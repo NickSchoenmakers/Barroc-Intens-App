@@ -1,1 +1,19 @@
-<mxfile host="app.diagrams.net" modified="2022-10-04T10:03:59.250Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" version="20.4.0" etag="rjQaZ_cnsQFXifDlkc8d" type="github"><diagram id="HLa_lnb8rshcpBEHxv-E">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-04T10:07:01.437Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="_pCnicQpqA4gW4tEmdrs" version="20.4.0" type="github">
+  <diagram id="HLa_lnb8rshcpBEHxv-E" name="Pagina-1">
+    <mxGraphModel dx="1038" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YkFLDojU3lP3mr4K3PG8-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;shape=link;" edge="1" parent="1" source="YkFLDojU3lP3mr4K3PG8-1" target="YkFLDojU3lP3mr4K3PG8-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YkFLDojU3lP3mr4K3PG8-1" value="interview vragen" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="220" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YkFLDojU3lP3mr4K3PG8-2" value="styling" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
