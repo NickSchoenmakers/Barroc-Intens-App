@@ -80,6 +80,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Name = "SalesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
