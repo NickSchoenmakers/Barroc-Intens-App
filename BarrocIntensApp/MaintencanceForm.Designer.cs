@@ -52,6 +52,7 @@
             this.BtnStoringen.TabIndex = 1;
             this.BtnStoringen.Text = "Storingen";
             this.BtnStoringen.UseVisualStyleBackColor = true;
+            this.BtnStoringen.Click += new System.EventHandler(this.BtnStoringen_Click);
             // 
             // BtnOnderhoud
             // 

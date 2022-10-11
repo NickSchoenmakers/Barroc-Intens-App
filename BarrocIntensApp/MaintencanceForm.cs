@@ -24,6 +24,13 @@ namespace BarrocIntensApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //var inkoopForm = new InkoopForm();
+            //this.Hide();
+            //inkoopForm.Show(this);
+        }
+
+        private void BtnStoringen_Click(object sender, EventArgs e)
+        {
 
         }
     }
