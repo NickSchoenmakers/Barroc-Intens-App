@@ -126,6 +126,9 @@
     <Compile Include="SalesOfferteForm.Designer.cs">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FacturatieForm.resx">
+      <DependentUpon>FacturatieForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
