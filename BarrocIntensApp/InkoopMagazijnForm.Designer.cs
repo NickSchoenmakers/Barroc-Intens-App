@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class FacturatieForm
+    partial class InkoopMagazijnForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FacturatieForm
+            // InkoopMagazijnForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 593);
-            this.Name = "FacturatieForm";
-            this.Text = "Facturatie_Form";
+            this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Name = "InkoopMagazijnForm";
+            this.Text = "InkoopMagazijnForm";
             this.ResumeLayout(false);
 
         }

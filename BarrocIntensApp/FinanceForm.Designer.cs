@@ -35,7 +35,7 @@
             // 
             // FacturatieBtn
             // 
-            this.FacturatieBtn.Location = new System.Drawing.Point(67, 135);
+            this.FacturatieBtn.Location = new System.Drawing.Point(179, 177);
             this.FacturatieBtn.Name = "FacturatieBtn";
             this.FacturatieBtn.Size = new System.Drawing.Size(200, 200);
             this.FacturatieBtn.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // LeaseBtn
             // 
-            this.LeaseBtn.Location = new System.Drawing.Point(273, 134);
+            this.LeaseBtn.Location = new System.Drawing.Point(437, 177);
             this.LeaseBtn.Name = "LeaseBtn";
             this.LeaseBtn.Size = new System.Drawing.Size(200, 200);
             this.LeaseBtn.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // KostenBtn
             // 
-            this.KostenBtn.Location = new System.Drawing.Point(479, 135);
+            this.KostenBtn.Location = new System.Drawing.Point(693, 177);
             this.KostenBtn.Name = "KostenBtn";
             this.KostenBtn.Size = new System.Drawing.Size(200, 200);
             this.KostenBtn.TabIndex = 2;
@@ -63,15 +63,15 @@
             this.KostenBtn.UseVisualStyleBackColor = true;
             this.KostenBtn.Click += new System.EventHandler(this.KostenBtn_Click);
             // 
-            // Finance_mainForm
+            // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(1142, 593);
             this.Controls.Add(this.KostenBtn);
             this.Controls.Add(this.LeaseBtn);
             this.Controls.Add(this.FacturatieBtn);
-            this.Name = "Finance_mainForm";
+            this.Name = "FinanceForm";
             this.Text = "Finance_mainForm";
             this.ResumeLayout(false);
 

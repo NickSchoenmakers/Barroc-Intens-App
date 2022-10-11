@@ -64,6 +64,12 @@
     <Compile Include="InkoopForm.Designer.cs">
       <DependentUpon>InkoopForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InkoopMagazijnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InkoopMagazijnForm.Designer.cs">
+      <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KostenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,11 +126,17 @@
     <Compile Include="SalesOfferteForm.Designer.cs">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FacturatieForm.resx">
+      <DependentUpon>FacturatieForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InkoopForm.resx">
       <DependentUpon>InkoopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InkoopMagazijnForm.resx">
+      <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
