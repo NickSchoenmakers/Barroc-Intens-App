@@ -39,10 +39,10 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(875, 6);
+            this.lblTitle.Location = new System.Drawing.Point(876, 9);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(217, 31);
+            this.lblTitle.Size = new System.Drawing.Size(173, 25);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Finance | Kosten";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -50,7 +50,7 @@
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-385, -3);
+            this.pbBlack.Location = new System.Drawing.Point(-384, 0);
             this.pbBlack.Margin = new System.Windows.Forms.Padding(4);
             this.pbBlack.Name = "pbBlack";
             this.pbBlack.Size = new System.Drawing.Size(1527, 53);
