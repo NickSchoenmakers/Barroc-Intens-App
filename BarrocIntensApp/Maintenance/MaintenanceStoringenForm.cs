@@ -19,7 +19,7 @@ namespace BarrocIntensApp
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
         {
-            var inkoopForm = new MaintencanceForm();
+            var inkoopForm = new MaintenanceForm();
             this.Hide();
             inkoopForm.Show(this);
         }
