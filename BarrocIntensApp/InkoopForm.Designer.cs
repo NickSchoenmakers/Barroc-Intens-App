@@ -45,7 +45,7 @@ namespace BarrocIntensApp
             this.btnMagazijn.TabIndex = 0;
             this.btnMagazijn.Text = "Magazijn";
             this.btnMagazijn.UseVisualStyleBackColor = true;
-            this.btnMagazijn.Click += new System.EventHandler(this.button1_Click);
+            this.btnMagazijn.Click += new System.EventHandler(this.btnMagazijn_Click);
             // 
             // pbBlack
             // 
@@ -73,7 +73,7 @@ namespace BarrocIntensApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Controls.Add(this.btnMagazijn);
