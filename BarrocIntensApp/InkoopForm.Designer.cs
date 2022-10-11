@@ -52,7 +52,7 @@ namespace BarrocIntensApp
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
             this.pbBlack.Location = new System.Drawing.Point(-2, -1);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(802, 43);
+            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 1;
             this.pbBlack.TabStop = false;
             // 
@@ -62,7 +62,7 @@ namespace BarrocIntensApp
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(639, 8);
+            this.lblTitle.Location = new System.Drawing.Point(983, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(149, 25);
             this.lblTitle.TabIndex = 2;
