@@ -8,12 +8,12 @@ namespace BarrocIntensApp.Models
 {
     internal class Note
     {
-        public int Id { get; set; }
-        public string NoteText { get; set; }
-        public DateTime Date { get; set; }
-        public int CompanyId { get; set; }
-        public Company Company { get; set; } = null;
-        public int AuthorId { get; set; }
-        public User Author { get; set; } = null;
+        public int id { get; set; }
+        public string note { get; set; }
+        public DateTime date { get; set; }
+        public int company_id { get; set; }
+        public Company company { get; set; } = null;
+        public int author_id { get; set; }
+        public User author { get; set; } = null;
     }
 }

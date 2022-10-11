@@ -200,6 +200,7 @@
     <Compile Include="Maintenance\MaintenanceForm.Designer.cs">
       <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\CustomInvoice.cs" />
     <Compile Include="Models\CustomInvoiceProduct.cs" />

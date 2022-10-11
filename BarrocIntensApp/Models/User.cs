@@ -9,11 +9,13 @@ namespace BarrocIntensApp.Models
 {
     internal class User
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public ObservableCollectionListSource<Note> Notes { get; } = new ObservableCollectionListSource<Note>();
-        public ObservableCollectionListSource<Company> Companies { get; } = new ObservableCollectionListSource<Company>();
+        public int id { get; set; }
+        public string name { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public int role_id { get; set; }
+        public Role role { get; set; } = null;
+        public ObservableCollectionListSource<Note> notes { get; } = new ObservableCollectionListSource<Note>();
+        public ObservableCollectionListSource<Company> companies { get; } = new ObservableCollectionListSource<Company>();
     }
 }
