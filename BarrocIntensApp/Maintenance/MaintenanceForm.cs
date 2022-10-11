@@ -52,5 +52,12 @@ namespace BarrocIntensApp
         {
 
         }
+
+        private void BtnStoringen_Click(object sender, EventArgs e)
+        {
+            var inkoopForm = new MaintenanceStoringenForm();
+            this.Hide();
+            inkoopForm.Show(this);
+        }
     }
 }

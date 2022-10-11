@@ -8,5 +8,10 @@ namespace BarrocIntensApp.Models
 {
     internal class MaintenanceAppointment
     {
+        public int Id { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
+        public string Remark { get; set; }
+        public DateTime DateAdded { get; set; }
     }
 }

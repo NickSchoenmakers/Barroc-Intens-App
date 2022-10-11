@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceForm));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnOfferte = new BarrocIntensApp.RoundButton();
             this.BtnOnderdelen = new BarrocIntensApp.RoundButton();
@@ -75,6 +76,7 @@
             this.BtnStoringen.TabIndex = 4;
             this.BtnStoringen.Text = "Storing";
             this.BtnStoringen.UseVisualStyleBackColor = false;
+            this.BtnStoringen.Click += new System.EventHandler(this.BtnStoringen_Click);
             // 
             // BtnOnderhoud
             // 
