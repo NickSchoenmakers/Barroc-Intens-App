@@ -138,6 +138,12 @@
     <EmbeddedResource Include="InkoopMagazijnForm.resx">
       <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KostenForm.resx">
+      <DependentUpon>KostenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaseForm.resx">
+      <DependentUpon>LeaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
