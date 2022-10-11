@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BarrocIntensApp
 {
-    public partial class MaintencanceForm : Form
+    public partial class MaintenanceForm : Form
     {
-        public MaintencanceForm()
+        public MaintenanceForm()
         {
             InitializeComponent();
         }

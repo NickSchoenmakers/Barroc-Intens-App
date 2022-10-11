@@ -26,14 +26,14 @@ namespace BarrocIntensApp
 
         private void LeaseBtn_Click(object sender, EventArgs e)
         {
-            var LeaseForm = new LeaseForm();
+            var LeaseForm = new FinanceLeaseForm();
             this.Hide();
             LeaseForm.Show(this);
         }
 
         private void KostenBtn_Click(object sender, EventArgs e)
         {
-            var KostenForm = new KostenForm();
+            var KostenForm = new FinanceKostenForm();
             this.Hide();
             KostenForm.Show(this);
         }

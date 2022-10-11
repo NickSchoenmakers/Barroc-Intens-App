@@ -46,7 +46,6 @@
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Finance | Facturatie";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // pbBlack
             // 

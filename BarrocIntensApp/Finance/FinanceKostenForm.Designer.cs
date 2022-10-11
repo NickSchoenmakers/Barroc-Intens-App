@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class SalesOfferteForm
+    partial class FinanceKostenForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesOfferteForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KostenForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
@@ -40,23 +40,23 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(715, 5);
+            this.lblTitle.Location = new System.Drawing.Point(657, 7);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(139, 25);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Sales | Name";
+            this.lblTitle.Size = new System.Drawing.Size(173, 25);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "Finance | Kosten";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-4, -2);
+            this.pbBlack.Location = new System.Drawing.Point(-288, 0);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(861, 43);
-            this.pbBlack.TabIndex = 5;
+            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
+            this.pbBlack.TabIndex = 7;
             this.pbBlack.TabStop = false;
             // 
-            // SalesOfferteForm
+            // KostenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,8 +65,8 @@
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "SalesOfferteForm";
-            this.Text = "SalesOfferteForm";
+            this.Name = "KostenForm";
+            this.Text = "KostenForm1";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
