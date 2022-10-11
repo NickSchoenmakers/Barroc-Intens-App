@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class MainForm
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
