@@ -36,7 +36,7 @@
             // 
             // BtnOnderdelen
             // 
-            this.BtnOnderdelen.Location = new System.Drawing.Point(94, 111);
+            this.BtnOnderdelen.Location = new System.Drawing.Point(82, 192);
             this.BtnOnderdelen.Name = "BtnOnderdelen";
             this.BtnOnderdelen.Size = new System.Drawing.Size(200, 200);
             this.BtnOnderdelen.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // BtnStoringen
             // 
-            this.BtnStoringen.Location = new System.Drawing.Point(300, 111);
+            this.BtnStoringen.Location = new System.Drawing.Point(476, 192);
             this.BtnStoringen.Name = "BtnStoringen";
             this.BtnStoringen.Size = new System.Drawing.Size(200, 200);
             this.BtnStoringen.TabIndex = 1;
@@ -56,18 +56,19 @@
             // 
             // BtnOnderhoud
             // 
-            this.BtnOnderhoud.Location = new System.Drawing.Point(506, 111);
+            this.BtnOnderhoud.Location = new System.Drawing.Point(860, 192);
             this.BtnOnderhoud.Name = "BtnOnderhoud";
             this.BtnOnderhoud.Size = new System.Drawing.Size(200, 200);
             this.BtnOnderhoud.TabIndex = 2;
             this.BtnOnderhoud.Text = "Onderhoud";
             this.BtnOnderhoud.UseVisualStyleBackColor = true;
+            this.BtnOnderhoud.Click += new System.EventHandler(this.BtnOnderhoud_Click);
             // 
             // MaintencanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.BtnOnderhoud);
             this.Controls.Add(this.BtnStoringen);
             this.Controls.Add(this.BtnOnderdelen);

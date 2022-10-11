@@ -129,6 +129,15 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceOnderdelenForm.resx">
+      <DependentUpon>MaintenanceOnderdelenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceOnderhoudForm.resx">
+      <DependentUpon>MaintenanceOnderhoudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceStoringenForm.resx">
+      <DependentUpon>MaintenanceStoringenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaintencanceForm.resx">
       <DependentUpon>MaintencanceForm.cs</DependentUpon>
     </EmbeddedResource>
