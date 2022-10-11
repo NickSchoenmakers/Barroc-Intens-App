@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturatie_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturatie_Form.Designer.cs">
+      <DependentUpon>Facturatie_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance_mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance_mainForm.Designer.cs">
+      <DependentUpon>Finance_mainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InkoopForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InkoopForm.Designer.cs">
       <DependentUpon>InkoopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KostenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KostenForm.Designer.cs">
+      <DependentUpon>KostenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaseForm.Designer.cs">
+      <DependentUpon>LeaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +102,9 @@
     <Compile Include="SalesOfferteForm.Designer.cs">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Finance_mainForm.resx">
+      <DependentUpon>Finance_mainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InkoopForm.resx">
       <DependentUpon>InkoopForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class KostenForm1
+    partial class KostenForm
     {
         /// <summary>
         /// Required designer variable.

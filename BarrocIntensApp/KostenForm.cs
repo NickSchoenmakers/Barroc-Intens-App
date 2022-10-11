@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BarrocIntensApp
 {
-    public partial class KostenForm1 : Form
+    public partial class KostenForm : Form
     {
-        public KostenForm1()
+        public KostenForm()
         {
             InitializeComponent();
         }
