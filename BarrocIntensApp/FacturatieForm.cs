@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BarrocIntensApp
 {
-    public partial class Facturatie_Form : Form
+    public partial class FacturatieForm : Form
     {
-        public Facturatie_Form()
+        public FacturatieForm()
         {
             InitializeComponent();
         }

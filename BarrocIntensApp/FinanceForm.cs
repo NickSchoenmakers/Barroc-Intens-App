@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace BarrocIntensApp
 {
-    public partial class Finance_mainForm : Form
+    public partial class FinanceForm : Form
     {
-        public Finance_mainForm()
+        public FinanceForm()
         {
             InitializeComponent();
         }
 
         private void FacturatieBtn_Click(object sender, EventArgs e)
         {
-            var Facturatie_Form = new Facturatie_Form();
+            var Facturatie_Form = new FacturatieForm();
             this.Hide();
             Facturatie_Form.Show(this);
         }

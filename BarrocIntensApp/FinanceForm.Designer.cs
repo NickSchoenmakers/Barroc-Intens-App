@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class Finance_mainForm
+    partial class FinanceForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class Facturatie_Form
+    partial class FacturatieForm
     {
         /// <summary>
         /// Required designer variable.
