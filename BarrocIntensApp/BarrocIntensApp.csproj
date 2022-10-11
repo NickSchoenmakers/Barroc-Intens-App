@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InkoopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InkoopForm.Designer.cs">
+      <DependentUpon>InkoopForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,8 +78,14 @@
     <Compile Include="SalesOfferteForm.Designer.cs">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InkoopForm.resx">
+      <DependentUpon>InkoopForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintencanceForm.resx">
+      <DependentUpon>MaintencanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
