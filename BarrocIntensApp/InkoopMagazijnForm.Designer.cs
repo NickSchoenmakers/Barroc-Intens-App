@@ -1,9 +1,6 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
-namespace BarrocIntensApp
+﻿namespace BarrocIntensApp
 {
-    partial class InkoopForm
+    partial class InkoopMagazijnForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,30 +28,10 @@ namespace BarrocIntensApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMagazijn = new System.Windows.Forms.Button();
-            this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pbBlack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnMagazijn
-            // 
-            this.btnMagazijn.Location = new System.Drawing.Point(12, 63);
-            this.btnMagazijn.Name = "btnMagazijn";
-            this.btnMagazijn.Size = new System.Drawing.Size(177, 170);
-            this.btnMagazijn.TabIndex = 0;
-            this.btnMagazijn.Text = "Magazijn";
-            this.btnMagazijn.UseVisualStyleBackColor = true;
-            this.btnMagazijn.Click += new System.EventHandler(this.btnMagazijn_Click);
-            // 
-            // pbBlack
-            // 
-            this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-2, -1);
-            this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
-            this.pbBlack.TabIndex = 1;
-            this.pbBlack.TabStop = false;
             // 
             // lblTitle
             // 
@@ -65,20 +42,28 @@ namespace BarrocIntensApp
             this.lblTitle.Location = new System.Drawing.Point(983, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(149, 25);
-            this.lblTitle.TabIndex = 2;
+            this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Inkoop | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // InkoopForm
+            // pbBlack
+            // 
+            this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
+            this.pbBlack.Location = new System.Drawing.Point(0, 0);
+            this.pbBlack.Name = "pbBlack";
+            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
+            this.pbBlack.TabIndex = 3;
+            this.pbBlack.TabStop = false;
+            // 
+            // InkoopMagazijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Controls.Add(this.btnMagazijn);
-            this.Name = "InkoopForm";
-            this.Text = "Inkoop";
+            this.Name = "InkoopMagazijnForm";
+            this.Text = "InkoopMagazijnForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,8 +72,7 @@ namespace BarrocIntensApp
 
         #endregion
 
-        private System.Windows.Forms.Button btnMagazijn;
-        private PictureBox pbBlack;
-        private Label lblTitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pbBlack;
     }
 }
