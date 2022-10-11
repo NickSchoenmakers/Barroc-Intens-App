@@ -12,5 +12,6 @@ namespace BarrocIntensApp.Models
         public DateTime Date { get; set; }
         public DateTime PaidAt { get; set; }
         public int CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 }
