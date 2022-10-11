@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinanceForm));
             this.FacturatieBtn = new System.Windows.Forms.Button();
             this.LeaseBtn = new System.Windows.Forms.Button();
             this.KostenBtn = new System.Windows.Forms.Button();
@@ -38,9 +39,10 @@
             // 
             // FacturatieBtn
             // 
-            this.FacturatieBtn.Location = new System.Drawing.Point(179, 177);
+            this.FacturatieBtn.Location = new System.Drawing.Point(134, 144);
+            this.FacturatieBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FacturatieBtn.Name = "FacturatieBtn";
-            this.FacturatieBtn.Size = new System.Drawing.Size(200, 200);
+            this.FacturatieBtn.Size = new System.Drawing.Size(150, 162);
             this.FacturatieBtn.TabIndex = 0;
             this.FacturatieBtn.Text = "Facturatie";
             this.FacturatieBtn.UseVisualStyleBackColor = true;
@@ -48,9 +50,10 @@
             // 
             // LeaseBtn
             // 
-            this.LeaseBtn.Location = new System.Drawing.Point(437, 177);
+            this.LeaseBtn.Location = new System.Drawing.Point(328, 144);
+            this.LeaseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LeaseBtn.Name = "LeaseBtn";
-            this.LeaseBtn.Size = new System.Drawing.Size(200, 200);
+            this.LeaseBtn.Size = new System.Drawing.Size(150, 162);
             this.LeaseBtn.TabIndex = 1;
             this.LeaseBtn.Text = "Lease contract";
             this.LeaseBtn.UseVisualStyleBackColor = true;
@@ -58,9 +61,10 @@
             // 
             // KostenBtn
             // 
-            this.KostenBtn.Location = new System.Drawing.Point(693, 177);
+            this.KostenBtn.Location = new System.Drawing.Point(520, 144);
+            this.KostenBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.KostenBtn.Name = "KostenBtn";
-            this.KostenBtn.Size = new System.Drawing.Size(200, 200);
+            this.KostenBtn.Size = new System.Drawing.Size(150, 162);
             this.KostenBtn.TabIndex = 2;
             this.KostenBtn.Text = "Kosten overzicht";
             this.KostenBtn.UseVisualStyleBackColor = true;
@@ -72,10 +76,9 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(875, 9);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(656, 7);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(190, 31);
+            this.lblTitle.Size = new System.Drawing.Size(153, 25);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Finance | Main";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -83,23 +86,24 @@
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-385, 0);
-            this.pbBlack.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBlack.Location = new System.Drawing.Point(-289, 0);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1527, 53);
+            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 7;
             this.pbBlack.TabStop = false;
             // 
             // FinanceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 593);
+            this.ClientSize = new System.Drawing.Size(856, 482);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Controls.Add(this.KostenBtn);
             this.Controls.Add(this.LeaseBtn);
             this.Controls.Add(this.FacturatieBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FinanceForm";
             this.Text = "Finance_mainForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();

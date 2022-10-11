@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InkoopMagazijnForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
@@ -62,6 +63,7 @@
             this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InkoopMagazijnForm";
             this.Text = "InkoopMagazijnForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();

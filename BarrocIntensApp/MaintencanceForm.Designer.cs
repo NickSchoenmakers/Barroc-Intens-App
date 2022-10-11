@@ -76,6 +76,7 @@
             this.BtnStoringen.TabIndex = 4;
             this.BtnStoringen.Text = "Storing";
             this.BtnStoringen.UseVisualStyleBackColor = false;
+            this.BtnStoringen.Click += new System.EventHandler(this.BtnStoringen_Click);
             // 
             // BtnOnderhoud
             // 
