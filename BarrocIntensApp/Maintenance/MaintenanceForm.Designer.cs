@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintencanceForm));
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnOfferte = new BarrocIntensApp.RoundButton();
             this.BtnOnderdelen = new BarrocIntensApp.RoundButton();

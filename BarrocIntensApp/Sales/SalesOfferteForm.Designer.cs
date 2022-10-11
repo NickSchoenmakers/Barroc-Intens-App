@@ -39,10 +39,9 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(953, 6);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(1004, 7);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(175, 31);
+            this.lblTitle.Size = new System.Drawing.Size(139, 25);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Sales | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -50,20 +49,20 @@
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-6, -3);
-            this.pbBlack.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBlack.Location = new System.Drawing.Point(0, 0);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1148, 53);
+            this.pbBlack.Size = new System.Drawing.Size(1146, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
             // 
             // SalesOfferteForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 593);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SalesOfferteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesOfferteForm";
