@@ -58,7 +58,7 @@
             // 
             // btnmaintenance
             // 
-            this.btnmaintenance.Location = new System.Drawing.Point(429, 13);
+            this.btnmaintenance.Location = new System.Drawing.Point(429, 221);
             this.btnmaintenance.Margin = new System.Windows.Forms.Padding(4);
             this.btnmaintenance.Name = "btnmaintenance";
             this.btnmaintenance.Size = new System.Drawing.Size(200, 200);

@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturatie_Form.cs">
+    <Compile Include="FacturatieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturatie_Form.Designer.cs">
-      <DependentUpon>Facturatie_Form.cs</DependentUpon>
+    <Compile Include="FacturatieForm.Designer.cs">
+      <DependentUpon>FacturatieForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finance_mainForm.cs">
+    <Compile Include="FinanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finance_mainForm.Designer.cs">
-      <DependentUpon>Finance_mainForm.cs</DependentUpon>
+    <Compile Include="FinanceForm.Designer.cs">
+      <DependentUpon>FinanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InkoopForm.cs">
       <SubType>Form</SubType>
@@ -120,8 +120,8 @@
     <Compile Include="SalesOfferteForm.Designer.cs">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Finance_mainForm.resx">
-      <DependentUpon>Finance_mainForm.cs</DependentUpon>
+    <EmbeddedResource Include="FinanceForm.resx">
+      <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InkoopForm.resx">
       <DependentUpon>InkoopForm.cs</DependentUpon>
