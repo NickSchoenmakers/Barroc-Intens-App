@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class KostenForm
+    partial class FinanceLeaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,33 +39,33 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(876, 9);
+            this.lblTitle.Location = new System.Drawing.Point(875, 8);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(173, 25);
-            this.lblTitle.TabIndex = 8;
-            this.lblTitle.Text = "Finance | Kosten";
+            this.lblTitle.Size = new System.Drawing.Size(206, 31);
+            this.lblTitle.TabIndex = 10;
+            this.lblTitle.Text = "Finance | Lease";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-384, 0);
+            this.pbBlack.Location = new System.Drawing.Point(-385, -1);
             this.pbBlack.Margin = new System.Windows.Forms.Padding(4);
             this.pbBlack.Name = "pbBlack";
             this.pbBlack.Size = new System.Drawing.Size(1527, 53);
-            this.pbBlack.TabIndex = 7;
+            this.pbBlack.TabIndex = 9;
             this.pbBlack.TabStop = false;
             // 
-            // KostenForm
+            // LeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 593);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Name = "KostenForm";
-            this.Text = "KostenForm1";
+            this.Name = "LeaseForm";
+            this.Text = "LeaseForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

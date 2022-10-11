@@ -133,41 +133,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FacturatieForm.cs">
+    <Compile Include="Finance\FinanceFacturatieForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacturatieForm.Designer.cs">
-      <DependentUpon>FacturatieForm.cs</DependentUpon>
+    <Compile Include="Finance\FinanceFacturatieForm.Designer.cs">
+      <DependentUpon>FinanceFacturatieForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FinanceForm.cs">
+    <Compile Include="Finance\FinanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FinanceForm.Designer.cs">
+    <Compile Include="Finance\FinanceForm.Designer.cs">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InkoopForm.cs">
+    <Compile Include="Inkoop\InkoopForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InkoopForm.Designer.cs">
+    <Compile Include="Inkoop\InkoopForm.Designer.cs">
       <DependentUpon>InkoopForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InkoopMagazijnForm.cs">
+    <Compile Include="Inkoop\InkoopMagazijnForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InkoopMagazijnForm.Designer.cs">
+    <Compile Include="Inkoop\InkoopMagazijnForm.Designer.cs">
       <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KostenForm.cs">
+    <Compile Include="Finance\FinanceKostenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KostenForm.Designer.cs">
-      <DependentUpon>KostenForm.cs</DependentUpon>
+    <Compile Include="Finance\FinanceKostenForm.Designer.cs">
+      <DependentUpon>FinanceKostenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LeaseForm.cs">
+    <Compile Include="Finance\FinanceLeaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LeaseForm.Designer.cs">
-      <DependentUpon>LeaseForm.cs</DependentUpon>
+    <Compile Include="Finance\FinanceLeaseForm.Designer.cs">
+      <DependentUpon>FinanceLeaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -175,29 +175,29 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceOnderdelenForm.cs">
+    <Compile Include="Maintenance\MaintenanceOnderdelenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceOnderdelenForm.Designer.cs">
+    <Compile Include="Maintenance\MaintenanceOnderdelenForm.Designer.cs">
       <DependentUpon>MaintenanceOnderdelenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceOnderhoudForm.cs">
+    <Compile Include="Maintenance\MaintenanceOnderhoudForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceOnderhoudForm.Designer.cs">
+    <Compile Include="Maintenance\MaintenanceOnderhoudForm.Designer.cs">
       <DependentUpon>MaintenanceOnderhoudForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceStoringenForm.cs">
+    <Compile Include="Maintenance\MaintenanceStoringenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceStoringenForm.Designer.cs">
+    <Compile Include="Maintenance\MaintenanceStoringenForm.Designer.cs">
       <DependentUpon>MaintenanceStoringenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintencanceForm.cs">
+    <Compile Include="Maintenance\MaintenanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintencanceForm.Designer.cs">
-      <DependentUpon>MaintencanceForm.cs</DependentUpon>
+    <Compile Include="Maintenance\MaintenanceForm.Designer.cs">
+      <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\CustomInvoice.cs" />
@@ -212,50 +212,50 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SalesForm.cs">
+    <Compile Include="Sales\SalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesForm.Designer.cs">
+    <Compile Include="Sales\SalesForm.Designer.cs">
       <DependentUpon>SalesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalesOfferteForm.cs">
+    <Compile Include="Sales\SalesOfferteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesOfferteForm.Designer.cs">
+    <Compile Include="Sales\SalesOfferteForm.Designer.cs">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FacturatieForm.resx">
-      <DependentUpon>FacturatieForm.cs</DependentUpon>
+    <EmbeddedResource Include="Finance\FinanceFacturatieForm.resx">
+      <DependentUpon>FinanceFacturatieForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FinanceForm.resx">
+    <EmbeddedResource Include="Finance\FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InkoopForm.resx">
+    <EmbeddedResource Include="Inkoop\InkoopForm.resx">
       <DependentUpon>InkoopForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InkoopMagazijnForm.resx">
+    <EmbeddedResource Include="Inkoop\InkoopMagazijnForm.resx">
       <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KostenForm.resx">
-      <DependentUpon>KostenForm.cs</DependentUpon>
+    <EmbeddedResource Include="Finance\FinanceKostenForm.resx">
+      <DependentUpon>FinanceKostenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LeaseForm.resx">
-      <DependentUpon>LeaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="Finance\FinanceLeaseForm.resx">
+      <DependentUpon>FinanceLeaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenanceOnderdelenForm.resx">
+    <EmbeddedResource Include="Maintenance\MaintenanceOnderdelenForm.resx">
       <DependentUpon>MaintenanceOnderdelenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenanceOnderhoudForm.resx">
+    <EmbeddedResource Include="Maintenance\MaintenanceOnderhoudForm.resx">
       <DependentUpon>MaintenanceOnderhoudForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintenanceStoringenForm.resx">
+    <EmbeddedResource Include="Maintenance\MaintenanceStoringenForm.resx">
       <DependentUpon>MaintenanceStoringenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaintencanceForm.resx">
-      <DependentUpon>MaintencanceForm.cs</DependentUpon>
+    <EmbeddedResource Include="Maintenance\MaintenanceForm.resx">
+      <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -266,10 +266,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SalesForm.resx">
+    <EmbeddedResource Include="Sales\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesOfferteForm.resx">
+    <EmbeddedResource Include="Sales\SalesOfferteForm.resx">
       <DependentUpon>SalesOfferteForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
