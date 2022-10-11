@@ -9,13 +9,13 @@ namespace BarrocIntensApp.Models
 {
     internal class Product
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string image_path { get; set; }
-        public decimal price { get; set; }
-        public int product_category_id { get; set; }
-        public ProductCategory product_category { get; set; } = null;
-        public ObservableCollectionListSource<CustomInvoiceProduct> custom_invoice_products { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string ImagePath { get; set; }
+        public decimal Price { get; set; }
+        public int ProductCategoryId { get; set; }
+        public ProductCategory ProductCategory { get; set; } = null;
+        public ObservableCollectionListSource<CustomInvoiceProduct> CustomInvoiceProducts { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
     }
 }

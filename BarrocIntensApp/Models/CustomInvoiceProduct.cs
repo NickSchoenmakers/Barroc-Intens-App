@@ -8,9 +8,9 @@ namespace BarrocIntensApp.Models
 {
     internal class CustomInvoiceProduct
     {
-        public int id { get; set; }
-        public int product_id { get; set; }
-        public int amount { get; set; }
-        public decimal price_per_product { get; set; }
+        public int Id { get; set; }
+        public int ProductId { get; set; }
+        public int Amount { get; set; }
+        public decimal PricePerProduct { get; set; }
     }
 }

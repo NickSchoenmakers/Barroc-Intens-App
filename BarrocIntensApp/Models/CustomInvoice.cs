@@ -9,11 +9,11 @@ namespace BarrocIntensApp.Models
 {
     internal class CustomInvoice
     {
-        public string id { get; set; }
-        public DateTime date { get; set; }
-        public DateTime paid_at { get; set; }
-        public int company_id { get; set; }
-        public Company company { get; set; } = null;
-        public ObservableCollectionListSource<CustomInvoiceProduct> custom_invoice_products { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
+        public string Id { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime PaidAt { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; } = null;
+        public ObservableCollectionListSource<CustomInvoiceProduct> CustomInvoiceProducts { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
     }
 }
