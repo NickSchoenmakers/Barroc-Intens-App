@@ -40,7 +40,7 @@ namespace BarrocIntensApp
             GraphicsPath GraphPath = GetRoundPath(Rect, borderRadius);
 
             this.Region = new Region(GraphPath);
-            using (Pen pen = new Pen(Color.Black, borderThickness))
+            using (Pen pen = new Pen(Color.Yellow, borderThickness))
             {
                 pen.Alignment = PenAlignment.Inset;
                 e.Graphics.DrawPath(pen, GraphPath);

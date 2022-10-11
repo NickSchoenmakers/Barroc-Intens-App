@@ -47,7 +47,6 @@ namespace BarrocIntensApp
             this.btnMagazijn.TabIndex = 0;
             this.btnMagazijn.Text = "Magazijn";
             this.btnMagazijn.UseVisualStyleBackColor = true;
-            this.btnMagazijn.Click += new System.EventHandler(this.button1_Click);
             // 
             // pbBlack
             // 
