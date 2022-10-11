@@ -17,7 +17,7 @@ namespace BarrocIntensApp
             InitializeComponent();
         }
 
-        private void btnMagazijn_Click(object sender, EventArgs e)
+        private void btnMagazijn_Click_1(object sender, EventArgs e)
         {
             var inkoopMagazijnForm = new InkoopMagazijnForm();
             this.Hide();

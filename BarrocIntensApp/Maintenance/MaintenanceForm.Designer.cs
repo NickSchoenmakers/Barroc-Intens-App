@@ -108,14 +108,14 @@
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-2, -3);
+            this.pbBlack.Location = new System.Drawing.Point(0, 0);
             this.pbBlack.Name = "pbBlack";
             this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 6;
             this.pbBlack.TabStop = false;
             this.pbBlack.Click += new System.EventHandler(this.pbBlack_Click);
             // 
-            // MaintencanceForm
+            // MaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +127,7 @@
             this.Controls.Add(this.BtnStoringen);
             this.Controls.Add(this.BtnOnderdelen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MaintencanceForm";
+            this.Name = "MaintenanceForm";
             this.Text = "MaintencanceForm";
             this.Load += new System.EventHandler(this.MaintencanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();

@@ -40,7 +40,7 @@
             // FacturatieBtn
             // 
             this.FacturatieBtn.Location = new System.Drawing.Point(134, 144);
-            this.FacturatieBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FacturatieBtn.Margin = new System.Windows.Forms.Padding(2);
             this.FacturatieBtn.Name = "FacturatieBtn";
             this.FacturatieBtn.Size = new System.Drawing.Size(150, 162);
             this.FacturatieBtn.TabIndex = 0;
@@ -51,7 +51,7 @@
             // LeaseBtn
             // 
             this.LeaseBtn.Location = new System.Drawing.Point(328, 144);
-            this.LeaseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LeaseBtn.Margin = new System.Windows.Forms.Padding(2);
             this.LeaseBtn.Name = "LeaseBtn";
             this.LeaseBtn.Size = new System.Drawing.Size(150, 162);
             this.LeaseBtn.TabIndex = 1;
@@ -62,7 +62,7 @@
             // KostenBtn
             // 
             this.KostenBtn.Location = new System.Drawing.Point(520, 144);
-            this.KostenBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.KostenBtn.Margin = new System.Windows.Forms.Padding(2);
             this.KostenBtn.Name = "KostenBtn";
             this.KostenBtn.Size = new System.Drawing.Size(150, 162);
             this.KostenBtn.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(656, 7);
+            this.lblTitle.Location = new System.Drawing.Point(979, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(153, 25);
             this.lblTitle.TabIndex = 8;
@@ -88,7 +88,7 @@
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
             this.pbBlack.Location = new System.Drawing.Point(-289, 0);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
+            this.pbBlack.Size = new System.Drawing.Size(1435, 43);
             this.pbBlack.TabIndex = 7;
             this.pbBlack.TabStop = false;
             // 
@@ -96,14 +96,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 482);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Controls.Add(this.KostenBtn);
             this.Controls.Add(this.LeaseBtn);
             this.Controls.Add(this.FacturatieBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FinanceForm";
             this.Text = "Finance_mainForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();

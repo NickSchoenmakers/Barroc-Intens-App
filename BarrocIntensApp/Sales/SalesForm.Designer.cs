@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnOfferte = new BarrocIntensApp.RoundButton();
@@ -41,7 +40,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(1002, 7);
+            this.lblTitle.Location = new System.Drawing.Point(993, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(139, 25);
             this.lblTitle.TabIndex = 4;
@@ -51,7 +50,7 @@
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-2, 0);
+            this.pbBlack.Location = new System.Drawing.Point(-1, 0);
             this.pbBlack.Name = "pbBlack";
             this.pbBlack.Size = new System.Drawing.Size(1146, 43);
             this.pbBlack.TabIndex = 3;
@@ -63,7 +62,7 @@
             this.btnOfferte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfferte.ForeColor = System.Drawing.Color.White;
             this.btnOfferte.Location = new System.Drawing.Point(18, 59);
-            this.btnOfferte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOfferte.Margin = new System.Windows.Forms.Padding(2);
             this.btnOfferte.Name = "btnOfferte";
             this.btnOfferte.Size = new System.Drawing.Size(170, 168);
             this.btnOfferte.TabIndex = 5;
@@ -79,7 +78,7 @@
             this.Controls.Add(this.btnOfferte);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesForm";

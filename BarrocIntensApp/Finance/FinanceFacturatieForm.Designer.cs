@@ -56,7 +56,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(656, 7);
+            this.lblTitle.Location = new System.Drawing.Point(930, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(202, 25);
             this.lblTitle.TabIndex = 6;
@@ -68,7 +68,7 @@
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
             this.pbBlack.Location = new System.Drawing.Point(-289, 0);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
+            this.pbBlack.Size = new System.Drawing.Size(1434, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
             // 
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 482);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ContractLbl);

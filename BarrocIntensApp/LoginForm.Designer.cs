@@ -86,7 +86,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(326, 184);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(128, 19);
             this.btnLogin.TabIndex = 4;
@@ -97,7 +97,7 @@
             // txbUserPassword
             // 
             this.txbUserPassword.Location = new System.Drawing.Point(379, 162);
-            this.txbUserPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbUserPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserPassword.Name = "txbUserPassword";
             this.txbUserPassword.Size = new System.Drawing.Size(76, 20);
             this.txbUserPassword.TabIndex = 99;
@@ -105,7 +105,7 @@
             // txbUserName
             // 
             this.txbUserName.Location = new System.Drawing.Point(379, 139);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(76, 20);
             this.txbUserName.TabIndex = 98;
@@ -145,18 +145,18 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(794, 7);
+            this.lblTitle.Location = new System.Drawing.Point(1009, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(58, 25);
+            this.lblTitle.Size = new System.Drawing.Size(123, 25);
             this.lblTitle.TabIndex = 101;
-            this.lblTitle.Text = "login";
+            this.lblTitle.Text = "Inlogpagina";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 482);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Controls.Add(this.lblUserName);
@@ -169,7 +169,7 @@
             this.Controls.Add(this.btnfinance);
             this.Controls.Add(this.btnInkoop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

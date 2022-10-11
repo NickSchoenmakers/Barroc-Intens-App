@@ -47,13 +47,14 @@ namespace BarrocIntensApp
             this.btnMagazijn.TabIndex = 0;
             this.btnMagazijn.Text = "Magazijn";
             this.btnMagazijn.UseVisualStyleBackColor = true;
+            this.btnMagazijn.Click += new System.EventHandler(this.btnMagazijn_Click_1);
             // 
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
             this.pbBlack.Location = new System.Drawing.Point(0, -1);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(857, 43);
+            this.pbBlack.Size = new System.Drawing.Size(1144, 43);
             this.pbBlack.TabIndex = 1;
             this.pbBlack.TabStop = false;
             // 
@@ -63,7 +64,7 @@ namespace BarrocIntensApp
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(697, 8);
+            this.lblTitle.Location = new System.Drawing.Point(983, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(149, 25);
             this.lblTitle.TabIndex = 2;
@@ -74,7 +75,7 @@ namespace BarrocIntensApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 482);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Controls.Add(this.btnMagazijn);
