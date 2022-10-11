@@ -28,12 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pbBlack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Black;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(875, 8);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(206, 31);
+            this.lblTitle.TabIndex = 10;
+            this.lblTitle.Text = "Finance | Lease";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pbBlack
+            // 
+            this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
+            this.pbBlack.Location = new System.Drawing.Point(-385, -1);
+            this.pbBlack.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBlack.Name = "pbBlack";
+            this.pbBlack.Size = new System.Drawing.Size(1527, 53);
+            this.pbBlack.TabIndex = 9;
+            this.pbBlack.TabStop = false;
+            // 
+            // LeaseForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1142, 593);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.pbBlack);
+            this.Name = "LeaseForm";
             this.Text = "LeaseForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pbBlack;
     }
 }

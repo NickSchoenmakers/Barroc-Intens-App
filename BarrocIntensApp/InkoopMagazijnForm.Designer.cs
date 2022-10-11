@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class KostenForm
+    partial class InkoopMagazijnForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,33 +39,31 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(875, 6);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(983, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(217, 31);
-            this.lblTitle.TabIndex = 8;
-            this.lblTitle.Text = "Finance | Kosten";
+            this.lblTitle.Size = new System.Drawing.Size(149, 25);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Inkoop | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-385, -3);
-            this.pbBlack.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBlack.Location = new System.Drawing.Point(0, 0);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1527, 53);
-            this.pbBlack.TabIndex = 7;
+            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
+            this.pbBlack.TabIndex = 3;
             this.pbBlack.TabStop = false;
             // 
-            // KostenForm
+            // InkoopMagazijnForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 593);
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Name = "KostenForm";
-            this.Text = "KostenForm1";
+            this.Name = "InkoopMagazijnForm";
+            this.Text = "InkoopMagazijnForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

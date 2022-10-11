@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace BarrocIntensApp
 {
-    public partial class InkoopForm : Form
+    public partial class FacturatieForm : Form
     {
-        public InkoopForm()
+        public FacturatieForm()
         {
             InitializeComponent();
         }
 
-        private void btnMagazijn_Click(object sender, EventArgs e)
+        private void lblTitle_Click(object sender, EventArgs e)
         {
-            var inkoopMagazijnForm = new InkoopMagazijnForm();
-            this.Hide();
-            inkoopMagazijnForm.Show(this);
+
         }
     }
 }
