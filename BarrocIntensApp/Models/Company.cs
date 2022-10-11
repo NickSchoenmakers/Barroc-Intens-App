@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,8 @@ namespace BarrocIntensApp.Models
         public DateTime BkrCheckedAt { get; set; }
         public string ContactName { get; set; }
         public string ContactPhoneNumber { get; set; }
+        public ObservableCollectionListSource<Note> Notes { get; } = new ObservableCollectionListSource<Note>();
+        public ObservableCollectionListSource<MaintenanceAppointment> MaintenanceAppointments { get; } = new ObservableCollectionListSource<MaintenanceAppointment>();
+        public ObservableCollectionListSource<CustomInvoice> CustomInvoices { get; } = new ObservableCollectionListSource<CustomInvoice>();
     }
 }

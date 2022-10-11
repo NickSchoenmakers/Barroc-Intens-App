@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace BarrocIntensApp.Models
         public string Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
+        public ObservableCollectionListSource<Note> Notes { get; } = new ObservableCollectionListSource<Note>();
+        public ObservableCollectionListSource<Company> Companies { get; } = new ObservableCollectionListSource<Company>();
     }
 }

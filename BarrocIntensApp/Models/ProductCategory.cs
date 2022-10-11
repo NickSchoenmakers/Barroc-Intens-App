@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace BarrocIntensApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int IsEmployeeOnly { get; set; }
+        public ObservableCollectionListSource<Product> Products { get; } = new ObservableCollectionListSource<Product>();
     }
 }
