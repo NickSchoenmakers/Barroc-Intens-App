@@ -1,4 +1,4 @@
-### Conventions
+# Conventions
 * PascalCase for naming forms
 * 200, 200 size for connection buttons
 * 1160, 640 for size of forms
