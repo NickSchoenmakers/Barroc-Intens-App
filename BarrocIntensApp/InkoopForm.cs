@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace BarrocIntensApp
 {
-    public partial class LoginForm : Form
+    public partial class InkoopForm : Form
     {
-        public LoginForm()
+        public InkoopForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnInkoop_Click(object sender, EventArgs e)
-        {
-            var inkoopForm = new InkoopForm();
-            this.Hide();
-            inkoopForm.Show(this);
         }
     }
 }

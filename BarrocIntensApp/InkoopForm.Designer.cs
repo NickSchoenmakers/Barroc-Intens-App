@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class LoginForm
+    partial class InkoopForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnInkoop = new System.Windows.Forms.Button();
+            this.btnMagazijn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnInkoop
+            // btnMagazijn
             // 
-            this.btnInkoop.Location = new System.Drawing.Point(25, 320);
-            this.btnInkoop.Name = "btnInkoop";
-            this.btnInkoop.Size = new System.Drawing.Size(75, 23);
-            this.btnInkoop.TabIndex = 0;
-            this.btnInkoop.Text = "Inkoop";
-            this.btnInkoop.UseVisualStyleBackColor = true;
-            this.btnInkoop.Click += new System.EventHandler(this.btnInkoop_Click);
+            this.btnMagazijn.Location = new System.Drawing.Point(12, 74);
+            this.btnMagazijn.Name = "btnMagazijn";
+            this.btnMagazijn.Size = new System.Drawing.Size(177, 170);
+            this.btnMagazijn.TabIndex = 0;
+            this.btnMagazijn.Text = "Magazijn";
+            this.btnMagazijn.UseVisualStyleBackColor = true;
+            this.btnMagazijn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // LoginForm
+            // InkoopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.btnInkoop);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "LoginForm";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMagazijn);
+            this.Name = "InkoopForm";
+            this.Text = "Inkoop";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnInkoop;
+        private System.Windows.Forms.Button btnMagazijn;
     }
 }
-
