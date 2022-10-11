@@ -19,7 +19,9 @@ namespace BarrocIntensApp
 
         private void btnOfferte_Click(object sender, EventArgs e)
         {
-
+            var salesOfferte = new SalesOfferteForm();
+            this.Hide();
+            salesOfferte.Show(this);
         }
     }
 }

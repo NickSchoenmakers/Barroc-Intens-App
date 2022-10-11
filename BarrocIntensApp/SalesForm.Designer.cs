@@ -60,7 +60,7 @@
             // 
             // btnOfferte
             // 
-            this.btnOfferte.BackColor = System.Drawing.SystemColors.Desktop;
+            this.btnOfferte.BackColor = System.Drawing.Color.Black;
             this.btnOfferte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfferte.ForeColor = System.Drawing.Color.White;
             this.btnOfferte.Location = new System.Drawing.Point(24, 73);
