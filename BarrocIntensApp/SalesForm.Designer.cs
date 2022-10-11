@@ -69,6 +69,7 @@
             this.btnOfferte.TabIndex = 5;
             this.btnOfferte.Text = "Offerte formulier";
             this.btnOfferte.UseVisualStyleBackColor = false;
+            this.btnOfferte.Click += new System.EventHandler(this.btnOfferte_Click);
             // 
             // SalesForm
             // 

@@ -16,5 +16,10 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
+
+        private void btnOfferte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
