@@ -38,7 +38,7 @@ namespace BarrocIntensApp
 
         private void btnmaintenance_Click(object sender, EventArgs e)
         {
-            var inkoopForm = new MaintencanceForm();
+            var inkoopForm = new MaintenanceForm();
             this.Hide();
             inkoopForm.Show(this);
         }
@@ -69,7 +69,7 @@ namespace BarrocIntensApp
             }
             else if (username == "maintenance" && password == "maintenance")
             {
-                var inkoopForm = new MaintencanceForm();
+                var inkoopForm = new MaintenanceForm();
                 this.Hide();
                 inkoopForm.Show(this);
             }

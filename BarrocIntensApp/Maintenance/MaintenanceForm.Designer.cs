@@ -1,6 +1,6 @@
 ﻿namespace BarrocIntensApp
 {
-    partial class MaintencanceForm
+    partial class MaintenanceForm
     {
         /// <summary>
         /// Required designer variable.
