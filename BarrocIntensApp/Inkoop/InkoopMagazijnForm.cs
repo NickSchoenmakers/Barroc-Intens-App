@@ -16,10 +16,5 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
-
-        private void InkoopMagazijnForm_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

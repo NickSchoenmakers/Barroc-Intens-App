@@ -39,7 +39,6 @@ namespace BarrocIntensApp.Models
                     new Role { Id = 3, Name = "Sales" },
                     new Role { Id = 4, Name = "Finance" }
             );
-
         }
     }
 }

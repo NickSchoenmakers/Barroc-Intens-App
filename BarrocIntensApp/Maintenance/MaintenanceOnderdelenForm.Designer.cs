@@ -28,18 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceOnderdelenForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -64,6 +58,13 @@
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.monthCalendar1.Location = new System.Drawing.Point(402, 176);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 9;
+            // 
             // BtnReturnStoringen
             // 
             this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
@@ -77,34 +78,19 @@
             this.BtnReturnStoringen.UseVisualStyleBackColor = false;
             this.BtnReturnStoringen.Click += new System.EventHandler(this.BtnReturnStoringen_Click);
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
-            // userBindingSource1
-            // 
-            this.userBindingSource1.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
-            // userBindingSource2
-            // 
-            this.userBindingSource2.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
             // MaintenanceOnderdelenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.BtnReturnStoringen);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenanceOnderdelenForm";
             this.Text = "MaintenanceOnderdelenForm";
-            this.Load += new System.EventHandler(this.MaintenanceOnderdelenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,8 +101,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
         private RoundButton BtnReturnStoringen;
-        private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.BindingSource userBindingSource1;
-        private System.Windows.Forms.BindingSource userBindingSource2;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
