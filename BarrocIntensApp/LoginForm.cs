@@ -13,7 +13,7 @@ namespace BarrocIntensApp
 {
     public partial class LoginForm : Form
     {
-        private AppDbContext dbContext;
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -80,14 +80,12 @@ namespace BarrocIntensApp
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            this.dbContext = new AppDbContext();
-            this.dbContext.Database.EnsureCreated();
+            
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.dbContext?.Dispose();
-            this.dbContext = null;
+            
         }
     }
 }

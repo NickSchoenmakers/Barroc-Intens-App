@@ -14,12 +14,21 @@ namespace BarrocIntensApp
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        private static AppDbContext dbContext;
+
         [STAThread]
         static void Main()
         {
+            dbContext = new AppDbContext();
+            dbContext.Database.EnsureCreated();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
+
+            dbContext?.Dispose();
+            dbContext = null;
         }
     }
 }
