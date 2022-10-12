@@ -15,7 +15,7 @@ namespace BarrocIntensApp
         /// The main entry point for the application.
         /// </summary>
         /// 
-        private static AppDbContext dbContext;
+        public static AppDbContext dbContext;
 
         [STAThread]
         static void Main()
