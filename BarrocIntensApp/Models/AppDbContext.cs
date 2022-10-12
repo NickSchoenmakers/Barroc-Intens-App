@@ -21,7 +21,8 @@ namespace BarrocIntensApp.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.EnableSensitiveDataLogging();
+            // Deze lijn uncommenten voor db logs
+            //optionsBuilder.EnableSensitiveDataLogging();
             optionsBuilder.UseMySql
                 ("server=localhost;database=barroc_intens_app;user=root;password=;");
         }
