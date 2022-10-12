@@ -16,12 +16,19 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
-
+        public new string Name;
+        public string Street;
+        public string Housenr;
+        public string City;
+        public string Zip;
+        public bool Period;
+        public string Product;
+        public int Amount;
         private void FacturatieForm_Load(object sender, EventArgs e)
         {
 
         }
-
+            
         private void NameLbl_Click(object sender, EventArgs e)
         {
 
@@ -30,6 +37,50 @@ namespace BarrocIntensApp
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void NameTb_TextChanged(object sender, EventArgs e)
+        {
+            NameTb.Text = Name;
+        }
+
+        private void StreetTb_TextChanged(object sender, EventArgs e)
+        {
+            StreetTb.Text = Street;
+        }
+
+        private void HnrTb_TextChanged(object sender, EventArgs e)
+        {
+            HnrTb.Text = Housenr;
+        }
+
+        private void CityTb_TextChanged(object sender, EventArgs e)
+        {
+            CityTb.Text = City; 
+        }
+
+        private void ZipTb_TextChanged(object sender, EventArgs e)
+        {
+            ZipTb.Text = Zip;
+        }
+
+        private void PeriodRb_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Period = false;
+        }
+
+        private void ProductCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Period = true;
+        }
+
+        private void AmountNu_ValueChanged(object sender, EventArgs e)
+        {
+            Amount = (int)AmountNu.Value;
         }
     }
 }
