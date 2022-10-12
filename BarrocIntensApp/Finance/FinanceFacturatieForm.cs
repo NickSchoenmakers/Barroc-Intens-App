@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace BarrocIntensApp
 {
@@ -66,16 +67,24 @@ namespace BarrocIntensApp
 
         private void PeriodRb_CheckedChanged(object sender, EventArgs e)
         {
-            
+            Period = true;
+            if (radioButton1.Checked)
+            {
+                radioButton1.Checked = false;
+            }
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             Period = false;
+            if (PeriodRb.Checked)
+            {
+                PeriodRb.Checked = false;
+            }
         }
 
         private void ProductCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Period = true;
+            
         }
 
         private void AmountNu_ValueChanged(object sender, EventArgs e)

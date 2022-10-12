@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CityTb = new System.Windows.Forms.TextBox();
-            this.MonthlyRb = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.PeriodRb = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
@@ -180,17 +180,17 @@
             this.CityTb.TabIndex = 25;
             this.CityTb.TextChanged += new System.EventHandler(this.CityTb_TextChanged);
             // 
-            // MonthlyRb
+            // radioButton1
             // 
-            this.MonthlyRb.AutoSize = true;
-            this.MonthlyRb.Location = new System.Drawing.Point(133, 249);
-            this.MonthlyRb.Name = "MonthlyRb";
-            this.MonthlyRb.Size = new System.Drawing.Size(81, 17);
-            this.MonthlyRb.TabIndex = 27;
-            this.MonthlyRb.TabStop = true;
-            this.MonthlyRb.Text = "Maandelijks";
-            this.MonthlyRb.UseVisualStyleBackColor = true;
-            this.MonthlyRb.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(133, 249);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(81, 17);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Maandelijks";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // PeriodRb
             // 
@@ -271,7 +271,7 @@
             this.Controls.Add(this.AmountNu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PeriodRb);
-            this.Controls.Add(this.MonthlyRb);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CityTb);
             this.Controls.Add(this.label1);
@@ -314,7 +314,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox CityTb;
-        private System.Windows.Forms.RadioButton MonthlyRb;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton PeriodRb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown AmountNu;
