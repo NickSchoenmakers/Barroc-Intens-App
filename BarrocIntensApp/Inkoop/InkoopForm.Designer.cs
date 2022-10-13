@@ -34,8 +34,9 @@ namespace BarrocIntensApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InkoopForm));
             this.btnMagazijn = new System.Windows.Forms.Button();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblDepartmentPart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,22 +61,37 @@ namespace BarrocIntensApp
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(983, 9);
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitle.Location = new System.Drawing.Point(727, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(149, 25);
-            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Size = new System.Drawing.Size(405, 25);
+            this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Inkoop | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblDepartmentPart
+            // 
+            this.lblDepartmentPart.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDepartmentPart.BackColor = System.Drawing.Color.Black;
+            this.lblDepartmentPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentPart.ForeColor = System.Drawing.Color.White;
+            this.lblDepartmentPart.Location = new System.Drawing.Point(12, 9);
+            this.lblDepartmentPart.Name = "lblDepartmentPart";
+            this.lblDepartmentPart.Size = new System.Drawing.Size(405, 25);
+            this.lblDepartmentPart.TabIndex = 35;
+            this.lblDepartmentPart.Text = "Dashboard";
+            this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InkoopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Controls.Add(this.btnMagazijn);
@@ -84,7 +100,6 @@ namespace BarrocIntensApp
             this.Text = "Inkoop";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -92,7 +107,8 @@ namespace BarrocIntensApp
 
         private System.Windows.Forms.Button btnMagazijn;
         private PictureBox pbBlack;
-        private Label lblTitle;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label lblTitle;
+        private Label lblDepartmentPart;
     }
 }
