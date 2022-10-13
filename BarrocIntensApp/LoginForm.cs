@@ -17,6 +17,11 @@ namespace BarrocIntensApp
     {
         private AppDbContext dbContext;
 
+        public static class Globals
+        {
+            public static User loggedInUser;
+        }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -62,40 +67,36 @@ namespace BarrocIntensApp
             string username = txbUserName.Text.ToString();
             string password = txbUserPassword.Text.ToString();
 
-            User loggedinUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
-
-
-
-
-
-            if (loggedinUser == null)
+            Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+            if (Globals.loggedInUser == null)
             {
             }
             else 
             {
-                if (loggedinUser.RoleId == 1)
+                if (Globals.loggedInUser.RoleId == 1)
                 {
+
                     var inkoopForm = new InkoopForm();
                     this.Hide();
                     inkoopForm.Show(this);
                 }
-                else if (loggedinUser.RoleId == 4)
+                else if (Globals.loggedInUser.RoleId == 4)
                 {
-                    var inkoopForm = new FinanceForm();
+                    var financeForm = new FinanceForm();
                     this.Hide();
-                    inkoopForm.Show(this);
+                    financeForm.Show(this);
                 }
-                else if (loggedinUser.RoleId == 2)
+                else if (Globals.loggedInUser.RoleId == 2)
                 {
-                    var inkoopForm = new MaintenanceForm();
+                    var maintenanceForm = new MaintenanceForm();
                     this.Hide();
-                    inkoopForm.Show(this);
+                    maintenanceForm.Show(this);
                 }
-                else if (loggedinUser.RoleId == 3)
+                else if (Globals.loggedInUser.RoleId == 3)
                 {
-                    var inkoopForm = new SalesForm();
+                    var salesForm = new SalesForm();
                     this.Hide();
-                    inkoopForm.Show(this);
+                    salesForm.Show(this);
                 }
             }
 
