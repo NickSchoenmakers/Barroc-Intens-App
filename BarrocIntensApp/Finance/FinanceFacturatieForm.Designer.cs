@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturatieForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.ProductCbx = new System.Windows.Forms.ComboBox();
             this.NameTb = new System.Windows.Forms.TextBox();
             this.StreetTb = new System.Windows.Forms.TextBox();
             this.ZipTb = new System.Windows.Forms.TextBox();
@@ -49,9 +49,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -75,15 +83,6 @@
             this.pbBlack.Size = new System.Drawing.Size(1434, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
-            // 
-            // ProductCbx
-            // 
-            this.ProductCbx.FormattingEnabled = true;
-            this.ProductCbx.Location = new System.Drawing.Point(131, 222);
-            this.ProductCbx.Name = "ProductCbx";
-            this.ProductCbx.Size = new System.Drawing.Size(121, 21);
-            this.ProductCbx.TabIndex = 7;
-            this.ProductCbx.SelectedIndexChanged += new System.EventHandler(this.ProductCbx_SelectedIndexChanged);
             // 
             // NameTb
             // 
@@ -183,7 +182,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(133, 249);
+            this.radioButton1.Location = new System.Drawing.Point(131, 378);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(81, 17);
             this.radioButton1.TabIndex = 27;
@@ -195,7 +194,7 @@
             // PeriodRb
             // 
             this.PeriodRb.AutoSize = true;
-            this.PeriodRb.Location = new System.Drawing.Point(235, 249);
+            this.PeriodRb.Location = new System.Drawing.Point(233, 378);
             this.PeriodRb.Name = "PeriodRb";
             this.PeriodRb.Size = new System.Drawing.Size(69, 17);
             this.PeriodRb.TabIndex = 28;
@@ -207,7 +206,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(258, 225);
+            this.label3.Location = new System.Drawing.Point(58, 404);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 29;
@@ -215,7 +214,7 @@
             // 
             // AmountNu
             // 
-            this.AmountNu.Location = new System.Drawing.Point(331, 222);
+            this.AmountNu.Location = new System.Drawing.Point(131, 401);
             this.AmountNu.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -249,6 +248,49 @@
             this.listView1.TabIndex = 31;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // productsDataGridView
+            // 
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.productCategoryDataGridViewTextBoxColumn});
+            this.productsDataGridView.DataSource = this.productBindingSource;
+            this.productsDataGridView.Location = new System.Drawing.Point(131, 222);
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.Size = new System.Drawing.Size(442, 150);
+            this.productsDataGridView.TabIndex = 33;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // productCategoryDataGridViewTextBoxColumn
+            // 
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
             // BtnReturnStoringen
             // 
             this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
@@ -266,6 +308,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.BtnReturnStoringen);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.AmountNu);
@@ -283,7 +326,6 @@
             this.Controls.Add(this.ZipTb);
             this.Controls.Add(this.StreetTb);
             this.Controls.Add(this.NameTb);
-            this.Controls.Add(this.ProductCbx);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -293,6 +335,8 @@
             this.Load += new System.EventHandler(this.FacturatieForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +346,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
-        private System.Windows.Forms.ComboBox ProductCbx;
         private System.Windows.Forms.TextBox NameTb;
         private System.Windows.Forms.TextBox StreetTb;
         private System.Windows.Forms.TextBox ZipTb;
@@ -320,5 +363,11 @@
         private System.Windows.Forms.NumericUpDown AmountNu;
         private System.Windows.Forms.ListView listView1;
         private RoundButton BtnReturnStoringen;
+        private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
     }
 }

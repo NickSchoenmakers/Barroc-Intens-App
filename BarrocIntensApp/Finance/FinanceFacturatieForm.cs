@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarrocIntensApp.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace BarrocIntensApp
 {
     public partial class FacturatieForm : Form
     {
+        private AppDbContext dbContext;
         public FacturatieForm()
         {
             InitializeComponent();
@@ -27,9 +30,10 @@ namespace BarrocIntensApp
         public int Amount;
         private void FacturatieForm_Load(object sender, EventArgs e)
         {
-
+            this.dbContext = new AppDbContext();
+            this.dbContext.Products.Load();
+            this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
         }
-            
         private void NameLbl_Click(object sender, EventArgs e)
         {
 
@@ -70,6 +74,7 @@ namespace BarrocIntensApp
             Period = true;
             if (radioButton1.Checked)
             {
+                Period = false;
                 radioButton1.Checked = false;
             }
         }
@@ -78,6 +83,7 @@ namespace BarrocIntensApp
             Period = false;
             if (PeriodRb.Checked)
             {
+                Period = true;
                 PeriodRb.Checked = false;
             }
         }
