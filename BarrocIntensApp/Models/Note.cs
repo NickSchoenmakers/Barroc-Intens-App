@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BarrocIntensApp.Models
 {
-    internal class Note
+    public class Note
     {
         public int Id { get; set; }
         public string NoteText { get; set; }

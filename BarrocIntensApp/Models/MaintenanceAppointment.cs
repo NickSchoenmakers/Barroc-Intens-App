@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BarrocIntensApp.Models
 {
-    internal class MaintenanceAppointment
+    public class MaintenanceAppointment
     {
         public int Id { get; set; }
         public int CompanyId { get; set; }
