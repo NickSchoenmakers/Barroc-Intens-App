@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -19,6 +20,13 @@ namespace BarrocIntensApp
         public LoginForm()
         {
             InitializeComponent();
+            this.dbContext = new AppDbContext();
+
+            // Uncomment the line below to start fresh with a new database.
+            // this.dbContext.Database.EnsureDeleted();
+            this.dbContext.Database.EnsureCreated();
+            
+            
         }
 
         private void btnInkoop_Click(object sender, EventArgs e)
@@ -51,34 +59,50 @@ namespace BarrocIntensApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
             string username = txbUserName.Text.ToString();
-            
             string password = txbUserPassword.Text.ToString();
-            if (username == "inkoop" && password == "inkoop")
+
+            User loggedinUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+
+
+
+
+
+            if (loggedinUser == null)
             {
-                var inkoopForm = new InkoopForm();
-                this.Hide();
-                inkoopForm.Show(this);
             }
-            else if(username == "finance" && password == "finance")
+            else 
             {
-                var inkoopForm = new FinanceForm();
-                this.Hide();
-                inkoopForm.Show(this);
+                if (loggedinUser.RoleId == 1)
+                {
+                    var inkoopForm = new InkoopForm();
+                    this.Hide();
+                    inkoopForm.Show(this);
+                }
+                else if (loggedinUser.RoleId == 4)
+                {
+                    var inkoopForm = new FinanceForm();
+                    this.Hide();
+                    inkoopForm.Show(this);
+                }
+                else if (loggedinUser.RoleId == 2)
+                {
+                    var inkoopForm = new MaintenanceForm();
+                    this.Hide();
+                    inkoopForm.Show(this);
+                }
+                else if (loggedinUser.RoleId == 3)
+                {
+                    var inkoopForm = new SalesForm();
+                    this.Hide();
+                    inkoopForm.Show(this);
+                }
             }
-            else if (username == "maintenance" && password == "maintenance")
-            {
-                var inkoopForm = new MaintenanceForm();
-                this.Hide();
-                inkoopForm.Show(this);
-            }
-            else if (username == "sales" && password == "sales")
-            {
-                var inkoopForm = new SalesForm();
-                this.Hide();
-                inkoopForm.Show(this);
-            }
+
+
+
+
+            
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
