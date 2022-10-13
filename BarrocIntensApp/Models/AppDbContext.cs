@@ -99,7 +99,7 @@ namespace BarrocIntensApp.Models
                 new ProductCategory { Id = 1, Name = "Machines", IsEmployeeOnly = 1 },
                 new ProductCategory { Id = 2, Name = "Koffiebonen", IsEmployeeOnly = 1 }
             );
-
+            Console.WriteLine("test");
 
         }
     }
