@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BarrocIntensApp.Models
 {
-    internal class AppDbContext : DbContext
+     class AppDbContext : DbContext
     {
         public DbSet<Company> Companies { get; set; }
         public DbSet<CustomInvoice> CustomInvoices { get; set; }
