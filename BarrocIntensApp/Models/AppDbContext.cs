@@ -50,6 +50,7 @@ namespace BarrocIntensApp.Models
                     new Role { Id = 3, Name = "Sales" },
                     new Role { Id = 4, Name = "Finance" }
             );
+<<<<<<< HEAD
 
             modelBuilder.Entity<Company>().HasData(
                 new Company { Id = 1, Name = "Bedrijf 1", Street = "Bredaweg", HouseNumber = "23", City = "Breda", CountryCode = "NL", BkrCheckedAt = new DateTime(2022, 01, 25), ContactName = "Jan Bedrijfsel", ContactPhoneNumber = "+31618476837" },
@@ -101,6 +102,8 @@ namespace BarrocIntensApp.Models
             );
             Console.WriteLine("test");
 
+=======
+>>>>>>> fffcc6cc916deedd7f3dfc03fe95684eca8a92d2
         }
     }
 }
