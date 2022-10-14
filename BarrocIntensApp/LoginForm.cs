@@ -35,6 +35,7 @@ namespace BarrocIntensApp
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("alibababababababababababaa");
             string username = txbUserName.Text.ToString();
             string password = txbUserPassword.Text.ToString();
 
