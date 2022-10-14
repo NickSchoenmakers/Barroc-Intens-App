@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarrocIntensApp.Sales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,13 @@ namespace BarrocIntensApp
             var salesOfferte = new SalesOfferteForm();
             this.Hide();
             salesOfferte.Show(this);
+        }
+
+        private void btnNotes_Click(object sender, EventArgs e)
+        {
+            var salesNotes = new SalesNotesForm();
+            this.Hide();
+            salesNotes.Show(this);
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace BarrocIntensApp
+﻿namespace BarrocIntensApp.Sales
 {
-    partial class SalesForm
+    partial class SalesNotesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,9 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.btnOfferte = new BarrocIntensApp.RoundButton();
-            this.btnNotes = new BarrocIntensApp.RoundButton();
+            this.btnBackNotes = new BarrocIntensApp.RoundButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lvNotes = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,60 +45,64 @@
             this.lblTitle.Location = new System.Drawing.Point(993, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(139, 25);
-            this.lblTitle.TabIndex = 4;
+            this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Sales | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-1, 0);
+            this.pbBlack.Location = new System.Drawing.Point(0, 0);
             this.pbBlack.Name = "pbBlack";
             this.pbBlack.Size = new System.Drawing.Size(1146, 43);
-            this.pbBlack.TabIndex = 3;
+            this.pbBlack.TabIndex = 7;
             this.pbBlack.TabStop = false;
             // 
-            // btnOfferte
+            // btnBackNotes
             // 
-            this.btnOfferte.BackColor = System.Drawing.Color.Black;
-            this.btnOfferte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOfferte.ForeColor = System.Drawing.Color.White;
-            this.btnOfferte.Location = new System.Drawing.Point(18, 59);
-            this.btnOfferte.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOfferte.Name = "btnOfferte";
-            this.btnOfferte.Size = new System.Drawing.Size(170, 168);
-            this.btnOfferte.TabIndex = 5;
-            this.btnOfferte.Text = "Offerte formulier";
-            this.btnOfferte.UseVisualStyleBackColor = false;
-            this.btnOfferte.Click += new System.EventHandler(this.btnOfferte_Click);
+            this.btnBackNotes.BackColor = System.Drawing.Color.Black;
+            this.btnBackNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackNotes.ForeColor = System.Drawing.Color.White;
+            this.btnBackNotes.Location = new System.Drawing.Point(12, 49);
+            this.btnBackNotes.Name = "btnBackNotes";
+            this.btnBackNotes.Size = new System.Drawing.Size(88, 50);
+            this.btnBackNotes.TabIndex = 9;
+            this.btnBackNotes.Text = "←";
+            this.btnBackNotes.UseVisualStyleBackColor = false;
+            this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
-            // btnNotes
+            // label1
             // 
-            this.btnNotes.BackColor = System.Drawing.Color.Black;
-            this.btnNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotes.ForeColor = System.Drawing.Color.White;
-            this.btnNotes.Location = new System.Drawing.Point(219, 59);
-            this.btnNotes.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNotes.Name = "btnNotes";
-            this.btnNotes.Size = new System.Drawing.Size(170, 168);
-            this.btnNotes.TabIndex = 6;
-            this.btnNotes.Text = "Notities";
-            this.btnNotes.UseVisualStyleBackColor = false;
-            this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(226, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 33);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Notes";
             // 
-            // SalesForm
+            // lvNotes
+            // 
+            this.lvNotes.HideSelection = false;
+            this.lvNotes.Location = new System.Drawing.Point(30, 164);
+            this.lvNotes.Name = "lvNotes";
+            this.lvNotes.Size = new System.Drawing.Size(472, 410);
+            this.lvNotes.TabIndex = 11;
+            this.lvNotes.UseCompatibleStateImageBehavior = false;
+            // 
+            // SalesNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.btnNotes);
-            this.Controls.Add(this.btnOfferte);
+            this.Controls.Add(this.lvNotes);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "SalesForm";
+            this.Name = "SalesNotesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SalesForm";
+            this.Text = "SalesNotesForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,9 +110,11 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
-        private RoundButton btnOfferte;
-        private RoundButton btnNotes;
+        private RoundButton btnBackNotes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lvNotes;
     }
 }

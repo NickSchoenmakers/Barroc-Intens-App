@@ -30,6 +30,7 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
+            this.btnBackOfferte = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,11 +56,25 @@
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
             // 
+            // btnBackOfferte
+            // 
+            this.btnBackOfferte.BackColor = System.Drawing.Color.Black;
+            this.btnBackOfferte.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackOfferte.ForeColor = System.Drawing.Color.White;
+            this.btnBackOfferte.Location = new System.Drawing.Point(12, 49);
+            this.btnBackOfferte.Name = "btnBackOfferte";
+            this.btnBackOfferte.Size = new System.Drawing.Size(88, 50);
+            this.btnBackOfferte.TabIndex = 9;
+            this.btnBackOfferte.Text = "←";
+            this.btnBackOfferte.UseVisualStyleBackColor = false;
+            this.btnBackOfferte.Click += new System.EventHandler(this.btnBackOfferte_Click);
+            // 
             // SalesOfferteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.btnBackOfferte);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -76,5 +91,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
+        private RoundButton btnBackOfferte;
     }
 }

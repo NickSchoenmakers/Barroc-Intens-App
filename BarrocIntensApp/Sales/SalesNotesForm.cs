@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarrocIntensApp.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BarrocIntensApp
+namespace BarrocIntensApp.Sales
 {
-    public partial class SalesOfferteForm : Form
+    public partial class SalesNotesForm : Form
     {
-        public SalesOfferteForm()
+        public SalesNotesForm()
         {
             InitializeComponent();
+
+            lvNotes.Items.Add("test");
         }
 
-        private void btnBackOfferte_Click(object sender, EventArgs e)
+        private void btnBackNotes_Click(object sender, EventArgs e)
         {
             var sales = new SalesForm();
             this.Hide();
