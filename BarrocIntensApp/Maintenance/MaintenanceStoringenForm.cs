@@ -20,7 +20,7 @@ namespace BarrocIntensApp
         public MaintenanceStoringenForm()
         {
             InitializeComponent();
-            lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
+           // lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
         }
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
