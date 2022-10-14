@@ -17,8 +17,12 @@ namespace BarrocIntensApp.Sales
         public SalesNotesForm()
         {
             InitializeComponent();
-
-            lvNotes.Items.Add("test");
+            var notes = (from n in Program.dbContext.Notes select n).ToList();
+            foreach (var note in notes)
+            {
+                lvNotes.Items.Add(note.NoteText);
+            }
+            
         }
 
         private void btnBackNotes_Click(object sender, EventArgs e)

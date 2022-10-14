@@ -83,11 +83,14 @@
             // 
             // lvNotes
             // 
+            this.lvNotes.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.lvNotes.AutoArrange = false;
             this.lvNotes.HideSelection = false;
             this.lvNotes.Location = new System.Drawing.Point(30, 164);
             this.lvNotes.Name = "lvNotes";
             this.lvNotes.Size = new System.Drawing.Size(472, 410);
             this.lvNotes.TabIndex = 11;
+            this.lvNotes.TileSize = new System.Drawing.Size(100, 10);
             this.lvNotes.UseCompatibleStateImageBehavior = false;
             // 
             // SalesNotesForm
