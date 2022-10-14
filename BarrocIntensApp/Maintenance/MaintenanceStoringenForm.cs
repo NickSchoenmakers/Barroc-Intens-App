@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarrocIntensApp.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +13,14 @@ using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp
 {
+    
     public partial class MaintenanceStoringenForm : Form
     {
+        private AppDbContext dbContext;
         public MaintenanceStoringenForm()
         {
             InitializeComponent();
-            lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
+           // lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
         }
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
@@ -24,6 +28,34 @@ namespace BarrocIntensApp
             var inkoopForm = new MaintenanceForm();
             this.Hide();
             inkoopForm.Show(this);
+        }
+
+
+
+        private void MaintenanceStoringenForm_Load(object sender, EventArgs e)
+        {
+            this.dbContext = new AppDbContext();
+            //fetch the appointments in the first appointment
+            //var maintenanceAppointment = this.dbContext.MaintenanceAppointments.ToList();
+            //var maintenanceAppointments = maintenanceAppointment[0];
+
+            
+                
+
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            this.dbContext = new AppDbContext();
+
+            this.dbContext.MaintenanceAppointments.Load();
+
+            this.maintenanceAppointmentBindingSource.DataSource = dbContext.MaintenanceAppointments.Local.ToBindingList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
