@@ -28,6 +28,35 @@ namespace BarrocIntensApp
             
             
         }
+
+        private void btnInkoop_Click(object sender, EventArgs e)
+        {
+            var inkoopForm = new InkoopForm();
+            this.Hide();
+            inkoopForm.Show(this);
+        }
+
+        private void btnfinance_Click(object sender, EventArgs e)
+        {
+            var inkoopForm = new FinanceForm();
+            this.Hide();
+            inkoopForm.Show(this);
+        }
+
+        private void btnmaintenance_Click(object sender, EventArgs e)
+        {
+            var inkoopForm = new MaintenanceForm();
+            this.Hide();
+            inkoopForm.Show(this);
+        }
+
+        private void btnsales_Click(object sender, EventArgs e)
+        {
+            var inkoopForm = new SalesForm();
+            this.Hide();
+            inkoopForm.Show(this);
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txbUserName.Text.ToString();
