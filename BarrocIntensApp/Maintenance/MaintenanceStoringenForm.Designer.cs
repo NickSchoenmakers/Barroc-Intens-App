@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceStoringenForm));
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.maintenanceAppointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,19 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Black;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(887, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(245, 25);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Maintenance | Storingen";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbBlack
             // 
@@ -134,7 +120,6 @@
             this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnReturnStoringen);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenanceStoringenForm";
@@ -144,13 +129,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
         private RoundButton BtnReturnStoringen;
         private System.Windows.Forms.DataGridView dataGridView1;

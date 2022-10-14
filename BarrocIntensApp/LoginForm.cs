@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -16,69 +17,64 @@ namespace BarrocIntensApp
     {
         private AppDbContext dbContext;
 
+        public static class Globals
+        {
+            public static User loggedInUser;
+        }
+
         public LoginForm()
         {
             InitializeComponent();
-        }
+            this.dbContext = new AppDbContext();
 
-        private void btnInkoop_Click(object sender, EventArgs e)
-        {
-            var inkoopForm = new InkoopForm();
-            this.Hide();
-            inkoopForm.Show(this);
+            // Uncomment the line below to start fresh with a new database.
+            // this.dbContext.Database.EnsureDeleted();
+            this.dbContext.Database.EnsureCreated();
+            
+            
         }
-
-        private void btnfinance_Click(object sender, EventArgs e)
-        {
-            var inkoopForm = new FinanceForm();
-            this.Hide();
-            inkoopForm.Show(this);
-        }
-
-        private void btnmaintenance_Click(object sender, EventArgs e)
-        {
-            var inkoopForm = new MaintenanceForm();
-            this.Hide();
-            inkoopForm.Show(this);
-        }
-
-        private void btnsales_Click(object sender, EventArgs e)
-        {
-            var inkoopForm = new SalesForm();
-            this.Hide();
-            inkoopForm.Show(this);
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
             string username = txbUserName.Text.ToString();
-            
             string password = txbUserPassword.Text.ToString();
-            if (username == "inkoop" && password == "inkoop")
+
+            Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+            if (Globals.loggedInUser == null)
             {
-                var inkoopForm = new InkoopForm();
-                this.Hide();
-                inkoopForm.Show(this);
             }
-            else if(username == "finance" && password == "finance")
+            else 
             {
-                var inkoopForm = new FinanceForm();
-                this.Hide();
-                inkoopForm.Show(this);
+                if (Globals.loggedInUser.RoleId == 1)
+                {
+
+                    var inkoopForm = new InkoopForm();
+                    this.Hide();
+                    inkoopForm.Show(this);
+                }
+                else if (Globals.loggedInUser.RoleId == 4)
+                {
+                    var financeForm = new FinanceForm();
+                    this.Hide();
+                    financeForm.Show(this);
+                }
+                else if (Globals.loggedInUser.RoleId == 2)
+                {
+                    var maintenanceForm = new MaintenanceForm();
+                    this.Hide();
+                    maintenanceForm.Show(this);
+                }
+                else if (Globals.loggedInUser.RoleId == 3)
+                {
+                    var salesForm = new SalesForm();
+                    this.Hide();
+                    salesForm.Show(this);
+                }
             }
-            else if (username == "maintenance" && password == "maintenance")
-            {
-                var inkoopForm = new MaintenanceForm();
-                this.Hide();
-                inkoopForm.Show(this);
-            }
-            else if (username == "sales" && password == "sales")
-            {
-                var inkoopForm = new SalesForm();
-                this.Hide();
-                inkoopForm.Show(this);
-            }
+
+
+
+
+            
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

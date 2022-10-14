@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturatieForm));
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.ProductCbx = new System.Windows.Forms.ComboBox();
             this.NameTb = new System.Windows.Forms.TextBox();
@@ -50,22 +49,11 @@
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
             this.listView1 = new System.Windows.Forms.ListView();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblDepartmentPart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Black;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(930, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(202, 25);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Finance | Facturatie";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbBlack
             // 
@@ -261,11 +249,40 @@
             this.BtnReturnStoringen.Text = "Bestel";
             this.BtnReturnStoringen.UseVisualStyleBackColor = false;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTitle.BackColor = System.Drawing.Color.Black;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitle.Location = new System.Drawing.Point(727, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(405, 25);
+            this.lblTitle.TabIndex = 33;
+            this.lblTitle.Text = "Finance | Name";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblDepartmentPart
+            // 
+            this.lblDepartmentPart.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDepartmentPart.BackColor = System.Drawing.Color.Black;
+            this.lblDepartmentPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentPart.ForeColor = System.Drawing.Color.White;
+            this.lblDepartmentPart.Location = new System.Drawing.Point(12, 9);
+            this.lblDepartmentPart.Name = "lblDepartmentPart";
+            this.lblDepartmentPart.Size = new System.Drawing.Size(405, 25);
+            this.lblDepartmentPart.TabIndex = 34;
+            this.lblDepartmentPart.Text = "Factuur aanmaken";
+            this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lblDepartmentPart);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.BtnReturnStoringen);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.AmountNu);
@@ -284,7 +301,6 @@
             this.Controls.Add(this.StreetTb);
             this.Controls.Add(this.NameTb);
             this.Controls.Add(this.ProductCbx);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -299,8 +315,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.ComboBox ProductCbx;
         private System.Windows.Forms.TextBox NameTb;
@@ -320,5 +334,7 @@
         private System.Windows.Forms.NumericUpDown AmountNu;
         private System.Windows.Forms.ListView listView1;
         private RoundButton BtnReturnStoringen;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblDepartmentPart;
     }
 }

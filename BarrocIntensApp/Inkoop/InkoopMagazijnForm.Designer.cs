@@ -32,36 +32,41 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InkoopMagazijnForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productCategoriesGridView2 = new System.Windows.Forms.DataGridView();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblProducten = new System.Windows.Forms.Label();
+            this.lblProductCategories = new System.Windows.Forms.Label();
+            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblDepartmentPart = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isEmployeeOnlyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoriesGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(983, 9);
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitle.Location = new System.Drawing.Point(727, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(149, 25);
+            this.lblTitle.Size = new System.Drawing.Size(405, 25);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Inkoop | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -75,113 +80,147 @@
             this.pbBlack.TabIndex = 3;
             this.pbBlack.TabStop = false;
             // 
-            // dataGridView1
+            // productsDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
-            this.imagePathDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.productCategoryIdDataGridViewTextBoxColumn,
-            this.productCategoryDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 149);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(766, 216);
-            this.dataGridView1.TabIndex = 5;
+            this.productCategoryIdDataGridViewTextBoxColumn});
+            this.productsDataGridView.DataSource = this.productsBindingSource1;
+            this.productsDataGridView.Location = new System.Drawing.Point(29, 295);
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.Size = new System.Drawing.Size(523, 284);
+            this.productsDataGridView.TabIndex = 5;
+            this.productsDataGridView.SelectionChanged += new System.EventHandler(this.productsDataGridView_SelectionChanged);
             // 
-            // productBindingSource
+            // productsBindingSource1
             // 
-            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            this.productsBindingSource1.DataMember = "Products";
+            this.productsBindingSource1.DataSource = this.productCategoryBindingSource;
             // 
-            // idDataGridViewTextBoxColumn
+            // productCategoriesGridView2
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.productCategoriesGridView2.AutoGenerateColumns = false;
+            this.productCategoriesGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productCategoriesGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.nameDataGridViewTextBoxColumn1});
+            this.productCategoriesGridView2.DataSource = this.productCategoryBindingSource;
+            this.productCategoriesGridView2.Location = new System.Drawing.Point(29, 76);
+            this.productCategoriesGridView2.Name = "productCategoriesGridView2";
+            this.productCategoriesGridView2.Size = new System.Drawing.Size(393, 171);
+            this.productCategoriesGridView2.TabIndex = 6;
+            this.productCategoriesGridView2.SelectionChanged += new System.EventHandler(this.productCategoriesGridView2_SelectionChanged);
             // 
-            // nameDataGridViewTextBoxColumn
+            // productsBindingSource
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.productCategoryBindingSource;
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // btnSave
             // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.btnSave.Location = new System.Drawing.Point(568, 542);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(119, 37);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // imagePathDataGridViewTextBoxColumn
+            // lblProducten
             // 
-            this.imagePathDataGridViewTextBoxColumn.DataPropertyName = "ImagePath";
-            this.imagePathDataGridViewTextBoxColumn.HeaderText = "ImagePath";
-            this.imagePathDataGridViewTextBoxColumn.Name = "imagePathDataGridViewTextBoxColumn";
+            this.lblProducten.AutoSize = true;
+            this.lblProducten.Location = new System.Drawing.Point(29, 276);
+            this.lblProducten.Name = "lblProducten";
+            this.lblProducten.Size = new System.Drawing.Size(56, 13);
+            this.lblProducten.TabIndex = 8;
+            this.lblProducten.Text = "Producten";
             // 
-            // priceDataGridViewTextBoxColumn
+            // lblProductCategories
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // productCategoryIdDataGridViewTextBoxColumn
-            // 
-            this.productCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "ProductCategoryId";
-            this.productCategoryIdDataGridViewTextBoxColumn.HeaderText = "ProductCategoryId";
-            this.productCategoryIdDataGridViewTextBoxColumn.Name = "productCategoryIdDataGridViewTextBoxColumn";
-            // 
-            // productCategoryDataGridViewTextBoxColumn
-            // 
-            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
-            this.isEmployeeOnlyDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.productCategoryBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(29, 49);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(766, 79);
-            this.dataGridView2.TabIndex = 6;
+            this.lblProductCategories.AutoSize = true;
+            this.lblProductCategories.Location = new System.Drawing.Point(29, 57);
+            this.lblProductCategories.Name = "lblProductCategories";
+            this.lblProductCategories.Size = new System.Drawing.Size(97, 13);
+            this.lblProductCategories.TabIndex = 9;
+            this.lblProductCategories.Text = "Product categorien";
             // 
             // productCategoryBindingSource
             // 
             this.productCategoryBindingSource.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
             // 
-            // idDataGridViewTextBoxColumn1
+            // nameDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Naam";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Beschrijving";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // productCategoryIdDataGridViewTextBoxColumn
+            // 
+            this.productCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.HeaderText = "Product categorie id";
+            this.productCategoryIdDataGridViewTextBoxColumn.Name = "productCategoryIdDataGridViewTextBoxColumn";
+            this.productCategoryIdDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
+            // lblDepartmentPart
+            // 
+            this.lblDepartmentPart.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDepartmentPart.BackColor = System.Drawing.Color.Black;
+            this.lblDepartmentPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentPart.ForeColor = System.Drawing.Color.White;
+            this.lblDepartmentPart.Location = new System.Drawing.Point(12, 9);
+            this.lblDepartmentPart.Name = "lblDepartmentPart";
+            this.lblDepartmentPart.Size = new System.Drawing.Size(405, 25);
+            this.lblDepartmentPart.TabIndex = 35;
+            this.lblDepartmentPart.Text = "Magazijn beheren";
+            this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Categorie";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // isEmployeeOnlyDataGridViewTextBoxColumn
-            // 
-            this.isEmployeeOnlyDataGridViewTextBoxColumn.DataPropertyName = "IsEmployeeOnly";
-            this.isEmployeeOnlyDataGridViewTextBoxColumn.HeaderText = "IsEmployeeOnly";
-            this.isEmployeeOnlyDataGridViewTextBoxColumn.Name = "isEmployeeOnlyDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn1.Width = 350;
             // 
             // InkoopMagazijnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblDepartmentPart);
+            this.Controls.Add(this.lblProductCategories);
+            this.Controls.Add(this.lblProducten);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.productCategoriesGridView2);
+            this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -189,10 +228,12 @@
             this.Text = "InkoopMagazijnForm";
             this.Load += new System.EventHandler(this.InkoopMagazijnForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoriesGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,19 +243,21 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.DataGridView productCategoriesGridView2;
+        private System.Windows.Forms.BindingSource productCategoryBindingSource;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private System.Windows.Forms.BindingSource productsBindingSource1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblProducten;
+        private System.Windows.Forms.Label lblProductCategories;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imagePathDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label lblDepartmentPart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isEmployeeOnlyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource productCategoryBindingSource;
     }
 }
