@@ -33,6 +33,8 @@
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lvNotes = new System.Windows.Forms.ListView();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txbNote = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +96,31 @@
             this.lvNotes.UseCompatibleStateImageBehavior = false;
             this.lvNotes.View = System.Windows.Forms.View.List;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(529, 241);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 40);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txbNote
+            // 
+            this.txbNote.Location = new System.Drawing.Point(529, 164);
+            this.txbNote.Multiline = true;
+            this.txbNote.Name = "txbNote";
+            this.txbNote.Size = new System.Drawing.Size(578, 71);
+            this.txbNote.TabIndex = 13;
+            // 
             // SalesNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.txbNote);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lvNotes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBackNotes);
@@ -120,5 +142,7 @@
         private RoundButton btnBackNotes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lvNotes;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txbNote;
     }
 }

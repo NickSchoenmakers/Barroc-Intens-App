@@ -31,5 +31,15 @@ namespace BarrocIntensApp.Sales
             this.Hide();
             sales.Show(this);
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+                if (Program.dbContext == null)
+                    return;
+
+                var note = new Note { NoteText = txbNote.Text, AuthorId = Global}
+
+                lvNotes.Refresh();
+        }
     }
 }
