@@ -92,6 +92,7 @@
             this.lvNotes.TabIndex = 11;
             this.lvNotes.TileSize = new System.Drawing.Size(100, 10);
             this.lvNotes.UseCompatibleStateImageBehavior = false;
+            this.lvNotes.View = System.Windows.Forms.View.List;
             // 
             // SalesNotesForm
             // 
