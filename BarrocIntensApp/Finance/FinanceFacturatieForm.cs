@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BarrocIntensApp.LoginForm;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace BarrocIntensApp
@@ -16,6 +17,7 @@ namespace BarrocIntensApp
         public FacturatieForm()
         {
             InitializeComponent();
+            lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
         public new string Name;
         public string Street;

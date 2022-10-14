@@ -40,7 +40,6 @@ namespace BarrocIntensApp
             this.Hide();
             inkoopForm.Show(this);
         }
-
         private void btnfinance_Click(object sender, EventArgs e)
         {
             var inkoopForm = new FinanceForm();
@@ -72,6 +71,8 @@ namespace BarrocIntensApp
             Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
 
             // checks if the user existed in the table
+            Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+
             if (Globals.loggedInUser == null)
             {
                 MessageBox.Show("please give correct login info");
@@ -110,6 +111,9 @@ namespace BarrocIntensApp
                 {
                     // tells the user they gave wrong login info
                     MessageBox.Show("invalid inlog info");
+                    var salesForm = new SalesForm();
+                    this.Hide();
+                    salesForm.Show(this);
                 }
             }
 

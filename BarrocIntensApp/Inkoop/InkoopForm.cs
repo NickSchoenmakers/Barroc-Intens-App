@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp
 {
@@ -15,6 +16,7 @@ namespace BarrocIntensApp
         public InkoopForm()
         {
             InitializeComponent();
+            lblTitle.Text = $"Inkoop | {Globals.loggedInUser.Name}";
         }
 
         private void btnMagazijn_Click_1(object sender, EventArgs e)
