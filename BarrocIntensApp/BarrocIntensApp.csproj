@@ -298,6 +298,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Image\Logo6_groot.ico" />
+    <None Include="Image\Logo6_groot.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

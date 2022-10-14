@@ -17,6 +17,11 @@ namespace BarrocIntensApp
     {
         private AppDbContext dbContext;
 
+        public static class Globals
+        {
+            public static User loggedInUser;
+        }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -59,43 +64,52 @@ namespace BarrocIntensApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // stores the given info from the user
             string username = txbUserName.Text.ToString();
             string password = txbUserPassword.Text.ToString();
 
-            User loggedinUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+            // puts the user info into an object if both exist in the tame table as eachother
+            Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
 
-
-
-
-
-            if (loggedinUser == null)
+            // checks if the user existed in the table
+            if (Globals.loggedInUser == null)
             {
+                MessageBox.Show("please give correct login info");
             }
             else 
             {
-                if (loggedinUser.RoleId == 1)
+                if (Globals.loggedInUser.RoleId == 1)
                 {
+                    // sends user to the inkoop form
                     var inkoopForm = new InkoopForm();
                     this.Hide();
                     inkoopForm.Show(this);
                 }
-                else if (loggedinUser.RoleId == 4)
+                else if (Globals.loggedInUser.RoleId == 4)
                 {
-                    var inkoopForm = new FinanceForm();
+                    // sends user to finance form
+                    var financeForm = new FinanceForm();
                     this.Hide();
-                    inkoopForm.Show(this);
+                    financeForm.Show(this);
                 }
-                else if (loggedinUser.RoleId == 2)
+                else if (Globals.loggedInUser.RoleId == 2)
                 {
-                    var inkoopForm = new MaintenanceForm();
+                    // sends user to the maintenance form
+                    var maintenanceForm = new MaintenanceForm();
                     this.Hide();
-                    inkoopForm.Show(this);
+                    maintenanceForm.Show(this);
                 }
-                else if (loggedinUser.RoleId == 3)
+                else if (Globals.loggedInUser.RoleId == 3)
                 {
-                    var inkoopForm = new SalesForm();
+                    // sends user to the sales form
+                    var salesForm = new SalesForm();
                     this.Hide();
-                    inkoopForm.Show(this);
+                    salesForm.Show(this);
+                }
+                else 
+                {
+                    // tells the user they gave wrong login info
+                    MessageBox.Show("invalid inlog info");
                 }
             }
 
@@ -113,6 +127,11 @@ namespace BarrocIntensApp
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
