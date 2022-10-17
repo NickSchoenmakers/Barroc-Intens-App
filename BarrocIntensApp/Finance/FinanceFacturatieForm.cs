@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -20,19 +21,21 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
-        public new string Name;
-        public string Street;
-        public string Housenr;
-        public string City;
-        public string Zip;
-        public bool Period;
-        public string Product;
-        public int Amount;
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public new string Name { get; set; }
+        public string Street { get; set; }
+        public string Housenr { get; set; }
+        public string City { get; set; }
+        public string Zip { get; set; }
+        public bool Period { get; set; }
+        public int Amount { get; set; }
         private void FacturatieForm_Load(object sender, EventArgs e)
         {
             this.dbContext = new AppDbContext();
             this.dbContext.Products.Load();
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
+
         }
         private void NameLbl_Click(object sender, EventArgs e)
         {
@@ -46,27 +49,27 @@ namespace BarrocIntensApp
 
         private void NameTb_TextChanged(object sender, EventArgs e)
         {
-            NameTb.Text = Name;
+          Name =  NameTb.Text;
         }
 
         private void StreetTb_TextChanged(object sender, EventArgs e)
         {
-            StreetTb.Text = Street;
+           Street = StreetTb.Text;
         }
 
         private void HnrTb_TextChanged(object sender, EventArgs e)
         {
-            HnrTb.Text = Housenr;
+          Housenr = HnrTb.Text;
         }
 
         private void CityTb_TextChanged(object sender, EventArgs e)
         {
-            CityTb.Text = City; 
+          City = CityTb.Text;
         }
 
         private void ZipTb_TextChanged(object sender, EventArgs e)
         {
-            ZipTb.Text = Zip;
+          Zip = ZipTb.Text;
         }
 
         private void PeriodRb_CheckedChanged(object sender, EventArgs e)
@@ -90,7 +93,7 @@ namespace BarrocIntensApp
 
         private void ProductCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void AmountNu_ValueChanged(object sender, EventArgs e)
@@ -100,6 +103,29 @@ namespace BarrocIntensApp
 
         private void productsDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //ProductId = (Product)this.productsDataGridView.CurrentRow.DataBoundItem;
+            var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
+            Testlabel.Text = product?.Id.ToString();
+            ProductId = product.Id;
+        }
+
+        public void Cartbtn_Click(object sender, EventArgs e)
+        {
+            int i = 1;
+            i = i++;
+            OrderId = i;
+            object[] CartArray = new object[8];
+            CartArray[0] = OrderId;
+            CartArray[1] = ProductId;
+            CartArray[2] = Name;
+            CartArray[3] = Street;
+            CartArray[4] = Housenr;
+            CartArray[5] = City;
+            CartArray[6] = Zip;
+            CartArray[7] = Amount;
+            CartArray[8] = Period;
+
+            CartGv.DataSource = CartArray;
 
         }
     }

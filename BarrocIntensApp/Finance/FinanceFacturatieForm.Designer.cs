@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturatieForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
@@ -48,18 +47,20 @@
             this.PeriodRb = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
+            this.Testlabel = new System.Windows.Forms.Label();
+            this.CartGv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -235,19 +236,6 @@
             0});
             this.AmountNu.ValueChanged += new System.EventHandler(this.AmountNu_ValueChanged);
             // 
-            // listView1
-            // 
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(741, 49);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(391, 427);
-            this.listView1.TabIndex = 31;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // productsDataGridView
             // 
             this.productsDataGridView.AutoGenerateColumns = false;
@@ -255,12 +243,11 @@
             this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.productCategoryDataGridViewTextBoxColumn});
+            this.priceDataGridViewTextBoxColumn});
             this.productsDataGridView.DataSource = this.productBindingSource;
             this.productsDataGridView.Location = new System.Drawing.Point(131, 222);
             this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(442, 150);
+            this.productsDataGridView.Size = new System.Drawing.Size(345, 150);
             this.productsDataGridView.TabIndex = 33;
             this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
             // 
@@ -269,28 +256,38 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // productCategoryDataGridViewTextBoxColumn
-            // 
-            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
+            // Cartbtn
+            // 
+            this.Cartbtn.BackColor = System.Drawing.Color.Black;
+            this.Cartbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cartbtn.ForeColor = System.Drawing.Color.White;
+            this.Cartbtn.Location = new System.Drawing.Point(388, 384);
+            this.Cartbtn.Name = "Cartbtn";
+            this.Cartbtn.Size = new System.Drawing.Size(88, 50);
+            this.Cartbtn.TabIndex = 34;
+            this.Cartbtn.Text = "add to cart";
+            this.Cartbtn.UseVisualStyleBackColor = false;
+            this.Cartbtn.Click += new System.EventHandler(this.Cartbtn_Click);
             // 
             // BtnReturnStoringen
             // 
@@ -304,14 +301,33 @@
             this.BtnReturnStoringen.Text = "Bestel";
             this.BtnReturnStoringen.UseVisualStyleBackColor = false;
             // 
+            // Testlabel
+            // 
+            this.Testlabel.AutoSize = true;
+            this.Testlabel.Location = new System.Drawing.Point(338, 492);
+            this.Testlabel.Name = "Testlabel";
+            this.Testlabel.Size = new System.Drawing.Size(46, 13);
+            this.Testlabel.TabIndex = 35;
+            this.Testlabel.Text = "testlabel";
+            // 
+            // CartGv
+            // 
+            this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CartGv.Location = new System.Drawing.Point(680, 75);
+            this.CartGv.Name = "CartGv";
+            this.CartGv.Size = new System.Drawing.Size(465, 272);
+            this.CartGv.TabIndex = 36;
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.CartGv);
+            this.Controls.Add(this.Testlabel);
+            this.Controls.Add(this.Cartbtn);
             this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.BtnReturnStoringen);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.AmountNu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PeriodRb);
@@ -338,6 +354,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,13 +379,14 @@
         private System.Windows.Forms.RadioButton PeriodRb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown AmountNu;
-        private System.Windows.Forms.ListView listView1;
         private RoundButton BtnReturnStoringen;
         private System.Windows.Forms.DataGridView productsDataGridView;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
+        private RoundButton Cartbtn;
+        private System.Windows.Forms.Label Testlabel;
+        private System.Windows.Forms.DataGridView CartGv;
     }
 }
