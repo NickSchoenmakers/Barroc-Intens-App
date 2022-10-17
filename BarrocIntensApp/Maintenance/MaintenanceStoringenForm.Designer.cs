@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceStoringenForm));
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,8 +38,6 @@
             this.maintenanceAppointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBlack
@@ -72,30 +69,30 @@
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTitle.BackColor = System.Drawing.Color.Black;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitle.Location = new System.Drawing.Point(727, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(405, 25);
+            this.lblTitle.TabIndex = 35;
+            this.lblTitle.Text = "Maintenance | Name";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // companyIdDataGridViewTextBoxColumn
+            // lblDepartmentPart
             // 
-            this.companyIdDataGridViewTextBoxColumn.DataPropertyName = "CompanyId";
-            this.companyIdDataGridViewTextBoxColumn.HeaderText = "CompanyId";
-            this.companyIdDataGridViewTextBoxColumn.Name = "companyIdDataGridViewTextBoxColumn";
-            this.companyIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // remarkDataGridViewTextBoxColumn
-            // 
-            this.remarkDataGridViewTextBoxColumn.DataPropertyName = "Remark";
-            this.remarkDataGridViewTextBoxColumn.HeaderText = "Remark";
-            this.remarkDataGridViewTextBoxColumn.Name = "remarkDataGridViewTextBoxColumn";
-            // 
-            // dateAddedDataGridViewTextBoxColumn
-            // 
-            this.dateAddedDataGridViewTextBoxColumn.DataPropertyName = "DateAdded";
-            this.dateAddedDataGridViewTextBoxColumn.HeaderText = "DateAdded";
-            this.dateAddedDataGridViewTextBoxColumn.Name = "dateAddedDataGridViewTextBoxColumn";
-            this.dateAddedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lblDepartmentPart.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDepartmentPart.BackColor = System.Drawing.Color.Black;
+            this.lblDepartmentPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentPart.ForeColor = System.Drawing.Color.White;
+            this.lblDepartmentPart.Location = new System.Drawing.Point(12, 9);
+            this.lblDepartmentPart.Name = "lblDepartmentPart";
+            this.lblDepartmentPart.Size = new System.Drawing.Size(405, 25);
+            this.lblDepartmentPart.TabIndex = 36;
+            this.lblDepartmentPart.Text = "Storingen";
+            this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // maintenanceAppointmentBindingSource
             // 
@@ -125,10 +122,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenanceStoringenForm";
             this.Text = "MaintenanceStoringenForm";
-            this.Load += new System.EventHandler(this.MaintenanceStoringenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

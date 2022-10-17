@@ -1,6 +1,4 @@
-﻿using BarrocIntensApp.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +11,12 @@ using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp
 {
-    
     public partial class MaintenanceStoringenForm : Form
     {
-        private AppDbContext dbContext;
         public MaintenanceStoringenForm()
         {
             InitializeComponent();
-           // lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
+            lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
         }
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)

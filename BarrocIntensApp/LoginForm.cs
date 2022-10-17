@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,12 +36,18 @@ namespace BarrocIntensApp
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("gyauhthuq3hhq5iu3q4g6q34");
+            Console.WriteLine("hagyhweay3a4ihreuihy");
+            Console.WriteLine("viuavetgveubgtevwuibtvuobguegvhugu");
+            Console.WriteLine("iuwncuenauvrtiyeinnyoeorvyniyp4n6839yq32p");
+            Console.WriteLine("tq32y23tvvb3y7vaynioynv7ynpo7wet");
             string username = txbUserName.Text.ToString();
             string password = txbUserPassword.Text.ToString();
 
             Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
             if (Globals.loggedInUser == null)
             {
+                MessageBox.Show("vul een correct user in");
             }
             else 
             {
