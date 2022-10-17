@@ -262,6 +262,7 @@
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.Size = new System.Drawing.Size(442, 150);
             this.productsDataGridView.TabIndex = 33;
+            this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 

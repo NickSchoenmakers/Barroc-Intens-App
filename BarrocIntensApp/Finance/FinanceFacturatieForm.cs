@@ -97,5 +97,10 @@ namespace BarrocIntensApp
         {
             Amount = (int)AmountNu.Value;
         }
+
+        private void productsDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
     }
 }
