@@ -9,15 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BarrocIntensApp.LoginForm;
 
-namespace BarrocIntensApp
+namespace BarrocIntensApp.Sales
 {
-    public partial class SalesOfferteForm : Form
+    public partial class SalesNotesForm : Form
     {
-        public SalesOfferteForm()
+        public SalesNotesForm()
         {
             InitializeComponent();
 
             lblTitle.Text = $"Sales | {Globals.loggedInUser.Name}";
+
+            var notes = (from n in Program.dbContext.Notes select n).ToList();
+            foreach (var note in notes)
+            {
+                lvNotes.Items.Add(note.NoteText);
+            }
         }
 
         private void btnBackNotes_Click(object sender, EventArgs e)

@@ -32,6 +32,7 @@
             this.btnOfferte = new BarrocIntensApp.RoundButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
+            this.btnNotities = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,11 +86,26 @@
             this.lblDepartmentPart.Text = "Dashboard";
             this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnNotities
+            // 
+            this.btnNotities.BackColor = System.Drawing.Color.Black;
+            this.btnNotities.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotities.ForeColor = System.Drawing.Color.White;
+            this.btnNotities.Location = new System.Drawing.Point(218, 59);
+            this.btnNotities.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNotities.Name = "btnNotities";
+            this.btnNotities.Size = new System.Drawing.Size(170, 168);
+            this.btnNotities.TabIndex = 37;
+            this.btnNotities.Text = "Notities";
+            this.btnNotities.UseVisualStyleBackColor = false;
+            this.btnNotities.Click += new System.EventHandler(this.btnNotities_Click);
+            // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.btnNotities);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnOfferte);
@@ -108,5 +124,6 @@
         private RoundButton btnOfferte;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
+        private RoundButton btnNotities;
     }
 }
