@@ -33,6 +33,8 @@
             this.lvNotes = new System.Windows.Forms.ListView();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             this.lvNotes.HideSelection = false;
             this.lvNotes.Location = new System.Drawing.Point(17, 104);
             this.lvNotes.Name = "lvNotes";
-            this.lvNotes.Size = new System.Drawing.Size(400, 485);
+            this.lvNotes.Size = new System.Drawing.Size(483, 485);
             this.lvNotes.TabIndex = 40;
             this.lvNotes.UseCompatibleStateImageBehavior = false;
             this.lvNotes.View = System.Windows.Forms.View.List;
@@ -95,11 +97,30 @@
             this.btnBackNotes.UseVisualStyleBackColor = false;
             this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(525, 104);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(594, 140);
+            this.textBox1.TabIndex = 42;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1019, 250);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 46);
+            this.btnSave.TabIndex = 43;
+            this.btnSave.Text = "Opslaan";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // SalesNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lvNotes);
             this.Controls.Add(this.lblDepartmentPart);
@@ -110,6 +131,7 @@
             this.Text = "SalesNotesForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,5 +142,7 @@
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.ListView lvNotes;
         private RoundButton btnBackNotes;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSave;
     }
 }
