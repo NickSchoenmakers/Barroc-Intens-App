@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,10 +29,24 @@ namespace BarrocIntensApp
 
         private void MaintenanceOnderdelenForm_Load(object sender, EventArgs e)
         {
+            Program.dbContext.Products.Load();
+            this.dataGridView1.DataSource = Program.dbContext.Products.Local.ToList();
+            Program.dbContext = new Models.AppDbContext();
 
+            var product = Program.dbContext.Products.ToList();
+            var products = product[0];
+
+            Program.dbContext.MaintenanceAppointments.Load();
+
+            //this.productBindingSource.DataSource = Program.dbContext.Products;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void userBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

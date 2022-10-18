@@ -31,25 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceOnderdelenForm));
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,31 +55,6 @@
             this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
-            // 
-            // BtnReturnStoringen
-            // 
-            this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
-            this.BtnReturnStoringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReturnStoringen.ForeColor = System.Drawing.Color.White;
-            this.BtnReturnStoringen.Location = new System.Drawing.Point(-2, 47);
-            this.BtnReturnStoringen.Name = "BtnReturnStoringen";
-            this.BtnReturnStoringen.Size = new System.Drawing.Size(88, 50);
-            this.BtnReturnStoringen.TabIndex = 8;
-            this.BtnReturnStoringen.Text = "←";
-            this.BtnReturnStoringen.UseVisualStyleBackColor = false;
-            this.BtnReturnStoringen.Click += new System.EventHandler(this.BtnReturnStoringen_Click);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
-            // userBindingSource1
-            // 
-            this.userBindingSource1.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
-            // userBindingSource2
-            // 
-            this.userBindingSource2.DataSource = typeof(BarrocIntensApp.Models.User);
             // 
             // lblTitle
             // 
@@ -118,14 +86,13 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.imagePathDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
             this.productCategoryIdDataGridViewTextBoxColumn,
             this.productCategoryDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
@@ -137,6 +104,19 @@
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
+            // BtnReturnStoringen
+            // 
+            this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
+            this.BtnReturnStoringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReturnStoringen.ForeColor = System.Drawing.Color.White;
+            this.BtnReturnStoringen.Location = new System.Drawing.Point(-2, 47);
+            this.BtnReturnStoringen.Name = "BtnReturnStoringen";
+            this.BtnReturnStoringen.Size = new System.Drawing.Size(88, 50);
+            this.BtnReturnStoringen.TabIndex = 8;
+            this.BtnReturnStoringen.Text = "←";
+            this.BtnReturnStoringen.UseVisualStyleBackColor = false;
+            this.BtnReturnStoringen.Click += new System.EventHandler(this.BtnReturnStoringen_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -161,12 +141,6 @@
             this.imagePathDataGridViewTextBoxColumn.DataPropertyName = "ImagePath";
             this.imagePathDataGridViewTextBoxColumn.HeaderText = "ImagePath";
             this.imagePathDataGridViewTextBoxColumn.Name = "imagePathDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // productCategoryIdDataGridViewTextBoxColumn
             // 
@@ -195,9 +169,6 @@
             this.Text = "MaintenanceOnderdelenForm";
             this.Load += new System.EventHandler(this.MaintenanceOnderdelenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -207,19 +178,15 @@
         #endregion
         private System.Windows.Forms.PictureBox pbBlack;
         private RoundButton BtnReturnStoringen;
-        private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.BindingSource userBindingSource1;
-        private System.Windows.Forms.BindingSource userBindingSource2;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imagePathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource productBindingSource;
     }
 }
