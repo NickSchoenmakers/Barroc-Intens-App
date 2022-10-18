@@ -90,20 +90,19 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
-            
+            var CompanyName = (string) NameCb.SelectedValue;
             i = i+1;
             OrderId = i;
-            object[] CartArray = new object[9];
+            object[] CartArray = new object[8];
             CartArray[0] = OrderId;
             CartArray[1] = ProductId;
-            CartArray[2] = Name;
-            CartArray[3] = Street;
-            CartArray[4] = Housenr;
-            CartArray[5] = City;
-            CartArray[6] = Zip;
-            CartArray[7] = Amount;
+            CartArray[2] = CompanyName;
+            CartArray[3] = StreetTb.Text;
+            CartArray[4] = HnrTb.Text;
+            CartArray[5] = CityTb.Text;
+            CartArray[6] = ZipTb.Text;
+            CartArray[7] = (int)AmountNu.Value;
             CartArray[8] = Period;
-
             CartGv.DataSource = CartArray;
 
         }
