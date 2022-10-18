@@ -15,7 +15,7 @@ namespace BarrocIntensApp.Models
         public string HouseNumber { get; set; }
         public string City { get; set; }
         public string CountryCode { get; set; }
-        public DateTime BkrCheckedAt { get; set; }
+        public DateTime? BkrCheckedAt { get; set; } = null;
         public string ContactName { get; set; }
         public string ContactPhoneNumber { get; set; }
         public ObservableCollectionListSource<Note> Notes { get; } = new ObservableCollectionListSource<Note>();
