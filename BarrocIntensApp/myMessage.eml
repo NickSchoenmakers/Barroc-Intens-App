@@ -1,0 +1,25 @@
+X-Unsent: 1
+X-Sender: D279851@edu.curio.nl
+MIME-Version: 1.0
+From: D279851@edu.curio.nl
+Date: 18 Oct 2022 11:57:38 +0200
+Subject: Your subject here
+Content-Type: multipart/mixed;
+ boundary=--boundary_2_a0bd3c63-578a-4ba1-897d-3bc03a5038f0
+
+
+----boundary_2_a0bd3c63-578a-4ba1-897d-3bc03a5038f0
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+<span style=3D'font-size: 12pt; color: red;'>My HTML formatted bo=
+dy</span>
+----boundary_2_a0bd3c63-578a-4ba1-897d-3bc03a5038f0
+Content-Type: application/octet-stream;
+ name="/xampp/htdocs/Barroc-Intens-App/BarrocIntensApp/text.txt"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+
+----boundary_2_a0bd3c63-578a-4ba1-897d-3bc03a5038f0--
+
