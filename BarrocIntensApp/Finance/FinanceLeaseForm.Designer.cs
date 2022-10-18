@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinanceLeaseForm));
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
+            this.cbCompanies = new System.Windows.Forms.ComboBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbBKRChecked = new System.Windows.Forms.Label();
+            this.lbCheckedResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBlack
@@ -71,11 +77,49 @@
             this.lblDepartmentPart.Text = "Lease aanmaken";
             this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cbCompanies
+            // 
+            this.cbCompanies.DataSource = this.companyBindingSource;
+            this.cbCompanies.DisplayMember = "Name";
+            this.cbCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCompanies.FormattingEnabled = true;
+            this.cbCompanies.Location = new System.Drawing.Point(270, 252);
+            this.cbCompanies.Name = "cbCompanies";
+            this.cbCompanies.Size = new System.Drawing.Size(121, 21);
+            this.cbCompanies.TabIndex = 36;
+            this.cbCompanies.ValueMember = "BkrCheckedAt";
+            this.cbCompanies.SelectedIndexChanged += new System.EventHandler(this.cbCompanies_SelectedIndexChanged);
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
+            // 
+            // lbBKRChecked
+            // 
+            this.lbBKRChecked.AutoSize = true;
+            this.lbBKRChecked.Location = new System.Drawing.Point(511, 260);
+            this.lbBKRChecked.Name = "lbBKRChecked";
+            this.lbBKRChecked.Size = new System.Drawing.Size(77, 13);
+            this.lbBKRChecked.TabIndex = 37;
+            this.lbBKRChecked.Text = "BKR checked:";
+            // 
+            // lbCheckedResult
+            // 
+            this.lbCheckedResult.AutoSize = true;
+            this.lbCheckedResult.Location = new System.Drawing.Point(624, 260);
+            this.lbCheckedResult.Name = "lbCheckedResult";
+            this.lbCheckedResult.Size = new System.Drawing.Size(104, 13);
+            this.lbCheckedResult.TabIndex = 38;
+            this.lbCheckedResult.Text = "Selecteer een bedrijf";
+            // 
             // FinanceLeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lbCheckedResult);
+            this.Controls.Add(this.lbBKRChecked);
+            this.Controls.Add(this.cbCompanies);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
@@ -83,8 +127,11 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FinanceLeaseForm";
             this.Text = "LeaseForm";
+            this.Load += new System.EventHandler(this.FinanceLeaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +139,9 @@
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
+        private System.Windows.Forms.ComboBox cbCompanies;
+        private System.Windows.Forms.BindingSource companyBindingSource;
+        private System.Windows.Forms.Label lbBKRChecked;
+        private System.Windows.Forms.Label lbCheckedResult;
     }
 }
