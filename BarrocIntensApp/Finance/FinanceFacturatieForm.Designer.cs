@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturatieForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.NameTb = new System.Windows.Forms.TextBox();
             this.StreetTb = new System.Windows.Forms.TextBox();
             this.ZipTb = new System.Windows.Forms.TextBox();
             this.NameLbl = new System.Windows.Forms.Label();
@@ -43,23 +42,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CityTb = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.PeriodRb = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.CartGv = new System.Windows.Forms.DataGridView();
-            this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CartGv = new System.Windows.Forms.DataGridView();
+            this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
+            this.NameCb = new System.Windows.Forms.ComboBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -83,14 +83,6 @@
             this.pbBlack.Size = new System.Drawing.Size(1434, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
-            // 
-            // NameTb
-            // 
-            this.NameTb.Location = new System.Drawing.Point(131, 92);
-            this.NameTb.Name = "NameTb";
-            this.NameTb.Size = new System.Drawing.Size(173, 20);
-            this.NameTb.TabIndex = 8;
-            this.NameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
             // 
             // StreetTb
             // 
@@ -179,34 +171,10 @@
             this.CityTb.TabIndex = 25;
             this.CityTb.TextChanged += new System.EventHandler(this.CityTb_TextChanged);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(131, 378);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(81, 17);
-            this.radioButton1.TabIndex = 27;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Maandelijks";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // PeriodRb
-            // 
-            this.PeriodRb.AutoSize = true;
-            this.PeriodRb.Location = new System.Drawing.Point(233, 378);
-            this.PeriodRb.Name = "PeriodRb";
-            this.PeriodRb.Size = new System.Drawing.Size(69, 17);
-            this.PeriodRb.TabIndex = 28;
-            this.PeriodRb.TabStop = true;
-            this.PeriodRb.Text = "Periodiek";
-            this.PeriodRb.UseVisualStyleBackColor = true;
-            this.PeriodRb.CheckedChanged += new System.EventHandler(this.PeriodRb_CheckedChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 404);
+            this.label3.Location = new System.Drawing.Point(59, 381);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 29;
@@ -214,7 +182,7 @@
             // 
             // AmountNu
             // 
-            this.AmountNu.Location = new System.Drawing.Point(131, 401);
+            this.AmountNu.Location = new System.Drawing.Point(132, 378);
             this.AmountNu.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -250,27 +218,6 @@
             this.productsDataGridView.TabIndex = 33;
             this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
             // 
-            // CartGv
-            // 
-            this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CartGv.Location = new System.Drawing.Point(680, 75);
-            this.CartGv.Name = "CartGv";
-            this.CartGv.Size = new System.Drawing.Size(465, 272);
-            this.CartGv.TabIndex = 36;
-            // 
-            // Cartbtn
-            // 
-            this.Cartbtn.BackColor = System.Drawing.Color.Black;
-            this.Cartbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cartbtn.ForeColor = System.Drawing.Color.White;
-            this.Cartbtn.Location = new System.Drawing.Point(388, 384);
-            this.Cartbtn.Name = "Cartbtn";
-            this.Cartbtn.Size = new System.Drawing.Size(88, 50);
-            this.Cartbtn.TabIndex = 34;
-            this.Cartbtn.Text = "add to cart";
-            this.Cartbtn.UseVisualStyleBackColor = false;
-            this.Cartbtn.Click += new System.EventHandler(this.Cartbtn_Click);
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -296,6 +243,27 @@
             // 
             this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
+            // CartGv
+            // 
+            this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CartGv.Location = new System.Drawing.Point(680, 75);
+            this.CartGv.Name = "CartGv";
+            this.CartGv.Size = new System.Drawing.Size(465, 272);
+            this.CartGv.TabIndex = 36;
+            // 
+            // Cartbtn
+            // 
+            this.Cartbtn.BackColor = System.Drawing.Color.Black;
+            this.Cartbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cartbtn.ForeColor = System.Drawing.Color.White;
+            this.Cartbtn.Location = new System.Drawing.Point(388, 384);
+            this.Cartbtn.Name = "Cartbtn";
+            this.Cartbtn.Size = new System.Drawing.Size(88, 50);
+            this.Cartbtn.TabIndex = 34;
+            this.Cartbtn.Text = "add to cart";
+            this.Cartbtn.UseVisualStyleBackColor = false;
+            this.Cartbtn.Click += new System.EventHandler(this.Cartbtn_Click);
+            // 
             // BtnReturnStoringen
             // 
             this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
@@ -308,19 +276,33 @@
             this.BtnReturnStoringen.Text = "Bestel";
             this.BtnReturnStoringen.UseVisualStyleBackColor = false;
             // 
+            // NameCb
+            // 
+            this.NameCb.DataSource = this.companyBindingSource;
+            this.NameCb.DisplayMember = "Name";
+            this.NameCb.FormattingEnabled = true;
+            this.NameCb.Location = new System.Drawing.Point(132, 95);
+            this.NameCb.Name = "NameCb";
+            this.NameCb.Size = new System.Drawing.Size(170, 21);
+            this.NameCb.TabIndex = 37;
+            this.NameCb.ValueMember = "Id";
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.NameCb);
             this.Controls.Add(this.CartGv);
             this.Controls.Add(this.Cartbtn);
             this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.BtnReturnStoringen);
             this.Controls.Add(this.AmountNu);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.PeriodRb);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CityTb);
             this.Controls.Add(this.label1);
@@ -331,7 +313,6 @@
             this.Controls.Add(this.NameLbl);
             this.Controls.Add(this.ZipTb);
             this.Controls.Add(this.StreetTb);
-            this.Controls.Add(this.NameTb);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -342,8 +323,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,7 +335,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
-        private System.Windows.Forms.TextBox NameTb;
         private System.Windows.Forms.TextBox StreetTb;
         private System.Windows.Forms.TextBox ZipTb;
         private System.Windows.Forms.Label NameLbl;
@@ -364,8 +345,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox CityTb;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton PeriodRb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown AmountNu;
         private RoundButton BtnReturnStoringen;
@@ -376,5 +355,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private RoundButton Cartbtn;
         private System.Windows.Forms.DataGridView CartGv;
+        private System.Windows.Forms.ComboBox NameCb;
+        private System.Windows.Forms.BindingSource companyBindingSource;
     }
 }

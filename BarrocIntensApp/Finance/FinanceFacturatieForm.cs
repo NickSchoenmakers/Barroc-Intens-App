@@ -35,7 +35,9 @@ namespace BarrocIntensApp
         {
             this.dbContext = new AppDbContext();
             this.dbContext.Products.Load();
+            this.dbContext.Companies.Load();
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
+            this.NameCb.DataSource = dbContext.Companies.Local.ToBindingList();
 
         }
         private void NameLbl_Click(object sender, EventArgs e)
@@ -48,48 +50,25 @@ namespace BarrocIntensApp
 
         }
 
-        private void NameTb_TextChanged(object sender, EventArgs e)
-        {
-          Name =  NameTb.Text;
-        }
 
         private void StreetTb_TextChanged(object sender, EventArgs e)
         {
-           Street = StreetTb.Text;
+          // Street = StreetTb.Text;
         }
 
         private void HnrTb_TextChanged(object sender, EventArgs e)
         {
-          Housenr = HnrTb.Text;
+         // Housenr = HnrTb.Text;
         }
 
         private void CityTb_TextChanged(object sender, EventArgs e)
         {
-          City = CityTb.Text;
+          //City = CityTb.Text;
         }
 
         private void ZipTb_TextChanged(object sender, EventArgs e)
         {
-          Zip = ZipTb.Text;
-        }
-
-        private void PeriodRb_CheckedChanged(object sender, EventArgs e)
-        {
-            Period = true;
-            if (radioButton1.Checked)
-            {
-                Period = false;
-                radioButton1.Checked = false;
-            }
-        }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            Period = false;
-            if (PeriodRb.Checked)
-            {
-                Period = true;
-                PeriodRb.Checked = false;
-            }
+          //Zip = ZipTb.Text;
         }
 
         private void ProductCbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,14 +78,13 @@ namespace BarrocIntensApp
 
         private void AmountNu_ValueChanged(object sender, EventArgs e)
         {
-            Amount = (int)AmountNu.Value;
+           // Amount = (int)AmountNu.Value;
         }
 
         private void productsDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //ProductId = (Product)this.productsDataGridView.CurrentRow.DataBoundItem;
             var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
-            Testlabel.Text = product?.Id.ToString();
             ProductId = product.Id;
         }
 
