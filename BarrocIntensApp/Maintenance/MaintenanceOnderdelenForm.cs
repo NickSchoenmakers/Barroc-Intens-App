@@ -37,8 +37,6 @@ namespace BarrocIntensApp
             var products = product[0];
 
             Program.dbContext.MaintenanceAppointments.Load();
-
-            
         }
     }
 }
