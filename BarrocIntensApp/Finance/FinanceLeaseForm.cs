@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,24 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
             lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
+        }
+
+        private void FinanceLeaseForm_Load(object sender, EventArgs e)
+        {
+            Program.dbContext.Companies.Load();
+            companyBindingSource.DataSource = Program.dbContext.Companies.Local.ToBindingList();
+        }
+
+        private void cbCompanies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCompanies.ValueMember == null)
+            {
+                lbCheckedResult.Text = "nee";
+            }
+            else
+            {
+                lbCheckedResult.Text = "ja";
+            }
         }
     }
 }

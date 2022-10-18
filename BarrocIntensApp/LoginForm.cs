@@ -30,48 +30,51 @@ namespace BarrocIntensApp
 
             // Uncomment the line below to start fresh with a new database.
             // this.dbContext.Database.EnsureDeleted();
-            this.dbContext.Database.EnsureCreated();
-            
-            
+            this.dbContext.Database.EnsureCreated();            
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("gyauhthuq3hhq5iu3q4g6q34");
-            Console.WriteLine("hagyhweay3a4ihreuihy");
-            Console.WriteLine("viuavetgveubgtevwuibtvuobguegvhugu");
-            Console.WriteLine("iuwncuenauvrtiyeinnyoeorvyniyp4n6839yq32p");
-            Console.WriteLine("tq32y23tvvb3y7vaynioynv7ynpo7wet");
+            // saves the user given data
             string username = txbUserName.Text.ToString();
             string password = txbUserPassword.Text.ToString();
 
+            // checks if the username and password exist and if they are in the same table
             Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
             if (Globals.loggedInUser == null)
             {
+                // if the user gives a wrong account it gives this message
                 MessageBox.Show("vul een correct user in");
             }
             else 
             {
+                // checks for the role id
                 if (Globals.loggedInUser.RoleId == 1)
                 {
-
+                    // sends user to the inkoop page
                     var inkoopForm = new InkoopForm();
                     this.Hide();
                     inkoopForm.Show(this);
                 }
+                // checks for the role id
                 else if (Globals.loggedInUser.RoleId == 4)
                 {
+                    // sends user to the finance form
                     var financeForm = new FinanceForm();
                     this.Hide();
                     financeForm.Show(this);
                 }
+                // checks for the role id
                 else if (Globals.loggedInUser.RoleId == 2)
                 {
+                    // sends user to the maintenance form
                     var maintenanceForm = new MaintenanceForm();
                     this.Hide();
                     maintenanceForm.Show(this);
                 }
+                // checks for the role id
                 else if (Globals.loggedInUser.RoleId == 3)
                 {
+                    // sends user to the sales form
                     var salesForm = new SalesForm();
                     this.Hide();
                     salesForm.Show(this);

@@ -43,56 +43,57 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(14, 113);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(10, 92);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(229, 55);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Size = new System.Drawing.Size(172, 45);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txbUserPassword
             // 
-            this.txbUserPassword.Location = new System.Drawing.Point(84, 86);
-            this.txbUserPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbUserPassword.Location = new System.Drawing.Point(63, 70);
+            this.txbUserPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserPassword.Name = "txbUserPassword";
-            this.txbUserPassword.Size = new System.Drawing.Size(159, 22);
-            this.txbUserPassword.TabIndex = 99;
+            this.txbUserPassword.Size = new System.Drawing.Size(120, 20);
+            this.txbUserPassword.TabIndex = 2;
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(84, 58);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbUserName.Location = new System.Drawing.Point(63, 47);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(159, 22);
-            this.txbUserName.TabIndex = 98;
+            this.txbUserName.Size = new System.Drawing.Size(120, 20);
+            this.txbUserName.TabIndex = 1;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(11, 89);
+            this.lblPassword.Location = new System.Drawing.Point(8, 72);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(66, 16);
+            this.lblPassword.Size = new System.Drawing.Size(52, 13);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "password";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(11, 61);
+            this.lblUserName.Location = new System.Drawing.Point(8, 50);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(67, 16);
+            this.lblUserName.Size = new System.Drawing.Size(53, 13);
             this.lblUserName.TabIndex = 8;
             this.lblUserName.Text = "username";
             // 
             // pbBlack
             // 
             this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-3, -1);
-            this.pbBlack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbBlack.Location = new System.Drawing.Point(-2, -1);
             this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1527, 53);
+            this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 100;
             this.pbBlack.TabStop = false;
             // 
@@ -102,8 +103,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(352, 9);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(264, 7);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(123, 25);
             this.lblTitle.TabIndex = 101;
@@ -113,18 +113,19 @@
             // pxbBigLogo
             // 
             this.pxbBigLogo.Image = global::BarrocIntensApp.Properties.Resources.Logo6_groot;
-            this.pxbBigLogo.Location = new System.Drawing.Point(249, 61);
+            this.pxbBigLogo.Location = new System.Drawing.Point(187, 50);
+            this.pxbBigLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pxbBigLogo.Name = "pxbBigLogo";
-            this.pxbBigLogo.Size = new System.Drawing.Size(235, 179);
+            this.pxbBigLogo.Size = new System.Drawing.Size(176, 145);
             this.pxbBigLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pxbBigLogo.TabIndex = 102;
             this.pxbBigLogo.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 246);
+            this.ClientSize = new System.Drawing.Size(393, 200);
             this.Controls.Add(this.pxbBigLogo);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
@@ -134,7 +135,7 @@
             this.Controls.Add(this.txbUserPassword);
             this.Controls.Add(this.btnLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
