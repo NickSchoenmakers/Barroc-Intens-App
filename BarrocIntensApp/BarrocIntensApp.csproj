@@ -147,17 +147,17 @@
     <Compile Include="Finance\FinanceForm.Designer.cs">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inkoop\InkoopBestellenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inkoop\InkoopBestellenForm.Designer.cs">
+      <DependentUpon>InkoopBestellenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inkoop\InkoopForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inkoop\InkoopForm.Designer.cs">
       <DependentUpon>InkoopForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inkoop\InkoopMagazijnForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inkoop\InkoopMagazijnForm.Designer.cs">
-      <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Finance\FinanceKostenForm.cs">
       <SubType>Form</SubType>
@@ -234,11 +234,11 @@
     <EmbeddedResource Include="Finance\FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inkoop\InkoopBestellenForm.resx">
+      <DependentUpon>InkoopBestellenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inkoop\InkoopForm.resx">
       <DependentUpon>InkoopForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inkoop\InkoopMagazijnForm.resx">
-      <DependentUpon>InkoopMagazijnForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finance\FinanceKostenForm.resx">
       <DependentUpon>FinanceKostenForm.cs</DependentUpon>

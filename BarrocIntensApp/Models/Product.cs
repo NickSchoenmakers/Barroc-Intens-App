@@ -14,6 +14,7 @@ namespace BarrocIntensApp.Models
         public string Description { get; set; }
         public string ImagePath { get; set; } = null;
         public decimal Price { get; set; }
+        public int Stock { get; set; } = 0;
         public int ProductCategoryId { get; set; }
         public ProductCategory ProductCategory { get; set; } = null;
         public ObservableCollectionListSource<CustomInvoiceProduct> CustomInvoiceProducts { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
