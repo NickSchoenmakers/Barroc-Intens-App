@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,9 @@ namespace BarrocIntensApp.Models
     public class MaintenanceAppointment
     {
         public int Id { get; set; }
-        public int CompanyId { get; set; }
-        public Company Company { get; set; } = null;
         public string Remark { get; set; }
-        public DateTime DateAdded { get; set; }
+        public DateTime? NextAppointment { get; set; } = null;
+        public DateTime? LastAppointment { get; set; } = null;
+        public ObservableCollectionListSource<User> Users { get; } = new ObservableCollectionListSource<User>();
     }
 }
