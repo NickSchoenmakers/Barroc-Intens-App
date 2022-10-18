@@ -21,6 +21,7 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
+        public int i = 0;
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public new string Name { get; set; }
@@ -111,10 +112,10 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
-            int i = 1;
-            i = i++;
+            
+            i = i+1;
             OrderId = i;
-            object[] CartArray = new object[8];
+            object[] CartArray = new object[9];
             CartArray[0] = OrderId;
             CartArray[1] = ProductId;
             CartArray[2] = Name;
