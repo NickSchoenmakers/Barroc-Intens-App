@@ -40,15 +40,5 @@ namespace BarrocIntensApp
 
             //this.productBindingSource.DataSource = Program.dbContext.Products;
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void userBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
