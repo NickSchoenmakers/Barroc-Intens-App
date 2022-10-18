@@ -33,8 +33,9 @@
             this.lvNotes = new System.Windows.Forms.ListView();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbNote = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lbNoteSelected = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,13 +68,17 @@
             // 
             // lvNotes
             // 
+            this.lvNotes.GridLines = true;
             this.lvNotes.HideSelection = false;
             this.lvNotes.Location = new System.Drawing.Point(17, 104);
+            this.lvNotes.MultiSelect = false;
             this.lvNotes.Name = "lvNotes";
+            this.lvNotes.ShowItemToolTips = true;
             this.lvNotes.Size = new System.Drawing.Size(483, 485);
             this.lvNotes.TabIndex = 40;
             this.lvNotes.UseCompatibleStateImageBehavior = false;
-            this.lvNotes.View = System.Windows.Forms.View.List;
+            this.lvNotes.View = System.Windows.Forms.View.Tile;
+            this.lvNotes.SelectedIndexChanged += new System.EventHandler(this.lvNotes_SelectedIndexChanged);
             // 
             // pbBlack
             // 
@@ -97,13 +102,13 @@
             this.btnBackNotes.UseVisualStyleBackColor = false;
             this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
-            // textBox1
+            // txbNote
             // 
-            this.textBox1.Location = new System.Drawing.Point(525, 104);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(594, 140);
-            this.textBox1.TabIndex = 42;
+            this.txbNote.Location = new System.Drawing.Point(525, 104);
+            this.txbNote.Multiline = true;
+            this.txbNote.Name = "txbNote";
+            this.txbNote.Size = new System.Drawing.Size(594, 140);
+            this.txbNote.TabIndex = 42;
             // 
             // btnSave
             // 
@@ -113,14 +118,24 @@
             this.btnSave.TabIndex = 43;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lbNoteSelected
+            // 
+            this.lbNoteSelected.Location = new System.Drawing.Point(525, 370);
+            this.lbNoteSelected.Name = "lbNoteSelected";
+            this.lbNoteSelected.Size = new System.Drawing.Size(594, 192);
+            this.lbNoteSelected.TabIndex = 44;
+            this.lbNoteSelected.Text = "Selecteer een notitie";
             // 
             // SalesNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lbNoteSelected);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbNote);
             this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lvNotes);
             this.Controls.Add(this.lblDepartmentPart);
@@ -142,7 +157,8 @@
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.ListView lvNotes;
         private RoundButton btnBackNotes;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbNote;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lbNoteSelected;
     }
 }
