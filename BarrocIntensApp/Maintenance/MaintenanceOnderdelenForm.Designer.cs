@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceOnderdelenForm));
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBlack
@@ -51,31 +51,6 @@
             this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
-            // 
-            // BtnReturnStoringen
-            // 
-            this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
-            this.BtnReturnStoringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReturnStoringen.ForeColor = System.Drawing.Color.White;
-            this.BtnReturnStoringen.Location = new System.Drawing.Point(-2, 47);
-            this.BtnReturnStoringen.Name = "BtnReturnStoringen";
-            this.BtnReturnStoringen.Size = new System.Drawing.Size(88, 50);
-            this.BtnReturnStoringen.TabIndex = 8;
-            this.BtnReturnStoringen.Text = "←";
-            this.BtnReturnStoringen.UseVisualStyleBackColor = false;
-            this.BtnReturnStoringen.Click += new System.EventHandler(this.BtnReturnStoringen_Click);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
-            // userBindingSource1
-            // 
-            this.userBindingSource1.DataSource = typeof(BarrocIntensApp.Models.User);
-            // 
-            // userBindingSource2
-            // 
-            this.userBindingSource2.DataSource = typeof(BarrocIntensApp.Models.User);
             // 
             // lblTitle
             // 
@@ -104,11 +79,58 @@
             this.lblDepartmentPart.Text = "Onderdelen beheren";
             this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.productBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(152, 87);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(898, 401);
+            this.dataGridView1.TabIndex = 37;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
+            // BtnReturnStoringen
+            // 
+            this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
+            this.BtnReturnStoringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReturnStoringen.ForeColor = System.Drawing.Color.White;
+            this.BtnReturnStoringen.Location = new System.Drawing.Point(-2, 47);
+            this.BtnReturnStoringen.Name = "BtnReturnStoringen";
+            this.BtnReturnStoringen.Size = new System.Drawing.Size(88, 50);
+            this.BtnReturnStoringen.TabIndex = 8;
+            this.BtnReturnStoringen.Text = "←";
+            this.BtnReturnStoringen.UseVisualStyleBackColor = false;
+            this.BtnReturnStoringen.Click += new System.EventHandler(this.BtnReturnStoringen_Click);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 200;
+            // 
             // MaintenanceOnderdelenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.BtnReturnStoringen);
@@ -118,9 +140,8 @@
             this.Text = "MaintenanceOnderdelenForm";
             this.Load += new System.EventHandler(this.MaintenanceOnderdelenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,10 +149,11 @@
         #endregion
         private System.Windows.Forms.PictureBox pbBlack;
         private RoundButton BtnReturnStoringen;
-        private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.BindingSource userBindingSource1;
-        private System.Windows.Forms.BindingSource userBindingSource2;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }
