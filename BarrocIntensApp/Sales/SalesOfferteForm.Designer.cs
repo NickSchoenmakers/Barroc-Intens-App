@@ -32,6 +32,7 @@
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
+            this.BtnSendMail = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +85,22 @@
             this.btnBackNotes.UseVisualStyleBackColor = false;
             this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
+            // BtnSendMail
+            // 
+            this.BtnSendMail.Location = new System.Drawing.Point(784, 388);
+            this.BtnSendMail.Name = "BtnSendMail";
+            this.BtnSendMail.Size = new System.Drawing.Size(348, 201);
+            this.BtnSendMail.TabIndex = 43;
+            this.BtnSendMail.Text = "Send mail";
+            this.BtnSendMail.UseVisualStyleBackColor = true;
+            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click);
+            // 
             // SalesOfferteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.BtnSendMail);
             this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton btnBackNotes;
+        private RoundButton BtnSendMail;
     }
 }
