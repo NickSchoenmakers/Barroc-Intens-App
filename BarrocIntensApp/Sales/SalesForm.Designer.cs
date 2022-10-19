@@ -110,7 +110,9 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnOfferte);
             this.Controls.Add(this.pbBlack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "SalesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesForm";

@@ -270,6 +270,8 @@
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "InkoopBestellenForm";
             this.Text = "Bestellen";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();

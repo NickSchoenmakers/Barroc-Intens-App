@@ -79,8 +79,10 @@
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FinanceKostenForm";
             this.Text = "KostenForm1";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
