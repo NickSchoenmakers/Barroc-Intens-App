@@ -279,6 +279,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Company.datasource" />
+    <None Include="Properties\DataSources\BarrocIntensApp.Models.CustomInvoiceProduct.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Note.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Product.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.ProductCategory.datasource" />

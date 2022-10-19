@@ -32,16 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturatieForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.StreetTb = new System.Windows.Forms.TextBox();
-            this.ZipTb = new System.Windows.Forms.TextBox();
             this.NameLbl = new System.Windows.Forms.Label();
             this.Street_numberLbl = new System.Windows.Forms.Label();
             this.ZipcodeLbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.HnrTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.CityTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
@@ -50,16 +46,27 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CartGv = new System.Windows.Forms.DataGridView();
+            this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
             this.NameCb = new System.Windows.Forms.ComboBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Streetlbl = new System.Windows.Forms.Label();
+            this.Houselbl = new System.Windows.Forms.Label();
+            this.citylbl = new System.Windows.Forms.Label();
+            this.ziplbl = new System.Windows.Forms.Label();
+            this.customInvoiceProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -83,22 +90,6 @@
             this.pbBlack.Size = new System.Drawing.Size(1434, 43);
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
-            // 
-            // StreetTb
-            // 
-            this.StreetTb.Location = new System.Drawing.Point(131, 118);
-            this.StreetTb.Name = "StreetTb";
-            this.StreetTb.Size = new System.Drawing.Size(173, 20);
-            this.StreetTb.TabIndex = 9;
-            this.StreetTb.TextChanged += new System.EventHandler(this.StreetTb_TextChanged);
-            // 
-            // ZipTb
-            // 
-            this.ZipTb.Location = new System.Drawing.Point(131, 196);
-            this.ZipTb.Name = "ZipTb";
-            this.ZipTb.Size = new System.Drawing.Size(173, 20);
-            this.ZipTb.TabIndex = 10;
-            this.ZipTb.TextChanged += new System.EventHandler(this.ZipTb_TextChanged);
             // 
             // NameLbl
             // 
@@ -137,14 +128,6 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Product";
             // 
-            // HnrTb
-            // 
-            this.HnrTb.Location = new System.Drawing.Point(131, 144);
-            this.HnrTb.Name = "HnrTb";
-            this.HnrTb.Size = new System.Drawing.Size(173, 20);
-            this.HnrTb.TabIndex = 23;
-            this.HnrTb.TextChanged += new System.EventHandler(this.HnrTb_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -162,14 +145,6 @@
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Stad";
-            // 
-            // CityTb
-            // 
-            this.CityTb.Location = new System.Drawing.Point(131, 170);
-            this.CityTb.Name = "CityTb";
-            this.CityTb.Size = new System.Drawing.Size(173, 20);
-            this.CityTb.TabIndex = 25;
-            this.CityTb.TextChanged += new System.EventHandler(this.CityTb_TextChanged);
             // 
             // label3
             // 
@@ -245,11 +220,21 @@
             // 
             // CartGv
             // 
+            this.CartGv.AutoGenerateColumns = false;
             this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CartGv.Location = new System.Drawing.Point(680, 75);
+            this.CartGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.productIdDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn});
+            this.CartGv.DataSource = this.customInvoiceProductsBindingSource;
+            this.CartGv.Location = new System.Drawing.Point(801, 75);
             this.CartGv.Name = "CartGv";
-            this.CartGv.Size = new System.Drawing.Size(465, 272);
+            this.CartGv.Size = new System.Drawing.Size(344, 272);
             this.CartGv.TabIndex = 36;
+            // 
+            // customInvoiceProductBindingSource
+            // 
+            this.customInvoiceProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.CustomInvoiceProduct);
             // 
             // Cartbtn
             // 
@@ -286,16 +271,80 @@
             this.NameCb.Size = new System.Drawing.Size(170, 21);
             this.NameCb.TabIndex = 37;
             this.NameCb.ValueMember = "Id";
+            this.NameCb.SelectedValueChanged += new System.EventHandler(this.NameCb_SelectedValueChanged);
             // 
             // companyBindingSource
             // 
             this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
+            // 
+            // Streetlbl
+            // 
+            this.Streetlbl.AutoSize = true;
+            this.Streetlbl.Location = new System.Drawing.Point(132, 123);
+            this.Streetlbl.Name = "Streetlbl";
+            this.Streetlbl.Size = new System.Drawing.Size(35, 13);
+            this.Streetlbl.TabIndex = 38;
+            this.Streetlbl.Text = "label4";
+            // 
+            // Houselbl
+            // 
+            this.Houselbl.AutoSize = true;
+            this.Houselbl.Location = new System.Drawing.Point(132, 147);
+            this.Houselbl.Name = "Houselbl";
+            this.Houselbl.Size = new System.Drawing.Size(35, 13);
+            this.Houselbl.TabIndex = 39;
+            this.Houselbl.Text = "label5";
+            // 
+            // citylbl
+            // 
+            this.citylbl.AutoSize = true;
+            this.citylbl.Location = new System.Drawing.Point(132, 173);
+            this.citylbl.Name = "citylbl";
+            this.citylbl.Size = new System.Drawing.Size(35, 13);
+            this.citylbl.TabIndex = 40;
+            this.citylbl.Text = "label6";
+            // 
+            // ziplbl
+            // 
+            this.ziplbl.AutoSize = true;
+            this.ziplbl.Location = new System.Drawing.Point(132, 199);
+            this.ziplbl.Name = "ziplbl";
+            this.ziplbl.Size = new System.Drawing.Size(35, 13);
+            this.ziplbl.TabIndex = 41;
+            this.ziplbl.Text = "label7";
+            // 
+            // customInvoiceProductsBindingSource
+            // 
+            this.customInvoiceProductsBindingSource.DataMember = "CustomInvoiceProducts";
+            this.customInvoiceProductsBindingSource.DataSource = this.productBindingSource;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.ziplbl);
+            this.Controls.Add(this.citylbl);
+            this.Controls.Add(this.Houselbl);
+            this.Controls.Add(this.Streetlbl);
             this.Controls.Add(this.NameCb);
             this.Controls.Add(this.CartGv);
             this.Controls.Add(this.Cartbtn);
@@ -304,15 +353,11 @@
             this.Controls.Add(this.AmountNu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.CityTb);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.HnrTb);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.ZipcodeLbl);
             this.Controls.Add(this.Street_numberLbl);
             this.Controls.Add(this.NameLbl);
-            this.Controls.Add(this.ZipTb);
-            this.Controls.Add(this.StreetTb);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -325,7 +370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,16 +382,12 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbBlack;
-        private System.Windows.Forms.TextBox StreetTb;
-        private System.Windows.Forms.TextBox ZipTb;
         private System.Windows.Forms.Label NameLbl;
         private System.Windows.Forms.Label Street_numberLbl;
         private System.Windows.Forms.Label ZipcodeLbl;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox HnrTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox CityTb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown AmountNu;
         private RoundButton BtnReturnStoringen;
@@ -357,5 +400,14 @@
         private System.Windows.Forms.DataGridView CartGv;
         private System.Windows.Forms.ComboBox NameCb;
         private System.Windows.Forms.BindingSource companyBindingSource;
+        private System.Windows.Forms.Label Streetlbl;
+        private System.Windows.Forms.Label Houselbl;
+        private System.Windows.Forms.Label citylbl;
+        private System.Windows.Forms.Label ziplbl;
+        private System.Windows.Forms.BindingSource customInvoiceProductBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customInvoiceProductsBindingSource;
     }
 }
