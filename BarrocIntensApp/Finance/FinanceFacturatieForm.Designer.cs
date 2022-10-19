@@ -46,6 +46,10 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CartGv = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customInvoiceProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
@@ -55,18 +59,14 @@
             this.Houselbl = new System.Windows.Forms.Label();
             this.citylbl = new System.Windows.Forms.Label();
             this.ziplbl = new System.Windows.Forms.Label();
-            this.customInvoiceProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -226,11 +226,34 @@
             this.idDataGridViewTextBoxColumn,
             this.productIdDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn});
-            this.CartGv.DataSource = this.customInvoiceProductsBindingSource;
+            this.CartGv.DataSource = this.customInvoiceProductBindingSource;
             this.CartGv.Location = new System.Drawing.Point(801, 75);
             this.CartGv.Name = "CartGv";
             this.CartGv.Size = new System.Drawing.Size(344, 272);
             this.CartGv.TabIndex = 36;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            // 
+            // customInvoiceProductsBindingSource
+            // 
+            this.customInvoiceProductsBindingSource.DataMember = "CustomInvoiceProducts";
+            this.customInvoiceProductsBindingSource.DataSource = this.productBindingSource;
             // 
             // customInvoiceProductBindingSource
             // 
@@ -313,29 +336,6 @@
             this.ziplbl.TabIndex = 41;
             this.ziplbl.Text = "label7";
             // 
-            // customInvoiceProductsBindingSource
-            // 
-            this.customInvoiceProductsBindingSource.DataMember = "CustomInvoiceProducts";
-            this.customInvoiceProductsBindingSource.DataSource = this.productBindingSource;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,9 +370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
