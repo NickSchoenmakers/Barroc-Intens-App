@@ -262,6 +262,7 @@
     <Compile Include="Models\CustomInvoice.cs" />
     <Compile Include="Models\CustomInvoiceProduct.cs" />
     <Compile Include="Models\MaintenanceAppointment.cs" />
+    <Compile Include="Models\MaintenanceAppointmentProduct.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
