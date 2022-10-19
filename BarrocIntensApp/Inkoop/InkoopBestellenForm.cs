@@ -96,5 +96,37 @@ namespace BarrocIntensApp.Inkoop
                 dgvProducts.DataSource = productCategory.Products.Where(p => p.Stock == 0).ToList();
             }
         }
+
+        private void tbxSearch_Enter(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text == "Typ hier om te zoeken..")
+            {
+                tbxSearch.Text = "";
+
+                tbxSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void tbxSearch_Leave(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text == "")
+            {
+                tbxSearch.Text = "Typ hier om te zoeken..";
+
+                tbxSearch.ForeColor = Color.Gray;
+            }
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text != "Typ hier om te zoeken.." || tbxSearch.Text != "")
+            {
+                dgvProducts.DataSource = Program.dbContext.Products.Where(p => p.Name.Contains(tbxSearch.Text)).ToList();
+            }
+            else
+            {
+                FilterProducts();
+            }
+        }
     }
 }

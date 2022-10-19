@@ -48,6 +48,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -194,7 +196,7 @@
             this.groupProductInfo.Controls.Add(this.lblPrice);
             this.groupProductInfo.Controls.Add(this.btnOrder);
             this.groupProductInfo.Controls.Add(this.lblStock);
-            this.groupProductInfo.Location = new System.Drawing.Point(558, 162);
+            this.groupProductInfo.Location = new System.Drawing.Point(558, 200);
             this.groupProductInfo.Name = "groupProductInfo";
             this.groupProductInfo.Size = new System.Drawing.Size(574, 389);
             this.groupProductInfo.TabIndex = 48;
@@ -224,7 +226,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvProducts);
-            this.groupBox2.Location = new System.Drawing.Point(20, 162);
+            this.groupBox2.Location = new System.Drawing.Point(20, 200);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(522, 389);
             this.groupBox2.TabIndex = 49;
@@ -239,7 +241,7 @@
             "Alles",
             "Op voorraad",
             "Niet op vooraad"});
-            this.cbFilter.Location = new System.Drawing.Point(199, 129);
+            this.cbFilter.Location = new System.Drawing.Point(201, 173);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(173, 21);
             this.cbFilter.TabIndex = 50;
@@ -248,11 +250,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 113);
+            this.label1.Location = new System.Drawing.Point(198, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 51;
             this.label1.Text = "Filter";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Zoeken";
+            // 
+            // tbxSearch
+            // 
+            this.tbxSearch.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.tbxSearch.Location = new System.Drawing.Point(20, 174);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(173, 20);
+            this.tbxSearch.TabIndex = 53;
+            this.tbxSearch.Text = "Typ hier om te zoeken..";
+            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            this.tbxSearch.Enter += new System.EventHandler(this.tbxSearch_Enter);
+            this.tbxSearch.Leave += new System.EventHandler(this.tbxSearch_Leave);
             // 
             // InkoopBestellenForm
             // 
@@ -260,6 +283,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.tbxSearch);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.groupBox2);
@@ -307,5 +332,7 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxSearch;
     }
 }
