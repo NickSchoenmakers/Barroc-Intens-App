@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -193,6 +194,7 @@
             // groupProductInfo
             // 
             this.groupProductInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupProductInfo.Controls.Add(this.btnDeleteProduct);
             this.groupProductInfo.Controls.Add(this.lblPrice);
             this.groupProductInfo.Controls.Add(this.btnOrder);
             this.groupProductInfo.Controls.Add(this.lblStock);
@@ -277,6 +279,16 @@
             this.tbxSearch.Enter += new System.EventHandler(this.tbxSearch_Enter);
             this.tbxSearch.Leave += new System.EventHandler(this.tbxSearch_Leave);
             // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(455, 313);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(113, 32);
+            this.btnDeleteProduct.TabIndex = 50;
+            this.btnDeleteProduct.Text = "Product verwijderen";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
             // InkoopBestellenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +346,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Button btnDeleteProduct;
     }
 }

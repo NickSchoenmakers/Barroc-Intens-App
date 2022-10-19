@@ -51,6 +51,7 @@ namespace BarrocIntensApp.Inkoop
         private void dgvProducts_SelectionChanged(object sender, EventArgs e)
         {
             this.RefreshProductInfo();
+            this.groupProductInfo.Show();
         }
 
         private void btnAddStock_Click(object sender, EventArgs e)
@@ -112,8 +113,8 @@ namespace BarrocIntensApp.Inkoop
             if (tbxSearch.Text == "")
             {
                 tbxSearch.Text = "Typ hier om te zoeken..";
-
                 tbxSearch.ForeColor = Color.Gray;
+                FilterProducts();
             }
         }
 
@@ -123,10 +124,14 @@ namespace BarrocIntensApp.Inkoop
             {
                 dgvProducts.DataSource = Program.dbContext.Products.Where(p => p.Name.Contains(tbxSearch.Text)).ToList();
             }
-            else
-            {
-                FilterProducts();
-            }
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            Program.dbContext.Remove(GetProduct());
+            Program.dbContext.SaveChanges();
+            dgvProducts.ClearSelection();
+            groupProductInfo.Hide();
         }
     }
 }
