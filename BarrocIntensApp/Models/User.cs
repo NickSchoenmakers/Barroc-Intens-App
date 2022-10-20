@@ -17,5 +17,6 @@ namespace BarrocIntensApp.Models
         public int RoleId { get; set; }
         public Role Role { get; set; } = null;
         public ObservableCollectionListSource<Note> Notes { get; } = new ObservableCollectionListSource<Note>();
+        public ObservableCollectionListSource<MaintenanceAppointment> MaintenanceAppointments { get; } = new ObservableCollectionListSource<MaintenanceAppointment>();
     }
 }

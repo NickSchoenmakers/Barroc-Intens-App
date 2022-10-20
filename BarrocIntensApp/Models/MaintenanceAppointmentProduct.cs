@@ -11,8 +11,8 @@ namespace BarrocIntensApp.Models
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product Product { get; set; } = null;
         public int CompanyId { get; set; }
-        public Company Company { get; set; }
+        public Company Company { get; set; } = null;
     }
 }

@@ -13,6 +13,9 @@ namespace BarrocIntensApp.Models
         public string Remark { get; set; }
         public DateTime? NextAppointment { get; set; } = null;
         public DateTime? LastAppointment { get; set; } = null;
-        public ObservableCollectionListSource<User> Users { get; } = new ObservableCollectionListSource<User>();
+        public int CompanyId { get; set; }
+        public Company Company { get; set; } = null;
+        public int WorkerId { get; set; }
+        public User Worker { get; set; } = null;
     }
 }

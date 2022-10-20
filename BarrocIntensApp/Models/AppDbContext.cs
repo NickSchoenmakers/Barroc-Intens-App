@@ -85,9 +85,9 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17) },
-                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12) },
-                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01), LastAppointment = new DateTime(2019, 09, 29) }
+                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17, 17, 15, 0), WorkerId = 4, CompanyId = 1},
+                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12, 10, 15, 0), WorkerId = 5, CompanyId = 2 },
+                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01, 12, 0, 0), LastAppointment = new DateTime(2019, 09, 29), WorkerId = 6, CompanyId = 3 }
             );
 
             modelBuilder.Entity<Note>().HasData(
