@@ -22,8 +22,6 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
-
-        DateTime Date = DateTime.Now;
         public int ProductId { get; set; }
         public int Id = 0;
         public bool Idtest { get; set; }
@@ -35,12 +33,10 @@ namespace BarrocIntensApp
             this.dbContext.Companies.Load();
             this.dbContext.CustomInvoiceProducts.Load();
 
-            this.customInvoiceProductsBindingSource.DataSource = dbContext.CustomInvoiceProducts.Local.ToBindingList();
+            this.customInvoiceProductBindingSource.DataSource = dbContext.CustomInvoiceProducts.Local.ToBindingList();
 
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
             this.NameCb.DataSource = dbContext.Companies.Local.ToBindingList();
-
-            MessageBox.Show("test");
         }
         private void NameLbl_Click(object sender, EventArgs e)
         {
@@ -72,23 +68,30 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
-            int[] CartArray = new int[3];
-            CartArray[0] = Amount;
-            CartArray[1] = ProductId;
-            CartArray[2] = Id;
+            if (ProductId != 0)
+            {
+                int[] CartArray = new int[3];
+                CartArray[0] = Amount;
+                CartArray[1] = ProductId;
+                CartArray[2] = Id;
 
-            var id = this.dbContext.CustomInvoiceProducts.Select(x => x.Id).Max();
-            id++;
-            MessageBox.Show(id.ToString());
-            var ProductToAdd = new CustomInvoiceProduct {
-                Amount = (int)AmountNu.Value,
-                ProductId = ProductId,
-                Id = id
-            };
-            this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
-            this.dbContext.SaveChanges();
-            this.CartGv.Refresh();
-
+                var id = this.dbContext.CustomInvoiceProducts.Select(x => x.Id).Max();
+                id++;
+                MessageBox.Show(id.ToString());
+                var ProductToAdd = new CustomInvoiceProduct
+                {
+                    Amount = (int)AmountNu.Value,
+                    ProductId = ProductId,
+                    Id = id
+                };
+                this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
+                this.dbContext.SaveChanges();
+                this.CartGv.Refresh();
+            }
+            else 
+            {
+                MessageBox.Show("please select a product");
+            }
         }
 
         private void NameCb_SelectedValueChanged(object sender, EventArgs e)
@@ -97,6 +100,11 @@ namespace BarrocIntensApp
         }
 
         private void pbBlack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CartGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
