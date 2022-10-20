@@ -65,12 +65,12 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<CustomInvoiceProduct>().HasData(
-                new CustomInvoiceProduct { Id = 1, ProductId = 2, Amount = 3, PricePerProduct = 599 },
-                new CustomInvoiceProduct { Id = 2, ProductId = 1, Amount = 5, PricePerProduct = 499 },
-                new CustomInvoiceProduct { Id = 3, ProductId = 8, Amount = 4, PricePerProduct = 27.80m },
-                new CustomInvoiceProduct { Id = 4, ProductId = 4, Amount = 3, PricePerProduct = 999 },
-                new CustomInvoiceProduct { Id = 5, ProductId = 6, Amount = 2, PricePerProduct = 23.20m },
-                new CustomInvoiceProduct { Id = 6, ProductId = 8, Amount = 8, PricePerProduct = 27.80m }
+                new CustomInvoiceProduct { Id = 1, ProductId = 2, Amount = 3},
+                new CustomInvoiceProduct { Id = 2, ProductId = 1, Amount = 5},
+                new CustomInvoiceProduct { Id = 3, ProductId = 8, Amount = 4},
+                new CustomInvoiceProduct { Id = 4, ProductId = 4, Amount = 3},
+                new CustomInvoiceProduct { Id = 5, ProductId = 6, Amount = 2},
+                new CustomInvoiceProduct { Id = 6, ProductId = 8, Amount = 8}
             );
 
             modelBuilder.Entity<Product>().HasData(
