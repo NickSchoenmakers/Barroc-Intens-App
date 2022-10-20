@@ -16,8 +16,6 @@ namespace BarrocIntensApp
 {
     public partial class LoginForm : Form
     {
-        private AppDbContext dbContext;
-
         public static class Globals
         {
             public static User loggedInUser;
@@ -26,26 +24,38 @@ namespace BarrocIntensApp
         public LoginForm()
         {
             InitializeComponent();
-            this.dbContext = new AppDbContext();
+            txbUserPassword.PasswordChar = '●';
 
             // Uncomment the line below to start fresh with a new database.
             // this.dbContext.Database.EnsureDeleted();
-            this.dbContext.Database.EnsureCreated();            
+            Program.dbContext.Database.EnsureCreated();            
         }
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void txbUserPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
+        }
+        private void login()
         {
             // saves the user given data
             string username = txbUserName.Text.ToString();
             string password = txbUserPassword.Text.ToString();
 
             // checks if the username and password exist and if they are in the same table
-            Globals.loggedInUser = this.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+            Globals.loggedInUser = Program.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
             if (Globals.loggedInUser == null)
             {
                 // if the user gives a wrong account it gives this message
                 MessageBox.Show("vul een correct user in");
             }
-            else 
+            else
             {
                 // checks for the role id
                 if (Globals.loggedInUser.RoleId == 1)
@@ -80,21 +90,6 @@ namespace BarrocIntensApp
                     salesForm.Show(this);
                 }
             }
-
-
-
-
-            
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
         }
     }
 }
