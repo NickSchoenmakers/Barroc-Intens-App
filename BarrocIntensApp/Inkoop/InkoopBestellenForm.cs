@@ -26,6 +26,8 @@ namespace BarrocIntensApp.Inkoop
             var productCategory = (ProductCategory)this.cbCategories.SelectedItem;
             dgvProducts.DataSource = productCategory.Products;
             cbFilter.SelectedIndex = 0;
+            this.cbProductCategory.DataSource = Program.dbContext.ProductCategories.Local.ToBindingList();
+            numProductPrice.Controls[0].Visible = false;
         }
 
         private void btnReturnDashboard_Click(object sender, EventArgs e)
@@ -51,6 +53,7 @@ namespace BarrocIntensApp.Inkoop
         private void dgvProducts_SelectionChanged(object sender, EventArgs e)
         {
             this.RefreshProductInfo();
+            this.groupProductInfo.Show();
         }
 
         private void btnAddStock_Click(object sender, EventArgs e)
@@ -94,6 +97,70 @@ namespace BarrocIntensApp.Inkoop
             else if (cbFilter.SelectedIndex == 2)
             {
                 dgvProducts.DataSource = productCategory.Products.Where(p => p.Stock == 0).ToList();
+            }
+        }
+
+        private void tbxSearch_Enter(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text == "Typ hier om te zoeken..")
+            {
+                tbxSearch.Text = "";
+
+                tbxSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void tbxSearch_Leave(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text == "")
+            {
+                tbxSearch.Text = "Typ hier om te zoeken..";
+                tbxSearch.ForeColor = Color.Gray;
+                FilterProducts();
+            }
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text != "Typ hier om te zoeken.." || tbxSearch.Text != "")
+            {
+                dgvProducts.DataSource = Program.dbContext.Products.Where(p => p.Name.Contains(tbxSearch.Text)).ToList();
+            }
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            Program.dbContext.Remove(GetProduct());
+            Program.dbContext.SaveChanges();
+            dgvProducts.ClearSelection();
+            groupProductInfo.Hide();
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            Product productToAdd = new Product
+            {
+                Name = txbProductName.Text,
+                Description = txbProductDescription.Text,
+                Price = numProductPrice.Value,
+                ProductCategoryId = (int)cbProductCategory.SelectedValue,
+                isPart = checkPart.Checked
+            };
+
+            Program.dbContext.Products.Add(productToAdd);
+            Program.dbContext.SaveChanges();
+        }
+
+        private void cbProductCategory_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if ((int)cbProductCategory.SelectedIndex == 1)
+            {
+                checkPart.Checked = false;
+                checkPart.Hide();
+            }
+            else
+            {
+                checkPart.Show();
             }
         }
     }

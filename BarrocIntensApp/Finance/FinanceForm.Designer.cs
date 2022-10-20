@@ -118,8 +118,10 @@
             this.Controls.Add(this.KostenBtn);
             this.Controls.Add(this.LeaseBtn);
             this.Controls.Add(this.FacturatieBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FinanceForm";
             this.Text = "Finance_mainForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();

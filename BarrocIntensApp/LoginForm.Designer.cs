@@ -59,6 +59,7 @@
             this.txbUserPassword.Name = "txbUserPassword";
             this.txbUserPassword.Size = new System.Drawing.Size(120, 20);
             this.txbUserPassword.TabIndex = 2;
+            this.txbUserPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbUserPassword_KeyDown);
             // 
             // txbUserName
             // 
@@ -113,7 +114,7 @@
             // pxbBigLogo
             // 
             this.pxbBigLogo.Image = global::BarrocIntensApp.Properties.Resources.Logo6_groot;
-            this.pxbBigLogo.Location = new System.Drawing.Point(187, 50);
+            this.pxbBigLogo.Location = new System.Drawing.Point(201, 50);
             this.pxbBigLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pxbBigLogo.Name = "pxbBigLogo";
             this.pxbBigLogo.Size = new System.Drawing.Size(176, 145);
@@ -134,8 +135,10 @@
             this.Controls.Add(this.txbUserName);
             this.Controls.Add(this.txbUserPassword);
             this.Controls.Add(this.btnLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

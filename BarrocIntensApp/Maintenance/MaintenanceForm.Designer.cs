@@ -141,7 +141,9 @@
             this.Controls.Add(this.BtnOnderhoud);
             this.Controls.Add(this.BtnStoringen);
             this.Controls.Add(this.BtnOnderdelen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MaintenanceForm";
             this.Text = "MaintencanceForm";
             this.Load += new System.EventHandler(this.MaintencanceForm_Load);
