@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BarrocIntensApp.LoginForm;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -21,6 +22,7 @@ namespace BarrocIntensApp
         public FacturatieForm()
         {
             InitializeComponent();
+            lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
         public int ProductId { get; set; }
         public int Id = 0;

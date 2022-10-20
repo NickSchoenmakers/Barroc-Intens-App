@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarrocIntensApp.Inkoop;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp
 {
@@ -15,13 +17,14 @@ namespace BarrocIntensApp
         public InkoopForm()
         {
             InitializeComponent();
+            lblTitle.Text = $"Inkoop | {Globals.loggedInUser.Name}";
         }
 
-        private void btnMagazijn_Click_1(object sender, EventArgs e)
+        private void btnBestellen_Click(object sender, EventArgs e)
         {
-            var inkoopMagazijnForm = new InkoopMagazijnForm();
+            var inkoopBestellenForm = new InkoopBestellenForm();
             this.Hide();
-            inkoopMagazijnForm.Show(this);
+            inkoopBestellenForm.Show(this);
         }
     }
 }

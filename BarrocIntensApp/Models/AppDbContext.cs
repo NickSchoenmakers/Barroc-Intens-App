@@ -18,6 +18,7 @@ namespace BarrocIntensApp.Models
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<User> MaintenanceAppointmentsProduct { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,23 +33,23 @@ namespace BarrocIntensApp.Models
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, Name = "Inkoop Gebruiker 1", Username = "inkoop1", Password = "pass", RoleId = 1 },
                 new User { Id = 2, Name = "Inkoop Gebruiker 2", Username = "inkoop2", Password = "pass", RoleId = 1 },
-                new User { Id = 3, Name = "Inkoop Gebruiker 3", Username = "inkoop3", Password = "pass", RoleId = 1 },
+                new User { Id = 3, Name = "Inkoop manager 3", Username = "inkoop3", Password = "pass", RoleId = 1, isManager = true },
                 new User { Id = 4, Name = "Maintenance Gebruiker 1", Username = "maintenance1", Password = "pass", RoleId = 2 },
                 new User { Id = 5, Name = "Maintenance Gebruiker 2", Username = "maintenance2", Password = "pass", RoleId = 2 },
-                new User { Id = 6, Name = "Maintenance Gebruiker 3", Username = "maintenance3", Password = "pass", RoleId = 2 },
+                new User { Id = 6, Name = "Maintenance manager 3", Username = "maintenance3", Password = "pass", RoleId = 2, isManager = true },
                 new User { Id = 7, Name = "Sales Gebruiker 1", Username = "sales1", Password = "pass", RoleId = 3 },
                 new User { Id = 8, Name = "Sales Gebruiker 2", Username = "sales2", Password = "pass", RoleId = 3 },
-                new User { Id = 9, Name = "Sales Gebruiker 3", Username = "sales3", Password = "pass", RoleId = 3 },
+                new User { Id = 9, Name = "Sales manager 3", Username = "sales3", Password = "pass", RoleId = 3, isManager = true },
                 new User { Id = 10, Name = "Finance Gebruiker 1", Username = "finance1", Password = "pass", RoleId = 4 },
                 new User { Id = 11, Name = "Finance Gebruiker 2", Username = "finance2", Password = "pass", RoleId = 4 },
-                new User { Id = 12, Name = "Finance Gebruiker 3", Username = "finance3", Password = "pass", RoleId = 4 }
+                new User { Id = 12, Name = "Finance manager 3", Username = "finance3", Password = "pass", RoleId = 4, isManager = true }
             );
 
             modelBuilder.Entity<Role>().HasData(
-                    new Role { Id = 1, Name = "Inkoop" },
-                    new Role { Id = 2, Name = "Maintenance" },
-                    new Role { Id = 3, Name = "Sales" },
-                    new Role { Id = 4, Name = "Finance" }
+                    new Role { Id = 1, Name = "Inkoop", },
+                    new Role { Id = 2, Name = "Maintenance", },
+                    new Role { Id = 3, Name = "Sales", },
+                    new Role { Id = 4, Name = "Finance", }
             );
 
             modelBuilder.Entity<Company>().HasData(
@@ -73,20 +74,20 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = 1, Name = "Barroc Intens Italian Light", Description = "S234FREKT", ImagePath = "Image/machine-bit-light.png", Price = 499, ProductCategoryId = 1 },
-                new Product { Id = 2, Name = "Barroc Intens Italian", Description = "S234KNDPF", ImagePath = "Image/machine-bit-light.png", Price = 599, ProductCategoryId = 1 },
-                new Product { Id = 3, Name = "Barroc Intens Italian Deluxe", Description = "S234KNDPF", ImagePath = "Image/machine-bit-deluxe.png", Price = 799, ProductCategoryId = 1 },
-                new Product { Id = 4, Name = "Barroc Intens Italian Deluxe Special", Description = "S234NNBMV", ImagePath = "Image/machine-bit-deluxe.png", Price = 999, ProductCategoryId = 1 },
-                new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, ProductCategoryId = 2 },
-                new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, ProductCategoryId = 2 },
-                new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, ProductCategoryId = 2 },
-                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, ProductCategoryId = 2 }
+                new Product { Id = 1, Name = "Barroc Intens Italian Light", Description = "S234FREKT", ImagePath = "Image/machine-bit-light.png", Price = 499, Stock = 10, ProductCategoryId = 1 },
+                new Product { Id = 2, Name = "Barroc Intens Italian", Description = "S234KNDPF", ImagePath = "Image/machine-bit-light.png", Price = 599, Stock = 5, ProductCategoryId = 1 },
+                new Product { Id = 3, Name = "Barroc Intens Italian Deluxe", Description = "S234KNDPF", ImagePath = "Image/machine-bit-deluxe.png", Price = 799, Stock = 7, ProductCategoryId = 1 },
+                new Product { Id = 4, Name = "Barroc Intens Italian Deluxe Special", Description = "S234NNBMV", ImagePath = "Image/machine-bit-deluxe.png", Price = 999, Stock = 0, ProductCategoryId = 1 },
+                new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, Stock = 0, ProductCategoryId = 2 },
+                new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, Stock = 250, ProductCategoryId = 2 },
+                new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, Stock = 124, ProductCategoryId = 2 },
+                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2 }
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment { Id = 1, CompanyId = 1, Remark = "Spullen meenemen", DateAdded = new DateTime(2022, 05, 17) },
-                new MaintenanceAppointment { Id = 2, CompanyId = 2, Remark = "Kan lang duren", DateAdded = new DateTime(2021, 12, 12) },
-                new MaintenanceAppointment { Id = 3, CompanyId = 3, Remark = "Kleine onderhoud nodig", DateAdded = new DateTime(2020, 06, 01) }
+                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17) },
+                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12) },
+                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01), LastAppointment = new DateTime(2019, 09, 29) }
             );
 
             modelBuilder.Entity<Note>().HasData(
@@ -99,8 +100,11 @@ namespace BarrocIntensApp.Models
                 new ProductCategory { Id = 1, Name = "Machines", IsEmployeeOnly = 1 },
                 new ProductCategory { Id = 2, Name = "Koffiebonen", IsEmployeeOnly = 1 }
             );
-            Console.WriteLine("test");
-
+            modelBuilder.Entity<MaintenanceAppointmentProduct>().HasData(
+                new MaintenanceAppointmentProduct { Id = 1, ProductId = 1, CompanyId = 1 },
+                new MaintenanceAppointmentProduct { Id = 2, ProductId = 3, CompanyId = 2 },
+                new MaintenanceAppointmentProduct { Id = 3, ProductId = 6, CompanyId = 3 }
+            );
         }
     }
 }

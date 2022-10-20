@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp
 {
@@ -15,9 +16,17 @@ namespace BarrocIntensApp
         public MaintenanceOnderhoudForm()
         {
             InitializeComponent();
+            lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
         }
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
+        {
+            var inkoopForm = new MaintenanceForm();
+            this.Hide();
+            inkoopForm.Show(this);
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
         {
             var inkoopForm = new MaintenanceForm();
             this.Hide();
