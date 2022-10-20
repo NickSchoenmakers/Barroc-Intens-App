@@ -34,6 +34,9 @@ namespace BarrocIntensApp
             this.dbContext.Products.Load();
             this.dbContext.Companies.Load();
             this.dbContext.CustomInvoiceProducts.Load();
+
+            this.customInvoiceProductsBindingSource.DataSource = dbContext.CustomInvoiceProducts.Local.ToBindingList();
+
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
             this.NameCb.DataSource = dbContext.Companies.Local.ToBindingList();
 
@@ -69,50 +72,33 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
-            //int[] CartArray = new int[3];
-            //CartArray[0] = Amount;
-            //CartArray[1] = ProductId;
-            //CartArray[2] = Id;
+            int[] CartArray = new int[3];
+            CartArray[0] = Amount;
+            CartArray[1] = ProductId;
+            CartArray[2] = Id;
 
-            //CartGv.DataSource = CartArray;
-            //while (true) {
-            //var id = this.dbContext.CustomInvoiceProducts.Where(u => u.Id != Id).FirstOrDefault();
-            //    if (id != null)
-            //    {
-            //        Id++;
-            //        MessageBox.Show(Id.ToString(), "is niet uniek");
-            //        MessageBox.Show("is niet uniek");
-            //    }
-            //    else {
-            //        MessageBox.Show(Id.ToString(), "is uniek");
-            //        MessageBox.Show("is uniek");
-            //        break;
-            //    }
-            //}
-            int counter = 0;
-            while (true) {
-                counter++;
-                var idcheck = this.dbContext.CustomInvoiceProducts.Where(u => u.Id != Id).FirstOrDefault();
-                if (idcheck != null)
-                {
-                    MessageBox.Show(counter.ToString(), "is uniek");
-                    MessageBox.Show("is uniek");
-                    break;
-                }
-                
-            }
-
-            //    var ProductToAdd = new CustomInvoiceProduct {
-            //        Amount = (int)AmountNu.Value,
-            //        ProductId = ProductId,
-
-            //};
+            var id = this.dbContext.CustomInvoiceProducts.Select(x => x.Id).Max();
+            id++;
+            MessageBox.Show(id.ToString());
+            var ProductToAdd = new CustomInvoiceProduct {
+                Amount = (int)AmountNu.Value,
+                ProductId = ProductId,
+                Id = id
+            };
+            this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
+            this.dbContext.SaveChanges();
+            this.CartGv.Refresh();
 
         }
 
         private void NameCb_SelectedValueChanged(object sender, EventArgs e)
         {
             var CompanyId = (String)NameCb.SelectedText;
+        }
+
+        private void pbBlack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
