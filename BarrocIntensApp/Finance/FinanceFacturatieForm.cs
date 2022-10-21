@@ -1,5 +1,6 @@
 ﻿using BarrocIntensApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,8 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
         }
+        float ProductPriceDouble = 0;
+        float price = 0;
         public int ProductId { get; set; }
         public int Id = 0;
         public bool Idtest { get; set; }
@@ -69,30 +72,28 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
-            if (ProductId != 0)
-            {
-                int[] CartArray = new int[3];
-                CartArray[0] = Amount;
-                CartArray[1] = ProductId;
-                CartArray[2] = Id;
-
-                var id = this.dbContext.CustomInvoiceProducts.Select(x => x.Id).Max();
-                id++;
-                MessageBox.Show(id.ToString());
-                var ProductToAdd = new CustomInvoiceProduct
-                {
-                    Amount = (int)AmountNu.Value,
-                    ProductId = ProductId,
-                    Id = id
-                };
-                this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
-                this.dbContext.SaveChanges();
-                this.CartGv.Refresh();
-            }
-            else 
+            if (ProductId == 0)
             {
                 MessageBox.Show("please select a product");
+                return;
             }
+            int[] CartArray = new int[3];
+            CartArray[0] = Amount;
+            CartArray[1] = ProductId;
+            CartArray[2] = Id;
+
+            var id = this.dbContext.CustomInvoiceProducts.Select(x => x.Id).Max();
+            id++;
+            MessageBox.Show(id.ToString());
+            var ProductToAdd = new CustomInvoiceProduct
+            {
+                Amount = (int)AmountNu.Value,
+                ProductId = ProductId,
+                Id = id
+            };
+            this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
+            this.dbContext.SaveChanges();
+            this.InvoiceProductsdgv.Refresh();
         }
 
         private void NameCb_SelectedValueChanged(object sender, EventArgs e)
@@ -108,6 +109,27 @@ namespace BarrocIntensApp
         private void CartGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void InvoiceProductsdgv_SelectionChanged(object sender, EventArgs e)
+        {
+            // gets the row from the designer
+            var ProductPrice = (CustomInvoiceProduct)this.InvoiceProductsdgv.CurrentRow?.DataBoundItem;
+
+            // checks if something was selected in the datagrid
+            if (ProductPrice == null)
+                return;
+
+            // puts the price of a product into a variable
+            ProductPriceDouble = (float)ProductPrice.Product.Price;
+
+            // round up the price
+            ProductPriceDouble = (float)Math.Round(ProductPriceDouble * 100f) / 100f;
+            // calculates the total price of everything
+            price = ProductPrice.Amount * ProductPriceDouble;
+
+            // shows the user what the price is
+            lblPrice.Text = price.ToString();
         }
     }
 }
