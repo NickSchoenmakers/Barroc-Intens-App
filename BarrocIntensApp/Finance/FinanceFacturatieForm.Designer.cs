@@ -44,7 +44,7 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CartGv = new System.Windows.Forms.DataGridView();
+            this.InvoiceProductsdgv = new System.Windows.Forms.DataGridView();
             this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
@@ -54,14 +54,15 @@
             this.Houselbl = new System.Windows.Forms.Label();
             this.citylbl = new System.Windows.Forms.Label();
             this.ziplbl = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceProductsdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -174,6 +175,7 @@
             this.productsDataGridView.DataSource = this.productBindingSource;
             this.productsDataGridView.Location = new System.Drawing.Point(131, 222);
             this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productsDataGridView.Size = new System.Drawing.Size(345, 150);
             this.productsDataGridView.TabIndex = 33;
             this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
@@ -203,20 +205,22 @@
             // 
             this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
-            // CartGv
+            // InvoiceProductsdgv
             // 
-            this.CartGv.AutoGenerateColumns = false;
-            this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CartGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.InvoiceProductsdgv.AutoGenerateColumns = false;
+            this.InvoiceProductsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InvoiceProductsdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.productIdDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn});
-            this.CartGv.DataSource = this.customInvoiceProductBindingSource;
-            this.CartGv.Location = new System.Drawing.Point(801, 75);
-            this.CartGv.Name = "CartGv";
-            this.CartGv.Size = new System.Drawing.Size(344, 272);
-            this.CartGv.TabIndex = 36;
-            this.CartGv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartGv_CellContentClick);
+            this.amountDataGridViewTextBoxColumn,
+            this.Product});
+            this.InvoiceProductsdgv.DataSource = this.customInvoiceProductBindingSource;
+            this.InvoiceProductsdgv.Location = new System.Drawing.Point(611, 75);
+            this.InvoiceProductsdgv.Name = "InvoiceProductsdgv";
+            this.InvoiceProductsdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.InvoiceProductsdgv.Size = new System.Drawing.Size(534, 272);
+            this.InvoiceProductsdgv.TabIndex = 36;
+            this.InvoiceProductsdgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartGv_CellContentClick);
+            this.InvoiceProductsdgv.SelectionChanged += new System.EventHandler(this.InvoiceProductsdgv_SelectionChanged);
             // 
             // customInvoiceProductBindingSource
             // 
@@ -299,17 +303,20 @@
             this.ziplbl.TabIndex = 41;
             this.ziplbl.Text = "label7";
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(608, 359);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(35, 13);
+            this.lblPrice.TabIndex = 42;
+            this.lblPrice.Text = "label4";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
             // 
             // amountDataGridViewTextBoxColumn
             // 
@@ -317,17 +324,26 @@
             this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             // 
+            // Product
+            // 
+            this.Product.DataPropertyName = "Product";
+            this.Product.HeaderText = "Product";
+            this.Product.MinimumWidth = 50;
+            this.Product.Name = "Product";
+            this.Product.Width = 500;
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.ziplbl);
             this.Controls.Add(this.citylbl);
             this.Controls.Add(this.Houselbl);
             this.Controls.Add(this.Streetlbl);
             this.Controls.Add(this.NameCb);
-            this.Controls.Add(this.CartGv);
+            this.Controls.Add(this.InvoiceProductsdgv);
             this.Controls.Add(this.Cartbtn);
             this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.BtnReturnStoringen);
@@ -351,7 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceProductsdgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -376,7 +392,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private RoundButton Cartbtn;
-        private System.Windows.Forms.DataGridView CartGv;
+        private System.Windows.Forms.DataGridView InvoiceProductsdgv;
         private System.Windows.Forms.ComboBox NameCb;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.Label Streetlbl;
@@ -384,8 +400,9 @@
         private System.Windows.Forms.Label citylbl;
         private System.Windows.Forms.Label ziplbl;
         private System.Windows.Forms.BindingSource customInvoiceProductBindingSource;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
     }
 }
