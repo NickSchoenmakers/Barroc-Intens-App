@@ -20,5 +20,9 @@ namespace BarrocIntensApp.Models
         public ProductCategory ProductCategory { get; set; } = null;
         public ObservableCollectionListSource<CustomInvoiceProduct> CustomInvoiceProducts { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
 
+        public override string ToString()
+        {
+            return $"{Name}(€{Price})";
+        }
     }
 }
