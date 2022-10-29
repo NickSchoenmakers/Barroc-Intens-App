@@ -124,7 +124,7 @@ namespace BarrocIntensApp.Inkoop
         {
             if (tbxSearch.Text != "Typ hier om te zoeken.." || tbxSearch.Text != "")
             {
-                dgvProducts.DataSource = Program.dbContext.Products.Where(p => p.Name.Contains(tbxSearch.Text)).ToList();
+                dgvProducts.DataSource = Program.dbContext.Products.Where(p => p.Name.Contains(tbxSearch.Text) && p.ProductCategoryId == (int)cbCategories.SelectedValue).ToList();
             }
         }
 
