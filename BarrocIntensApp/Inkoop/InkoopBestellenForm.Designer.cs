@@ -43,11 +43,14 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
+            this.lbAantal = new System.Windows.Forms.Label();
+            this.txbAantal = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbPermission = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -191,6 +194,8 @@
             // groupProductInfo
             // 
             this.groupProductInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupProductInfo.Controls.Add(this.lbAantal);
+            this.groupProductInfo.Controls.Add(this.txbAantal);
             this.groupProductInfo.Controls.Add(this.lblPrice);
             this.groupProductInfo.Controls.Add(this.btnOrder);
             this.groupProductInfo.Controls.Add(this.lblStock);
@@ -200,6 +205,22 @@
             this.groupProductInfo.TabIndex = 48;
             this.groupProductInfo.TabStop = false;
             this.groupProductInfo.Text = "Product info";
+            // 
+            // lbAantal
+            // 
+            this.lbAantal.AutoSize = true;
+            this.lbAantal.Location = new System.Drawing.Point(329, 342);
+            this.lbAantal.Name = "lbAantal";
+            this.lbAantal.Size = new System.Drawing.Size(37, 13);
+            this.lbAantal.TabIndex = 51;
+            this.lbAantal.Text = "Aantal";
+            // 
+            // txbAantal
+            // 
+            this.txbAantal.Location = new System.Drawing.Point(332, 358);
+            this.txbAantal.Name = "txbAantal";
+            this.txbAantal.Size = new System.Drawing.Size(100, 20);
+            this.txbAantal.TabIndex = 50;
             // 
             // lblPrice
             // 
@@ -254,12 +275,21 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Filter";
             // 
+            // lbPermission
+            // 
+            this.lbPermission.AutoSize = true;
+            this.lbPermission.Location = new System.Drawing.Point(874, 579);
+            this.lbPermission.Name = "lbPermission";
+            this.lbPermission.Size = new System.Drawing.Size(0, 13);
+            this.lbPermission.TabIndex = 52;
+            // 
             // InkoopBestellenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lbPermission);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.groupBox2);
@@ -307,5 +337,8 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbAantal;
+        private System.Windows.Forms.TextBox txbAantal;
+        private System.Windows.Forms.Label lbPermission;
     }
 }
