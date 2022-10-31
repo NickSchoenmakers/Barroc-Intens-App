@@ -339,7 +339,7 @@
             this.Controls.Add(this.ZipcodeLbl);
             this.Controls.Add(this.Street_numberLbl);
             this.Controls.Add(this.NameLbl);
-            this.Controls.Add(this.lblTitle);
+            //this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -388,4 +388,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+    }
 }

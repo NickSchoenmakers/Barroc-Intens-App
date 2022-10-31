@@ -22,7 +22,7 @@ namespace BarrocIntensApp
         public FacturatieForm()
         {
             InitializeComponent();
-            lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
+            //lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
         public int ProductId { get; set; }
         public int Id = 0;
