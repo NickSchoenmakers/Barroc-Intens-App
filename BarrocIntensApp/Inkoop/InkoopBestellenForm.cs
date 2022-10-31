@@ -59,7 +59,22 @@ namespace BarrocIntensApp.Inkoop
         private void btnAddStock_Click(object sender, EventArgs e)
         {
             Product product = GetProduct();
-            product.Stock++;
+            if (String.IsNullOrEmpty(txbAmount.Text))
+            {
+                product.Stock++;
+            }
+            else
+            {
+                int aantal = Convert.ToInt16(txbAmount.Text);
+                if (aantal >= 5000)
+                {
+                    lbPermission.Text = "Toestemming vereist voor aantallen hoger dan 5000";
+                }
+                else
+                {
+                    product.Stock = product.Stock + aantal;
+                }
+            }
             Program.dbContext.Products.Update(product);
             Program.dbContext.SaveChanges();
             this.RefreshProductInfo();

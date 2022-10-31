@@ -62,6 +62,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lbPermission = new System.Windows.Forms.Label();
+            this.txbAmount = new System.Windows.Forms.TextBox();
+            this.lbAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -186,6 +189,9 @@
             // groupProductInfo
             // 
             this.groupProductInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupProductInfo.Controls.Add(this.lbAmount);
+            this.groupProductInfo.Controls.Add(this.txbAmount);
+            this.groupProductInfo.Controls.Add(this.lbPermission);
             this.groupProductInfo.Controls.Add(this.btnDeleteProduct);
             this.groupProductInfo.Controls.Add(this.lblPrice);
             this.groupProductInfo.Controls.Add(this.btnOrder);
@@ -412,6 +418,30 @@
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
             // 
+            // lbPermission
+            // 
+            this.lbPermission.AutoSize = true;
+            this.lbPermission.Location = new System.Drawing.Point(316, 13);
+            this.lbPermission.Name = "lbPermission";
+            this.lbPermission.Size = new System.Drawing.Size(0, 13);
+            this.lbPermission.TabIndex = 51;
+            // 
+            // txbAmount
+            // 
+            this.txbAmount.Location = new System.Drawing.Point(349, 339);
+            this.txbAmount.Name = "txbAmount";
+            this.txbAmount.Size = new System.Drawing.Size(100, 20);
+            this.txbAmount.TabIndex = 52;
+            // 
+            // lbAmount
+            // 
+            this.lbAmount.AutoSize = true;
+            this.lbAmount.Location = new System.Drawing.Point(351, 323);
+            this.lbAmount.Name = "lbAmount";
+            this.lbAmount.Size = new System.Drawing.Size(37, 13);
+            this.lbAmount.TabIndex = 53;
+            this.lbAmount.Text = "Aantal";
+            // 
             // InkoopBestellenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,5 +517,8 @@
         private System.Windows.Forms.TextBox txbProductName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numProductPrice;
+        private System.Windows.Forms.Label lbAmount;
+        private System.Windows.Forms.TextBox txbAmount;
+        private System.Windows.Forms.Label lbPermission;
     }
 }
