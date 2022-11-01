@@ -40,7 +40,6 @@ namespace BarrocIntensApp
                 "testing subject",
                 "testing body",
                 "C:/xampp/htdocs/Barroc-Intens-App/BarrocIntensApp/text.txt");
-            MessageBox.Show("email sent");
         }
         public static void SendMailWithMailTo(
             string address,
@@ -54,6 +53,11 @@ namespace BarrocIntensApp
                     "mailto:{0}?Subject={1}&Body={2}&Attachment={3}",
                     address, subject, body, attachment);
             System.Diagnostics.Process.Start(mailto);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,8 +32,48 @@
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
-            this.BtnSendMail = new BarrocIntensApp.RoundButton();
+            this.BtnSendMail = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.txbLastName = new System.Windows.Forms.TextBox();
+            this.lbLastName = new System.Windows.Forms.Label();
+            this.txbFirstName = new System.Windows.Forms.TextBox();
+            this.lbFirstName = new System.Windows.Forms.Label();
+            this.lbProduct1 = new System.Windows.Forms.Label();
+            this.lbProduct8 = new System.Windows.Forms.Label();
+            this.lbProduct6 = new System.Windows.Forms.Label();
+            this.lbProduct5 = new System.Windows.Forms.Label();
+            this.lbProduct3 = new System.Windows.Forms.Label();
+            this.lbProduct4 = new System.Windows.Forms.Label();
+            this.lbProduct7 = new System.Windows.Forms.Label();
+            this.lbProduct2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -87,20 +127,308 @@
             // 
             // BtnSendMail
             // 
-            this.BtnSendMail.Location = new System.Drawing.Point(784, 388);
+            this.BtnSendMail.Location = new System.Drawing.Point(432, 504);
             this.BtnSendMail.Name = "BtnSendMail";
-            this.BtnSendMail.Size = new System.Drawing.Size(348, 201);
-            this.BtnSendMail.TabIndex = 43;
-            this.BtnSendMail.Text = "Send mail";
+            this.BtnSendMail.Size = new System.Drawing.Size(75, 23);
+            this.BtnSendMail.TabIndex = 11;
+            this.BtnSendMail.Text = "Verstuur mail";
             this.BtnSendMail.UseVisualStyleBackColor = true;
-            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.numericUpDown8);
+            this.panel1.Controls.Add(this.BtnSendMail);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.numericUpDown7);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.numericUpDown6);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.numericUpDown5);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.numericUpDown4);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.numericUpDown3);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.numericUpDown2);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lbProduct2);
+            this.panel1.Controls.Add(this.lbProduct7);
+            this.panel1.Controls.Add(this.lbProduct4);
+            this.panel1.Controls.Add(this.lbProduct3);
+            this.panel1.Controls.Add(this.lbProduct5);
+            this.panel1.Controls.Add(this.lbProduct6);
+            this.panel1.Controls.Add(this.lbProduct8);
+            this.panel1.Controls.Add(this.lbProduct1);
+            this.panel1.Controls.Add(this.txbEmail);
+            this.panel1.Controls.Add(this.lbEmail);
+            this.panel1.Controls.Add(this.txbLastName);
+            this.panel1.Controls.Add(this.lbLastName);
+            this.panel1.Controls.Add(this.txbFirstName);
+            this.panel1.Controls.Add(this.lbFirstName);
+            this.panel1.Location = new System.Drawing.Point(296, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(512, 532);
+            this.panel1.TabIndex = 44;
+            // 
+            // txbEmail
+            // 
+            this.txbEmail.Location = new System.Drawing.Point(69, 120);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(403, 20);
+            this.txbEmail.TabIndex = 2;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(28, 120);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.TabIndex = 4;
+            this.lbEmail.Text = "E-mail";
+            this.lbEmail.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txbLastName
+            // 
+            this.txbLastName.Location = new System.Drawing.Point(124, 72);
+            this.txbLastName.Name = "txbLastName";
+            this.txbLastName.Size = new System.Drawing.Size(348, 20);
+            this.txbLastName.TabIndex = 1;
+            // 
+            // lbLastName
+            // 
+            this.lbLastName.AutoSize = true;
+            this.lbLastName.Location = new System.Drawing.Point(28, 72);
+            this.lbLastName.Name = "lbLastName";
+            this.lbLastName.Size = new System.Drawing.Size(90, 13);
+            this.lbLastName.TabIndex = 2;
+            this.lbLastName.Text = "Achternaam klant";
+            // 
+            // txbFirstName
+            // 
+            this.txbFirstName.Location = new System.Drawing.Point(115, 28);
+            this.txbFirstName.Name = "txbFirstName";
+            this.txbFirstName.Size = new System.Drawing.Size(357, 20);
+            this.txbFirstName.TabIndex = 0;
+            // 
+            // lbFirstName
+            // 
+            this.lbFirstName.AutoSize = true;
+            this.lbFirstName.Location = new System.Drawing.Point(28, 28);
+            this.lbFirstName.Name = "lbFirstName";
+            this.lbFirstName.Size = new System.Drawing.Size(81, 13);
+            this.lbFirstName.TabIndex = 0;
+            this.lbFirstName.Text = "Voornaam klant";
+            // 
+            // lbProduct1
+            // 
+            this.lbProduct1.AutoSize = true;
+            this.lbProduct1.Location = new System.Drawing.Point(28, 183);
+            this.lbProduct1.Name = "lbProduct1";
+            this.lbProduct1.Size = new System.Drawing.Size(127, 13);
+            this.lbProduct1.TabIndex = 6;
+            this.lbProduct1.Text = "Barroc Intens Italian Light";
+            // 
+            // lbProduct8
+            // 
+            this.lbProduct8.AutoSize = true;
+            this.lbProduct8.Location = new System.Drawing.Point(28, 499);
+            this.lbProduct8.Name = "lbProduct8";
+            this.lbProduct8.Size = new System.Drawing.Size(110, 13);
+            this.lbProduct8.TabIndex = 7;
+            this.lbProduct8.Text = "Red Honey Honduras";
+            // 
+            // lbProduct6
+            // 
+            this.lbProduct6.AutoSize = true;
+            this.lbProduct6.Location = new System.Drawing.Point(28, 410);
+            this.lbProduct6.Name = "lbProduct6";
+            this.lbProduct6.Size = new System.Drawing.Size(109, 13);
+            this.lbProduct6.TabIndex = 8;
+            this.lbProduct6.Text = "Yellow Bourbon Brasil";
+            // 
+            // lbProduct5
+            // 
+            this.lbProduct5.AutoSize = true;
+            this.lbProduct5.Location = new System.Drawing.Point(28, 366);
+            this.lbProduct5.Name = "lbProduct5";
+            this.lbProduct5.Size = new System.Drawing.Size(97, 13);
+            this.lbProduct5.TabIndex = 9;
+            this.lbProduct5.Text = "Espresso Beneficio";
+            // 
+            // lbProduct3
+            // 
+            this.lbProduct3.AutoSize = true;
+            this.lbProduct3.Location = new System.Drawing.Point(28, 274);
+            this.lbProduct3.Name = "lbProduct3";
+            this.lbProduct3.Size = new System.Drawing.Size(137, 13);
+            this.lbProduct3.TabIndex = 10;
+            this.lbProduct3.Text = "Barroc Intens Italian Deluxe";
+            // 
+            // lbProduct4
+            // 
+            this.lbProduct4.AutoSize = true;
+            this.lbProduct4.Location = new System.Drawing.Point(28, 321);
+            this.lbProduct4.Name = "lbProduct4";
+            this.lbProduct4.Size = new System.Drawing.Size(175, 13);
+            this.lbProduct4.TabIndex = 11;
+            this.lbProduct4.Text = "Barroc Intens Italian Deluxe Special";
+            // 
+            // lbProduct7
+            // 
+            this.lbProduct7.AutoSize = true;
+            this.lbProduct7.Location = new System.Drawing.Point(28, 454);
+            this.lbProduct7.Name = "lbProduct7";
+            this.lbProduct7.Size = new System.Drawing.Size(81, 13);
+            this.lbProduct7.TabIndex = 12;
+            this.lbProduct7.Text = "Espresso Roma";
+            // 
+            // lbProduct2
+            // 
+            this.lbProduct2.AutoSize = true;
+            this.lbProduct2.Location = new System.Drawing.Point(28, 229);
+            this.lbProduct2.Name = "lbProduct2";
+            this.lbProduct2.Size = new System.Drawing.Size(101, 13);
+            this.lbProduct2.TabIndex = 13;
+            this.lbProduct2.Text = "Barroc Intens Italian";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(282, 167);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Aantal";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(282, 181);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown1.TabIndex = 3;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(282, 222);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown2.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(282, 208);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Aantal";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(282, 267);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown3.TabIndex = 5;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(282, 253);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Aantal";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(282, 314);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown4.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(282, 300);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "Aantal";
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(282, 364);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown5.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(282, 350);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(37, 13);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Aantal";
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Location = new System.Drawing.Point(282, 408);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown6.TabIndex = 8;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(282, 394);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(37, 13);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Aantal";
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Location = new System.Drawing.Point(282, 452);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown7.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(282, 438);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 41;
+            this.label18.Text = "Aantal";
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Location = new System.Drawing.Point(282, 497);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown8.TabIndex = 10;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(282, 483);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "Aantal";
             // 
             // SalesOfferteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.BtnSendMail);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -112,6 +440,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesOfferteForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +459,37 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton btnBackNotes;
-        private RoundButton BtnSendMail;
+        private System.Windows.Forms.Button BtnSendMail;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.TextBox txbLastName;
+        private System.Windows.Forms.Label lbLastName;
+        private System.Windows.Forms.TextBox txbFirstName;
+        private System.Windows.Forms.Label lbFirstName;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbProduct2;
+        private System.Windows.Forms.Label lbProduct7;
+        private System.Windows.Forms.Label lbProduct4;
+        private System.Windows.Forms.Label lbProduct3;
+        private System.Windows.Forms.Label lbProduct5;
+        private System.Windows.Forms.Label lbProduct6;
+        private System.Windows.Forms.Label lbProduct8;
+        private System.Windows.Forms.Label lbProduct1;
     }
 }
