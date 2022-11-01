@@ -49,31 +49,31 @@
             this.lbProduct7 = new System.Windows.Forms.Label();
             this.lbProduct2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount1 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount2 = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount3 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount4 = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount5 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount6 = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount7 = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.nudAmount8 = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount8)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -138,22 +138,22 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.numericUpDown8);
+            this.panel1.Controls.Add(this.nudAmount8);
             this.panel1.Controls.Add(this.BtnSendMail);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.numericUpDown7);
+            this.panel1.Controls.Add(this.nudAmount7);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.numericUpDown6);
+            this.panel1.Controls.Add(this.nudAmount6);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.numericUpDown5);
+            this.panel1.Controls.Add(this.nudAmount5);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.numericUpDown4);
+            this.panel1.Controls.Add(this.nudAmount4);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.numericUpDown3);
+            this.panel1.Controls.Add(this.nudAmount3);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.numericUpDown2);
+            this.panel1.Controls.Add(this.nudAmount2);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.nudAmount1);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.lbProduct2);
             this.panel1.Controls.Add(this.lbProduct7);
@@ -304,19 +304,19 @@
             this.label12.TabIndex = 15;
             this.label12.Text = "Aantal";
             // 
-            // numericUpDown1
+            // nudAmount1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(282, 181);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.nudAmount1.Location = new System.Drawing.Point(282, 181);
+            this.nudAmount1.Name = "nudAmount1";
+            this.nudAmount1.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount1.TabIndex = 3;
             // 
-            // numericUpDown2
+            // nudAmount2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(282, 222);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown2.TabIndex = 4;
+            this.nudAmount2.Location = new System.Drawing.Point(282, 222);
+            this.nudAmount2.Name = "nudAmount2";
+            this.nudAmount2.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount2.TabIndex = 4;
             // 
             // label13
             // 
@@ -327,12 +327,12 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "Aantal";
             // 
-            // numericUpDown3
+            // nudAmount3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(282, 267);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown3.TabIndex = 5;
+            this.nudAmount3.Location = new System.Drawing.Point(282, 267);
+            this.nudAmount3.Name = "nudAmount3";
+            this.nudAmount3.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount3.TabIndex = 5;
             // 
             // label14
             // 
@@ -343,12 +343,12 @@
             this.label14.TabIndex = 33;
             this.label14.Text = "Aantal";
             // 
-            // numericUpDown4
+            // nudAmount4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(282, 314);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown4.TabIndex = 6;
+            this.nudAmount4.Location = new System.Drawing.Point(282, 314);
+            this.nudAmount4.Name = "nudAmount4";
+            this.nudAmount4.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount4.TabIndex = 6;
             // 
             // label15
             // 
@@ -359,12 +359,12 @@
             this.label15.TabIndex = 35;
             this.label15.Text = "Aantal";
             // 
-            // numericUpDown5
+            // nudAmount5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(282, 364);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown5.TabIndex = 7;
+            this.nudAmount5.Location = new System.Drawing.Point(282, 364);
+            this.nudAmount5.Name = "nudAmount5";
+            this.nudAmount5.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount5.TabIndex = 7;
             // 
             // label16
             // 
@@ -375,12 +375,12 @@
             this.label16.TabIndex = 37;
             this.label16.Text = "Aantal";
             // 
-            // numericUpDown6
+            // nudAmount6
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(282, 408);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown6.TabIndex = 8;
+            this.nudAmount6.Location = new System.Drawing.Point(282, 408);
+            this.nudAmount6.Name = "nudAmount6";
+            this.nudAmount6.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount6.TabIndex = 8;
             // 
             // label17
             // 
@@ -391,12 +391,12 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Aantal";
             // 
-            // numericUpDown7
+            // nudAmount7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(282, 452);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown7.TabIndex = 9;
+            this.nudAmount7.Location = new System.Drawing.Point(282, 452);
+            this.nudAmount7.Name = "nudAmount7";
+            this.nudAmount7.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount7.TabIndex = 9;
             // 
             // label18
             // 
@@ -407,12 +407,12 @@
             this.label18.TabIndex = 41;
             this.label18.Text = "Aantal";
             // 
-            // numericUpDown8
+            // nudAmount8
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(282, 497);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown8.TabIndex = 10;
+            this.nudAmount8.Location = new System.Drawing.Point(282, 497);
+            this.nudAmount8.Name = "nudAmount8";
+            this.nudAmount8.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount8.TabIndex = 10;
             // 
             // label19
             // 
@@ -442,14 +442,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -467,21 +467,21 @@
         private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.TextBox txbFirstName;
         private System.Windows.Forms.Label lbFirstName;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.NumericUpDown nudAmount8;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown nudAmount7;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown nudAmount6;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown nudAmount5;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown nudAmount4;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nudAmount3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudAmount2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudAmount1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbProduct2;
         private System.Windows.Forms.Label lbProduct7;
