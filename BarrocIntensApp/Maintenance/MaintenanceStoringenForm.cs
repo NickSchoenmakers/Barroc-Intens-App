@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Azure.Core.HttpHeader;
 using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp
@@ -27,9 +28,6 @@ namespace BarrocIntensApp
             this.Hide();
             inkoopForm.Show(this);
         }
-
-
-
         private void MaintenanceStoringenForm_Load(object sender, EventArgs e)
         {
             Program.dbContext = new AppDbContext();
@@ -38,15 +36,15 @@ namespace BarrocIntensApp
             var maintenanceAppointments = maintenanceAppointment[0];
 
             Program.dbContext.MaintenanceAppointments.Load();
+            Program.dbContext.Companies.Load();
 
-            this.maintenanceAppointmentBindingSource1.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();
+            this.maintenanceAppointmentBindingSource.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();
+            this.companyBindingSource.DataSource = Program.dbContext.Companies.Local.ToBindingList();
 
-
+            Program.dbContext.Entry(maintenanceAppointments)
+                .Reference(c => c.Company)
+                .Load();
         }
-        
-
-       
-
         private void roundButton1_Click(object sender, EventArgs e)
         {
             var inkoopForm = new MaintenanceForm();
@@ -57,6 +55,10 @@ namespace BarrocIntensApp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
