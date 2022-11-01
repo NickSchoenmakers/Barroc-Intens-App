@@ -22,10 +22,13 @@ namespace BarrocIntensApp.Inkoop
             lblTitle.Text = $"Inkoop | {Globals.loggedInUser.Name}";
             Program.dbContext.Products.Load();
             Program.dbContext.ProductCategories.Load();
+
             this.cbCategories.DataSource  = Program.dbContext.ProductCategories.Local.ToBindingList();
             var productCategory = (ProductCategory)this.cbCategories.SelectedItem;
+
             dgvProducts.DataSource = productCategory.Products;
             cbFilter.SelectedIndex = 0;
+
             this.cbProductCategory.DataSource = Program.dbContext.ProductCategories.Local.ToBindingList();
             numProductPrice.Controls[0].Visible = false;
         }
@@ -177,6 +180,11 @@ namespace BarrocIntensApp.Inkoop
             {
                 checkPart.Show();
             }
+        }
+
+        private void InkoopBestellenForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

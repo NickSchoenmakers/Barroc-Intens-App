@@ -131,5 +131,10 @@ namespace BarrocIntensApp
             // shows the user what the price is
             lblPrice.Text = price.ToString();
         }
+
+        private void NameCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
