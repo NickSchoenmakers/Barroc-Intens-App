@@ -36,12 +36,11 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NextAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRemarks = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NextAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
@@ -92,41 +91,6 @@
             // 
             this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
             // 
-            // CompanyId
-            // 
-            this.CompanyId.DataPropertyName = "CompanyId";
-            this.CompanyId.HeaderText = "CompanyId";
-            this.CompanyId.Name = "CompanyId";
-            this.CompanyId.Width = 85;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NextAppointment";
-            this.dataGridViewTextBoxColumn1.HeaderText = "NextAppointment";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 113;
-            // 
-            // NextAppointment
-            // 
-            this.NextAppointment.DataPropertyName = "NextAppointment";
-            this.NextAppointment.HeaderText = "NextAppointment";
-            this.NextAppointment.Name = "NextAppointment";
-            this.NextAppointment.Width = 113;
-            // 
-            // Remark
-            // 
-            this.Remark.DataPropertyName = "Remark";
-            this.Remark.HeaderText = "Remark";
-            this.Remark.Name = "Remark";
-            this.Remark.Width = 69;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 41;
-            // 
             // dgvRemarks
             // 
             this.dgvRemarks.AutoGenerateColumns = false;
@@ -138,8 +102,7 @@
             this.idDataGridViewTextBoxColumn,
             this.Remark,
             this.NextAppointment,
-            this.dataGridViewTextBoxColumn1,
-            this.CompanyId,
+            this.LastAppointment,
             this.Company});
             this.dgvRemarks.DataSource = this.maintenanceAppointmentBindingSource;
             this.dgvRemarks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -148,6 +111,34 @@
             this.dgvRemarks.Size = new System.Drawing.Size(753, 438);
             this.dgvRemarks.TabIndex = 8;
             this.dgvRemarks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 41;
+            // 
+            // Remark
+            // 
+            this.Remark.DataPropertyName = "Remark";
+            this.Remark.HeaderText = "Remark";
+            this.Remark.Name = "Remark";
+            this.Remark.Width = 69;
+            // 
+            // NextAppointment
+            // 
+            this.NextAppointment.DataPropertyName = "NextAppointment";
+            this.NextAppointment.HeaderText = "NextAppointment";
+            this.NextAppointment.Name = "NextAppointment";
+            this.NextAppointment.Width = 113;
+            // 
+            // LastAppointment
+            // 
+            this.LastAppointment.DataPropertyName = "LastAppointment";
+            this.LastAppointment.HeaderText = "LastAppointment";
+            this.LastAppointment.Name = "LastAppointment";
+            this.LastAppointment.Width = 111;
             // 
             // Company
             // 
@@ -187,12 +178,11 @@
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NextAppointment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dgvRemarks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NextAppointment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastAppointment;
         private System.Windows.Forms.DataGridViewTextBoxColumn Company;
     }
 }
