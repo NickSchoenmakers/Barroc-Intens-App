@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Aspose.Pdf;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,6 +13,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +28,9 @@ namespace BarrocIntensApp
             InitializeComponent();
 
             lblTitle.Text = $"Sales | {Globals.loggedInUser.Name}";
+
+            Program.dbContext.Products.Load();
+            this.dgvProducts.DataSource = Program.dbContext.Products.Local.ToBindingList();
         }
 
         private void btnBackNotes_Click(object sender, EventArgs e)
@@ -35,29 +42,29 @@ namespace BarrocIntensApp
 
         private void BtnSendMail_Click(object sender, EventArgs e)
         {
-            SendMailWithMailTo(
-                "D279851@edu.curio.nl",
-                "testing subject",
-                "testing body",
-                "C:/xampp/htdocs/Barroc-Intens-App/BarrocIntensApp/text.txt");
-        }
-        public static void SendMailWithMailTo(
-            string address,
-            string subject,
-            string body,
-            string attachment)
-        {
-            //Don't use this - just an example
-            string mailto =
-                string.Format(
-                    "mailto:{0}?Subject={1}&Body={2}&Attachment={3}",
-                    address, subject, body, attachment);
-            System.Diagnostics.Process.Start(mailto);
-        }
+            this.Enabled = false;
+            pbLoad.Visible = true;
+            pbLoad.BringToFront();
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+            Task.Run(() =>
+            {
+                // Initialize document object
+                Document document = new Document();
+                // Add page
+                Page page = document.Pages.Add();
+                // Add text to new page
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Hello World!"));
+                // Save updated PDF
+                var outputFileName = System.IO.Path.Combine("HelloWorld_out.pdf");
+                document.Save(outputFileName);
 
+                Process.Start(outputFileName);
+
+                this.Invoke((MethodInvoker)delegate {
+                    this.Enabled = true;
+                    pbLoad.Visible = false;
+                });
+            });
         }
     }
 }

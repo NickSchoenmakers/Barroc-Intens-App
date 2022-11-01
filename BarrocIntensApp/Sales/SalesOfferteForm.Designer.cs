@@ -28,52 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.btnBackNotes = new BarrocIntensApp.RoundButton();
             this.BtnSendMail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.nudAmount1 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.txbLastName = new System.Windows.Forms.TextBox();
             this.lbLastName = new System.Windows.Forms.Label();
             this.txbFirstName = new System.Windows.Forms.TextBox();
             this.lbFirstName = new System.Windows.Forms.Label();
-            this.lbProduct1 = new System.Windows.Forms.Label();
-            this.lbProduct8 = new System.Windows.Forms.Label();
-            this.lbProduct6 = new System.Windows.Forms.Label();
-            this.lbProduct5 = new System.Windows.Forms.Label();
-            this.lbProduct3 = new System.Windows.Forms.Label();
-            this.lbProduct4 = new System.Windows.Forms.Label();
-            this.lbProduct7 = new System.Windows.Forms.Label();
-            this.lbProduct2 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.nudAmount1 = new System.Windows.Forms.NumericUpDown();
-            this.nudAmount2 = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.nudAmount3 = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.nudAmount4 = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.nudAmount5 = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.nudAmount6 = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.nudAmount7 = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.nudAmount8 = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
+            this.groupProducts = new System.Windows.Forms.GroupBox();
+            this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbLoad = new System.Windows.Forms.ProgressBar();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPartDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBackNotes = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount8)).BeginInit();
+            this.groupProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -112,19 +103,6 @@
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
             // 
-            // btnBackNotes
-            // 
-            this.btnBackNotes.BackColor = System.Drawing.Color.Black;
-            this.btnBackNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackNotes.ForeColor = System.Drawing.Color.White;
-            this.btnBackNotes.Location = new System.Drawing.Point(12, 49);
-            this.btnBackNotes.Name = "btnBackNotes";
-            this.btnBackNotes.Size = new System.Drawing.Size(88, 50);
-            this.btnBackNotes.TabIndex = 42;
-            this.btnBackNotes.Text = "←";
-            this.btnBackNotes.UseVisualStyleBackColor = false;
-            this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
-            // 
             // BtnSendMail
             // 
             this.BtnSendMail.Location = new System.Drawing.Point(432, 504);
@@ -133,46 +111,75 @@
             this.BtnSendMail.TabIndex = 11;
             this.BtnSendMail.Text = "Verstuur mail";
             this.BtnSendMail.UseVisualStyleBackColor = true;
+            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.nudAmount8);
+            this.panel1.Controls.Add(this.dgvProducts);
             this.panel1.Controls.Add(this.BtnSendMail);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.nudAmount7);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.nudAmount6);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.nudAmount5);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.nudAmount4);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.nudAmount3);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.nudAmount2);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.nudAmount1);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.lbProduct2);
-            this.panel1.Controls.Add(this.lbProduct7);
-            this.panel1.Controls.Add(this.lbProduct4);
-            this.panel1.Controls.Add(this.lbProduct3);
-            this.panel1.Controls.Add(this.lbProduct5);
-            this.panel1.Controls.Add(this.lbProduct6);
-            this.panel1.Controls.Add(this.lbProduct8);
-            this.panel1.Controls.Add(this.lbProduct1);
             this.panel1.Controls.Add(this.txbEmail);
             this.panel1.Controls.Add(this.lbEmail);
             this.panel1.Controls.Add(this.txbLastName);
             this.panel1.Controls.Add(this.lbLastName);
             this.panel1.Controls.Add(this.txbFirstName);
             this.panel1.Controls.Add(this.lbFirstName);
+            this.panel1.Controls.Add(this.groupProducts);
             this.panel1.Location = new System.Drawing.Point(296, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 532);
             this.panel1.TabIndex = 44;
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AllowUserToResizeColumns = false;
+            this.dgvProducts.AllowUserToResizeRows = false;
+            this.dgvProducts.AutoGenerateColumns = false;
+            this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.ColumnHeadersVisible = false;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColumnName,
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.imagePathDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.productCategoryIdDataGridViewTextBoxColumn,
+            this.isPartDataGridViewCheckBoxColumn,
+            this.productCategoryDataGridViewTextBoxColumn});
+            this.dgvProducts.DataSource = this.productBindingSource2;
+            this.dgvProducts.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvProducts.Location = new System.Drawing.Point(34, 177);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersVisible = false;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvProducts.Size = new System.Drawing.Size(441, 155);
+            this.dgvProducts.TabIndex = 46;
+            // 
+            // nudAmount1
+            // 
+            this.nudAmount1.Location = new System.Drawing.Point(31, 360);
+            this.nudAmount1.Name = "nudAmount1";
+            this.nudAmount1.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount1.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(31, 346);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Aantal";
             // 
             // txbEmail
             // 
@@ -189,7 +196,6 @@
             this.lbEmail.Size = new System.Drawing.Size(35, 13);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "E-mail";
-            this.lbEmail.Click += new System.EventHandler(this.label3_Click);
             // 
             // txbLastName
             // 
@@ -223,205 +229,133 @@
             this.lbFirstName.TabIndex = 0;
             this.lbFirstName.Text = "Voornaam klant";
             // 
-            // lbProduct1
+            // groupProducts
             // 
-            this.lbProduct1.AutoSize = true;
-            this.lbProduct1.Location = new System.Drawing.Point(28, 183);
-            this.lbProduct1.Name = "lbProduct1";
-            this.lbProduct1.Size = new System.Drawing.Size(127, 13);
-            this.lbProduct1.TabIndex = 6;
-            this.lbProduct1.Text = "Barroc Intens Italian Light";
+            this.groupProducts.Controls.Add(this.dgvAppointments);
+            this.groupProducts.Location = new System.Drawing.Point(34, 162);
+            this.groupProducts.Name = "groupProducts";
+            this.groupProducts.Size = new System.Drawing.Size(441, 170);
+            this.groupProducts.TabIndex = 74;
+            this.groupProducts.TabStop = false;
+            this.groupProducts.Text = "Producten";
             // 
-            // lbProduct8
+            // dgvAppointments
             // 
-            this.lbProduct8.AutoSize = true;
-            this.lbProduct8.Location = new System.Drawing.Point(28, 499);
-            this.lbProduct8.Name = "lbProduct8";
-            this.lbProduct8.Size = new System.Drawing.Size(110, 13);
-            this.lbProduct8.TabIndex = 7;
-            this.lbProduct8.Text = "Red Honey Honduras";
+            this.dgvAppointments.AllowUserToAddRows = false;
+            this.dgvAppointments.AllowUserToDeleteRows = false;
+            this.dgvAppointments.AllowUserToResizeColumns = false;
+            this.dgvAppointments.AllowUserToResizeRows = false;
+            this.dgvAppointments.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAppointments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointments.ColumnHeadersVisible = false;
+            this.dgvAppointments.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvAppointments.Location = new System.Drawing.Point(3, 12);
+            this.dgvAppointments.Name = "dgvAppointments";
+            this.dgvAppointments.ReadOnly = true;
+            this.dgvAppointments.RowHeadersVisible = false;
+            this.dgvAppointments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAppointments.Size = new System.Drawing.Size(515, 381);
+            this.dgvAppointments.TabIndex = 45;
             // 
-            // lbProduct6
+            // dgvColumnName
             // 
-            this.lbProduct6.AutoSize = true;
-            this.lbProduct6.Location = new System.Drawing.Point(28, 410);
-            this.lbProduct6.Name = "lbProduct6";
-            this.lbProduct6.Size = new System.Drawing.Size(109, 13);
-            this.lbProduct6.TabIndex = 8;
-            this.lbProduct6.Text = "Yellow Bourbon Brasil";
+            this.dgvColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvColumnName.DataPropertyName = "Name";
+            this.dgvColumnName.HeaderText = "Name";
+            this.dgvColumnName.Name = "dgvColumnName";
+            this.dgvColumnName.ReadOnly = true;
             // 
-            // lbProduct5
+            // pbLoad
             // 
-            this.lbProduct5.AutoSize = true;
-            this.lbProduct5.Location = new System.Drawing.Point(28, 366);
-            this.lbProduct5.Name = "lbProduct5";
-            this.lbProduct5.Size = new System.Drawing.Size(97, 13);
-            this.lbProduct5.TabIndex = 9;
-            this.lbProduct5.Text = "Espresso Beneficio";
+            this.pbLoad.Location = new System.Drawing.Point(56, 220);
+            this.pbLoad.MarqueeAnimationSpeed = 1;
+            this.pbLoad.Name = "pbLoad";
+            this.pbLoad.Size = new System.Drawing.Size(1021, 100);
+            this.pbLoad.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pbLoad.TabIndex = 46;
+            this.pbLoad.UseWaitCursor = true;
+            this.pbLoad.Visible = false;
             // 
-            // lbProduct3
+            // idDataGridViewTextBoxColumn
             // 
-            this.lbProduct3.AutoSize = true;
-            this.lbProduct3.Location = new System.Drawing.Point(28, 274);
-            this.lbProduct3.Name = "lbProduct3";
-            this.lbProduct3.Size = new System.Drawing.Size(137, 13);
-            this.lbProduct3.TabIndex = 10;
-            this.lbProduct3.Text = "Barroc Intens Italian Deluxe";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lbProduct4
+            // nameDataGridViewTextBoxColumn
             // 
-            this.lbProduct4.AutoSize = true;
-            this.lbProduct4.Location = new System.Drawing.Point(28, 321);
-            this.lbProduct4.Name = "lbProduct4";
-            this.lbProduct4.Size = new System.Drawing.Size(175, 13);
-            this.lbProduct4.TabIndex = 11;
-            this.lbProduct4.Text = "Barroc Intens Italian Deluxe Special";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lbProduct7
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.lbProduct7.AutoSize = true;
-            this.lbProduct7.Location = new System.Drawing.Point(28, 454);
-            this.lbProduct7.Name = "lbProduct7";
-            this.lbProduct7.Size = new System.Drawing.Size(81, 13);
-            this.lbProduct7.TabIndex = 12;
-            this.lbProduct7.Text = "Espresso Roma";
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lbProduct2
+            // imagePathDataGridViewTextBoxColumn
             // 
-            this.lbProduct2.AutoSize = true;
-            this.lbProduct2.Location = new System.Drawing.Point(28, 229);
-            this.lbProduct2.Name = "lbProduct2";
-            this.lbProduct2.Size = new System.Drawing.Size(101, 13);
-            this.lbProduct2.TabIndex = 13;
-            this.lbProduct2.Text = "Barroc Intens Italian";
+            this.imagePathDataGridViewTextBoxColumn.DataPropertyName = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn.HeaderText = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn.Name = "imagePathDataGridViewTextBoxColumn";
+            this.imagePathDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // label12
+            // priceDataGridViewTextBoxColumn
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(282, 167);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Aantal";
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nudAmount1
+            // stockDataGridViewTextBoxColumn
             // 
-            this.nudAmount1.Location = new System.Drawing.Point(282, 181);
-            this.nudAmount1.Name = "nudAmount1";
-            this.nudAmount1.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount1.TabIndex = 3;
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nudAmount2
+            // productCategoryIdDataGridViewTextBoxColumn
             // 
-            this.nudAmount2.Location = new System.Drawing.Point(282, 222);
-            this.nudAmount2.Name = "nudAmount2";
-            this.nudAmount2.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount2.TabIndex = 4;
+            this.productCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.HeaderText = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.Name = "productCategoryIdDataGridViewTextBoxColumn";
+            this.productCategoryIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // label13
+            // isPartDataGridViewCheckBoxColumn
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(282, 208);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Aantal";
+            this.isPartDataGridViewCheckBoxColumn.DataPropertyName = "isPart";
+            this.isPartDataGridViewCheckBoxColumn.HeaderText = "isPart";
+            this.isPartDataGridViewCheckBoxColumn.Name = "isPartDataGridViewCheckBoxColumn";
+            this.isPartDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
-            // nudAmount3
+            // productCategoryDataGridViewTextBoxColumn
             // 
-            this.nudAmount3.Location = new System.Drawing.Point(282, 267);
-            this.nudAmount3.Name = "nudAmount3";
-            this.nudAmount3.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount3.TabIndex = 5;
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // label14
+            // productBindingSource2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(282, 253);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 13);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Aantal";
+            this.productBindingSource2.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
-            // nudAmount4
+            // btnBackNotes
             // 
-            this.nudAmount4.Location = new System.Drawing.Point(282, 314);
-            this.nudAmount4.Name = "nudAmount4";
-            this.nudAmount4.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount4.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(282, 300);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "Aantal";
-            // 
-            // nudAmount5
-            // 
-            this.nudAmount5.Location = new System.Drawing.Point(282, 364);
-            this.nudAmount5.Name = "nudAmount5";
-            this.nudAmount5.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount5.TabIndex = 7;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(282, 350);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 13);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "Aantal";
-            // 
-            // nudAmount6
-            // 
-            this.nudAmount6.Location = new System.Drawing.Point(282, 408);
-            this.nudAmount6.Name = "nudAmount6";
-            this.nudAmount6.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount6.TabIndex = 8;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(282, 394);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(37, 13);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "Aantal";
-            // 
-            // nudAmount7
-            // 
-            this.nudAmount7.Location = new System.Drawing.Point(282, 452);
-            this.nudAmount7.Name = "nudAmount7";
-            this.nudAmount7.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount7.TabIndex = 9;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(282, 438);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
-            this.label18.TabIndex = 41;
-            this.label18.Text = "Aantal";
-            // 
-            // nudAmount8
-            // 
-            this.nudAmount8.Location = new System.Drawing.Point(282, 497);
-            this.nudAmount8.Name = "nudAmount8";
-            this.nudAmount8.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount8.TabIndex = 10;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(282, 483);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(37, 13);
-            this.label19.TabIndex = 43;
-            this.label19.Text = "Aantal";
+            this.btnBackNotes.BackColor = System.Drawing.Color.Black;
+            this.btnBackNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackNotes.ForeColor = System.Drawing.Color.White;
+            this.btnBackNotes.Location = new System.Drawing.Point(12, 49);
+            this.btnBackNotes.Name = "btnBackNotes";
+            this.btnBackNotes.Size = new System.Drawing.Size(88, 50);
+            this.btnBackNotes.TabIndex = 42;
+            this.btnBackNotes.Text = "←";
+            this.btnBackNotes.UseVisualStyleBackColor = false;
+            this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
             // SalesOfferteForm
             // 
@@ -433,6 +367,7 @@
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
+            this.Controls.Add(this.pbLoad);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -442,14 +377,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount8)).EndInit();
+            this.groupProducts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -467,29 +399,22 @@
         private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.TextBox txbFirstName;
         private System.Windows.Forms.Label lbFirstName;
-        private System.Windows.Forms.NumericUpDown nudAmount8;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown nudAmount7;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown nudAmount6;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown nudAmount5;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown nudAmount4;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown nudAmount3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown nudAmount2;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown nudAmount1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lbProduct2;
-        private System.Windows.Forms.Label lbProduct7;
-        private System.Windows.Forms.Label lbProduct4;
-        private System.Windows.Forms.Label lbProduct3;
-        private System.Windows.Forms.Label lbProduct5;
-        private System.Windows.Forms.Label lbProduct6;
-        private System.Windows.Forms.Label lbProduct8;
-        private System.Windows.Forms.Label lbProduct1;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.BindingSource productBindingSource2;
+        private System.Windows.Forms.GroupBox groupProducts;
+        private System.Windows.Forms.DataGridView dgvAppointments;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imagePathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isPartDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ProgressBar pbLoad;
     }
 }
