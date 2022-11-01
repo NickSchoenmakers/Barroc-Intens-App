@@ -82,7 +82,11 @@ namespace BarrocIntensApp.Models
                 new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, Stock = 0, ProductCategoryId = 2 },
                 new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, Stock = 250, ProductCategoryId = 2 },
                 new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, Stock = 124, ProductCategoryId = 2 },
-                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2 }
+                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2 },
+                new Product { Id = 9, Name = "Kabel", Description = "123", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true },
+                new Product { Id = 10, Name = "Schroef", Description = "SFE8912SD", Price = 0.05m, Stock = 1500, ProductCategoryId = 1, isPart = true },
+                new Product { Id = 11, Name = "Lichtje", Description = "GMGE2222A", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true },
+                new Product { Id = 12, Name = "Knop", Description = "GHSM333A3", Price = 0.05m, Stock = 500, ProductCategoryId = 1, isPart = true }
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(

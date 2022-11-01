@@ -24,8 +24,7 @@ namespace BarrocIntensApp.Maintenance
         public MaintenanceCreateWerkbonForm(MaintenanceAppointment maintenanceAppointment)
         {
             InitializeComponent();
-            Program.dbContext.Products.Where(p => p.isPart == true).Load();
-            this.cboParts.DataSource = Program.dbContext.Products.Local.ToBindingList();
+            this.cboParts.DataSource = Program.dbContext.Products.Where(p => p.isPart).ToList();
             this.maintenanceAppointment = maintenanceAppointment;
 
             maintenanceAppointmentWorkOrderToAdd = new MaintenanceAppointmentWorkOrder();
@@ -39,7 +38,8 @@ namespace BarrocIntensApp.Maintenance
                 Amount = (int)numAmount.Value
             };
             maintenanceAppointmentWorkOrderToAdd.MaintenanceAppointmentWorkOrderProducts.Add(maintenanceAppointmentWorkOrderProductToAdd);
-            dgvParts.Rows.Add((string)cboParts.GetItemText(cboParts.SelectedItem), numAmount.Value);
+            this.dgvParts.Rows.Add(maintenanceAppointmentWorkOrderProductToAdd.Product.Name, maintenanceAppointmentWorkOrderProductToAdd.Amount);
+
         }
 
         private void btnAddWorkOrder_Click(object sender, EventArgs e)
@@ -54,6 +54,18 @@ namespace BarrocIntensApp.Maintenance
             if (dgvParts.Rows.Count > 0 || !string.IsNullOrEmpty(txbDescription.Text)) {
                 workOrderCreated = maintenanceAppointmentWorkOrderToAdd;
                 this.Close();
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e) {
+            dgvParts.Rows.RemoveAt(dgvParts.SelectedCells[0].RowIndex);
+            btnRemove.Visible = false;
+            dgvParts.ClearSelection();
+        }
+
+        private void dgvParts_SelectionChanged(object sender, EventArgs e) {
+            if (dgvParts.SelectedCells.Count > 0) {
+                btnRemove.Visible = true;
             }
         }
     }

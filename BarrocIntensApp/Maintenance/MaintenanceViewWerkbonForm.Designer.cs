@@ -30,14 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupParts = new System.Windows.Forms.GroupBox();
             this.dgvParts = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceAppointmentWorkOrderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblDescription = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupParts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -67,7 +69,8 @@
             this.dgvParts.ColumnHeadersVisible = false;
             this.dgvParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
-            this.quantity});
+            this.quantity,
+            this.totalPrice});
             this.dgvParts.GridColor = System.Drawing.SystemColors.Control;
             this.dgvParts.Location = new System.Drawing.Point(5, 16);
             this.dgvParts.Name = "dgvParts";
@@ -76,22 +79,6 @@
             this.dgvParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvParts.Size = new System.Drawing.Size(544, 312);
             this.dgvParts.TabIndex = 61;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Naam";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 480;
-            // 
-            // quantity
-            // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.quantity.DefaultCellStyle = dataGridViewCellStyle1;
-            this.quantity.HeaderText = "Aantal";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -103,14 +90,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Werkzaamheden";
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
-            // 
-            // maintenanceAppointmentWorkOrderProductBindingSource
-            // 
-            this.maintenanceAppointmentWorkOrderProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.MaintenanceAppointmentWorkOrderProduct);
-            // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
@@ -120,6 +99,39 @@
             this.lblDescription.Size = new System.Drawing.Size(60, 13);
             this.lblDescription.TabIndex = 0;
             this.lblDescription.Text = "Description";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
+            // maintenanceAppointmentWorkOrderProductBindingSource
+            // 
+            this.maintenanceAppointmentWorkOrderProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.MaintenanceAppointmentWorkOrderProduct);
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Naam";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 410;
+            // 
+            // quantity
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.quantity.DefaultCellStyle = dataGridViewCellStyle1;
+            this.quantity.HeaderText = "Aantal";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 50;
+            // 
+            // totalPrice
+            // 
+            this.totalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.totalPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            this.totalPrice.HeaderText = "Totale prijs";
+            this.totalPrice.Name = "totalPrice";
+            this.totalPrice.ReadOnly = true;
             // 
             // MaintenanceViewWerkbonForm
             // 
@@ -144,10 +156,11 @@
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.GroupBox groupParts;
         private System.Windows.Forms.DataGridView dgvParts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.BindingSource maintenanceAppointmentWorkOrderProductBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txbDescription = new System.Windows.Forms.TextBox();
             this.lblOnderdelen = new System.Windows.Forms.Label();
@@ -39,11 +39,12 @@
             this.btnAddWorkOrder = new System.Windows.Forms.Button();
             this.groupParts = new System.Windows.Forms.GroupBox();
             this.dgvParts = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.numAmount = new System.Windows.Forms.NumericUpDown();
             this.maintenanceAppointmentWorkOrderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.groupParts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
@@ -81,6 +82,7 @@
             // 
             this.cboParts.DataSource = this.productBindingSource;
             this.cboParts.DisplayMember = "Name";
+            this.cboParts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboParts.FormattingEnabled = true;
             this.cboParts.Location = new System.Drawing.Point(19, 158);
             this.cboParts.Name = "cboParts";
@@ -143,6 +145,23 @@
             this.dgvParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvParts.Size = new System.Drawing.Size(537, 222);
             this.dgvParts.TabIndex = 61;
+            this.dgvParts.SelectionChanged += new System.EventHandler(this.dgvParts_SelectionChanged);
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Naam";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 480;
+            // 
+            // quantity
+            // 
+            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            this.quantity.HeaderText = "Aantal";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
             // 
             // label2
             // 
@@ -174,27 +193,23 @@
             // 
             this.maintenanceAppointmentWorkOrderProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.MaintenanceAppointmentWorkOrderProduct);
             // 
-            // name
+            // btnRemove
             // 
-            this.name.HeaderText = "Naam";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 480;
+            this.btnRemove.Location = new System.Drawing.Point(445, 165);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(122, 26);
+            this.btnRemove.TabIndex = 63;
+            this.btnRemove.Text = "Onderdeel weghalen";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Visible = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // quantity
-            // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.quantity.DefaultCellStyle = dataGridViewCellStyle1;
-            this.quantity.HeaderText = "Aantal";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // MaintenanceWerkbonForm
+            // MaintenanceCreateWerkbonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 484);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.numAmount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupParts);
@@ -204,7 +219,7 @@
             this.Controls.Add(this.lblOnderdelen);
             this.Controls.Add(this.txbDescription);
             this.Controls.Add(this.label1);
-            this.Name = "MaintenanceWerkbonForm";
+            this.Name = "MaintenanceCreateWerkbonForm";
             this.Text = "MaintenanceWerkbon";
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.groupParts.ResumeLayout(false);
@@ -232,5 +247,6 @@
         private System.Windows.Forms.BindingSource maintenanceAppointmentWorkOrderProductBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
