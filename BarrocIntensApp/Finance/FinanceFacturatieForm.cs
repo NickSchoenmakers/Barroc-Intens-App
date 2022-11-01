@@ -123,7 +123,7 @@ namespace BarrocIntensApp
 
         private void NameCb_SelectedValueChanged(object sender, EventArgs e)
         {
-             CompanyId = (int)NameCb.SelectedValue;
+             //CompanyId = (int)NameCb.SelectedValue;
         }
 
         private void pbBlack_Click(object sender, EventArgs e)
