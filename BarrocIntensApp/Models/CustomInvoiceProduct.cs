@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,9 @@ namespace BarrocIntensApp.Models
         public Product Product { get; set; } = null;
         public int Amount { get; set; }
         //public int CustomInvoiceId { get; set; }
+        public ObservableCollectionListSource<CustomInvoice> CustomInvoice { get; } = new ObservableCollectionListSource<CustomInvoice>();
+
+        public override string ToString(){}
 
     }
 }

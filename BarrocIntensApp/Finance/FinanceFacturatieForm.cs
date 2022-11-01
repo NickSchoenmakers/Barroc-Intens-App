@@ -34,9 +34,9 @@ namespace BarrocIntensApp
         public int ProductInCart =0;
         public int testc;
         public int Amount { get; set; }
-        public int Date { get; private set; }
-        public int PaidAt { get; private set; }
-        public int CompanyId { get; private set; }
+        public int Date { get;  set; }
+        public int PaidAt { get;  set; }
+        public int CompanyId { get;  set; }
 
         private void FacturatieForm_Load(object sender, EventArgs e)
         {
@@ -51,8 +51,24 @@ namespace BarrocIntensApp
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
             this.NameCb.DataSource = dbContext.Companies.Local.ToBindingList();
 
-            var CustomInvoicesid = this.dbContext.CustomInvoices.Select(x => x.Id).Max();
-            int testc = CustomInvoicesid++;
+
+                var ProductToBuy = new CustomInvoice
+                {
+                    Date = DateTime.Now,
+                    PaidAt = DateTime.Now,
+                    CompanyId = CompanyId
+
+                };
+                this.dbContext.CustomInvoices.Add(ProductToBuy);
+
+            var CustomInvoiceProducts = Program.dbContext.CustomInvoiceProducts.ToList();
+            var CustomInvoiceProduct = CustomInvoiceProducts[0];
+
+            Program.dbContext.Entry(CustomInvoiceProduct)
+                             .Reference(c => c.Id)
+                             .Load();
+
+
         }
         private void NameLbl_Click(object sender, EventArgs e)
         {
@@ -86,21 +102,12 @@ namespace BarrocIntensApp
         {
             if (ProductId != 0)
             {
-                int[] CartArray = new int[4];
-                CartArray[0] = Amount;
-                CartArray[1] = ProductId;
-                CartArray[2] = Id;
-                //CartArray[3] = testc;
 
-                var id = this.dbContext.CustomInvoiceProducts.Select(x => x.Id).Max();
-                id++;
-                CustomInvoiceProductId = id;
                 var ProductToAdd = new CustomInvoiceProduct
                 {
                     Amount = (int)AmountNu.Value,
                     ProductId = ProductId,
-                    Id = id,
-                    //CustomInvoiceId = testc
+                    CustomInvoiceId = CustomInvoice
                 };
                 this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
                 this.dbContext.SaveChanges();
@@ -130,35 +137,9 @@ namespace BarrocIntensApp
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
         {
-            if (ProductInCart != 0)
-            {
 
-                int[] InvoiceArray = new int[3];
-                InvoiceArray[0] = Id;
-                InvoiceArray[1] = Date;
-                InvoiceArray[2] = PaidAt;
-                InvoiceArray[3] = CompanyId;
-
-                var id = this.dbContext.CustomInvoices.Select(x => x.Id).Max();
-                id++;
-
-                var ProductToBuy = new CustomInvoice
-                {
-                    Id = id,
-                    Date = DateTime.Now,
-                    PaidAt = DateTime.Now,
-                    CompanyId = CompanyId
-
-                };
-                this.dbContext.CustomInvoices.Add(ProductToBuy);
                 this.dbContext.SaveChanges();
                 this.CartGv.Refresh();
-                ProductInCart = 0;
-            }
-            else
-            {
-                MessageBox.Show("please select a product");
-            }
         }
     }
 }
