@@ -435,6 +435,7 @@
             this.MaximizeBox = false;
             this.Name = "InkoopBestellenForm";
             this.Text = "Bestellen";
+            this.Load += new System.EventHandler(this.InkoopBestellenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
