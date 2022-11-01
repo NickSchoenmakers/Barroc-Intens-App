@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Messaging;
 using System.Text;
@@ -29,6 +30,9 @@ namespace BarrocIntensApp
             // Uncomment the line below to start fresh with a new database.
             // this.dbContext.Database.EnsureDeleted();
             Program.dbContext.Database.EnsureCreated();            
+        }
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -89,7 +93,9 @@ namespace BarrocIntensApp
                     this.Hide();
                     salesForm.Show(this);
                 }
+
+
             }
-        }
+        }                
     }
 }

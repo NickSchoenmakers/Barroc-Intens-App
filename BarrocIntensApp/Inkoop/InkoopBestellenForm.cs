@@ -144,7 +144,7 @@ namespace BarrocIntensApp.Inkoop
                 Description = txbProductDescription.Text,
                 Price = numProductPrice.Value,
                 ProductCategoryId = (int)cbProductCategory.SelectedValue,
-                isPart = checkPart.Checked
+                IsPart = checkPart.Checked
             };
 
             Program.dbContext.Products.Add(productToAdd);

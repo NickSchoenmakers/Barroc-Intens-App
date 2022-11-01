@@ -12,5 +12,7 @@ namespace BarrocIntensApp.Models
         public int ProductId { get; set; }
         public Product Product { get; set; } = null;
         public int Amount { get; set; }
+        //public int CustomInvoiceId { get; set; }
+
     }
 }
