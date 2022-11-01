@@ -19,5 +19,7 @@ namespace BarrocIntensApp.Models
         public Product Product { get; set; } = null;
         public int WorkerId { get; set; }
         public User Worker { get; set; } = null;
+        public int? MaintenanceAppointmentWorkOrderId { get; set; } = null;
+        public MaintenanceAppointmentWorkOrder MaintenanceAppointmentWorkOrder { get; set; } = null;
     }
 }
