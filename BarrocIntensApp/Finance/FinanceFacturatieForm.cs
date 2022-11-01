@@ -36,8 +36,8 @@ namespace BarrocIntensApp
         public int Amount { get; set; }
         public int Date { get;  set; }
         public int PaidAt { get;  set; }
-        public int CompanyId { get;  set; }
-
+        public Company Company { get;  set; }
+        public CustomInvoice ProductToBuy { get; set; }
         private void FacturatieForm_Load(object sender, EventArgs e)
         {
             this.dbContext = new AppDbContext();
@@ -52,15 +52,14 @@ namespace BarrocIntensApp
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
             this.NameCb.DataSource = dbContext.Companies.Local.ToBindingList();
 
-            var CustomInvoice = (this.dbContext.CustomInvoices);
-                var ProductToBuy = new CustomInvoice
+
+                ProductToBuy = new CustomInvoice
                 {
                     Date = DateTime.Now,
                     PaidAt = DateTime.Now,
-                    CompanyId = CompanyId
 
                 };
-                this.dbContext.CustomInvoices.Add(ProductToBuy);
+                Company.CustomInvoices.Add(ProductToBuy);
 
             //var CustomInvoiceProducts = Program.dbContext.CustomInvoiceProducts.ToList();
             //var CustomInvoiceProduct = CustomInvoiceProducts[0];
@@ -94,25 +93,23 @@ namespace BarrocIntensApp
 
         private void productsDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //ProductId = (Product)this.productsDataGridView.CurrentRow.DataBoundItem;
-            var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
-            ProductId = product.Id;
         }
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
-            if (ProductId != 0)
+            var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
+            if (product != null)
             {
 
                 var ProductToAdd = new CustomInvoiceProduct
                 {
                     Amount = (int)AmountNu.Value,
-                    ProductId = ProductId,
-                    //CustomInvoiceId 
+                    Product = product,
                 };
-                this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
+
+                ProductToBuy.CustomInvoiceProducts.Add(ProductToAdd);
                 this.CartGv.Refresh();
-                ProductInCart++;
+                this.dbContext.SaveChanges();
             }
             else 
             {
@@ -122,7 +119,10 @@ namespace BarrocIntensApp
 
         private void NameCb_SelectedValueChanged(object sender, EventArgs e)
         {
-             //CompanyId = (int)NameCb.SelectedValue;
+            if (!string.IsNullOrEmpty(NameCb.ValueMember)) { 
+                Company = (Company)NameCb.SelectedItem;
+            }
+             
         }
 
         private void pbBlack_Click(object sender, EventArgs e)

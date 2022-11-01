@@ -228,6 +228,7 @@
             // 
             // NameCb
             // 
+            this.NameCb.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.companyBindingSource, "Id", true));
             this.NameCb.DataSource = this.companyBindingSource;
             this.NameCb.DisplayMember = "Name";
             this.NameCb.FormattingEnabled = true;
