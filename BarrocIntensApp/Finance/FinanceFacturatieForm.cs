@@ -45,6 +45,7 @@ namespace BarrocIntensApp
             this.dbContext.Companies.Load();
             this.dbContext.CustomInvoiceProducts.Load();
             this.dbContext.CustomInvoices.Load();
+            
 
             this.customInvoiceProductBindingSource.DataSource = dbContext.CustomInvoiceProducts.Local.ToBindingList();
 
@@ -61,12 +62,12 @@ namespace BarrocIntensApp
                 };
                 this.dbContext.CustomInvoices.Add(ProductToBuy);
 
-            var CustomInvoiceProducts = Program.dbContext.CustomInvoiceProducts.ToList();
-            var CustomInvoiceProduct = CustomInvoiceProducts[0];
+            //var CustomInvoiceProducts = Program.dbContext.CustomInvoiceProducts.ToList();
+            //var CustomInvoiceProduct = CustomInvoiceProducts[0];
 
-            Program.dbContext.Entry(CustomInvoiceProduct)
-                             .Reference(c => c.Id)
-                             .Load();
+            //Program.dbContext.Entry(CustomInvoiceProduct)
+            //                 .Reference(c => c.Id)
+            //                 .Load();
 
 
         }
@@ -107,7 +108,7 @@ namespace BarrocIntensApp
                 {
                     Amount = (int)AmountNu.Value,
                     ProductId = ProductId,
-                    CustomInvoiceId = CustomInvoice
+                    //CustomInvoiceId 
                 };
                 this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
                 this.dbContext.SaveChanges();
