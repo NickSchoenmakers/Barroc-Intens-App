@@ -52,7 +52,7 @@ namespace BarrocIntensApp
             this.productBindingSource.DataSource = dbContext.Products.Local.ToBindingList();
             this.NameCb.DataSource = dbContext.Companies.Local.ToBindingList();
 
-
+            var CustomInvoice = (this.dbContext.CustomInvoices);
                 var ProductToBuy = new CustomInvoice
                 {
                     Date = DateTime.Now,
@@ -111,7 +111,6 @@ namespace BarrocIntensApp
                     //CustomInvoiceId 
                 };
                 this.dbContext.CustomInvoiceProducts.Add(ProductToAdd);
-                this.dbContext.SaveChanges();
                 this.CartGv.Refresh();
                 ProductInCart++;
             }
