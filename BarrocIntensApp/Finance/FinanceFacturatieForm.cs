@@ -1,6 +1,7 @@
 ﻿using BarrocIntensApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,8 @@ namespace BarrocIntensApp
             InitializeComponent();
             //lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
+        float ProductPriceDouble = 0;
+        float price = 0;
         public int ProductId { get; set; }
         public int Id = 0;
         public int CustomInvoiceProductId { get; set; }
@@ -140,6 +143,32 @@ namespace BarrocIntensApp
 
                 this.dbContext.SaveChanges();
                 this.CartGv.Refresh();
+        }
+
+        private void InvoiceProductsdgv_SelectionChanged(object sender, EventArgs e)
+        {
+            // gets the row from the designer
+            var ProductPrice = (CustomInvoiceProduct)this.InvoiceProductsdgv.CurrentRow?.DataBoundItem;
+
+            // checks if something was selected in the datagrid
+            if (ProductPrice == null)
+                return;
+
+            // puts the price of a product into a variable
+            ProductPriceDouble = (float)ProductPrice.Product.Price;
+
+            // round up the price
+            ProductPriceDouble = (float)Math.Round(ProductPriceDouble * 100f) / 100f;
+            // calculates the total price of everything
+            price = ProductPrice.Amount * ProductPriceDouble;
+
+            // shows the user what the price is
+            lblPrice.Text = price.ToString();
+        }
+
+        private void NameCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

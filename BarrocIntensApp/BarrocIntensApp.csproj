@@ -239,11 +239,17 @@
     <Compile Include="Maintenance\MaintenanceOnderdelenForm.Designer.cs">
       <DependentUpon>MaintenanceOnderdelenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance\MaintenanceOnderhoudForm.cs">
+    <Compile Include="Maintenance\MaintenanceKalenderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintenance\MaintenanceOnderhoudForm.Designer.cs">
-      <DependentUpon>MaintenanceOnderhoudForm.cs</DependentUpon>
+    <Compile Include="Maintenance\MaintenanceKalenderForm.Designer.cs">
+      <DependentUpon>MaintenanceKalenderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\MaintenanceOnderHoudManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\MaintenanceOnderHoudManagerForm.Designer.cs">
+      <DependentUpon>MaintenanceOnderHoudManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance\MaintenanceStoringenForm.cs">
       <SubType>Form</SubType>
@@ -262,7 +268,6 @@
     <Compile Include="Models\CustomInvoice.cs" />
     <Compile Include="Models\CustomInvoiceProduct.cs" />
     <Compile Include="Models\MaintenanceAppointment.cs" />
-    <Compile Include="Models\MaintenanceAppointmentProduct.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
@@ -315,8 +320,11 @@
     <EmbeddedResource Include="Maintenance\MaintenanceOnderdelenForm.resx">
       <DependentUpon>MaintenanceOnderdelenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance\MaintenanceOnderhoudForm.resx">
-      <DependentUpon>MaintenanceOnderhoudForm.cs</DependentUpon>
+    <EmbeddedResource Include="Maintenance\MaintenanceKalenderForm.resx">
+      <DependentUpon>MaintenanceKalenderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\MaintenanceOnderHoudManagerForm.resx">
+      <DependentUpon>MaintenanceOnderHoudManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance\MaintenanceStoringenForm.resx">
       <DependentUpon>MaintenanceStoringenForm.cs</DependentUpon>
@@ -346,6 +354,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Company.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.CustomInvoiceProduct.datasource" />
+    <None Include="Properties\DataSources\BarrocIntensApp.Models.MaintenanceAppointment1.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Note.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Product.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.ProductCategory.datasource" />

@@ -33,11 +33,14 @@
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
-            this.cbCompanies = new System.Windows.Forms.ComboBox();
+            this.cbCompanies = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bkrCheckedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lbBKRChecked = new System.Windows.Forms.Label();
-            this.lbCheckedResult = new System.Windows.Forms.Label();
+            this.btnSaveChanges = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCompanies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,46 +82,59 @@
             // 
             // cbCompanies
             // 
+            this.cbCompanies.AllowUserToAddRows = false;
+            this.cbCompanies.AllowUserToDeleteRows = false;
+            this.cbCompanies.AutoGenerateColumns = false;
+            this.cbCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cbCompanies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.cityDataGridViewTextBoxColumn,
+            this.bkrCheckedAtDataGridViewTextBoxColumn});
             this.cbCompanies.DataSource = this.companyBindingSource;
-            this.cbCompanies.DisplayMember = "Name";
-            this.cbCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCompanies.FormattingEnabled = true;
-            this.cbCompanies.Location = new System.Drawing.Point(270, 252);
+            this.cbCompanies.Location = new System.Drawing.Point(379, 202);
             this.cbCompanies.Name = "cbCompanies";
-            this.cbCompanies.Size = new System.Drawing.Size(121, 21);
-            this.cbCompanies.TabIndex = 36;
-            this.cbCompanies.ValueMember = "BkrCheckedAt";
-            this.cbCompanies.SelectedIndexChanged += new System.EventHandler(this.cbCompanies_SelectedIndexChanged);
+            this.cbCompanies.Size = new System.Drawing.Size(345, 150);
+            this.cbCompanies.TabIndex = 40;
+            this.cbCompanies.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.cbCompanies_DataError);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            // 
+            // bkrCheckedAtDataGridViewTextBoxColumn
+            // 
+            this.bkrCheckedAtDataGridViewTextBoxColumn.DataPropertyName = "BkrCheckedAt";
+            this.bkrCheckedAtDataGridViewTextBoxColumn.HeaderText = "BkrCheckedAt";
+            this.bkrCheckedAtDataGridViewTextBoxColumn.Name = "bkrCheckedAtDataGridViewTextBoxColumn";
             // 
             // companyBindingSource
             // 
             this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
             // 
-            // lbBKRChecked
+            // btnSaveChanges
             // 
-            this.lbBKRChecked.AutoSize = true;
-            this.lbBKRChecked.Location = new System.Drawing.Point(511, 260);
-            this.lbBKRChecked.Name = "lbBKRChecked";
-            this.lbBKRChecked.Size = new System.Drawing.Size(77, 13);
-            this.lbBKRChecked.TabIndex = 37;
-            this.lbBKRChecked.Text = "BKR checked:";
-            // 
-            // lbCheckedResult
-            // 
-            this.lbCheckedResult.AutoSize = true;
-            this.lbCheckedResult.Location = new System.Drawing.Point(624, 260);
-            this.lbCheckedResult.Name = "lbCheckedResult";
-            this.lbCheckedResult.Size = new System.Drawing.Size(104, 13);
-            this.lbCheckedResult.TabIndex = 38;
-            this.lbCheckedResult.Text = "Selecteer een bedrijf";
+            this.btnSaveChanges.Location = new System.Drawing.Point(730, 202);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(223, 150);
+            this.btnSaveChanges.TabIndex = 41;
+            this.btnSaveChanges.Text = "save changes";
+            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // FinanceLeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.lbCheckedResult);
-            this.Controls.Add(this.lbBKRChecked);
+            this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.cbCompanies);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -131,9 +147,9 @@
             this.Text = "LeaseForm";
             this.Load += new System.EventHandler(this.FinanceLeaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCompanies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -141,9 +157,11 @@
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
-        private System.Windows.Forms.ComboBox cbCompanies;
         private System.Windows.Forms.BindingSource companyBindingSource;
-        private System.Windows.Forms.Label lbBKRChecked;
-        private System.Windows.Forms.Label lbCheckedResult;
+        private System.Windows.Forms.DataGridView cbCompanies;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bkrCheckedAtDataGridViewTextBoxColumn;
+        private RoundButton btnSaveChanges;
     }
 }
