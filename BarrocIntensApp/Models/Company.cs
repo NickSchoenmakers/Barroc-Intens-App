@@ -20,10 +20,6 @@ namespace BarrocIntensApp.Models
         public string ContactPhoneNumber { get; set; }
         public ObservableCollectionListSource<Note> Notes { get; } = new ObservableCollectionListSource<Note>();
         public ObservableCollectionListSource<MaintenanceAppointment> MaintenanceAppointments { get; } = new ObservableCollectionListSource<MaintenanceAppointment>();
-        public ObservableCollectionListSource<CustomInvoice> CustomInvoices { get; } = new ObservableCollectionListSource<CustomInvoice>(); 
-        public override string ToString()
-        {
-            return Name;
-        }
+        public ObservableCollectionListSource<CustomInvoice> CustomInvoices { get; } = new ObservableCollectionListSource<CustomInvoice>();
     }
 }

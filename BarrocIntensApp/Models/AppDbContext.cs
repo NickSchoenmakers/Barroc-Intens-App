@@ -53,7 +53,7 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<Company>().HasData(
-                new Company { Id = 1, Name = "Bedrijf 1", Street = "Bredaweg", HouseNumber = "23", City = "Breda", CountryCode = "NL", ContactName = "Jan Bedrijfsel", ContactPhoneNumber = "+31618476837" },
+                new Company { Id = 1, Name = "Bedrijf 1", Street = "Bredaweg", HouseNumber = "23", City = "Breda", CountryCode = "NL", BkrCheckedAt = new DateTime(2022, 01, 25), ContactName = "Jan Bedrijfsel", ContactPhoneNumber = "+31618476837" },
                 new Company { Id = 2, Name = "Bedrijf 2", Street = "Tilburgweg", HouseNumber = "55", City = "Tilburg", CountryCode = "NL", BkrCheckedAt = new DateTime(2021, 07, 19), ContactName = "Piet Bar", ContactPhoneNumber = "0638561212" },
                 new Company { Id = 3, Name = "Bedrijf 3", Street = "Ja", HouseNumber = "1", City = "Antwerpen", CountryCode = "BE", BkrCheckedAt = new DateTime(2020, 01, 10), ContactName = "Belg Jat", ContactPhoneNumber = "+3165847643" }
             );
@@ -82,9 +82,9 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17, 17, 15, 0), ProductId = 1, WorkerId = 4, CompanyId = 1},
-                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12, 10, 15, 0), ProductId = 2, WorkerId = 5, CompanyId = 2 },
-                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01, 12, 0, 0), LastAppointment = new DateTime(2019, 09, 29), ProductId = 2, WorkerId = 6, CompanyId = 3 }
+                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17) },
+                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12) },
+                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01), LastAppointment = new DateTime(2019, 09, 29) }
             );
 
             modelBuilder.Entity<Note>().HasData(
@@ -96,6 +96,11 @@ namespace BarrocIntensApp.Models
             modelBuilder.Entity<ProductCategory>().HasData(
                 new ProductCategory { Id = 1, Name = "Machines", IsEmployeeOnly = 1 },
                 new ProductCategory { Id = 2, Name = "Koffiebonen", IsEmployeeOnly = 1 }
+            );
+            modelBuilder.Entity<MaintenanceAppointmentProduct>().HasData(
+                new MaintenanceAppointmentProduct { Id = 1, ProductId = 1, CompanyId = 1 },
+                new MaintenanceAppointmentProduct { Id = 2, ProductId = 3, CompanyId = 2 },
+                new MaintenanceAppointmentProduct { Id = 3, ProductId = 6, CompanyId = 3 }
             );
         }
     }

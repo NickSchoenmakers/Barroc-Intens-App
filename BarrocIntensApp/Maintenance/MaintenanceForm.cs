@@ -1,5 +1,4 @@
-﻿using BarrocIntensApp.Maintenance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,11 +17,11 @@ namespace BarrocIntensApp
         {
             InitializeComponent();
             lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
-            if (Globals.loggedInUser.isManager == true) {
-                BtnManager.Visible = true;
-                BtnCalendar.Visible = false;
-                BtnManager.Location = new Point(467, 63);
-            }
+        }
+
+        private void MaintencanceForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
@@ -41,9 +40,19 @@ namespace BarrocIntensApp
 
         private void BtnOnderhoud_Click_1(object sender, EventArgs e)
         {
-            var inkoopForm = new MaintenanceKalenderForm();
+            var inkoopForm = new MaintenanceOnderhoudForm();
             this.Hide();
             inkoopForm.Show(this);
+        }
+
+        private void lblTitle_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbBlack_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BtnStoringen_Click(object sender, EventArgs e)
@@ -51,14 +60,6 @@ namespace BarrocIntensApp
             var inkoopForm = new MaintenanceStoringenForm();
             this.Hide();
             inkoopForm.Show(this);
-        }
-
-        private void BtnManager_Click(object sender, EventArgs e) {
-            if (Globals.loggedInUser.isManager == true) {
-                var maintenanceOnderhoudManagerForm = new MaintenanceOnderHoudManagerForm();
-                this.Hide();
-                maintenanceOnderhoudManagerForm.Show(this);
-            }
         }
     }
 }

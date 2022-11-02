@@ -57,7 +57,7 @@ namespace BarrocIntensApp
             if (Globals.loggedInUser == null)
             {
                 // if the user gives a wrong account it gives this message
-                MessageBox.Show("Deze gebruiker bestaat niet, vul een bestaande gebruiker in");
+                MessageBox.Show("vul een correct user in");
             }
             else
             {
@@ -97,11 +97,5 @@ namespace BarrocIntensApp
 
             }
         }                
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

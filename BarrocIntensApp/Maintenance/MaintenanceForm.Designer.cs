@@ -32,12 +32,11 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.BtnCalendar = new BarrocIntensApp.RoundButton();
+            this.BtnOnderhoud = new BarrocIntensApp.RoundButton();
             this.BtnStoringen = new BarrocIntensApp.RoundButton();
             this.BtnOnderdelen = new BarrocIntensApp.RoundButton();
             this.btnOfferte = new BarrocIntensApp.RoundButton();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
-            this.BtnManager = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +48,7 @@
             this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 6;
             this.pbBlack.TabStop = false;
+            this.pbBlack.Click += new System.EventHandler(this.pbBlack_Click);
             // 
             // lblTitle
             // 
@@ -64,18 +64,18 @@
             this.lblTitle.Text = "Maintenance | Name";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // BtnCalendar
+            // BtnOnderhoud
             // 
-            this.BtnCalendar.BackColor = System.Drawing.Color.Black;
-            this.BtnCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCalendar.ForeColor = System.Drawing.Color.White;
-            this.BtnCalendar.Location = new System.Drawing.Point(467, 63);
-            this.BtnCalendar.Name = "BtnCalendar";
-            this.BtnCalendar.Size = new System.Drawing.Size(200, 200);
-            this.BtnCalendar.TabIndex = 5;
-            this.BtnCalendar.Text = "Onderhoud";
-            this.BtnCalendar.UseVisualStyleBackColor = false;
-            this.BtnCalendar.Click += new System.EventHandler(this.BtnOnderhoud_Click_1);
+            this.BtnOnderhoud.BackColor = System.Drawing.Color.Black;
+            this.BtnOnderhoud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnOnderhoud.ForeColor = System.Drawing.Color.White;
+            this.BtnOnderhoud.Location = new System.Drawing.Point(467, 63);
+            this.BtnOnderhoud.Name = "BtnOnderhoud";
+            this.BtnOnderhoud.Size = new System.Drawing.Size(200, 200);
+            this.BtnOnderhoud.TabIndex = 5;
+            this.BtnOnderhoud.Text = "Onderhoud";
+            this.BtnOnderhoud.UseVisualStyleBackColor = false;
+            this.BtnOnderhoud.Click += new System.EventHandler(this.BtnOnderhoud_Click_1);
             // 
             // BtnStoringen
             // 
@@ -129,31 +129,16 @@
             this.lblDepartmentPart.Text = "Dashboard";
             this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BtnManager
-            // 
-            this.BtnManager.BackColor = System.Drawing.Color.Black;
-            this.BtnManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnManager.ForeColor = System.Drawing.Color.White;
-            this.BtnManager.Location = new System.Drawing.Point(694, 63);
-            this.BtnManager.Name = "BtnManager";
-            this.BtnManager.Size = new System.Drawing.Size(200, 200);
-            this.BtnManager.TabIndex = 36;
-            this.BtnManager.Text = "Onderhoud inplannen";
-            this.BtnManager.UseVisualStyleBackColor = false;
-            this.BtnManager.Visible = false;
-            this.BtnManager.Click += new System.EventHandler(this.BtnManager_Click);
-            // 
             // MaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.BtnManager);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Controls.Add(this.BtnCalendar);
+            this.Controls.Add(this.BtnOnderhoud);
             this.Controls.Add(this.BtnStoringen);
             this.Controls.Add(this.BtnOnderdelen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -161,6 +146,7 @@
             this.MaximizeBox = false;
             this.Name = "MaintenanceForm";
             this.Text = "MaintencanceForm";
+            this.Load += new System.EventHandler(this.MaintencanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
 
@@ -172,10 +158,9 @@
         private RoundButton btnOfferte;
         private RoundButton BtnOnderdelen;
         private RoundButton BtnStoringen;
-        private RoundButton BtnCalendar;
+        private RoundButton BtnOnderhoud;
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
-        private RoundButton BtnManager;
     }
 }

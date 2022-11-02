@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InvoiceProductsdgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -134,7 +134,6 @@
             this.productsDataGridView.DataSource = this.productBindingSource;
             this.productsDataGridView.Location = new System.Drawing.Point(76, 47);
             this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productsDataGridView.Size = new System.Drawing.Size(345, 150);
             this.productsDataGridView.TabIndex = 33;
             this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
@@ -164,11 +163,11 @@
             // 
             this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
-            // InvoiceProductsdgv
+            // CartGv
             // 
-            this.InvoiceProductsdgv.AutoGenerateColumns = false;
-            this.InvoiceProductsdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.InvoiceProductsdgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CartGv.AutoGenerateColumns = false;
+            this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CartGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.productIdDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn});
@@ -238,7 +237,6 @@
             this.NameCb.Size = new System.Drawing.Size(170, 21);
             this.NameCb.TabIndex = 37;
             this.NameCb.ValueMember = "Id";
-            this.NameCb.SelectedIndexChanged += new System.EventHandler(this.NameCb_SelectedIndexChanged);
             this.NameCb.SelectedValueChanged += new System.EventHandler(this.NameCb_SelectedValueChanged);
             // 
             // companyBindingSource
@@ -272,22 +270,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
             // 
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            // FacturatieForm
             // 
-            // amountDataGridViewTextBoxColumn
-            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.AmountNu);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.ZipcodeLbl);
-            this.Controls.Add(this.Street_numberLbl);
-            this.Controls.Add(this.NameLbl);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -300,7 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InvoiceProductsdgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CartGv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -321,16 +310,16 @@
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-    }
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private RoundButton Cartbtn;
-        private System.Windows.Forms.DataGridView InvoiceProductsdgv;
+        private System.Windows.Forms.DataGridView CartGv;
         private System.Windows.Forms.ComboBox NameCb;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.BindingSource customInvoiceProductBindingSource;
-        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+    }
 }
