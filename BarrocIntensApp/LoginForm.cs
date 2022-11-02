@@ -33,6 +33,7 @@ namespace BarrocIntensApp
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("login branch jdsadsgnds");
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
