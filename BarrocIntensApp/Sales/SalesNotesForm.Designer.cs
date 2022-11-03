@@ -43,6 +43,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CompanyNamelbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DateMadelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
@@ -164,6 +166,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DateMadelbl);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.CompanyNamelbl);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbNoteSelected);
@@ -191,6 +195,25 @@
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(254, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Datum: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // DateMadelbl
+            // 
+            this.DateMadelbl.AutoSize = true;
+            this.DateMadelbl.Location = new System.Drawing.Point(304, 29);
+            this.DateMadelbl.Name = "DateMadelbl";
+            this.DateMadelbl.Size = new System.Drawing.Size(35, 13);
+            this.DateMadelbl.TabIndex = 47;
+            this.DateMadelbl.Text = "label3";
             // 
             // SalesNotesForm
             // 
@@ -238,5 +261,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CompanyNamelbl;
         private System.Windows.Forms.BindingSource noteBindingSource;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label DateMadelbl;
     }
 }
