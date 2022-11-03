@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txbDescription = new System.Windows.Forms.TextBox();
             this.lblOnderdelen = new System.Windows.Forms.Label();
@@ -89,6 +89,7 @@
             this.cboParts.Size = new System.Drawing.Size(198, 21);
             this.cboParts.TabIndex = 3;
             this.cboParts.ValueMember = "Id";
+            this.cboParts.SelectedIndexChanged += new System.EventHandler(this.cboParts_SelectedIndexChanged);
             // 
             // productBindingSource
             // 
@@ -157,8 +158,8 @@
             // quantity
             // 
             this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.quantity.DefaultCellStyle = dataGridViewCellStyle1;
             this.quantity.HeaderText = "Aantal";
             this.quantity.Name = "quantity";
             this.quantity.ReadOnly = true;

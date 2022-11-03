@@ -13,6 +13,7 @@ namespace BarrocIntensApp.Models
         public string Remark { get; set; }
         public DateTime? NextAppointment { get; set; } = null;
         public DateTime? LastAppointment { get; set; } = null;
+        public bool IsRoutine { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; } = null;
         public int ProductId { get; set; }

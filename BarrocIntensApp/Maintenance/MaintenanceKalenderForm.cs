@@ -53,6 +53,7 @@ namespace BarrocIntensApp
         private void dgvAppointments_SelectionChanged(object sender, EventArgs e){
             this.RefreshAppointmentInfo();
             this.groupAppointmentInfo.Show();
+            lblWorkOrderFeedback.Visible = false;
         }
 
         private void RefreshAppointmentInfo() {
@@ -67,6 +68,15 @@ namespace BarrocIntensApp
                 lblCompanyNumber.Text = $"Huisnummer: {maintenanceAppointment.Company.HouseNumber}";
                 lblCompanyCity.Text = $"Stad: {maintenanceAppointment.Company.City}";
                 lblCompanyCountryCode.Text = $"Landcode: {maintenanceAppointment.Company.CountryCode}";
+
+                if (maintenanceAppointment.IsRoutine)
+                {
+                    lblRoutine.Text = "Type bezoek: routinematig";
+                }
+                else
+                {
+                    lblRoutine.Text = "Type bezoek: storingbezoek";
+                }
             }
             if (GetMaintenanceAppointmentWorkOrder() is null)
             {

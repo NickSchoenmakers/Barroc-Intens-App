@@ -37,6 +37,9 @@ namespace BarrocIntensApp.Maintenance
                 Product = (Product)cboParts.SelectedItem,
                 Amount = (int)numAmount.Value
             };
+
+            var product = (Product)cboParts.SelectedItem;
+            product.Stock -= (int)numAmount.Value;
             maintenanceAppointmentWorkOrderToAdd.MaintenanceAppointmentWorkOrderProducts.Add(maintenanceAppointmentWorkOrderProductToAdd);
             this.dgvParts.Rows.Add(maintenanceAppointmentWorkOrderProductToAdd.Product.Name, maintenanceAppointmentWorkOrderProductToAdd.Amount);
 
@@ -59,14 +62,19 @@ namespace BarrocIntensApp.Maintenance
 
         private void btnRemove_Click(object sender, EventArgs e) {
             dgvParts.Rows.RemoveAt(dgvParts.SelectedCells[0].RowIndex);
-            btnRemove.Visible = false;
+            //btnRemove.Visible = false;
             dgvParts.ClearSelection();
         }
 
         private void dgvParts_SelectionChanged(object sender, EventArgs e) {
             if (dgvParts.SelectedCells.Count > 0) {
-                btnRemove.Visible = true;
+                //btnRemove.Visible = true;
             }
+        }
+
+        private void cboParts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.numAmount.Maximum = ((Product)cboParts.SelectedItem).Stock;
         }
     }
 }

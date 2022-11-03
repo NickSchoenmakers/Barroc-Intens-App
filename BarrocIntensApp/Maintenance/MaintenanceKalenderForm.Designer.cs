@@ -33,8 +33,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupAppointments = new System.Windows.Forms.GroupBox();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.nextAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maintenanceAppointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupAppointmentInfo = new System.Windows.Forms.GroupBox();
             this.btnViewWorkOrder = new System.Windows.Forms.Button();
             this.btnShowCreateWorkOrder = new System.Windows.Forms.Button();
@@ -52,17 +50,20 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblWorkOrderFeedback = new System.Windows.Forms.Label();
+            this.nextAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintenanceAppointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maintenanceAppointmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblRoutine = new System.Windows.Forms.Label();
             this.groupAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
             this.groupAppointmentInfo.SuspendLayout();
             this.groupAppointmentLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource1)).BeginInit();
@@ -116,22 +117,10 @@
             this.dgvAppointments.TabIndex = 45;
             this.dgvAppointments.SelectionChanged += new System.EventHandler(this.dgvAppointments_SelectionChanged);
             // 
-            // nextAppointmentDataGridViewTextBoxColumn
-            // 
-            this.nextAppointmentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nextAppointmentDataGridViewTextBoxColumn.DataPropertyName = "NextAppointment";
-            this.nextAppointmentDataGridViewTextBoxColumn.HeaderText = "NextAppointment";
-            this.nextAppointmentDataGridViewTextBoxColumn.Name = "nextAppointmentDataGridViewTextBoxColumn";
-            this.nextAppointmentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nextAppointmentDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // maintenanceAppointmentBindingSource
-            // 
-            this.maintenanceAppointmentBindingSource.DataSource = typeof(BarrocIntensApp.Models.MaintenanceAppointment);
-            // 
             // groupAppointmentInfo
             // 
             this.groupAppointmentInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupAppointmentInfo.Controls.Add(this.lblRoutine);
             this.groupAppointmentInfo.Controls.Add(this.btnViewWorkOrder);
             this.groupAppointmentInfo.Controls.Add(this.btnShowCreateWorkOrder);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentProduct);
@@ -317,6 +306,19 @@
             this.lblWorkOrderFeedback.Text = "Werkbon aangemaakt";
             this.lblWorkOrderFeedback.Visible = false;
             // 
+            // nextAppointmentDataGridViewTextBoxColumn
+            // 
+            this.nextAppointmentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nextAppointmentDataGridViewTextBoxColumn.DataPropertyName = "NextAppointment";
+            this.nextAppointmentDataGridViewTextBoxColumn.HeaderText = "NextAppointment";
+            this.nextAppointmentDataGridViewTextBoxColumn.Name = "nextAppointmentDataGridViewTextBoxColumn";
+            this.nextAppointmentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nextAppointmentDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // maintenanceAppointmentBindingSource
+            // 
+            this.maintenanceAppointmentBindingSource.DataSource = typeof(BarrocIntensApp.Models.MaintenanceAppointment);
+            // 
             // btnReturnDashboard
             // 
             this.btnReturnDashboard.BackColor = System.Drawing.Color.Black;
@@ -355,6 +357,15 @@
             // 
             this.maintenanceAppointmentBindingSource1.DataSource = typeof(BarrocIntensApp.Models.MaintenanceAppointment);
             // 
+            // lblRoutine
+            // 
+            this.lblRoutine.AutoSize = true;
+            this.lblRoutine.Location = new System.Drawing.Point(9, 146);
+            this.lblRoutine.Name = "lblRoutine";
+            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
+            this.lblRoutine.TabIndex = 58;
+            this.lblRoutine.Text = "Routine";
+            // 
             // MaintenanceKalenderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,12 +388,12 @@
             this.Text = "MaintenanceOnderhoudForm";
             this.groupAppointments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).EndInit();
             this.groupAppointmentInfo.ResumeLayout(false);
             this.groupAppointmentInfo.PerformLayout();
             this.groupAppointmentLocation.ResumeLayout(false);
             this.groupAppointmentLocation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource1)).EndInit();
@@ -419,5 +430,6 @@
         private System.Windows.Forms.Button btnShowCreateWorkOrder;
         private System.Windows.Forms.Label lblWorkOrderFeedback;
         private System.Windows.Forms.Button btnViewWorkOrder;
+        private System.Windows.Forms.Label lblRoutine;
     }
 }

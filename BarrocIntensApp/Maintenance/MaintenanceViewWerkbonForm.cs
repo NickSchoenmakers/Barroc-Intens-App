@@ -18,7 +18,6 @@ namespace BarrocIntensApp.Maintenance
         {
             InitializeComponent();
             this.lblDescription.Text = maintenanceAppointmentWorkOrder.Description;
-            // create a foreach that goes through all products in this workorder and adds them to the datagridview dgvParts
             foreach (var product in maintenanceAppointmentWorkOrder.MaintenanceAppointmentWorkOrderProducts) {
                 this.dgvParts.Rows.Add(product.Product.Name, product.Amount, "€" + Decimal.Parse((product.Amount * product.Product.Price).ToString("0.00")));
             }
