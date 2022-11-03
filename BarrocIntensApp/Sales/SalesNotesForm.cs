@@ -84,6 +84,7 @@ namespace BarrocIntensApp.Sales
             {
                 lbNoteSelected.Text = lvNotes.SelectedItems[0].Text;
                 CompanyNamelbl.Text = note.Company.Name;
+                DateMadelbl.Text = note.Date.ToString();
             }
 
         }
@@ -115,6 +116,11 @@ namespace BarrocIntensApp.Sales
         }
 
         private void lbNoteSelected_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
