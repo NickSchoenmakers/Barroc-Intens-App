@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lvNotes = new System.Windows.Forms.ListView();
@@ -36,7 +37,18 @@
             this.txbNote = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lbNoteSelected = new System.Windows.Forms.Label();
+            this.CompNameCB = new System.Windows.Forms.ComboBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CompanyNamelbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DateMadelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDepartmentPart
@@ -122,18 +134,94 @@
             // 
             // lbNoteSelected
             // 
-            this.lbNoteSelected.Location = new System.Drawing.Point(525, 370);
+            this.lbNoteSelected.Location = new System.Drawing.Point(6, 57);
             this.lbNoteSelected.Name = "lbNoteSelected";
-            this.lbNoteSelected.Size = new System.Drawing.Size(594, 192);
+            this.lbNoteSelected.Size = new System.Drawing.Size(568, 155);
             this.lbNoteSelected.TabIndex = 44;
             this.lbNoteSelected.Text = "Selecteer een notitie";
+            this.lbNoteSelected.Click += new System.EventHandler(this.lbNoteSelected_Click);
+            // 
+            // CompNameCB
+            // 
+            this.CompNameCB.DataSource = this.companyBindingSource;
+            this.CompNameCB.DisplayMember = "Name";
+            this.CompNameCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CompNameCB.FormattingEnabled = true;
+            this.CompNameCB.Location = new System.Drawing.Point(531, 260);
+            this.CompNameCB.Name = "CompNameCB";
+            this.CompNameCB.Size = new System.Drawing.Size(160, 21);
+            this.CompNameCB.TabIndex = 45;
+            this.CompNameCB.ValueMember = "Id";
+            this.CompNameCB.SelectedIndexChanged += new System.EventHandler(this.CompNameCB_SelectedIndexChanged);
+            this.CompNameCB.SelectedValueChanged += new System.EventHandler(this.CompNameCB_SelectedValueChanged);
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
+            // 
+            // noteBindingSource
+            // 
+            this.noteBindingSource.DataSource = typeof(BarrocIntensApp.Models.Note);
+            this.noteBindingSource.CurrentChanged += new System.EventHandler(this.noteBindingSource_CurrentChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.DateMadelbl);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.CompanyNamelbl);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbNoteSelected);
+            this.groupBox1.Location = new System.Drawing.Point(525, 326);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(594, 215);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Notities";
+            // 
+            // CompanyNamelbl
+            // 
+            this.CompanyNamelbl.AutoSize = true;
+            this.CompanyNamelbl.Location = new System.Drawing.Point(131, 29);
+            this.CompanyNamelbl.Name = "CompanyNamelbl";
+            this.CompanyNamelbl.Size = new System.Drawing.Size(35, 13);
+            this.CompanyNamelbl.TabIndex = 45;
+            this.CompanyNamelbl.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Company Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(254, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Datum: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // DateMadelbl
+            // 
+            this.DateMadelbl.AutoSize = true;
+            this.DateMadelbl.Location = new System.Drawing.Point(304, 29);
+            this.DateMadelbl.Name = "DateMadelbl";
+            this.DateMadelbl.Size = new System.Drawing.Size(35, 13);
+            this.DateMadelbl.TabIndex = 47;
+            this.DateMadelbl.Text = "label3";
             // 
             // SalesNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.lbNoteSelected);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.CompNameCB);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txbNote);
             this.Controls.Add(this.btnBackNotes);
@@ -146,7 +234,12 @@
             this.Name = "SalesNotesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesNotesForm";
+            this.Load += new System.EventHandler(this.SalesNotesLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +255,13 @@
         private System.Windows.Forms.TextBox txbNote;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lbNoteSelected;
+        private System.Windows.Forms.ComboBox CompNameCB;
+        private System.Windows.Forms.BindingSource companyBindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label CompanyNamelbl;
+        private System.Windows.Forms.BindingSource noteBindingSource;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label DateMadelbl;
     }
 }
