@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace BarrocIntensApp
 {
     public partial class FacturatieForm : Form
     {
+        float ProductPriceDouble = 0;
+        float price = 0;
         private AppDbContext dbContext;
         public FacturatieForm()
         {
@@ -79,6 +82,10 @@ namespace BarrocIntensApp
         {
 
         }
+        private void CartGv_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
 
 
         private void ProductCbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,13 +107,11 @@ namespace BarrocIntensApp
             var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
             if (product != null)
             {
-
                 var ProductToAdd = new CustomInvoiceProduct
                 {
                     Amount = (int)AmountNu.Value,
                     Product = product,
                 };
-
                 ProductToBuy.CustomInvoiceProducts.Add(ProductToAdd);
                 this.CartGv.Refresh();
                 this.dbContext.SaveChanges();
@@ -132,7 +137,6 @@ namespace BarrocIntensApp
 
         private void CartGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
@@ -140,6 +144,31 @@ namespace BarrocIntensApp
 
                 this.dbContext.SaveChanges();
                 this.CartGv.Refresh();
+        }
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CartGv_SelectionChanged_1(object sender, EventArgs e)
+        {
+            // gets the row from the designer
+            var ProductPrice = (CustomInvoiceProduct)this.CartGv.CurrentRow?.DataBoundItem;
+
+            // checks if something was selected in the datagrid
+            if (ProductPrice == null)
+                return;
+
+            // puts the price of a product into a variable
+            ProductPriceDouble = (float)ProductPrice.Product.Price;
+
+            // round up the price
+            ProductPriceDouble = (float)Math.Round(ProductPriceDouble * 100f) / 100f;
+            // calculates the total price of everything
+            price = ProductPrice.Amount * ProductPriceDouble;
+
+            // shows the user what the price is
+            lblPrice.Text = price.ToString();
         }
     }
 }

@@ -51,6 +51,7 @@
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -177,6 +178,7 @@
             this.CartGv.Size = new System.Drawing.Size(344, 272);
             this.CartGv.TabIndex = 36;
             this.CartGv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartGv_CellContentClick);
+            this.CartGv.SelectionChanged += new System.EventHandler(this.CartGv_SelectionChanged_1);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -245,6 +247,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPrice);
             this.groupBox1.Controls.Add(this.CartGv);
             this.groupBox1.Controls.Add(this.BtnReturnStoringen);
             this.groupBox1.Location = new System.Drawing.Point(605, 125);
@@ -270,6 +273,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(7, 310);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(35, 13);
+            this.lblPrice.TabIndex = 37;
+            this.lblPrice.Text = "label1";
+            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -321,5 +335,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblPrice;
     }
 }
