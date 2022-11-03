@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.maintenanceAppointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupPlanAppointment = new System.Windows.Forms.GroupBox();
+            this.cbRoutine = new System.Windows.Forms.CheckBox();
             this.cbWorker = new System.Windows.Forms.ComboBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             this.nextAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupAppointments = new System.Windows.Forms.GroupBox();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.lblRoutine = new System.Windows.Forms.Label();
             this.groupAppointmentInfo.SuspendLayout();
             this.groupAppointmentLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource1)).BeginInit();
@@ -93,6 +95,7 @@
             // groupAppointmentInfo
             // 
             this.groupAppointmentInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupAppointmentInfo.Controls.Add(this.lblRoutine);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentWorker);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentProduct);
             this.groupAppointmentInfo.Controls.Add(this.groupAppointmentLocation);
@@ -274,6 +277,7 @@
             // 
             // groupPlanAppointment
             // 
+            this.groupPlanAppointment.Controls.Add(this.cbRoutine);
             this.groupPlanAppointment.Controls.Add(this.cbWorker);
             this.groupPlanAppointment.Controls.Add(this.label5);
             this.groupPlanAppointment.Controls.Add(this.label1);
@@ -291,6 +295,16 @@
             this.groupPlanAppointment.TabIndex = 74;
             this.groupPlanAppointment.TabStop = false;
             this.groupPlanAppointment.Text = "Afspraak inplannen";
+            // 
+            // cbRoutine
+            // 
+            this.cbRoutine.AutoSize = true;
+            this.cbRoutine.Location = new System.Drawing.Point(225, 128);
+            this.cbRoutine.Name = "cbRoutine";
+            this.cbRoutine.Size = new System.Drawing.Size(126, 17);
+            this.cbRoutine.TabIndex = 64;
+            this.cbRoutine.Text = "Routinematig bezoek";
+            this.cbRoutine.UseVisualStyleBackColor = true;
             // 
             // cbWorker
             // 
@@ -477,6 +491,15 @@
             this.dgvAppointments.TabIndex = 45;
             this.dgvAppointments.SelectionChanged += new System.EventHandler(this.dgvAppointments_SelectionChanged_1);
             // 
+            // lblRoutine
+            // 
+            this.lblRoutine.AutoSize = true;
+            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
+            this.lblRoutine.Name = "lblRoutine";
+            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
+            this.lblRoutine.TabIndex = 57;
+            this.lblRoutine.Text = "Routine";
+            // 
             // MaintenanceOnderHoudManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,5 +577,7 @@
         private System.Windows.Forms.ComboBox cbWorker;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox cbRoutine;
+        private System.Windows.Forms.Label lblRoutine;
     }
 }

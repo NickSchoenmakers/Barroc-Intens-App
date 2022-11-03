@@ -22,9 +22,9 @@ namespace BarrocIntensApp
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e)
         {
-            var inkoopForm = new MaintenanceForm();
+            var maintenanceDashboard = new MaintenanceForm();
             this.Hide();
-            inkoopForm.Show(this);
+            maintenanceDashboard.Show(this);
         }
 
         private void MaintenanceOnderdelenForm_Load(object sender, EventArgs e)

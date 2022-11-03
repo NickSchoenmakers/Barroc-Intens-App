@@ -1,4 +1,5 @@
-﻿using BarrocIntensApp.Models;
+﻿using BarrocIntensApp.Maintenance;
+using BarrocIntensApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,10 +44,16 @@ namespace BarrocIntensApp
             var maintenanceAppointment = (MaintenanceAppointment)this.dgvAppointments.CurrentRow?.DataBoundItem;
             return maintenanceAppointment;
         }
+        private MaintenanceAppointmentWorkOrder GetMaintenanceAppointmentWorkOrder()
+        {
+            MaintenanceAppointmentWorkOrder maintenanceAppointmentWorkOrder = GetMaintenanceAppointment().MaintenanceAppointmentWorkOrder;
+            return maintenanceAppointmentWorkOrder;
+        }
 
         private void dgvAppointments_SelectionChanged(object sender, EventArgs e){
             this.RefreshAppointmentInfo();
             this.groupAppointmentInfo.Show();
+            lblWorkOrderFeedback.Visible = false;
         }
 
         private void RefreshAppointmentInfo() {
@@ -60,6 +68,25 @@ namespace BarrocIntensApp
                 lblCompanyNumber.Text = $"Huisnummer: {maintenanceAppointment.Company.HouseNumber}";
                 lblCompanyCity.Text = $"Stad: {maintenanceAppointment.Company.City}";
                 lblCompanyCountryCode.Text = $"Landcode: {maintenanceAppointment.Company.CountryCode}";
+
+                if (maintenanceAppointment.IsRoutine)
+                {
+                    lblRoutine.Text = "Type bezoek: routinematig";
+                }
+                else
+                {
+                    lblRoutine.Text = "Type bezoek: storingbezoek";
+                }
+            }
+            if (GetMaintenanceAppointmentWorkOrder() is null)
+            {
+                btnShowCreateWorkOrder.Visible = true;
+                btnViewWorkOrder.Visible = false;
+            }
+            else
+            {
+                btnViewWorkOrder.Visible = true;
+                btnShowCreateWorkOrder.Visible = false;
             }
         }
 
@@ -85,6 +112,32 @@ namespace BarrocIntensApp
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e) {
             FilterProducts();
+        }
+
+        private void btnShowCreateWorkOrder_Click(object sender, EventArgs e)
+        {
+            var maintenanceCreateWerkbon = new MaintenanceCreateWerkbonForm(GetMaintenanceAppointment());
+            maintenanceCreateWerkbon.ShowDialog(this);
+            if (maintenanceCreateWerkbon.workOrderCreated != null)
+            {
+                lblWorkOrderFeedback.Visible = true;
+                btnViewWorkOrder.Visible = true;
+                btnShowCreateWorkOrder.Visible = false;
+            }
+        }
+
+        private void btnReturnDashboard_Click(object sender, EventArgs e)
+        {
+            var maintenanceDashboard = new MaintenanceForm();
+            this.Hide();
+            maintenanceDashboard.Show(this);
+        }
+
+        private void btnViewWorkOrder_Click(object sender, EventArgs e)
+        {
+            var maintenanceWerkbon = new MaintenanceViewWerkbonForm(GetMaintenanceAppointmentWorkOrder());
+            maintenanceWerkbon.ShowDialog(this);
+
         }
     }
 }

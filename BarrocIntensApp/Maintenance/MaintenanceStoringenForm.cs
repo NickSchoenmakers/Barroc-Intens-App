@@ -47,9 +47,9 @@ namespace BarrocIntensApp
         }
         private void roundButton1_Click(object sender, EventArgs e)
         {
-            var inkoopForm = new MaintenanceForm();
+            var maintenanceDashboard = new MaintenanceForm();
             this.Hide();
-            inkoopForm.Show(this);
+            maintenanceDashboard.Show(this);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

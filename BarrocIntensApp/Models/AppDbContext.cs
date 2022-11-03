@@ -18,7 +18,8 @@ namespace BarrocIntensApp.Models
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<User> MaintenanceAppointmentsProduct { get; set; }
+        public DbSet<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentProducts { get; set; }
+        public DbSet<MaintenanceAppointmentWorkOrder> MaintenanceAppointmentWorkOrders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -81,14 +82,37 @@ namespace BarrocIntensApp.Models
                 new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, Stock = 0, ProductCategoryId = 2 },
                 new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, Stock = 250, ProductCategoryId = 2 },
                 new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, Stock = 124, ProductCategoryId = 2 },
-                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2 }
+                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2 },
+                new Product { Id = 9, Name = "Kabel", Description = "123", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true },
+                new Product { Id = 10, Name = "Schroef", Description = "SFE8912SD", Price = 0.05m, Stock = 1500, ProductCategoryId = 1, isPart = true },
+                new Product { Id = 11, Name = "Lichtje", Description = "GMGE2222A", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true },
+                new Product { Id = 12, Name = "Knop", Description = "GHSM333A3", Price = 0.05m, Stock = 500, ProductCategoryId = 1, isPart = true }
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17, 17, 15, 0), ProductId = 1, WorkerId = 4, CompanyId = 1},
-                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12, 10, 15, 0), ProductId = 2, WorkerId = 5, CompanyId = 2 },
-                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01, 12, 0, 0), LastAppointment = new DateTime(2019, 09, 29), ProductId = 2, WorkerId = 6, CompanyId = 3 }
+                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17, 17, 15, 0), ProductId = 1, WorkerId = 4, CompanyId = 1, IsRoutine = false},
+                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12, 10, 15, 0), ProductId = 2, WorkerId = 5, CompanyId = 2, IsRoutine = false },
+                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01, 12, 0, 0), LastAppointment = new DateTime(2019, 09, 29), ProductId = 2, WorkerId = 6, CompanyId = 3, IsRoutine = false },
+                new MaintenanceAppointment { Id = 4, Remark = "Grote onderhoud", NextAppointment = new DateTime(2023, 02, 12, 17, 15, 0), ProductId = 2, WorkerId = 4, CompanyId = 1, IsRoutine = false },
+                new MaintenanceAppointment { Id = 5, Remark = "Check", NextAppointment = new DateTime(2024, 02, 12, 17, 13, 0), ProductId = 2, WorkerId = 4, CompanyId = 1, IsRoutine = true }
             );
+
+            //modelBuilder.Entity<MaintenanceAppointmentWorkOrder>().HasData(
+            //    new MaintenanceAppointmentWorkOrder { Id = 1, Description = "ja" },
+            //    new MaintenanceAppointmentWorkOrder { Id = 2, Description = "werk" },
+            //    new MaintenanceAppointmentWorkOrder { Id = 3, Description = "ttt" }
+            //);
+            //modelBuilder.Entity<MaintenanceAppointmentWorkOrderProduct>().HasData(
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 1, MaintenanceAppointmentWorkOrderId = 1, ProductId = 1, Amount = 3},
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 2, MaintenanceAppointmentWorkOrderId = 1, ProductId = 2, Amount = 5 },
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 3, MaintenanceAppointmentWorkOrderId = 2, ProductId = 1, Amount = 2 },
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 4, MaintenanceAppointmentWorkOrderId = 3, ProductId = 1, Amount = 6 },
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 5, MaintenanceAppointmentWorkOrderId = 3, ProductId = 1, Amount = 1 },
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 6, MaintenanceAppointmentWorkOrderId = 3, ProductId = 2, Amount = 3 },
+            //    new MaintenanceAppointmentWorkOrderProduct { Id = 7, MaintenanceAppointmentWorkOrderId = 3, ProductId = 3, Amount = 2 }
+
+
+            //    );
 
             modelBuilder.Entity<Note>().HasData(
                 new Note { Id = 1, NoteText = "Goed gesprek", Date = new DateTime(2022, 01, 22), CompanyId = 1, AuthorId = 8 },

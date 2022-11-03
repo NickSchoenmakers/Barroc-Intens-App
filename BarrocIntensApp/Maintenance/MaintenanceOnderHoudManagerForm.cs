@@ -29,9 +29,9 @@ namespace BarrocIntensApp.Maintenance {
         }
 
         private void BtnReturnStoringen_Click(object sender, EventArgs e) {
-            var inkoopForm = new MaintenanceForm();
+            var maintenanceDashboard = new MaintenanceForm();
             this.Hide();
-            inkoopForm.Show(this);
+            maintenanceDashboard.Show(this);
         }
 
         private void roundButton1_Click(object sender, EventArgs e) {
@@ -58,6 +58,15 @@ namespace BarrocIntensApp.Maintenance {
                 lblCompanyNumber.Text = $"Huisnummer: {maintenanceAppointment.Company.HouseNumber}";
                 lblCompanyCity.Text = $"Stad: {maintenanceAppointment.Company.City}";
                 lblCompanyCountryCode.Text = $"Landcode: {maintenanceAppointment.Company.CountryCode}";
+
+                if (maintenanceAppointment.IsRoutine)
+                {
+                    lblRoutine.Text = "Type bezoek: routinematig";
+                }
+                else
+                {
+                    lblRoutine.Text = "Type bezoek: storingbezoek";
+                }
             }
         }
 
@@ -89,7 +98,8 @@ namespace BarrocIntensApp.Maintenance {
                 CompanyId = (int)cbAppointmentCompany.SelectedValue,
                 Remark = txbAppointmentRemark.Text,
                 ProductId = (int)cbAppointmentProduct.SelectedValue,
-                WorkerId = (int)cbWorker.SelectedValue
+                WorkerId = (int)cbWorker.SelectedValue,
+                IsRoutine = cbRoutine.Checked
             };
 
             Program.dbContext.MaintenanceAppointments.Add(maintenanceAppointmentToAdd);
