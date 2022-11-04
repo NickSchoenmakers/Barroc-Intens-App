@@ -38,6 +38,7 @@
             this.btnOfferte = new BarrocIntensApp.RoundButton();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.BtnManager = new BarrocIntensApp.RoundButton();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,12 +144,25 @@
             this.BtnManager.Visible = false;
             this.BtnManager.Click += new System.EventHandler(this.BtnManager_Click);
             // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(964, 63);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 42;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // MaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.BtnManager);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -177,5 +191,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton BtnManager;
+        private RoundButton roundButton1;
     }
 }

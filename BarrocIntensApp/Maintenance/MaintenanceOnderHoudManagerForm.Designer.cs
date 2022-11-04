@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.groupAppointmentInfo = new System.Windows.Forms.GroupBox();
+            this.lblRoutine = new System.Windows.Forms.Label();
             this.lblAppointmentWorker = new System.Windows.Forms.Label();
             this.lblAppointmentProduct = new System.Windows.Forms.Label();
             this.groupAppointmentLocation = new System.Windows.Forms.GroupBox();
@@ -64,7 +65,7 @@
             this.nextAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupAppointments = new System.Windows.Forms.GroupBox();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.lblRoutine = new System.Windows.Forms.Label();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             this.groupAppointmentInfo.SuspendLayout();
             this.groupAppointmentLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource1)).BeginInit();
@@ -109,6 +110,15 @@
             this.groupAppointmentInfo.TabIndex = 72;
             this.groupAppointmentInfo.TabStop = false;
             this.groupAppointmentInfo.Text = "Afspraakinfo";
+            // 
+            // lblRoutine
+            // 
+            this.lblRoutine.AutoSize = true;
+            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
+            this.lblRoutine.Name = "lblRoutine";
+            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
+            this.lblRoutine.TabIndex = 57;
+            this.lblRoutine.Text = "Routine";
             // 
             // lblAppointmentWorker
             // 
@@ -491,20 +501,24 @@
             this.dgvAppointments.TabIndex = 45;
             this.dgvAppointments.SelectionChanged += new System.EventHandler(this.dgvAppointments_SelectionChanged_1);
             // 
-            // lblRoutine
+            // roundButton2
             // 
-            this.lblRoutine.AutoSize = true;
-            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
-            this.lblRoutine.Name = "lblRoutine";
-            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
-            this.lblRoutine.TabIndex = 57;
-            this.lblRoutine.Text = "Routine";
+            this.roundButton2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton2.Location = new System.Drawing.Point(383, 45);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(168, 70);
+            this.roundButton2.TabIndex = 77;
+            this.roundButton2.Text = "Logout";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
             // MaintenanceOnderHoudManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.groupAppointmentInfo);
             this.Controls.Add(this.btnReturnDashboard);
@@ -579,5 +593,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbRoutine;
         private System.Windows.Forms.Label lblRoutine;
+        private RoundButton roundButton2;
     }
 }

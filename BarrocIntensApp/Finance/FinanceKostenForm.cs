@@ -18,5 +18,19 @@ namespace BarrocIntensApp
             InitializeComponent();
             lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var maintenanceDashboard = new FinanceForm();
+            this.Hide();
+            maintenanceDashboard.Show(this);
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
     }
 }
