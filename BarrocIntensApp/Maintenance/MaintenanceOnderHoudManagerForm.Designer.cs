@@ -26,6 +26,8 @@
             this.components = new System.ComponentModel.Container();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.groupAppointmentInfo = new System.Windows.Forms.GroupBox();
+            this.btnViewWorkOrder = new System.Windows.Forms.Button();
+            this.lblRoutine = new System.Windows.Forms.Label();
             this.lblAppointmentWorker = new System.Windows.Forms.Label();
             this.lblAppointmentProduct = new System.Windows.Forms.Label();
             this.groupAppointmentLocation = new System.Windows.Forms.GroupBox();
@@ -64,7 +66,6 @@
             this.nextAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupAppointments = new System.Windows.Forms.GroupBox();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.lblRoutine = new System.Windows.Forms.Label();
             this.groupAppointmentInfo.SuspendLayout();
             this.groupAppointmentLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource1)).BeginInit();
@@ -95,6 +96,7 @@
             // groupAppointmentInfo
             // 
             this.groupAppointmentInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupAppointmentInfo.Controls.Add(this.btnViewWorkOrder);
             this.groupAppointmentInfo.Controls.Add(this.lblRoutine);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentWorker);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentProduct);
@@ -109,6 +111,26 @@
             this.groupAppointmentInfo.TabIndex = 72;
             this.groupAppointmentInfo.TabStop = false;
             this.groupAppointmentInfo.Text = "Afspraakinfo";
+            // 
+            // btnViewWorkOrder
+            // 
+            this.btnViewWorkOrder.Location = new System.Drawing.Point(442, 289);
+            this.btnViewWorkOrder.Name = "btnViewWorkOrder";
+            this.btnViewWorkOrder.Size = new System.Drawing.Size(123, 32);
+            this.btnViewWorkOrder.TabIndex = 58;
+            this.btnViewWorkOrder.Text = "Werkbon openen";
+            this.btnViewWorkOrder.UseVisualStyleBackColor = true;
+            this.btnViewWorkOrder.Visible = false;
+            this.btnViewWorkOrder.Click += new System.EventHandler(this.btnViewWorkOrder_Click);
+            // 
+            // lblRoutine
+            // 
+            this.lblRoutine.AutoSize = true;
+            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
+            this.lblRoutine.Name = "lblRoutine";
+            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
+            this.lblRoutine.TabIndex = 57;
+            this.lblRoutine.Text = "Routine";
             // 
             // lblAppointmentWorker
             // 
@@ -491,15 +513,6 @@
             this.dgvAppointments.TabIndex = 45;
             this.dgvAppointments.SelectionChanged += new System.EventHandler(this.dgvAppointments_SelectionChanged_1);
             // 
-            // lblRoutine
-            // 
-            this.lblRoutine.AutoSize = true;
-            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
-            this.lblRoutine.Name = "lblRoutine";
-            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
-            this.lblRoutine.TabIndex = 57;
-            this.lblRoutine.Text = "Routine";
-            // 
             // MaintenanceOnderHoudManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,5 +592,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbRoutine;
         private System.Windows.Forms.Label lblRoutine;
+        private System.Windows.Forms.Button btnViewWorkOrder;
     }
 }

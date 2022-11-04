@@ -67,6 +67,15 @@ namespace BarrocIntensApp.Maintenance {
                 {
                     lblRoutine.Text = "Type bezoek: storingbezoek";
                 }
+
+                if (maintenanceAppointment.MaintenanceAppointmentWorkOrderId != null)
+                {
+                    btnViewWorkOrder.Visible = true;
+                }
+                else
+                {
+                    btnViewWorkOrder.Visible = false;
+                }
             }
         }
 
@@ -107,11 +116,23 @@ namespace BarrocIntensApp.Maintenance {
             FilterProducts();
         }
 
+        private MaintenanceAppointmentWorkOrder GetMaintenanceAppointmentWorkOrder()
+        {
+            MaintenanceAppointmentWorkOrder maintenanceAppointmentWorkOrder = GetMaintenanceAppointment().MaintenanceAppointmentWorkOrder;
+            return maintenanceAppointmentWorkOrder;
+        }
+
         private void btnDeleteAppointment_Click_1(object sender, EventArgs e) {
             Program.dbContext.Remove(GetMaintenanceAppointment());
             Program.dbContext.SaveChanges();
             dgvAppointments.ClearSelection();
             groupAppointmentInfo.Hide();
+        }
+
+        private void btnViewWorkOrder_Click(object sender, EventArgs e)
+        {
+            var maintenanceWerkbon = new MaintenanceViewWerkbonForm(GetMaintenanceAppointmentWorkOrder());
+            maintenanceWerkbon.ShowDialog(this);
         }
     }
 }
