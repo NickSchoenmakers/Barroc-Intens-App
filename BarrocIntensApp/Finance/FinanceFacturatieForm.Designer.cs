@@ -250,6 +250,7 @@
             this.NameCb.Size = new System.Drawing.Size(170, 21);
             this.NameCb.TabIndex = 37;
             this.NameCb.ValueMember = "Id";
+            this.NameCb.SelectedIndexChanged += new System.EventHandler(this.NameCb_SelectedIndexChanged);
             this.NameCb.SelectedValueChanged += new System.EventHandler(this.NameCb_SelectedValueChanged);
             // 
             // companyBindingSource
