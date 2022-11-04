@@ -104,17 +104,28 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
+            
             var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
             if (product != null)
             {
-                var ProductToAdd = new CustomInvoiceProduct
+                if (product.Stock >= (int)AmountNu.Value)
                 {
-                    Amount = (int)AmountNu.Value,
-                    Product = product,
-                };
-                ProductToBuy.CustomInvoiceProducts.Add(ProductToAdd);
-                this.CartGv.Refresh();
-                this.dbContext.SaveChanges();
+                    product.Stock = product.Stock - (int)AmountNu.Value;
+                    var ProductToAdd = new CustomInvoiceProduct
+                    {
+                        Amount = (int)AmountNu.Value,
+                        Product = product,
+                    };
+                    ProductToBuy.CustomInvoiceProducts.Add(ProductToAdd);
+                    this.dbContext.SaveChanges();
+                    this.CartGv.Refresh();
+                    this.productsDataGridView.Refresh();
+                }
+                else 
+                {
+                    MessageBox.Show("er zijn niet genoeg producten in voorraad om aan deze bestelling te voldoen, neem contact op met inkoop om eventueel meer producten te kopen om aan de bestelling te voldoen");
+                }
+
             }
             else 
             {
@@ -183,6 +194,11 @@ namespace BarrocIntensApp
             var maintenanceDashboard = new FinanceForm();
             this.Hide();
             maintenanceDashboard.Show(this);
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
