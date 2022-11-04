@@ -53,6 +53,7 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -296,11 +297,25 @@
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.Color.Black;
+            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(12, 53);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(88, 50);
+            this.roundButton2.TabIndex = 41;
+            this.roundButton2.Text = "←";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -351,5 +366,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblPrice;
         private RoundButton roundButton1;
+        private RoundButton roundButton2;
     }
 }

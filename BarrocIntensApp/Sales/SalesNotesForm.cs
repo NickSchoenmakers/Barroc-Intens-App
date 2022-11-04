@@ -124,5 +124,12 @@ namespace BarrocIntensApp.Sales
         {
 
         }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
     }
 }

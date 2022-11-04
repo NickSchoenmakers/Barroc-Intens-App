@@ -177,5 +177,12 @@ namespace BarrocIntensApp
             this.Hide();
             LoginForm.Show(this);
         }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var maintenanceDashboard = new FinanceForm();
+            this.Hide();
+            maintenanceDashboard.Show(this);
+        }
     }
 }

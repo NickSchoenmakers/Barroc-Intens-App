@@ -40,6 +40,9 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
+            this.lbAmount = new System.Windows.Forms.Label();
+            this.txbAmount = new System.Windows.Forms.TextBox();
+            this.lbPermission = new System.Windows.Forms.Label();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
@@ -62,9 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lbPermission = new System.Windows.Forms.Label();
-            this.txbAmount = new System.Windows.Forms.TextBox();
-            this.lbAmount = new System.Windows.Forms.Label();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -202,6 +203,30 @@
             this.groupProductInfo.TabIndex = 48;
             this.groupProductInfo.TabStop = false;
             this.groupProductInfo.Text = "Product info";
+            // 
+            // lbAmount
+            // 
+            this.lbAmount.AutoSize = true;
+            this.lbAmount.Location = new System.Drawing.Point(351, 323);
+            this.lbAmount.Name = "lbAmount";
+            this.lbAmount.Size = new System.Drawing.Size(37, 13);
+            this.lbAmount.TabIndex = 53;
+            this.lbAmount.Text = "Aantal";
+            // 
+            // txbAmount
+            // 
+            this.txbAmount.Location = new System.Drawing.Point(349, 339);
+            this.txbAmount.Name = "txbAmount";
+            this.txbAmount.Size = new System.Drawing.Size(100, 20);
+            this.txbAmount.TabIndex = 52;
+            // 
+            // lbPermission
+            // 
+            this.lbPermission.AutoSize = true;
+            this.lbPermission.Location = new System.Drawing.Point(316, 13);
+            this.lbPermission.Name = "lbPermission";
+            this.lbPermission.Size = new System.Drawing.Size(0, 13);
+            this.lbPermission.TabIndex = 51;
             // 
             // btnDeleteProduct
             // 
@@ -418,29 +443,17 @@
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
             // 
-            // lbPermission
+            // roundButton1
             // 
-            this.lbPermission.AutoSize = true;
-            this.lbPermission.Location = new System.Drawing.Point(316, 13);
-            this.lbPermission.Name = "lbPermission";
-            this.lbPermission.Size = new System.Drawing.Size(0, 13);
-            this.lbPermission.TabIndex = 51;
-            // 
-            // txbAmount
-            // 
-            this.txbAmount.Location = new System.Drawing.Point(349, 339);
-            this.txbAmount.Name = "txbAmount";
-            this.txbAmount.Size = new System.Drawing.Size(100, 20);
-            this.txbAmount.TabIndex = 52;
-            // 
-            // lbAmount
-            // 
-            this.lbAmount.AutoSize = true;
-            this.lbAmount.Location = new System.Drawing.Point(351, 323);
-            this.lbAmount.Name = "lbAmount";
-            this.lbAmount.Size = new System.Drawing.Size(37, 13);
-            this.lbAmount.TabIndex = 53;
-            this.lbAmount.Text = "Aantal";
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(384, 50);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 55;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // InkoopBestellenForm
             // 
@@ -448,6 +461,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.groupAddProduct);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.label2);
@@ -521,5 +535,6 @@
         private System.Windows.Forms.Label lbAmount;
         private System.Windows.Forms.TextBox txbAmount;
         private System.Windows.Forms.Label lbPermission;
+        private RoundButton roundButton1;
     }
 }

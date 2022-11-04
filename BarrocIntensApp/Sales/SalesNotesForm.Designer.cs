@@ -41,10 +41,11 @@
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DateMadelbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.CompanyNamelbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DateMadelbl = new System.Windows.Forms.Label();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
@@ -178,6 +179,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notities";
             // 
+            // DateMadelbl
+            // 
+            this.DateMadelbl.AutoSize = true;
+            this.DateMadelbl.Location = new System.Drawing.Point(304, 29);
+            this.DateMadelbl.Name = "DateMadelbl";
+            this.DateMadelbl.Size = new System.Drawing.Size(35, 13);
+            this.DateMadelbl.TabIndex = 47;
+            this.DateMadelbl.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(254, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Datum: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // CompanyNamelbl
             // 
             this.CompanyNamelbl.AutoSize = true;
@@ -196,30 +216,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Name:";
             // 
-            // label2
+            // roundButton1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Datum: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // DateMadelbl
-            // 
-            this.DateMadelbl.AutoSize = true;
-            this.DateMadelbl.Location = new System.Drawing.Point(304, 29);
-            this.DateMadelbl.Name = "DateMadelbl";
-            this.DateMadelbl.Size = new System.Drawing.Size(35, 13);
-            this.DateMadelbl.TabIndex = 47;
-            this.DateMadelbl.Text = "label3";
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(977, 44);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 54);
+            this.roundButton1.TabIndex = 47;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // SalesNotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CompNameCB);
             this.Controls.Add(this.btnSave);
@@ -263,5 +277,6 @@
         private System.Windows.Forms.BindingSource noteBindingSource;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label DateMadelbl;
+        private RoundButton roundButton1;
     }
 }

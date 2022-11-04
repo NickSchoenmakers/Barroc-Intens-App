@@ -55,6 +55,13 @@ namespace BarrocIntensApp
                     address, subject, body, attachment);
             System.Diagnostics.Process.Start(mailto);
         }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
     }
 }
 // C:/xampp/htdocs/Barroc-Intens-App/BarrocIntensApp/text.txt

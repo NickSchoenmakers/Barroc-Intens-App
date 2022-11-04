@@ -39,6 +39,8 @@
             this.bkrCheckedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSaveChanges = new BarrocIntensApp.RoundButton();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCompanies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
@@ -129,11 +131,38 @@
             this.btnSaveChanges.UseVisualStyleBackColor = true;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.Color.Black;
+            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(17, 48);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(88, 50);
+            this.roundButton2.TabIndex = 43;
+            this.roundButton2.Text = "←";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(964, 48);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 44;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // FinanceLeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton1);
+            this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.cbCompanies);
             this.Controls.Add(this.lblDepartmentPart);
@@ -163,5 +192,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bkrCheckedAtDataGridViewTextBoxColumn;
         private RoundButton btnSaveChanges;
+        private RoundButton roundButton2;
+        private RoundButton roundButton1;
     }
 }

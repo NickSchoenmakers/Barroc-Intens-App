@@ -33,6 +33,7 @@
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
             this.BtnSendMail = new BarrocIntensApp.RoundButton();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,24 @@
             this.BtnSendMail.UseVisualStyleBackColor = true;
             this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click);
             // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(964, 45);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 44;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // SalesOfferteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.BtnSendMail);
             this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lblDepartmentPart);
@@ -122,5 +136,6 @@
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton btnBackNotes;
         private RoundButton BtnSendMail;
+        private RoundButton roundButton1;
     }
 }

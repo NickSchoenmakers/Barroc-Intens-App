@@ -55,5 +55,19 @@ namespace BarrocIntensApp
             // if the user gives incorrect information then it shows them this message
             MessageBox.Show("please fill in a correct date. an example of formating: 20/02/2020");
         }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var maintenanceDashboard = new FinanceForm();
+            this.Hide();
+            maintenanceDashboard.Show(this);
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
     }
 }

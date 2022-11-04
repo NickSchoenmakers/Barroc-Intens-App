@@ -113,5 +113,12 @@ namespace BarrocIntensApp.Maintenance {
             dgvAppointments.ClearSelection();
             groupAppointmentInfo.Hide();
         }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
     }
 }

@@ -42,6 +42,7 @@
             this.NextAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
@@ -106,7 +107,7 @@
             this.Company});
             this.dgvRemarks.DataSource = this.maintenanceAppointmentBindingSource;
             this.dgvRemarks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dgvRemarks.Location = new System.Drawing.Point(379, 49);
+            this.dgvRemarks.Location = new System.Drawing.Point(12, 121);
             this.dgvRemarks.Name = "dgvRemarks";
             this.dgvRemarks.Size = new System.Drawing.Size(753, 438);
             this.dgvRemarks.TabIndex = 8;
@@ -147,11 +148,24 @@
             this.Company.Name = "Company";
             this.Company.Width = 76;
             // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton2.Location = new System.Drawing.Point(964, 49);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(168, 70);
+            this.roundButton2.TabIndex = 43;
+            this.roundButton2.Text = "Logout";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
             // MaintenanceStoringenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.dgvRemarks);
             this.Controls.Add(this.pbBlack);
@@ -184,5 +198,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NextAppointment;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastAppointment;
         private System.Windows.Forms.DataGridViewTextBoxColumn Company;
+        private RoundButton roundButton2;
     }
 }
