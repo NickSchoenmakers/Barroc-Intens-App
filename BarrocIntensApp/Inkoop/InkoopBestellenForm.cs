@@ -15,6 +15,7 @@ namespace BarrocIntensApp.Inkoop
 {
     public partial class InkoopBestellenForm : Form
     {
+        string hasArrived;
         public InkoopBestellenForm()
         {
             InitializeComponent();
@@ -101,8 +102,17 @@ namespace BarrocIntensApp.Inkoop
         private void RefreshProductInfo()
         {
             Product product = GetProduct();
+            if ((bool)(product?.hasArrived))
+            {
+                hasArrived = "ja";
+            }
+            else
+            {
+                hasArrived = "nee";
+            }
             lblPrice.Text = $"Prijs: {Decimal.Parse(product?.Price.ToString("0.00"))}";
             lblStock.Text = $"Aantal op voorraad: {product?.Stock.ToString()}";
+            lblStatus.Text = $"Is het geariveerd: {hasArrived}";
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,10 +174,12 @@ namespace BarrocIntensApp.Inkoop
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            Program.dbContext.Remove(GetProduct());
+            var product = GetProduct();
+            Program.dbContext.Remove(product);
             Program.dbContext.SaveChanges();
             dgvProducts.ClearSelection();
             groupProductInfo.Hide();
+            
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
