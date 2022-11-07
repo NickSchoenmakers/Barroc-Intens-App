@@ -66,6 +66,7 @@
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -190,6 +191,7 @@
             // groupProductInfo
             // 
             this.groupProductInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupProductInfo.Controls.Add(this.lblStatus);
             this.groupProductInfo.Controls.Add(this.lbAmount);
             this.groupProductInfo.Controls.Add(this.txbAmount);
             this.groupProductInfo.Controls.Add(this.lbPermission);
@@ -455,6 +457,16 @@
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatus.Location = new System.Drawing.Point(3, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(26, 13);
+            this.lblStatus.TabIndex = 54;
+            this.lblStatus.Text = "Prijs";
+            // 
             // InkoopBestellenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,5 +548,6 @@
         private System.Windows.Forms.TextBox txbAmount;
         private System.Windows.Forms.Label lbPermission;
         private RoundButton roundButton1;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
