@@ -34,7 +34,6 @@
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.BtnSendMail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.nudAmount1 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -44,9 +43,12 @@
             this.txbFirstName = new System.Windows.Forms.TextBox();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.groupProducts = new System.Windows.Forms.GroupBox();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbLoad = new System.Windows.Forms.ProgressBar();
+            this.btnBackNotes = new BarrocIntensApp.RoundButton();
+            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,15 +58,13 @@
             this.productCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPartDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBackNotes = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).BeginInit();
             this.groupProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -117,7 +117,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dgvProducts);
             this.panel1.Controls.Add(this.BtnSendMail);
             this.panel1.Controls.Add(this.nudAmount1);
             this.panel1.Controls.Add(this.label12);
@@ -132,38 +131,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 532);
             this.panel1.TabIndex = 44;
-            // 
-            // dgvProducts
-            // 
-            this.dgvProducts.AllowUserToAddRows = false;
-            this.dgvProducts.AllowUserToDeleteRows = false;
-            this.dgvProducts.AllowUserToResizeColumns = false;
-            this.dgvProducts.AllowUserToResizeRows = false;
-            this.dgvProducts.AutoGenerateColumns = false;
-            this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.ColumnHeadersVisible = false;
-            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvColumnName,
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.imagePathDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.stockDataGridViewTextBoxColumn,
-            this.productCategoryIdDataGridViewTextBoxColumn,
-            this.isPartDataGridViewCheckBoxColumn,
-            this.productCategoryDataGridViewTextBoxColumn});
-            this.dgvProducts.DataSource = this.productBindingSource2;
-            this.dgvProducts.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvProducts.Location = new System.Drawing.Point(34, 177);
-            this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.RowHeadersVisible = false;
-            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProducts.Size = new System.Drawing.Size(441, 155);
-            this.dgvProducts.TabIndex = 46;
             // 
             // nudAmount1
             // 
@@ -231,6 +198,7 @@
             // 
             // groupProducts
             // 
+            this.groupProducts.Controls.Add(this.dgvProducts);
             this.groupProducts.Controls.Add(this.dgvAppointments);
             this.groupProducts.Location = new System.Drawing.Point(34, 162);
             this.groupProducts.Name = "groupProducts";
@@ -238,6 +206,43 @@
             this.groupProducts.TabIndex = 74;
             this.groupProducts.TabStop = false;
             this.groupProducts.Text = "Producten";
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AllowUserToResizeColumns = false;
+            this.dgvProducts.AllowUserToResizeRows = false;
+            this.dgvProducts.AutoGenerateColumns = false;
+            this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.ColumnHeadersVisible = false;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColumnName,
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.imagePathDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.productCategoryIdDataGridViewTextBoxColumn,
+            this.isPartDataGridViewCheckBoxColumn,
+            this.productCategoryDataGridViewTextBoxColumn});
+            this.dgvProducts.DataSource = this.productBindingSource2;
+            this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProducts.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvProducts.Location = new System.Drawing.Point(3, 16);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersVisible = false;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvProducts.Size = new System.Drawing.Size(435, 151);
+            this.dgvProducts.TabIndex = 46;
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
             // dgvAppointments
             // 
@@ -258,14 +263,6 @@
             this.dgvAppointments.Size = new System.Drawing.Size(515, 381);
             this.dgvAppointments.TabIndex = 45;
             // 
-            // dgvColumnName
-            // 
-            this.dgvColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvColumnName.DataPropertyName = "Name";
-            this.dgvColumnName.HeaderText = "Name";
-            this.dgvColumnName.Name = "dgvColumnName";
-            this.dgvColumnName.ReadOnly = true;
-            // 
             // pbLoad
             // 
             this.pbLoad.Location = new System.Drawing.Point(56, 220);
@@ -276,73 +273,6 @@
             this.pbLoad.TabIndex = 46;
             this.pbLoad.UseWaitCursor = true;
             this.pbLoad.Visible = false;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagePathDataGridViewTextBoxColumn
-            // 
-            this.imagePathDataGridViewTextBoxColumn.DataPropertyName = "ImagePath";
-            this.imagePathDataGridViewTextBoxColumn.HeaderText = "ImagePath";
-            this.imagePathDataGridViewTextBoxColumn.Name = "imagePathDataGridViewTextBoxColumn";
-            this.imagePathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productCategoryIdDataGridViewTextBoxColumn
-            // 
-            this.productCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "ProductCategoryId";
-            this.productCategoryIdDataGridViewTextBoxColumn.HeaderText = "ProductCategoryId";
-            this.productCategoryIdDataGridViewTextBoxColumn.Name = "productCategoryIdDataGridViewTextBoxColumn";
-            this.productCategoryIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isPartDataGridViewCheckBoxColumn
-            // 
-            this.isPartDataGridViewCheckBoxColumn.DataPropertyName = "isPart";
-            this.isPartDataGridViewCheckBoxColumn.HeaderText = "isPart";
-            this.isPartDataGridViewCheckBoxColumn.Name = "isPartDataGridViewCheckBoxColumn";
-            this.isPartDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // productCategoryDataGridViewTextBoxColumn
-            // 
-            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
-            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productBindingSource2
-            // 
-            this.productBindingSource2.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
             // btnBackNotes
             // 
@@ -356,6 +286,86 @@
             this.btnBackNotes.Text = "←";
             this.btnBackNotes.UseVisualStyleBackColor = false;
             this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
+            // 
+            // dgvColumnName
+            // 
+            this.dgvColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvColumnName.DataPropertyName = "Name";
+            this.dgvColumnName.HeaderText = "Name";
+            this.dgvColumnName.Name = "dgvColumnName";
+            this.dgvColumnName.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // imagePathDataGridViewTextBoxColumn
+            // 
+            this.imagePathDataGridViewTextBoxColumn.DataPropertyName = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn.HeaderText = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn.Name = "imagePathDataGridViewTextBoxColumn";
+            this.imagePathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imagePathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // productCategoryIdDataGridViewTextBoxColumn
+            // 
+            this.productCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.HeaderText = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.Name = "productCategoryIdDataGridViewTextBoxColumn";
+            this.productCategoryIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productCategoryIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // isPartDataGridViewCheckBoxColumn
+            // 
+            this.isPartDataGridViewCheckBoxColumn.DataPropertyName = "isPart";
+            this.isPartDataGridViewCheckBoxColumn.HeaderText = "isPart";
+            this.isPartDataGridViewCheckBoxColumn.Name = "isPartDataGridViewCheckBoxColumn";
+            this.isPartDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isPartDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // productCategoryDataGridViewTextBoxColumn
+            // 
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productCategoryDataGridViewTextBoxColumn.Visible = false;
             // 
             // SalesOfferteForm
             // 
@@ -377,11 +387,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).EndInit();
             this.groupProducts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,6 +415,7 @@
         private System.Windows.Forms.BindingSource productBindingSource2;
         private System.Windows.Forms.GroupBox groupProducts;
         private System.Windows.Forms.DataGridView dgvAppointments;
+        private System.Windows.Forms.ProgressBar pbLoad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -415,6 +426,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isPartDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ProgressBar pbLoad;
     }
 }
