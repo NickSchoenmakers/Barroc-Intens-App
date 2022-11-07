@@ -197,6 +197,12 @@
     <Compile Include="Finance\FinanceFacturatieForm.Designer.cs">
       <DependentUpon>FinanceFacturatieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finance\FinanceFacturatieOverzichtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\FinanceFacturatieOverzichtForm.Designer.cs">
+      <DependentUpon>FinanceFacturatieOverzichtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Finance\FinanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </Compile>
     <EmbeddedResource Include="Finance\FinanceFacturatieForm.resx">
       <DependentUpon>FinanceFacturatieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\FinanceFacturatieOverzichtForm.resx">
+      <DependentUpon>FinanceFacturatieOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finance\FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
