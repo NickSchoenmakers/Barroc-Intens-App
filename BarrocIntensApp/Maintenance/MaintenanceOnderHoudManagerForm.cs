@@ -130,6 +130,13 @@ namespace BarrocIntensApp.Maintenance {
             groupAppointmentInfo.Hide();
         }
 
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
+
         private void btnViewWorkOrder_Click(object sender, EventArgs e)
         {
             var maintenanceWerkbon = new MaintenanceViewWerkbonForm(GetMaintenanceAppointmentWorkOrder());

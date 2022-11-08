@@ -15,6 +15,7 @@ namespace BarrocIntensApp.Inkoop
 {
     public partial class InkoopBestellenForm : Form
     {
+        string hasArrived;
         public InkoopBestellenForm()
         {
             InitializeComponent();
@@ -61,23 +62,30 @@ namespace BarrocIntensApp.Inkoop
 
         private void btnAddStock_Click(object sender, EventArgs e)
         {
+            // calls the method getproduct in order to load the selected row in the datagridview
             Product product = GetProduct();
+            // if the user did not select an amount to add it just adds 1 to the stock of the item
             if (String.IsNullOrEmpty(txbAmount.Text))
             {
                 product.Stock++;
             }
             else
             {
+                // converts the amount given by the user into an int so we can actually do math with it
                 int aantal = Convert.ToInt16(txbAmount.Text);
+                // checks if the order is bigger than 5000
                 if (aantal >= 5000)
                 {
-                    lbPermission.Text = "Toestemming vereist voor aantallen hoger dan 5000";
+                    // tells the user that they need permission to do this order
+                    lbPermission.Text = "Toestemming vereist voor bestellingen die meer producten kopen dat 5000";
                 }
                 else
                 {
+                    // adds the amount of products selected to the stock
                     product.Stock = product.Stock + aantal;
                 }
             }
+            // saves the changes to the database
             Program.dbContext.Products.Update(product);
             Program.dbContext.SaveChanges();
             this.RefreshProductInfo();
@@ -85,6 +93,8 @@ namespace BarrocIntensApp.Inkoop
 
         private Product GetProduct()
         {
+            // gets the selected row in the datagrid view and puts it into a variable
+            // this method is called buy typing GetProduct();
             var product = (Product)this.dgvProducts.CurrentRow?.DataBoundItem;
             return product;
         }
@@ -92,8 +102,17 @@ namespace BarrocIntensApp.Inkoop
         private void RefreshProductInfo()
         {
             Product product = GetProduct();
+            if ((bool)(product?.hasArrived))
+            {
+                hasArrived = "ja";
+            }
+            else
+            {
+                hasArrived = "nee";
+            }
             lblPrice.Text = $"Prijs: {Decimal.Parse(product?.Price.ToString("0.00"))}";
             lblStock.Text = $"Aantal op voorraad: {product?.Stock.ToString()}";
+            lblStatus.Text = $"Is het geariveerd: {hasArrived}";
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,18 +121,25 @@ namespace BarrocIntensApp.Inkoop
         }
         private void FilterProducts()
         {
+            // here we filter the products based on if it is avaliable
+            // gets the selected filter
             var productCategory = (ProductCategory)this.cbCategories.SelectedItem;
-            dgvProducts.DataSource = productCategory.Products;
+            // if no alles is selected it will do this
             if (cbFilter.SelectedIndex == 0)
             {
+                // this shows all products
                 dgvProducts.DataSource = productCategory.Products;
             }
+            // if the user selects op voorraad it will do this
             else if (cbFilter.SelectedIndex == 1)
             {
+                // this show all products that have stock
                 dgvProducts.DataSource = productCategory.Products.Where(p => p.Stock > 0).ToList();
             }
+            // if the user selects niet op voorraad it will do this
             else if (cbFilter.SelectedIndex == 2)
             {
+                // this shows all product that do not have stock
                 dgvProducts.DataSource = productCategory.Products.Where(p => p.Stock == 0).ToList();
             }
         }
@@ -148,24 +174,34 @@ namespace BarrocIntensApp.Inkoop
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            Program.dbContext.Remove(GetProduct());
+            var product = GetProduct();
+            Program.dbContext.Remove(product);
             Program.dbContext.SaveChanges();
             dgvProducts.ClearSelection();
             groupProductInfo.Hide();
+            
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            // this adds a product
             Product productToAdd = new Product
             {
+                // gives the product a name
                 Name = txbProductName.Text,
+                // gives the product a discription
                 Description = txbProductDescription.Text,
+                // gives the product a price
                 Price = numProductPrice.Value,
+                // gives the product a category
                 ProductCategoryId = (int)cbProductCategory.SelectedValue,
+                // gives the product a check if it is a part or not. 
+                // this does not need to be checked
                 isPart = checkPart.Checked
             };
-
+            // adds the product to the database
             Program.dbContext.Products.Add(productToAdd);
+            // sabes the database
             Program.dbContext.SaveChanges();
         }
 
@@ -185,6 +221,13 @@ namespace BarrocIntensApp.Inkoop
         private void InkoopBestellenForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
         }
     }
 }

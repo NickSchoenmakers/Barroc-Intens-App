@@ -112,6 +112,15 @@
             this.groupAppointmentInfo.TabStop = false;
             this.groupAppointmentInfo.Text = "Afspraakinfo";
             // 
+            // lblRoutine
+            // 
+            this.lblRoutine.AutoSize = true;
+            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
+            this.lblRoutine.Name = "lblRoutine";
+            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
+            this.lblRoutine.TabIndex = 57;
+            this.lblRoutine.Text = "Routine";
+            // 
             // btnViewWorkOrder
             // 
             this.btnViewWorkOrder.Location = new System.Drawing.Point(442, 289);
@@ -518,6 +527,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.groupAppointmentInfo);
             this.Controls.Add(this.btnReturnDashboard);
@@ -592,6 +602,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbRoutine;
         private System.Windows.Forms.Label lblRoutine;
+        private RoundButton roundButton2;
         private System.Windows.Forms.Button btnViewWorkOrder;
     }
 }

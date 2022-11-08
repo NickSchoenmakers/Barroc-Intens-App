@@ -31,9 +31,28 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnSendMail = new System.Windows.Forms.Button();
+            this.nudAmount1 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.txbLastName = new System.Windows.Forms.TextBox();
+            this.lbLastName = new System.Windows.Forms.Label();
+            this.txbFirstName = new System.Windows.Forms.TextBox();
+            this.lbFirstName = new System.Windows.Forms.Label();
+            this.groupProducts = new System.Windows.Forms.GroupBox();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.pbLoad = new System.Windows.Forms.ProgressBar();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
-            this.BtnSendMail = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).BeginInit();
+            this.groupProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -72,6 +91,170 @@
             this.pbBlack.TabIndex = 5;
             this.pbBlack.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BtnSendMail);
+            this.panel1.Controls.Add(this.nudAmount1);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.txbEmail);
+            this.panel1.Controls.Add(this.lbEmail);
+            this.panel1.Controls.Add(this.txbLastName);
+            this.panel1.Controls.Add(this.lbLastName);
+            this.panel1.Controls.Add(this.txbFirstName);
+            this.panel1.Controls.Add(this.lbFirstName);
+            this.panel1.Controls.Add(this.groupProducts);
+            this.panel1.Location = new System.Drawing.Point(302, 58);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(512, 532);
+            this.panel1.TabIndex = 47;
+            // 
+            // BtnSendMail
+            // 
+            this.BtnSendMail.Location = new System.Drawing.Point(432, 504);
+            this.BtnSendMail.Name = "BtnSendMail";
+            this.BtnSendMail.Size = new System.Drawing.Size(75, 23);
+            this.BtnSendMail.TabIndex = 11;
+            this.BtnSendMail.Text = "Verstuur mail";
+            this.BtnSendMail.UseVisualStyleBackColor = true;
+            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click_1);
+            // 
+            // nudAmount1
+            // 
+            this.nudAmount1.Location = new System.Drawing.Point(31, 360);
+            this.nudAmount1.Name = "nudAmount1";
+            this.nudAmount1.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount1.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(31, 346);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Aantal";
+            // 
+            // txbEmail
+            // 
+            this.txbEmail.Location = new System.Drawing.Point(69, 120);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(403, 20);
+            this.txbEmail.TabIndex = 2;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(28, 120);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.TabIndex = 4;
+            this.lbEmail.Text = "E-mail";
+            // 
+            // txbLastName
+            // 
+            this.txbLastName.Location = new System.Drawing.Point(124, 72);
+            this.txbLastName.Name = "txbLastName";
+            this.txbLastName.Size = new System.Drawing.Size(348, 20);
+            this.txbLastName.TabIndex = 1;
+            // 
+            // lbLastName
+            // 
+            this.lbLastName.AutoSize = true;
+            this.lbLastName.Location = new System.Drawing.Point(28, 72);
+            this.lbLastName.Name = "lbLastName";
+            this.lbLastName.Size = new System.Drawing.Size(90, 13);
+            this.lbLastName.TabIndex = 2;
+            this.lbLastName.Text = "Achternaam klant";
+            // 
+            // txbFirstName
+            // 
+            this.txbFirstName.Location = new System.Drawing.Point(115, 28);
+            this.txbFirstName.Name = "txbFirstName";
+            this.txbFirstName.Size = new System.Drawing.Size(357, 20);
+            this.txbFirstName.TabIndex = 0;
+            // 
+            // lbFirstName
+            // 
+            this.lbFirstName.AutoSize = true;
+            this.lbFirstName.Location = new System.Drawing.Point(28, 28);
+            this.lbFirstName.Name = "lbFirstName";
+            this.lbFirstName.Size = new System.Drawing.Size(81, 13);
+            this.lbFirstName.TabIndex = 0;
+            this.lbFirstName.Text = "Voornaam klant";
+            // 
+            // groupProducts
+            // 
+            this.groupProducts.Controls.Add(this.dgvProducts);
+            this.groupProducts.Controls.Add(this.dgvAppointments);
+            this.groupProducts.Location = new System.Drawing.Point(34, 162);
+            this.groupProducts.Name = "groupProducts";
+            this.groupProducts.Size = new System.Drawing.Size(441, 170);
+            this.groupProducts.TabIndex = 74;
+            this.groupProducts.TabStop = false;
+            this.groupProducts.Text = "Producten";
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AllowUserToResizeColumns = false;
+            this.dgvProducts.AllowUserToResizeRows = false;
+            this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.ColumnHeadersVisible = false;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColumnName});
+            this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProducts.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvProducts.Location = new System.Drawing.Point(3, 16);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersVisible = false;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvProducts.Size = new System.Drawing.Size(435, 151);
+            this.dgvProducts.TabIndex = 46;
+            // 
+            // dgvColumnName
+            // 
+            this.dgvColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvColumnName.DataPropertyName = "Name";
+            this.dgvColumnName.HeaderText = "Name";
+            this.dgvColumnName.Name = "dgvColumnName";
+            this.dgvColumnName.ReadOnly = true;
+            // 
+            // dgvAppointments
+            // 
+            this.dgvAppointments.AllowUserToAddRows = false;
+            this.dgvAppointments.AllowUserToDeleteRows = false;
+            this.dgvAppointments.AllowUserToResizeColumns = false;
+            this.dgvAppointments.AllowUserToResizeRows = false;
+            this.dgvAppointments.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAppointments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointments.ColumnHeadersVisible = false;
+            this.dgvAppointments.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvAppointments.Location = new System.Drawing.Point(3, 12);
+            this.dgvAppointments.Name = "dgvAppointments";
+            this.dgvAppointments.ReadOnly = true;
+            this.dgvAppointments.RowHeadersVisible = false;
+            this.dgvAppointments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAppointments.Size = new System.Drawing.Size(515, 381);
+            this.dgvAppointments.TabIndex = 45;
+            // 
+            // pbLoad
+            // 
+            this.pbLoad.Location = new System.Drawing.Point(62, 221);
+            this.pbLoad.MarqueeAnimationSpeed = 1;
+            this.pbLoad.Name = "pbLoad";
+            this.pbLoad.Size = new System.Drawing.Size(1021, 100);
+            this.pbLoad.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pbLoad.TabIndex = 48;
+            this.pbLoad.UseWaitCursor = true;
+            this.pbLoad.Visible = false;
+            // 
             // btnBackNotes
             // 
             this.btnBackNotes.BackColor = System.Drawing.Color.Black;
@@ -85,22 +268,13 @@
             this.btnBackNotes.UseVisualStyleBackColor = false;
             this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
-            // BtnSendMail
-            // 
-            this.BtnSendMail.Location = new System.Drawing.Point(784, 388);
-            this.BtnSendMail.Name = "BtnSendMail";
-            this.BtnSendMail.Size = new System.Drawing.Size(348, 201);
-            this.BtnSendMail.TabIndex = 43;
-            this.BtnSendMail.Text = "Send mail";
-            this.BtnSendMail.UseVisualStyleBackColor = true;
-            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click);
-            // 
             // SalesOfferteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.BtnSendMail);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pbLoad);
             this.Controls.Add(this.btnBackNotes);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -112,6 +286,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesOfferteForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).EndInit();
+            this.groupProducts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +301,20 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton btnBackNotes;
-        private RoundButton BtnSendMail;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnSendMail;
+        private System.Windows.Forms.NumericUpDown nudAmount1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.TextBox txbLastName;
+        private System.Windows.Forms.Label lbLastName;
+        private System.Windows.Forms.TextBox txbFirstName;
+        private System.Windows.Forms.Label lbFirstName;
+        private System.Windows.Forms.GroupBox groupProducts;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
+        private System.Windows.Forms.DataGridView dgvAppointments;
+        private System.Windows.Forms.ProgressBar pbLoad;
     }
 }

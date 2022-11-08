@@ -95,6 +95,7 @@ namespace BarrocIntensApp
 
         private void AmountNu_ValueChanged(object sender, EventArgs e)
         {
+            // gets the amount of products the user want to buy
             Amount = (int)AmountNu.Value;
         }
 
@@ -104,20 +105,43 @@ namespace BarrocIntensApp
 
         public void Cartbtn_Click(object sender, EventArgs e)
         {
+            // loads the selected product into a usable variable
             var product = (Product)this.productsDataGridView.CurrentRow?.DataBoundItem;
+            // checks if the user choose a product
             if (product != null)
             {
-                var ProductToAdd = new CustomInvoiceProduct
+                // checks if there is enough stock for the user to buy
+                if (product.Stock >= (int)AmountNu.Value)
                 {
-                    Amount = (int)AmountNu.Value,
-                    Product = product,
-                };
-                ProductToBuy.CustomInvoiceProducts.Add(ProductToAdd);
-                this.CartGv.Refresh();
-                this.dbContext.SaveChanges();
+                    // subtracts the amount of products bought from the stock
+                    product.Stock = product.Stock - (int)AmountNu.Value;
+                    // creates a new order
+                    var ProductToAdd = new CustomInvoiceProduct
+                    {
+                        // puts the amount of product the user bought into the order
+                        Amount = (int)AmountNu.Value,
+                        // puts the product into the order
+                        Product = product,
+                    };
+                    // adds the order to the database
+                    ProductToBuy.CustomInvoiceProducts.Add(ProductToAdd);
+                    // saves the changes that were made to the database
+                    this.dbContext.SaveChanges();
+                    // refreshes the orders datagrid
+                    this.CartGv.Refresh();
+                    // refreshes the product datagrid
+                    this.productsDataGridView.Refresh();
+                }
+                else 
+                {
+                    // this message gets shows if there is not enough stock for the order
+                    MessageBox.Show("er zijn niet genoeg producten in voorraad om aan deze bestelling te voldoen, neem contact op met inkoop om eventueel meer producten te kopen om aan de bestelling te voldoen");
+                }
+
             }
             else 
             {
+                // this message is shows if the user did not select a product
                 MessageBox.Show("please select a product");
             }
         }
@@ -169,6 +193,32 @@ namespace BarrocIntensApp
 
             // shows the user what the price is
             lblPrice.Text = price.ToString();
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            // logs the user out
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            // sends the user back to the maintenance dashboard
+            var maintenanceDashboard = new FinanceForm();
+            this.Hide();
+            maintenanceDashboard.Show(this);
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void NameCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

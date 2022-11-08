@@ -39,6 +39,7 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CartGv = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +51,10 @@
             this.NameCb = new System.Windows.Forms.ComboBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -131,12 +134,14 @@
             this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
+            this.priceDataGridViewTextBoxColumn,
+            this.Stock});
             this.productsDataGridView.DataSource = this.productBindingSource;
             this.productsDataGridView.Location = new System.Drawing.Point(76, 47);
             this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(345, 150);
+            this.productsDataGridView.Size = new System.Drawing.Size(442, 150);
             this.productsDataGridView.TabIndex = 33;
+            this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
             this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
             // 
             // nameDataGridViewTextBoxColumn
@@ -159,6 +164,12 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
             // 
             // productBindingSource
             // 
@@ -211,7 +222,7 @@
             this.Cartbtn.Name = "Cartbtn";
             this.Cartbtn.Size = new System.Drawing.Size(88, 50);
             this.Cartbtn.TabIndex = 34;
-            this.Cartbtn.Text = "add to cart";
+            this.Cartbtn.Text = "winkel wagen";
             this.Cartbtn.UseVisualStyleBackColor = false;
             this.Cartbtn.Click += new System.EventHandler(this.Cartbtn_Click);
             // 
@@ -239,6 +250,7 @@
             this.NameCb.Size = new System.Drawing.Size(170, 21);
             this.NameCb.TabIndex = 37;
             this.NameCb.ValueMember = "Id";
+            this.NameCb.SelectedIndexChanged += new System.EventHandler(this.NameCb_SelectedIndexChanged);
             this.NameCb.SelectedValueChanged += new System.EventHandler(this.NameCb_SelectedValueChanged);
             // 
             // companyBindingSource
@@ -255,7 +267,17 @@
             this.groupBox1.Size = new System.Drawing.Size(540, 475);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cart";
+            this.groupBox1.Text = "winkelwagen";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(7, 310);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(35, 13);
+            this.lblPrice.TabIndex = 37;
+            this.lblPrice.Text = "label1";
+            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
             // 
             // groupBox2
             // 
@@ -271,23 +293,40 @@
             this.groupBox2.Size = new System.Drawing.Size(600, 475);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Order";
+            this.groupBox2.Text = "besteling";
             // 
-            // lblPrice
+            // roundButton1
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(7, 310);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(35, 13);
-            this.lblPrice.TabIndex = 37;
-            this.lblPrice.Text = "label1";
-            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(964, 49);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 40;
+            this.roundButton1.Text = "uitloggen";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.Color.Black;
+            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(12, 53);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(88, 50);
+            this.roundButton2.TabIndex = 41;
+            this.roundButton2.Text = "←";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton2);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pbBlack);
@@ -322,9 +361,6 @@
         private RoundButton BtnReturnStoringen;
         private System.Windows.Forms.DataGridView productsDataGridView;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private RoundButton Cartbtn;
         private System.Windows.Forms.DataGridView CartGv;
         private System.Windows.Forms.ComboBox NameCb;
@@ -336,5 +372,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblPrice;
+        private RoundButton roundButton1;
+        private RoundButton roundButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
     }
 }
