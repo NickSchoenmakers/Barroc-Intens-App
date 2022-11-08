@@ -174,12 +174,19 @@ namespace BarrocIntensApp.Inkoop
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            var product = GetProduct();
-            Program.dbContext.Remove(product);
-            Program.dbContext.SaveChanges();
-            dgvProducts.ClearSelection();
-            groupProductInfo.Hide();
-            
+            if (Globals.loggedInUser.isManager == true)
+            {
+                var product = GetProduct();
+                Program.dbContext.Remove(product);
+                Program.dbContext.SaveChanges();
+                dgvProducts.ClearSelection();
+                groupProductInfo.Hide();
+            }
+            else
+            {
+                MessageBox.Show("you are not a manager, you cannot do this");
+            }
+
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
