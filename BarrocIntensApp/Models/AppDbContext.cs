@@ -20,6 +20,7 @@ namespace BarrocIntensApp.Models
         public DbSet<User> Users { get; set; }
         public DbSet<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentWorkOrderProducts { get; set; }
         public DbSet<MaintenanceAppointmentWorkOrder> MaintenanceAppointmentWorkOrders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -75,18 +76,18 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = 1, Name = "Barroc Intens Italian Light", Description = "S234FREKT", ImagePath = "Image/machine-bit-light.png", Price = 499, Stock = 10, ProductCategoryId = 1, hasArrived = false },
-                new Product { Id = 2, Name = "Barroc Intens Italian", Description = "S234KNDPF", ImagePath = "Image/machine-bit-light.png", Price = 599, Stock = 5, ProductCategoryId = 1, hasArrived = true },
-                new Product { Id = 3, Name = "Barroc Intens Italian Deluxe", Description = "S234KNDPF", ImagePath = "Image/machine-bit-deluxe.png", Price = 799, Stock = 7, ProductCategoryId = 1, hasArrived = true },
-                new Product { Id = 4, Name = "Barroc Intens Italian Deluxe Special", Description = "S234NNBMV", ImagePath = "Image/machine-bit-deluxe.png", Price = 999, Stock = 0, ProductCategoryId = 1, hasArrived = false },
-                new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, Stock = 0, ProductCategoryId = 2, hasArrived = true },
-                new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, Stock = 250, ProductCategoryId = 2, hasArrived = true },
-                new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, Stock = 124, ProductCategoryId = 2, hasArrived = true },
-                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2, hasArrived = true },
-                new Product { Id = 9, Name = "Kabel", Description = "123", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true, hasArrived = true },
-                new Product { Id = 10, Name = "Schroef", Description = "SFE8912SD", Price = 0.05m, Stock = 1500, ProductCategoryId = 1, isPart = true, hasArrived = true },
-                new Product { Id = 11, Name = "Lichtje", Description = "GMGE2222A", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true, hasArrived = true },
-                new Product { Id = 12, Name = "Knop", Description = "GHSM333A3", Price = 0.05m, Stock = 500, ProductCategoryId = 1, isPart = true, hasArrived = false }
+                new Product { Id = 1, Name = "Barroc Intens Italian Light", Description = "S234FREKT", ImagePath = "Image/machine-bit-light.png", Price = 499, Stock = 10, ProductCategoryId = 1},
+                new Product { Id = 2, Name = "Barroc Intens Italian", Description = "S234KNDPF", ImagePath = "Image/machine-bit-light.png", Price = 599, Stock = 5, ProductCategoryId = 1},
+                new Product { Id = 3, Name = "Barroc Intens Italian Deluxe", Description = "S234KNDPF", ImagePath = "Image/machine-bit-deluxe.png", Price = 799, Stock = 7, ProductCategoryId = 1},
+                new Product { Id = 4, Name = "Barroc Intens Italian Deluxe Special", Description = "S234NNBMV", ImagePath = "Image/machine-bit-deluxe.png", Price = 999, Stock = 0, ProductCategoryId = 1},
+                new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, Stock = 0, ProductCategoryId = 2},
+                new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, Stock = 250, ProductCategoryId = 2},
+                new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, Stock = 124, ProductCategoryId = 2},
+                new Product { Id = 8, Name = "Red Honey Honduras", Description = "S239EVVFS", Price = 27.80m, Stock = 121, ProductCategoryId = 2},
+                new Product { Id = 9, Name = "Kabel", Description = "123", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true},
+                new Product { Id = 10, Name = "Schroef", Description = "SFE8912SD", Price = 0.05m, Stock = 1500, ProductCategoryId = 1, isPart = true},
+                new Product { Id = 11, Name = "Lichtje", Description = "GMGE2222A", Price = 0.05m, Stock = 1000, ProductCategoryId = 1, isPart = true},
+                new Product { Id = 12, Name = "Knop", Description = "GHSM333A3", Price = 0.05m, Stock = 500, ProductCategoryId = 1, isPart = true}
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
@@ -123,6 +124,11 @@ namespace BarrocIntensApp.Models
             modelBuilder.Entity<ProductCategory>().HasData(
                 new ProductCategory { Id = 1, Name = "Machines", IsEmployeeOnly = 1 },
                 new ProductCategory { Id = 2, Name = "Koffiebonen", IsEmployeeOnly = 1 }
+            ); 
+
+            modelBuilder.Entity<Order>().HasData(
+                new Order { Id = 1, ProductId = 1, Amount = 200, hasArrived = true },
+                new Order { Id = 2, ProductId = 2, Amount = 300, hasArrived = false }
             );
         }
     }
