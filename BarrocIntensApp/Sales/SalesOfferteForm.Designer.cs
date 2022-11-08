@@ -28,15 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnSendMail = new System.Windows.Forms.Button();
-            this.nudAmount1 = new System.Windows.Forms.NumericUpDown();
+            this.gpAdded = new System.Windows.Forms.GroupBox();
+            this.dgvAdded = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagePathDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPartDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasArrivedDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.offerProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbFolder = new System.Windows.Forms.Label();
+            this.btnLocation = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnPdf = new System.Windows.Forms.Button();
+            this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
-            this.txbEmail = new System.Windows.Forms.TextBox();
-            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbFileLocation = new System.Windows.Forms.Label();
             this.txbLastName = new System.Windows.Forms.TextBox();
             this.lbLastName = new System.Windows.Forms.Label();
             this.txbFirstName = new System.Windows.Forms.TextBox();
@@ -44,14 +60,30 @@
             this.groupProducts = new System.Windows.Forms.GroupBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPartDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.pbLoad = new System.Windows.Forms.ProgressBar();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).BeginInit();
+            this.gpAdded.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdded)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offerProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.groupProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +127,14 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.BtnSendMail);
-            this.panel1.Controls.Add(this.nudAmount1);
+            this.panel1.Controls.Add(this.gpAdded);
+            this.panel1.Controls.Add(this.lbFolder);
+            this.panel1.Controls.Add(this.btnLocation);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnPdf);
+            this.panel1.Controls.Add(this.nudAmount);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.txbEmail);
-            this.panel1.Controls.Add(this.lbEmail);
+            this.panel1.Controls.Add(this.lbFileLocation);
             this.panel1.Controls.Add(this.txbLastName);
             this.panel1.Controls.Add(this.lbLastName);
             this.panel1.Controls.Add(this.txbFirstName);
@@ -110,22 +145,187 @@
             this.panel1.Size = new System.Drawing.Size(512, 532);
             this.panel1.TabIndex = 47;
             // 
-            // BtnSendMail
+            // gpAdded
             // 
-            this.BtnSendMail.Location = new System.Drawing.Point(432, 504);
-            this.BtnSendMail.Name = "BtnSendMail";
-            this.BtnSendMail.Size = new System.Drawing.Size(75, 23);
-            this.BtnSendMail.TabIndex = 11;
-            this.BtnSendMail.Text = "Verstuur mail";
-            this.BtnSendMail.UseVisualStyleBackColor = true;
-            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click_1);
+            this.gpAdded.Controls.Add(this.dgvAdded);
+            this.gpAdded.Location = new System.Drawing.Point(38, 389);
+            this.gpAdded.Name = "gpAdded";
+            this.gpAdded.Size = new System.Drawing.Size(437, 109);
+            this.gpAdded.TabIndex = 75;
+            this.gpAdded.TabStop = false;
+            this.gpAdded.Text = "Toegevoegd";
             // 
-            // nudAmount1
+            // dgvAdded
             // 
-            this.nudAmount1.Location = new System.Drawing.Point(31, 360);
-            this.nudAmount1.Name = "nudAmount1";
-            this.nudAmount1.Size = new System.Drawing.Size(100, 20);
-            this.nudAmount1.TabIndex = 3;
+            this.dgvAdded.AllowUserToAddRows = false;
+            this.dgvAdded.AllowUserToDeleteRows = false;
+            this.dgvAdded.AllowUserToResizeColumns = false;
+            this.dgvAdded.AllowUserToResizeRows = false;
+            this.dgvAdded.AutoGenerateColumns = false;
+            this.dgvAdded.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvAdded.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAdded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdded.ColumnHeadersVisible = false;
+            this.dgvAdded.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.descriptionDataGridViewTextBoxColumn1,
+            this.imagePathDataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn1,
+            this.stockDataGridViewTextBoxColumn1,
+            this.productCategoryIdDataGridViewTextBoxColumn1,
+            this.isPartDataGridViewCheckBoxColumn1,
+            this.hasArrivedDataGridViewCheckBoxColumn1,
+            this.productCategoryDataGridViewTextBoxColumn1});
+            this.dgvAdded.DataSource = this.offerProductBindingSource;
+            this.dgvAdded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAdded.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvAdded.Location = new System.Drawing.Point(3, 16);
+            this.dgvAdded.Name = "dgvAdded";
+            this.dgvAdded.ReadOnly = true;
+            this.dgvAdded.RowHeadersVisible = false;
+            this.dgvAdded.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAdded.Size = new System.Drawing.Size(431, 90);
+            this.dgvAdded.TabIndex = 76;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn1
+            // 
+            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
+            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // imagePathDataGridViewTextBoxColumn1
+            // 
+            this.imagePathDataGridViewTextBoxColumn1.DataPropertyName = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn1.HeaderText = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn1.Name = "imagePathDataGridViewTextBoxColumn1";
+            this.imagePathDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.imagePathDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // stockDataGridViewTextBoxColumn1
+            // 
+            this.stockDataGridViewTextBoxColumn1.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn1.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn1.Name = "stockDataGridViewTextBoxColumn1";
+            this.stockDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.stockDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // productCategoryIdDataGridViewTextBoxColumn1
+            // 
+            this.productCategoryIdDataGridViewTextBoxColumn1.DataPropertyName = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn1.HeaderText = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn1.Name = "productCategoryIdDataGridViewTextBoxColumn1";
+            this.productCategoryIdDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.productCategoryIdDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // isPartDataGridViewCheckBoxColumn1
+            // 
+            this.isPartDataGridViewCheckBoxColumn1.DataPropertyName = "isPart";
+            this.isPartDataGridViewCheckBoxColumn1.HeaderText = "isPart";
+            this.isPartDataGridViewCheckBoxColumn1.Name = "isPartDataGridViewCheckBoxColumn1";
+            this.isPartDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.isPartDataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // hasArrivedDataGridViewCheckBoxColumn1
+            // 
+            this.hasArrivedDataGridViewCheckBoxColumn1.DataPropertyName = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn1.HeaderText = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn1.Name = "hasArrivedDataGridViewCheckBoxColumn1";
+            this.hasArrivedDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.hasArrivedDataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // productCategoryDataGridViewTextBoxColumn1
+            // 
+            this.productCategoryDataGridViewTextBoxColumn1.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn1.HeaderText = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn1.Name = "productCategoryDataGridViewTextBoxColumn1";
+            this.productCategoryDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.productCategoryDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // offerProductBindingSource
+            // 
+            this.offerProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
+            // 
+            // lbFolder
+            // 
+            this.lbFolder.AutoSize = true;
+            this.lbFolder.Location = new System.Drawing.Point(201, 120);
+            this.lbFolder.Name = "lbFolder";
+            this.lbFolder.Size = new System.Drawing.Size(0, 13);
+            this.lbFolder.TabIndex = 78;
+            // 
+            // btnLocation
+            // 
+            this.btnLocation.Location = new System.Drawing.Point(119, 115);
+            this.btnLocation.Name = "btnLocation";
+            this.btnLocation.Size = new System.Drawing.Size(75, 23);
+            this.btnLocation.TabIndex = 77;
+            this.btnLocation.Text = "Browse";
+            this.btnLocation.UseVisualStyleBackColor = true;
+            this.btnLocation.Click += new System.EventHandler(this.btnLocation_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(400, 360);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 75;
+            this.btnAdd.Text = "Toevoegen";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.Location = new System.Drawing.Point(432, 504);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(75, 23);
+            this.btnPdf.TabIndex = 11;
+            this.btnPdf.Text = "Exporteer";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.BtnSendMail_Click_1);
+            // 
+            // nudAmount
+            // 
+            this.nudAmount.Location = new System.Drawing.Point(31, 360);
+            this.nudAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAmount.Name = "nudAmount";
+            this.nudAmount.Size = new System.Drawing.Size(100, 20);
+            this.nudAmount.TabIndex = 3;
+            this.nudAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label12
             // 
@@ -136,21 +336,14 @@
             this.label12.TabIndex = 15;
             this.label12.Text = "Aantal";
             // 
-            // txbEmail
+            // lbFileLocation
             // 
-            this.txbEmail.Location = new System.Drawing.Point(69, 120);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(403, 20);
-            this.txbEmail.TabIndex = 2;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(28, 120);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(35, 13);
-            this.lbEmail.TabIndex = 4;
-            this.lbEmail.Text = "E-mail";
+            this.lbFileLocation.AutoSize = true;
+            this.lbFileLocation.Location = new System.Drawing.Point(28, 120);
+            this.lbFileLocation.Name = "lbFileLocation";
+            this.lbFileLocation.Size = new System.Drawing.Size(85, 13);
+            this.lbFileLocation.TabIndex = 4;
+            this.lbFileLocation.Text = "Bestands locatie";
             // 
             // txbLastName
             // 
@@ -201,12 +394,24 @@
             this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.AllowUserToResizeColumns = false;
             this.dgvProducts.AllowUserToResizeRows = false;
+            this.dgvProducts.AutoGenerateColumns = false;
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.ColumnHeadersVisible = false;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvColumnName});
+            this.dgvColumnName,
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.imagePathDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.productCategoryIdDataGridViewTextBoxColumn,
+            this.isPartDataGridViewCheckBoxColumn,
+            this.hasArrivedDataGridViewCheckBoxColumn,
+            this.productCategoryDataGridViewTextBoxColumn});
+            this.dgvProducts.DataSource = this.productBindingSource;
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProducts.GridColor = System.Drawing.SystemColors.Control;
             this.dgvProducts.Location = new System.Drawing.Point(3, 16);
@@ -224,6 +429,90 @@
             this.dgvColumnName.HeaderText = "Name";
             this.dgvColumnName.Name = "dgvColumnName";
             this.dgvColumnName.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // imagePathDataGridViewTextBoxColumn
+            // 
+            this.imagePathDataGridViewTextBoxColumn.DataPropertyName = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn.HeaderText = "ImagePath";
+            this.imagePathDataGridViewTextBoxColumn.Name = "imagePathDataGridViewTextBoxColumn";
+            this.imagePathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imagePathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // productCategoryIdDataGridViewTextBoxColumn
+            // 
+            this.productCategoryIdDataGridViewTextBoxColumn.DataPropertyName = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.HeaderText = "ProductCategoryId";
+            this.productCategoryIdDataGridViewTextBoxColumn.Name = "productCategoryIdDataGridViewTextBoxColumn";
+            this.productCategoryIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productCategoryIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // isPartDataGridViewCheckBoxColumn
+            // 
+            this.isPartDataGridViewCheckBoxColumn.DataPropertyName = "isPart";
+            this.isPartDataGridViewCheckBoxColumn.HeaderText = "isPart";
+            this.isPartDataGridViewCheckBoxColumn.Name = "isPartDataGridViewCheckBoxColumn";
+            this.isPartDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isPartDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // hasArrivedDataGridViewCheckBoxColumn
+            // 
+            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
+            this.hasArrivedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.hasArrivedDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // productCategoryDataGridViewTextBoxColumn
+            // 
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productCategoryDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(BarrocIntensApp.Models.Product);
             // 
             // dgvAppointments
             // 
@@ -288,9 +577,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmount1)).EndInit();
+            this.gpAdded.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdded)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offerProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
             this.groupProducts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.ResumeLayout(false);
 
@@ -302,19 +595,46 @@
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton btnBackNotes;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button BtnSendMail;
-        private System.Windows.Forms.NumericUpDown nudAmount1;
+        private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.NumericUpDown nudAmount;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txbEmail;
-        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbFileLocation;
         private System.Windows.Forms.TextBox txbLastName;
         private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.TextBox txbFirstName;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.GroupBox groupProducts;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
         private System.Windows.Forms.DataGridView dgvAppointments;
         private System.Windows.Forms.ProgressBar pbLoad;
+        private System.Windows.Forms.DataGridView dgvAdded;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.Label lbFolder;
+        private System.Windows.Forms.Button btnLocation;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.BindingSource offerProductBindingSource;
+        private System.Windows.Forms.GroupBox gpAdded;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imagePathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isPartDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imagePathDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryIdDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isPartDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn1;
     }
 }

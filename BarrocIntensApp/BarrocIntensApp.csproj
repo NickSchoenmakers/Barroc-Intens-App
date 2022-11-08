@@ -299,6 +299,7 @@
     <Compile Include="Models\MaintenanceAppointmentWorkOrderProduct.cs" />
     <Compile Include="Models\MaintenanceAppointmentWorkOrder.cs" />
     <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\Role.cs" />
@@ -400,6 +401,7 @@
     <None Include="Properties\DataSources\BarrocIntensApp.Models.MaintenanceAppointment1.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.MaintenanceAppointmentWorkOrderProduct.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Note.datasource" />
+    <None Include="Properties\DataSources\BarrocIntensApp.Models.Order.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Product.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.ProductCategory.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.User.datasource" />

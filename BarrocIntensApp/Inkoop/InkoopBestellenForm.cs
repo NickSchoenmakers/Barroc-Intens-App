@@ -10,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BarrocIntensApp.LoginForm;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BarrocIntensApp.Inkoop
 {
     public partial class InkoopBestellenForm : Form
     {
-        string hasArrived;
         public InkoopBestellenForm()
         {
             InitializeComponent();
@@ -23,6 +23,9 @@ namespace BarrocIntensApp.Inkoop
             lblTitle.Text = $"Inkoop | {Globals.loggedInUser.Name}";
             Program.dbContext.Products.Load();
             Program.dbContext.ProductCategories.Load();
+            Program.dbContext.Orders.Load();
+
+            this.dgvOrders.DataSource = Program.dbContext.Orders.Local.ToBindingList();
 
             this.cbCategories.DataSource  = Program.dbContext.ProductCategories.Local.ToBindingList();
             var productCategory = (ProductCategory)this.cbCategories.SelectedItem;
@@ -67,12 +70,12 @@ namespace BarrocIntensApp.Inkoop
             // if the user did not select an amount to add it just adds 1 to the stock of the item
             if (String.IsNullOrEmpty(txbAmount.Text))
             {
-                product.Stock++;
+                
             }
             else
             {
                 // converts the amount given by the user into an int so we can actually do math with it
-                int aantal = Convert.ToInt16(txbAmount.Text);
+                int aantal = Convert.ToInt32(txbAmount.Text);
                 // checks if the order is bigger than 5000
                 if (aantal >= 5000)
                 {
@@ -82,13 +85,21 @@ namespace BarrocIntensApp.Inkoop
                 else
                 {
                     // adds the amount of products selected to the stock
-                    product.Stock = product.Stock + aantal;
+                    var order = new Order
+                    {
+                        // puts the amount of products bought into the order
+                        Amount = aantal,
+                        // puts the product into the order
+                        ProductId = product.Id,
+                        // this will be used to see if it has arrived
+                        hasArrived = false,
+                    };
+                    // saves the changes to the database
+                    Program.dbContext.Orders.Update(order);
+                    Program.dbContext.SaveChanges();
+                    this.RefreshProductInfo();
                 }
             }
-            // saves the changes to the database
-            Program.dbContext.Products.Update(product);
-            Program.dbContext.SaveChanges();
-            this.RefreshProductInfo();
         }
 
         private Product GetProduct()
@@ -102,17 +113,8 @@ namespace BarrocIntensApp.Inkoop
         private void RefreshProductInfo()
         {
             Product product = GetProduct();
-            if ((bool)(product?.hasArrived))
-            {
-                hasArrived = "ja";
-            }
-            else
-            {
-                hasArrived = "nee";
-            }
             lblPrice.Text = $"Prijs: {Decimal.Parse(product?.Price.ToString("0.00"))}";
             lblStock.Text = $"Aantal op voorraad: {product?.Stock.ToString()}";
-            lblStatus.Text = $"Is het geariveerd: {hasArrived}";
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -236,6 +238,37 @@ namespace BarrocIntensApp.Inkoop
             var LoginForm = new LoginForm();
             this.Hide();
             LoginForm.Show(this);
+        }
+
+        private void dgvOrders_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // gets the current selected order
+            var ordercel = (Order)this.dgvOrders.Rows[e.RowIndex].DataBoundItem;
+            var order = (Order)this.dgvOrders.CurrentRow?.DataBoundItem;
+            // gets the product that has the same id as the productid in the order
+            var product = Program.dbContext.Products.Where(u => u.Id == order.ProductId).FirstOrDefault();
+            // checks if the order has not yet arrived
+            if (order.hasArrived != true)
+            {
+                // adds the amount of products in the order to the stock of the product
+                product.Stock = product.Stock + order.Amount;
+                Program.dbContext.SaveChanges();
+                this.dgvOrders.Rows[e.RowIndex].ReadOnly = true;
+            }
+        }
+
+        private void dgvOrders_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var order = (Order)this.dgvOrders.Rows[e.RowIndex].DataBoundItem;
+            if (order.hasArrived == true) 
+            { 
+                this.dgvOrders.Rows[e.RowIndex].ReadOnly = true; 
+            }
+
         }
     }
 }
