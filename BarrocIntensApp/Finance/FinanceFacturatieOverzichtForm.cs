@@ -14,22 +14,24 @@ namespace BarrocIntensApp.Finance
 {
     public partial class FinanceFacturatieOverzichtForm : Form
     {
-        private AppDbContext dbContext;
         public FinanceFacturatieOverzichtForm()
         {
             InitializeComponent();
-        }
+            Program.dbContext.Products.Load();
+            Program.dbContext.Companies.Load();
+            Program.dbContext.CustomInvoiceProducts.Load();
+            Program.dbContext.CustomInvoices.Load();
 
+            this.InvoiceGridView.DataSource = Program.dbContext.CustomInvoices.Local.ToBindingList();
+            this.productsDataGridview.DataSource = Program.dbContext.CustomInvoiceProducts.Local.ToBindingList();
+        }
+        private void FinanceFacturatieOverzichtForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
         private void FinanceFacturatieOverzichtForm_Load(object sender, EventArgs e)
         {
-            this.dbContext = new AppDbContext();
-            this.dbContext.Products.Load();
-            this.dbContext.Companies.Load();
-            this.dbContext.CustomInvoiceProducts.Load();
-            this.dbContext.CustomInvoices.Load();
 
-            this.InvoiceGridView.DataSource = dbContext.CustomInvoices.Local.ToBindingList();
-            this.productsDataGridview.DataSource = dbContext.CustomInvoiceProducts.Local.ToBindingList();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -39,15 +41,16 @@ namespace BarrocIntensApp.Finance
 
         private void InvoiceGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (this.dbContext == null)
-                return;
+
+        }
+
+        private void InvoiceGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
 
             var Invoice = (CustomInvoice)this.InvoiceGridView.CurrentRow.DataBoundItem;
 
-            if (Invoice == null)
-                return;
 
-            this.dbContext.Entry(Invoice)
+            Program.dbContext.Entry(Invoice)
                 .Collection(I => I.CustomInvoiceProducts)
                 .Load();
             DateData.Text = Invoice?.Date.ToString();
@@ -55,6 +58,17 @@ namespace BarrocIntensApp.Finance
             PaidData.Text = Invoice?.PaidAt.ToString();
 
             productsDataGridview.DataSource = Invoice.CustomInvoiceProducts;
+        }
+
+        private void productsDataGridview_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var product = (CustomInvoiceProduct)this.productsDataGridview.CurrentRow.DataBoundItem;
+            
+            ProductData.Text = product.Product.Name;
+            AmountData.Text = product.Amount.ToString();
+            priceProductData.Text = product.Product.Price.ToString();
+            int test = product.Amount * ((int)product.Product.Price);
+            TotalPriceData.Text = test.ToString();
         }
     }
 }
