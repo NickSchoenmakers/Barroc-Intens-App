@@ -206,7 +206,8 @@ namespace BarrocIntensApp.Inkoop
                 ProductCategoryId = (int)cbProductCategory.SelectedValue,
                 // gives the product a check if it is a part or not. 
                 // this does not need to be checked
-                isPart = checkPart.Checked
+                isPart = checkPart.Checked,
+                IsLeasable = cbLeasable.Checked,
             };
             // adds the product to the database
             Program.dbContext.Products.Add(productToAdd);

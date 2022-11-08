@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarrocIntensApp.Finance;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,13 @@ namespace BarrocIntensApp
             var LoginForm = new LoginForm();
             this.Hide();
             LoginForm.Show(this);
+        }
+
+        private void btnBkrCheck_Click(object sender, EventArgs e)
+        {
+            var BkrCheckForm = new FinanceBkrCheck();
+            this.Hide();
+            BkrCheckForm.Show(this);
         }
     }
 }

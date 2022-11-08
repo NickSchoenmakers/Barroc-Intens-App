@@ -40,6 +40,7 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.lbAmount = new System.Windows.Forms.Label();
             this.txbAmount = new System.Windows.Forms.TextBox();
             this.lbPermission = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbLeasable = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -211,6 +213,16 @@
             this.groupProductInfo.TabStop = false;
             this.groupProductInfo.Text = "Product info";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatus.Location = new System.Drawing.Point(3, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(26, 13);
+            this.lblStatus.TabIndex = 54;
+            this.lblStatus.Text = "Prijs";
+            // 
             // lbAmount
             // 
             this.lbAmount.AutoSize = true;
@@ -321,6 +333,7 @@
             // 
             // groupAddProduct
             // 
+            this.groupAddProduct.Controls.Add(this.cbLeasable);
             this.groupAddProduct.Controls.Add(this.numProductPrice);
             this.groupAddProduct.Controls.Add(this.btnAddProduct);
             this.groupAddProduct.Controls.Add(this.checkPart);
@@ -507,6 +520,28 @@
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
             // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(384, 50);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 55;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
+            // cbLeasable
+            // 
+            this.cbLeasable.AutoSize = true;
+            this.cbLeasable.Location = new System.Drawing.Point(174, 79);
+            this.cbLeasable.Name = "cbLeasable";
+            this.cbLeasable.Size = new System.Drawing.Size(79, 17);
+            this.cbLeasable.TabIndex = 59;
+            this.cbLeasable.Text = "Kan leasen";
+            this.cbLeasable.UseVisualStyleBackColor = true;
+            // 
             // InkoopBestellenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,5 +631,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox cbLeasable;
     }
 }
