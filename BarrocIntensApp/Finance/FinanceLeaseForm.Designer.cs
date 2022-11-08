@@ -34,13 +34,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.cbCompanies = new System.Windows.Forms.DataGridView();
+            this.bkrcheckbox = new System.Windows.Forms.CheckBox();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
+            this.btnSaveChanges = new BarrocIntensApp.RoundButton();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bkrCheckedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSaveChanges = new BarrocIntensApp.RoundButton();
-            this.roundButton2 = new BarrocIntensApp.RoundButton();
-            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCompanies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
@@ -97,7 +98,54 @@
             this.cbCompanies.Name = "cbCompanies";
             this.cbCompanies.Size = new System.Drawing.Size(345, 150);
             this.cbCompanies.TabIndex = 40;
+            this.cbCompanies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cbCompanies_CellClick);
             this.cbCompanies.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.cbCompanies_DataError);
+            // 
+            // bkrcheckbox
+            // 
+            this.bkrcheckbox.AutoCheck = false;
+            this.bkrcheckbox.AutoSize = true;
+            this.bkrcheckbox.Location = new System.Drawing.Point(620, 179);
+            this.bkrcheckbox.Name = "bkrcheckbox";
+            this.bkrcheckbox.Size = new System.Drawing.Size(110, 17);
+            this.bkrcheckbox.TabIndex = 45;
+            this.bkrcheckbox.Text = "bkr geaccepteerd";
+            this.bkrcheckbox.UseVisualStyleBackColor = true;
+            // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(964, 48);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 44;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.Color.Black;
+            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(17, 48);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(88, 50);
+            this.roundButton2.TabIndex = 43;
+            this.roundButton2.Text = "←";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.Location = new System.Drawing.Point(730, 202);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(223, 150);
+            this.btnSaveChanges.TabIndex = 41;
+            this.btnSaveChanges.Text = "save changes";
+            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -121,46 +169,12 @@
             // 
             this.companyBindingSource.DataSource = typeof(BarrocIntensApp.Models.Company);
             // 
-            // btnSaveChanges
-            // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(730, 202);
-            this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(223, 150);
-            this.btnSaveChanges.TabIndex = 41;
-            this.btnSaveChanges.Text = "save changes";
-            this.btnSaveChanges.UseVisualStyleBackColor = true;
-            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.Black;
-            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton2.ForeColor = System.Drawing.Color.White;
-            this.roundButton2.Location = new System.Drawing.Point(17, 48);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(88, 50);
-            this.roundButton2.TabIndex = 43;
-            this.roundButton2.Text = "←";
-            this.roundButton2.UseVisualStyleBackColor = false;
-            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton1.Location = new System.Drawing.Point(964, 48);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(168, 70);
-            this.roundButton1.TabIndex = 44;
-            this.roundButton1.Text = "Logout";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
-            // 
             // FinanceLeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.bkrcheckbox);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.btnSaveChanges);
@@ -179,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbCompanies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +209,6 @@
         private RoundButton btnSaveChanges;
         private RoundButton roundButton2;
         private RoundButton roundButton1;
+        private System.Windows.Forms.CheckBox bkrcheckbox;
     }
 }
