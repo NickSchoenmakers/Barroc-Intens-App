@@ -135,5 +135,11 @@ namespace BarrocIntensApp.Maintenance {
             var maintenanceWerkbon = new MaintenanceViewWerkbonForm(GetMaintenanceAppointmentWorkOrder());
             maintenanceWerkbon.ShowDialog(this);
         }
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
+        }
     }
 }

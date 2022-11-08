@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.PDF, Version=22.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.22.10.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="Azure.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Core.1.25.0\lib\net461\Azure.Core.dll</HintPath>
     </Reference>
@@ -197,6 +200,12 @@
     <Compile Include="Finance\FinanceFacturatieForm.Designer.cs">
       <DependentUpon>FinanceFacturatieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finance\FinanceFacturatieOverzichtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\FinanceFacturatieOverzichtForm.Designer.cs">
+      <DependentUpon>FinanceFacturatieOverzichtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Finance\FinanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +321,9 @@
     </Compile>
     <EmbeddedResource Include="Finance\FinanceFacturatieForm.resx">
       <DependentUpon>FinanceFacturatieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\FinanceFacturatieOverzichtForm.resx">
+      <DependentUpon>FinanceFacturatieOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finance\FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
