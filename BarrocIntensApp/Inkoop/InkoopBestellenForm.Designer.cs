@@ -63,14 +63,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txbProductName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
-            this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
+            this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -80,9 +80,9 @@
             this.groupAddProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDepartmentPart
@@ -433,6 +433,63 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Naam";
             // 
+            // dgvOrders
+            // 
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.AutoGenerateColumns = false;
+            this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.hasArrivedDataGridViewCheckBoxColumn});
+            this.dgvOrders.DataSource = this.orderBindingSource;
+            this.dgvOrders.Location = new System.Drawing.Point(380, 219);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.Size = new System.Drawing.Size(349, 370);
+            this.dgvOrders.TabIndex = 56;
+            this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
+            this.dgvOrders.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellEndEdit);
+            this.dgvOrders.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrders_CellFormatting);
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            this.productDataGridViewTextBoxColumn.Width = 185;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // hasArrivedDataGridViewCheckBoxColumn
+            // 
+            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
+            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(BarrocIntensApp.Models.Order);
+            // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(206, 45);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 55;
+            this.roundButton1.Text = "Logout";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // btnReturnDashboard
             // 
             this.btnReturnDashboard.BackColor = System.Drawing.Color.Black;
@@ -449,61 +506,6 @@
             // productCategoryBindingSource1
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton1.Location = new System.Drawing.Point(206, 45);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(168, 70);
-            this.roundButton1.TabIndex = 55;
-            this.roundButton1.Text = "Logout";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
-            // 
-            // dgvOrders
-            // 
-            this.dgvOrders.AutoGenerateColumns = false;
-            this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.hasArrivedDataGridViewCheckBoxColumn});
-            this.dgvOrders.DataSource = this.orderBindingSource;
-            this.dgvOrders.Location = new System.Drawing.Point(380, 219);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(349, 370);
-            this.dgvOrders.TabIndex = 56;
-            this.dgvOrders.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellEndEdit);
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(BarrocIntensApp.Models.Order);
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            this.productDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productDataGridViewTextBoxColumn.Width = 185;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // hasArrivedDataGridViewCheckBoxColumn
-            // 
-            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
-            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
             // 
             // InkoopBestellenForm
             // 
@@ -542,9 +544,9 @@
             this.groupAddProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
