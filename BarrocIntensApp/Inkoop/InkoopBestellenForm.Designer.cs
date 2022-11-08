@@ -40,6 +40,7 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.lbAmount = new System.Windows.Forms.Label();
             this.txbAmount = new System.Windows.Forms.TextBox();
             this.lbPermission = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.roundButton1 = new BarrocIntensApp.RoundButton();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.cbLeasable = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -206,6 +207,16 @@
             this.groupProductInfo.TabStop = false;
             this.groupProductInfo.Text = "Product info";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatus.Location = new System.Drawing.Point(3, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(26, 13);
+            this.lblStatus.TabIndex = 54;
+            this.lblStatus.Text = "Prijs";
+            // 
             // lbAmount
             // 
             this.lbAmount.AutoSize = true;
@@ -316,6 +327,7 @@
             // 
             // groupAddProduct
             // 
+            this.groupAddProduct.Controls.Add(this.cbLeasable);
             this.groupAddProduct.Controls.Add(this.numProductPrice);
             this.groupAddProduct.Controls.Add(this.btnAddProduct);
             this.groupAddProduct.Controls.Add(this.checkPart);
@@ -457,15 +469,15 @@
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
-            // lblStatus
+            // cbLeasable
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblStatus.Location = new System.Drawing.Point(3, 42);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(26, 13);
-            this.lblStatus.TabIndex = 54;
-            this.lblStatus.Text = "Prijs";
+            this.cbLeasable.AutoSize = true;
+            this.cbLeasable.Location = new System.Drawing.Point(174, 79);
+            this.cbLeasable.Name = "cbLeasable";
+            this.cbLeasable.Size = new System.Drawing.Size(79, 17);
+            this.cbLeasable.TabIndex = 59;
+            this.cbLeasable.Text = "Kan leasen";
+            this.cbLeasable.UseVisualStyleBackColor = true;
             // 
             // InkoopBestellenForm
             // 
@@ -549,5 +561,6 @@
         private System.Windows.Forms.Label lbPermission;
         private RoundButton roundButton1;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox cbLeasable;
     }
 }

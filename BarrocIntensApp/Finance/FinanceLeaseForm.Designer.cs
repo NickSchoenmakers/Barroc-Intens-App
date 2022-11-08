@@ -35,8 +35,16 @@
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnLogout = new BarrocIntensApp.RoundButton();
             this.groupLeaseContractInfo = new System.Windows.Forms.GroupBox();
+            this.lblLeaseInfoProduct = new System.Windows.Forms.Label();
+            this.lblLeaseInfoCompany = new System.Windows.Forms.Label();
+            this.lblMonthlyPeriodically = new System.Windows.Forms.Label();
+            this.lblLeaseInfoPriceMonth = new System.Windows.Forms.Label();
+            this.lblLeaseInfoPeriods = new System.Windows.Forms.Label();
+            this.lblLeaseInfoStartDate = new System.Windows.Forms.Label();
             this.btnDeleteLeaseContract = new System.Windows.Forms.Button();
             this.groupCreateLeaseContract = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numPeriods = new System.Windows.Forms.NumericUpDown();
             this.lblMonthly = new System.Windows.Forms.Label();
             this.cbxMonthlyPeriodically = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,9 +61,12 @@
             this.companyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leaseContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSaveEdit = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.groupLeaseContractInfo.SuspendLayout();
             this.groupCreateLeaseContract.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeriods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.groupLeaseContracts.SuspendLayout();
@@ -127,6 +138,13 @@
             // groupLeaseContractInfo
             // 
             this.groupLeaseContractInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupLeaseContractInfo.Controls.Add(this.btnEdit);
+            this.groupLeaseContractInfo.Controls.Add(this.lblLeaseInfoProduct);
+            this.groupLeaseContractInfo.Controls.Add(this.lblLeaseInfoCompany);
+            this.groupLeaseContractInfo.Controls.Add(this.lblMonthlyPeriodically);
+            this.groupLeaseContractInfo.Controls.Add(this.lblLeaseInfoPriceMonth);
+            this.groupLeaseContractInfo.Controls.Add(this.lblLeaseInfoPeriods);
+            this.groupLeaseContractInfo.Controls.Add(this.lblLeaseInfoStartDate);
             this.groupLeaseContractInfo.Controls.Add(this.btnDeleteLeaseContract);
             this.groupLeaseContractInfo.Location = new System.Drawing.Point(558, 220);
             this.groupLeaseContractInfo.Name = "groupLeaseContractInfo";
@@ -134,6 +152,66 @@
             this.groupLeaseContractInfo.TabIndex = 80;
             this.groupLeaseContractInfo.TabStop = false;
             this.groupLeaseContractInfo.Text = "Leasecontract info";
+            // 
+            // lblLeaseInfoProduct
+            // 
+            this.lblLeaseInfoProduct.AutoSize = true;
+            this.lblLeaseInfoProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLeaseInfoProduct.Location = new System.Drawing.Point(3, 81);
+            this.lblLeaseInfoProduct.Name = "lblLeaseInfoProduct";
+            this.lblLeaseInfoProduct.Size = new System.Drawing.Size(44, 13);
+            this.lblLeaseInfoProduct.TabIndex = 52;
+            this.lblLeaseInfoProduct.Text = "Product";
+            // 
+            // lblLeaseInfoCompany
+            // 
+            this.lblLeaseInfoCompany.AutoSize = true;
+            this.lblLeaseInfoCompany.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLeaseInfoCompany.Location = new System.Drawing.Point(3, 68);
+            this.lblLeaseInfoCompany.Name = "lblLeaseInfoCompany";
+            this.lblLeaseInfoCompany.Size = new System.Drawing.Size(36, 13);
+            this.lblLeaseInfoCompany.TabIndex = 51;
+            this.lblLeaseInfoCompany.Text = "Bedrijf";
+            // 
+            // lblMonthlyPeriodically
+            // 
+            this.lblMonthlyPeriodically.AutoSize = true;
+            this.lblMonthlyPeriodically.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblMonthlyPeriodically.Location = new System.Drawing.Point(3, 55);
+            this.lblMonthlyPeriodically.Name = "lblMonthlyPeriodically";
+            this.lblMonthlyPeriodically.Size = new System.Drawing.Size(121, 13);
+            this.lblMonthlyPeriodically.TabIndex = 54;
+            this.lblMonthlyPeriodically.Text = "Maandelijks of periodiek";
+            // 
+            // lblLeaseInfoPriceMonth
+            // 
+            this.lblLeaseInfoPriceMonth.AutoSize = true;
+            this.lblLeaseInfoPriceMonth.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLeaseInfoPriceMonth.Location = new System.Drawing.Point(3, 42);
+            this.lblLeaseInfoPriceMonth.Name = "lblLeaseInfoPriceMonth";
+            this.lblLeaseInfoPriceMonth.Size = new System.Drawing.Size(82, 13);
+            this.lblLeaseInfoPriceMonth.TabIndex = 56;
+            this.lblLeaseInfoPriceMonth.Text = "Prijs per periode";
+            // 
+            // lblLeaseInfoPeriods
+            // 
+            this.lblLeaseInfoPeriods.AutoSize = true;
+            this.lblLeaseInfoPeriods.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLeaseInfoPeriods.Location = new System.Drawing.Point(3, 29);
+            this.lblLeaseInfoPeriods.Name = "lblLeaseInfoPeriods";
+            this.lblLeaseInfoPeriods.Size = new System.Drawing.Size(53, 13);
+            this.lblLeaseInfoPeriods.TabIndex = 53;
+            this.lblLeaseInfoPeriods.Text = "Termijnen";
+            // 
+            // lblLeaseInfoStartDate
+            // 
+            this.lblLeaseInfoStartDate.AutoSize = true;
+            this.lblLeaseInfoStartDate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLeaseInfoStartDate.Location = new System.Drawing.Point(3, 16);
+            this.lblLeaseInfoStartDate.Name = "lblLeaseInfoStartDate";
+            this.lblLeaseInfoStartDate.Size = new System.Drawing.Size(58, 13);
+            this.lblLeaseInfoStartDate.TabIndex = 55;
+            this.lblLeaseInfoStartDate.Text = "Startdatum";
             // 
             // btnDeleteLeaseContract
             // 
@@ -147,6 +225,9 @@
             // 
             // groupCreateLeaseContract
             // 
+            this.groupCreateLeaseContract.Controls.Add(this.btnSaveEdit);
+            this.groupCreateLeaseContract.Controls.Add(this.label2);
+            this.groupCreateLeaseContract.Controls.Add(this.numPeriods);
             this.groupCreateLeaseContract.Controls.Add(this.lblMonthly);
             this.groupCreateLeaseContract.Controls.Add(this.cbxMonthlyPeriodically);
             this.groupCreateLeaseContract.Controls.Add(this.label1);
@@ -162,6 +243,32 @@
             this.groupCreateLeaseContract.TabIndex = 82;
             this.groupCreateLeaseContract.TabStop = false;
             this.groupCreateLeaseContract.Text = "Leasecontract aanmaken";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 87;
+            this.label2.Text = "Aantal termijnen";
+            // 
+            // numPeriods
+            // 
+            this.numPeriods.Location = new System.Drawing.Point(224, 81);
+            this.numPeriods.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPeriods.Name = "numPeriods";
+            this.numPeriods.Size = new System.Drawing.Size(45, 20);
+            this.numPeriods.TabIndex = 86;
+            this.numPeriods.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblMonthly
             // 
@@ -183,6 +290,7 @@
             this.cbxMonthlyPeriodically.Name = "cbxMonthlyPeriodically";
             this.cbxMonthlyPeriodically.Size = new System.Drawing.Size(198, 21);
             this.cbxMonthlyPeriodically.TabIndex = 61;
+            this.cbxMonthlyPeriodically.SelectedIndexChanged += new System.EventHandler(this.cbxMonthlyPeriodically_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -286,13 +394,14 @@
             this.productDataGridViewTextBoxColumn});
             this.dgvLeaseContracts.DataSource = this.leaseContractBindingSource;
             this.dgvLeaseContracts.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvLeaseContracts.Location = new System.Drawing.Point(3, 15);
+            this.dgvLeaseContracts.Location = new System.Drawing.Point(0, 15);
             this.dgvLeaseContracts.Name = "dgvLeaseContracts";
             this.dgvLeaseContracts.ReadOnly = true;
             this.dgvLeaseContracts.RowHeadersVisible = false;
             this.dgvLeaseContracts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvLeaseContracts.Size = new System.Drawing.Size(515, 349);
+            this.dgvLeaseContracts.Size = new System.Drawing.Size(518, 349);
             this.dgvLeaseContracts.TabIndex = 45;
+            this.dgvLeaseContracts.SelectionChanged += new System.EventHandler(this.dgvLeaseContracts_SelectionChanged);
             // 
             // companyDataGridViewTextBoxColumn
             // 
@@ -314,6 +423,27 @@
             // 
             this.leaseContractBindingSource.DataSource = typeof(BarrocIntensApp.Models.LeaseContract);
             // 
+            // btnSaveEdit
+            // 
+            this.btnSaveEdit.Location = new System.Drawing.Point(423, 111);
+            this.btnSaveEdit.Name = "btnSaveEdit";
+            this.btnSaveEdit.Size = new System.Drawing.Size(144, 41);
+            this.btnSaveEdit.TabIndex = 88;
+            this.btnSaveEdit.Text = "Bewerkingen opslaan";
+            this.btnSaveEdit.UseVisualStyleBackColor = true;
+            this.btnSaveEdit.Visible = false;
+            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(423, 281);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(144, 36);
+            this.btnEdit.TabIndex = 57;
+            this.btnEdit.Text = "Leasecontract bewerken";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // FinanceLeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,8 +461,10 @@
             this.Text = "FinanceLeaseForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.groupLeaseContractInfo.ResumeLayout(false);
+            this.groupLeaseContractInfo.PerformLayout();
             this.groupCreateLeaseContract.ResumeLayout(false);
             this.groupCreateLeaseContract.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeriods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.groupLeaseContracts.ResumeLayout(false);
@@ -367,5 +499,15 @@
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblLeaseInfoStartDate;
+        private System.Windows.Forms.Label lblMonthlyPeriodically;
+        private System.Windows.Forms.Label lblLeaseInfoPeriods;
+        private System.Windows.Forms.Label lblLeaseInfoProduct;
+        private System.Windows.Forms.Label lblLeaseInfoCompany;
+        private System.Windows.Forms.Label lblLeaseInfoPriceMonth;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numPeriods;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSaveEdit;
     }
 }

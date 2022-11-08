@@ -19,10 +19,11 @@ namespace BarrocIntensApp.Models
         public bool isPart {get; set;}
         public bool hasArrived { get; set; }
         public ProductCategory ProductCategory { get; set; } = null;
+        public bool IsLeasable { get; set; } = false;
         public ObservableCollectionListSource<CustomInvoiceProduct> CustomInvoiceProducts { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
         public ObservableCollectionListSource<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentWorkOrderProducts { get; } = new ObservableCollectionListSource<MaintenanceAppointmentWorkOrderProduct>();
         public ObservableCollectionListSource<LeaseContract> LeaseContracts { get; } = new ObservableCollectionListSource<LeaseContract>();
-
+        
 
         public override string ToString()
         {
