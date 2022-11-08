@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BarrocIntensApp.LoginForm;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BarrocIntensApp.Inkoop
 {
@@ -86,9 +87,11 @@ namespace BarrocIntensApp.Inkoop
                     // adds the amount of products selected to the stock
                     var order = new Order
                     {
+                        // puts the amount of products bought into the order
                         Amount = aantal,
                         // puts the product into the order
                         ProductId = product.Id,
+                        // this will be used to see if it has arrived
                         hasArrived = false,
                     };
                     // saves the changes to the database
@@ -238,7 +241,33 @@ namespace BarrocIntensApp.Inkoop
 
         private void dgvOrders_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            Program.dbContext.SaveChanges();
+        }
+
+        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // gets the current selected order
+            var ordercel = (Order)this.dgvOrders.Rows[e.RowIndex].DataBoundItem;
+            var order = (Order)this.dgvOrders.CurrentRow?.DataBoundItem;
+            // gets the product that has the same id as the productid in the order
+            var product = Program.dbContext.Products.Where(u => u.Id == order.ProductId).FirstOrDefault();
+            // checks if the order has not yet arrived
+            if (order.hasArrived != true)
+            {
+                // adds the amount of products in the order to the stock of the product
+                product.Stock = product.Stock + order.Amount;
+                Program.dbContext.SaveChanges();
+                this.dgvOrders.Rows[e.RowIndex].ReadOnly = true;
+            }
+        }
+
+        private void dgvOrders_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var order = (Order)this.dgvOrders.Rows[e.RowIndex].DataBoundItem;
+            if (order.hasArrived == true) 
+            { 
+                this.dgvOrders.Rows[e.RowIndex].ReadOnly = true; 
+            }
+
         }
     }
 }
