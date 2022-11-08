@@ -36,6 +36,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.btnBkrCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,11 +121,23 @@
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
+            // btnBkrCheck
+            // 
+            this.btnBkrCheck.Location = new System.Drawing.Point(709, 144);
+            this.btnBkrCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBkrCheck.Name = "btnBkrCheck";
+            this.btnBkrCheck.Size = new System.Drawing.Size(150, 162);
+            this.btnBkrCheck.TabIndex = 42;
+            this.btnBkrCheck.Text = "BKR-checks";
+            this.btnBkrCheck.UseVisualStyleBackColor = true;
+            this.btnBkrCheck.Click += new System.EventHandler(this.btnBkrCheck_Click);
+            // 
             // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.btnBkrCheck);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -152,5 +165,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton roundButton1;
+        private System.Windows.Forms.Button btnBkrCheck;
     }
 }

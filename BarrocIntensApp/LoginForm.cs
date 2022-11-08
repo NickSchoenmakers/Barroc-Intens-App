@@ -45,8 +45,10 @@ namespace BarrocIntensApp
         private void login()
         {
             // saves the user given data
-            string username = txbUserName.Text.ToString();
-            string password = txbUserPassword.Text.ToString();
+            //string username = txbUserName.Text.ToString();
+            //string password = txbUserPassword.Text.ToString();
+            string username = "finance1";
+            string password = "pass";
 
             // checks if the username and password exist and if they are in the same table
             Globals.loggedInUser = Program.dbContext.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();

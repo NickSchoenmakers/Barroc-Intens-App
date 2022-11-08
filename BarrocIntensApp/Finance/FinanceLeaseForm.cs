@@ -6,81 +6,60 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BarrocIntensApp.LoginForm;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace BarrocIntensApp
+namespace BarrocIntensApp.Finance
 {
     public partial class FinanceLeaseForm : Form
     {
-        private AppDbContext dbContext;
         public FinanceLeaseForm()
         {
             InitializeComponent();
+            Program.dbContext.LeaseContracts.Load();
+            Program.dbContext.Companies.Load();
+            Program.dbContext.Products.Load();
+            this.dgvLeaseContracts.DataSource = Program.dbContext.LeaseContracts.Local.ToBindingList().OrderBy(l => l.Company.Name).ToList();
+            this.cbxLeaseContractCompany.DataSource = Program.dbContext.Companies.Local.ToBindingList().OrderBy(c => c.Name).ToList();
+            this.cbxLeaseContractProduct.DataSource = Program.dbContext.Products.Local.ToBindingList();
+            this.cbxMonthlyPeriodically.SelectedIndex = 0;
             lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
 
-        private void FinanceLeaseForm_Load(object sender, EventArgs e)
-        {
-            this.dbContext = new AppDbContext();
-            this.dbContext.Companies.Load();
-            companyBindingSource.DataSource = this.dbContext.Companies.Local.ToBindingList();
-        }
-
-        private void cbCompanies_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void btnChangeBkr_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSaveChanges_Click(object sender, EventArgs e)
-        {
-            // saves the changes made
-            this.dbContext.SaveChanges();
-            // refreshes the list
-            this.cbCompanies.Refresh();
-            // tells the user the changes were saved succesfully
-            MessageBox.Show("changes saved succesfully");
-        }
-
-        private void cbCompanies_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            // if the user gives incorrect information then it shows them this message
-            MessageBox.Show("please fill in a correct date. an example of formating: 20/02/2020");
-        }
-
-        private void roundButton2_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             var maintenanceDashboard = new FinanceForm();
             this.Hide();
             maintenanceDashboard.Show(this);
         }
 
-        private void roundButton1_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
             var LoginForm = new LoginForm();
             this.Hide();
             LoginForm.Show(this);
         }
 
-        private void cbCompanies_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCreateLeaseContract_Click(object sender, EventArgs e)
         {
-            var company = (Company)this.cbCompanies.CurrentRow?.DataBoundItem;
-            if (company.BkrCheckedAt == null)
+            LeaseContract leaseContractToAdd = new LeaseContract
             {
-                bkrcheckbox.Checked = false;
-            }
-            else
-            {
-                bkrcheckbox.Checked = true;
-            }
+                Monthly = cbxMonthlyPeriodically.SelectedIndex == 0,
+                ProductId = (int)cbxLeaseContractProduct.SelectedValue,
+                CompanyId = (int)cbxLeaseContractCompany.SelectedValue,
+                StartDate = dtLeaseContractStartDate.Value,
+                Periods = 12
+            };
+            Program.dbContext.LeaseContracts.Add(leaseContractToAdd);
+            Program.dbContext.SaveChanges();
+            this.dgvLeaseContracts.DataSource = Program.dbContext.LeaseContracts.Local.ToBindingList().OrderBy(l => l.Company.Name).ToList();
+        }
+
+        private void btnDeleteLeaseContract_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

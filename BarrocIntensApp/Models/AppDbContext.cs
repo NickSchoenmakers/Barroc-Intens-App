@@ -20,6 +20,7 @@ namespace BarrocIntensApp.Models
         public DbSet<User> Users { get; set; }
         public DbSet<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentWorkOrderProducts { get; set; }
         public DbSet<MaintenanceAppointmentWorkOrder> MaintenanceAppointmentWorkOrders { get; set; }
+        public DbSet<LeaseContract> LeaseContracts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -112,7 +113,7 @@ namespace BarrocIntensApp.Models
                 new MaintenanceAppointmentWorkOrderProduct { Id = 7, MaintenanceAppointmentWorkOrderId = 3, ProductId = 3, Amount = 2 }
 
 
-                );
+            );
 
             modelBuilder.Entity<Note>().HasData(
                 new Note { Id = 1, NoteText = "Goed gesprek", Date = new DateTime(2022, 01, 22), CompanyId = 1, AuthorId = 8 },
@@ -123,6 +124,15 @@ namespace BarrocIntensApp.Models
             modelBuilder.Entity<ProductCategory>().HasData(
                 new ProductCategory { Id = 1, Name = "Machines", IsEmployeeOnly = 1 },
                 new ProductCategory { Id = 2, Name = "Koffiebonen", IsEmployeeOnly = 1 }
+            );
+
+            modelBuilder.Entity<LeaseContract>().HasData(
+                new LeaseContract { Id = 1, Monthly = true, ProductId = 1, CompanyId = 1, StartDate = new DateTime(2022, 08, 10), Periods = 12 },
+                new LeaseContract { Id = 2, Monthly = true, ProductId = 2, CompanyId = 1, StartDate = new DateTime(2022, 08, 09), Periods = 12 },
+                new LeaseContract { Id = 3, Monthly = false, ProductId = 3, CompanyId = 2, StartDate = new DateTime(2022, 07, 08), Periods = 4 },
+                new LeaseContract { Id = 4, Monthly = false, ProductId = 4, CompanyId = 2, StartDate = new DateTime(2022, 06, 07), Periods = 4 },
+                new LeaseContract { Id = 5, Monthly = true, ProductId = 2, CompanyId = 1, StartDate = new DateTime(2022, 06, 06), Periods = 12 }
+
             );
         }
     }
