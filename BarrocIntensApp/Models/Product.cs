@@ -24,7 +24,8 @@ namespace BarrocIntensApp.Models
 
         public override string ToString()
         {
-            return $"{Name}(€{Price})";
+            double doublePrice = (double)Price;
+            return $"{Name} (€{doublePrice})";
         }
     }
 }
