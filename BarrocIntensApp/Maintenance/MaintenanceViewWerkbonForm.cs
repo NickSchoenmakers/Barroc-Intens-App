@@ -21,6 +21,7 @@ namespace BarrocIntensApp.Maintenance
             foreach (var product in maintenanceAppointmentWorkOrder.MaintenanceAppointmentWorkOrderProducts) {
                 this.dgvParts.Rows.Add(product.Product.Name, product.Amount, "€" + Decimal.Parse((product.Amount * product.Product.Price).ToString("0.00")));
             }
+
         }
     }
 }

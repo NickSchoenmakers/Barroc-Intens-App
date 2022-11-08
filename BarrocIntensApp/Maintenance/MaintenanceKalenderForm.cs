@@ -24,6 +24,7 @@ namespace BarrocIntensApp
             Program.dbContext.MaintenanceAppointments.Where(m => m.WorkerId == Globals.loggedInUser.Id).Load();
             Program.dbContext.Companies.Load();
             this.dgvAppointments.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();
+            Program.dbContext.MaintenanceAppointmentWorkOrders.Load();
             Program.dbContext.Products.Where(p => p.ProductCategoryId == 1).Load();
             cbFilter.SelectedIndex = 0;
         }
@@ -46,7 +47,8 @@ namespace BarrocIntensApp
         }
         private MaintenanceAppointmentWorkOrder GetMaintenanceAppointmentWorkOrder()
         {
-            MaintenanceAppointmentWorkOrder maintenanceAppointmentWorkOrder = GetMaintenanceAppointment().MaintenanceAppointmentWorkOrder;
+            MaintenanceAppointment maintenanceAppointment = GetMaintenanceAppointment();
+            MaintenanceAppointmentWorkOrder maintenanceAppointmentWorkOrder = maintenanceAppointment.MaintenanceAppointmentWorkOrder;
             return maintenanceAppointmentWorkOrder;
         }
 
@@ -78,7 +80,7 @@ namespace BarrocIntensApp
                     lblRoutine.Text = "Type bezoek: storingbezoek";
                 }
             }
-            if (GetMaintenanceAppointmentWorkOrder() is null)
+            if (GetMaintenanceAppointmentWorkOrder() == null)
             {
                 btnShowCreateWorkOrder.Visible = true;
                 btnViewWorkOrder.Visible = false;
