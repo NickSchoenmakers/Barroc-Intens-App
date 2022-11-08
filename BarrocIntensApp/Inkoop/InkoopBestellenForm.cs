@@ -15,7 +15,6 @@ namespace BarrocIntensApp.Inkoop
 {
     public partial class InkoopBestellenForm : Form
     {
-        string hasArrived;
         public InkoopBestellenForm()
         {
             InitializeComponent();
@@ -23,6 +22,9 @@ namespace BarrocIntensApp.Inkoop
             lblTitle.Text = $"Inkoop | {Globals.loggedInUser.Name}";
             Program.dbContext.Products.Load();
             Program.dbContext.ProductCategories.Load();
+            Program.dbContext.Orders.Load();
+
+            this.dgvOrders.DataSource = Program.dbContext.Orders.Local.ToBindingList();
 
             this.cbCategories.DataSource  = Program.dbContext.ProductCategories.Local.ToBindingList();
             var productCategory = (ProductCategory)this.cbCategories.SelectedItem;
@@ -67,12 +69,12 @@ namespace BarrocIntensApp.Inkoop
             // if the user did not select an amount to add it just adds 1 to the stock of the item
             if (String.IsNullOrEmpty(txbAmount.Text))
             {
-                product.Stock++;
+                
             }
             else
             {
                 // converts the amount given by the user into an int so we can actually do math with it
-                int aantal = Convert.ToInt16(txbAmount.Text);
+                int aantal = Convert.ToInt32(txbAmount.Text);
                 // checks if the order is bigger than 5000
                 if (aantal >= 5000)
                 {
@@ -82,13 +84,19 @@ namespace BarrocIntensApp.Inkoop
                 else
                 {
                     // adds the amount of products selected to the stock
-                    product.Stock = product.Stock + aantal;
+                    var order = new Order
+                    {
+                        Amount = aantal,
+                        // puts the product into the order
+                        ProductId = product.Id,
+                        hasArrived = false,
+                    };
+                    // saves the changes to the database
+                    Program.dbContext.Orders.Update(order);
+                    Program.dbContext.SaveChanges();
+                    this.RefreshProductInfo();
                 }
             }
-            // saves the changes to the database
-            Program.dbContext.Products.Update(product);
-            Program.dbContext.SaveChanges();
-            this.RefreshProductInfo();
         }
 
         private Product GetProduct()
@@ -102,17 +110,8 @@ namespace BarrocIntensApp.Inkoop
         private void RefreshProductInfo()
         {
             Product product = GetProduct();
-            if ((bool)(product?.hasArrived))
-            {
-                hasArrived = "ja";
-            }
-            else
-            {
-                hasArrived = "nee";
-            }
             lblPrice.Text = $"Prijs: {Decimal.Parse(product?.Price.ToString("0.00"))}";
             lblStock.Text = $"Aantal op voorraad: {product?.Stock.ToString()}";
-            lblStatus.Text = $"Is het geariveerd: {hasArrived}";
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -235,6 +234,11 @@ namespace BarrocIntensApp.Inkoop
             var LoginForm = new LoginForm();
             this.Hide();
             LoginForm.Show(this);
+        }
+
+        private void dgvOrders_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            Program.dbContext.SaveChanges();
         }
     }
 }
