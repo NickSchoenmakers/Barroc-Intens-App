@@ -66,6 +66,7 @@
             this.nextAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupAppointments = new System.Windows.Forms.GroupBox();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             this.groupAppointmentInfo.SuspendLayout();
             this.groupAppointmentLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource1)).BeginInit();
@@ -111,15 +112,6 @@
             this.groupAppointmentInfo.TabIndex = 72;
             this.groupAppointmentInfo.TabStop = false;
             this.groupAppointmentInfo.Text = "Afspraakinfo";
-            // 
-            // lblRoutine
-            // 
-            this.lblRoutine.AutoSize = true;
-            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
-            this.lblRoutine.Name = "lblRoutine";
-            this.lblRoutine.Size = new System.Drawing.Size(44, 13);
-            this.lblRoutine.TabIndex = 57;
-            this.lblRoutine.Text = "Routine";
             // 
             // btnViewWorkOrder
             // 
@@ -522,6 +514,18 @@
             this.dgvAppointments.TabIndex = 45;
             this.dgvAppointments.SelectionChanged += new System.EventHandler(this.dgvAppointments_SelectionChanged_1);
             // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton2.Location = new System.Drawing.Point(383, 45);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(168, 70);
+            this.roundButton2.TabIndex = 77;
+            this.roundButton2.Text = "Logout";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
             // MaintenanceOnderHoudManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,7 +606,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbRoutine;
         private System.Windows.Forms.Label lblRoutine;
-        private RoundButton roundButton2;
         private System.Windows.Forms.Button btnViewWorkOrder;
+        private RoundButton roundButton2;
     }
 }
