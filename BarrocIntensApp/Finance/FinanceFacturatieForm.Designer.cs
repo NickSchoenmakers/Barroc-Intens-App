@@ -42,9 +42,6 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CartGv = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
@@ -55,6 +52,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.roundButton2 = new BarrocIntensApp.RoundButton();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -178,36 +178,19 @@
             // CartGv
             // 
             this.CartGv.AutoGenerateColumns = false;
+            this.CartGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CartGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.productIdDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn});
+            this.amountDataGridViewTextBoxColumn,
+            this.Product});
             this.CartGv.DataSource = this.customInvoiceProductBindingSource;
             this.CartGv.Location = new System.Drawing.Point(6, 19);
             this.CartGv.Name = "CartGv";
-            this.CartGv.Size = new System.Drawing.Size(344, 272);
+            this.CartGv.Size = new System.Drawing.Size(521, 272);
             this.CartGv.TabIndex = 36;
             this.CartGv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartGv_CellContentClick);
             this.CartGv.SelectionChanged += new System.EventHandler(this.CartGv_SelectionChanged_1);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             // 
             // customInvoiceProductBindingSource
             // 
@@ -231,7 +214,7 @@
             this.BtnReturnStoringen.BackColor = System.Drawing.Color.Black;
             this.BtnReturnStoringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReturnStoringen.ForeColor = System.Drawing.Color.White;
-            this.BtnReturnStoringen.Location = new System.Drawing.Point(262, 297);
+            this.BtnReturnStoringen.Location = new System.Drawing.Point(6, 297);
             this.BtnReturnStoringen.Name = "BtnReturnStoringen";
             this.BtnReturnStoringen.Size = new System.Drawing.Size(88, 50);
             this.BtnReturnStoringen.TabIndex = 32;
@@ -272,7 +255,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(7, 310);
+            this.lblPrice.Location = new System.Drawing.Point(100, 317);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(35, 13);
             this.lblPrice.TabIndex = 37;
@@ -320,6 +303,27 @@
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 24.36548F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.FillWeight = 65.33537F;
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            // 
+            // Product
+            // 
+            this.Product.DataPropertyName = "Product";
+            this.Product.FillWeight = 210.2991F;
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
+            // 
             // FacturatieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,9 +370,6 @@
         private System.Windows.Forms.ComboBox NameCb;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.BindingSource customInvoiceProductBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblPrice;
@@ -378,5 +379,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
     }
 }

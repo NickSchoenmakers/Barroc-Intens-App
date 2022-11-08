@@ -69,5 +69,18 @@ namespace BarrocIntensApp
             this.Hide();
             LoginForm.Show(this);
         }
+
+        private void cbCompanies_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var company = (Company)this.cbCompanies.CurrentRow?.DataBoundItem;
+            if (company.BkrCheckedAt == null)
+            {
+                bkrcheckbox.Checked = false;
+            }
+            else
+            {
+                bkrcheckbox.Checked = true;
+            }
+        }
     }
 }

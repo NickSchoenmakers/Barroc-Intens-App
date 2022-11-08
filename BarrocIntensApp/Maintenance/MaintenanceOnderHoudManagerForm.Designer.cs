@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.groupAppointmentInfo = new System.Windows.Forms.GroupBox();
+            this.btnViewWorkOrder = new System.Windows.Forms.Button();
             this.lblRoutine = new System.Windows.Forms.Label();
             this.lblAppointmentWorker = new System.Windows.Forms.Label();
             this.lblAppointmentProduct = new System.Windows.Forms.Label();
@@ -96,6 +97,7 @@
             // groupAppointmentInfo
             // 
             this.groupAppointmentInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupAppointmentInfo.Controls.Add(this.btnViewWorkOrder);
             this.groupAppointmentInfo.Controls.Add(this.lblRoutine);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentWorker);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentProduct);
@@ -110,6 +112,17 @@
             this.groupAppointmentInfo.TabIndex = 72;
             this.groupAppointmentInfo.TabStop = false;
             this.groupAppointmentInfo.Text = "Afspraakinfo";
+            // 
+            // btnViewWorkOrder
+            // 
+            this.btnViewWorkOrder.Location = new System.Drawing.Point(442, 289);
+            this.btnViewWorkOrder.Name = "btnViewWorkOrder";
+            this.btnViewWorkOrder.Size = new System.Drawing.Size(123, 32);
+            this.btnViewWorkOrder.TabIndex = 58;
+            this.btnViewWorkOrder.Text = "Werkbon openen";
+            this.btnViewWorkOrder.UseVisualStyleBackColor = true;
+            this.btnViewWorkOrder.Visible = false;
+            this.btnViewWorkOrder.Click += new System.EventHandler(this.btnViewWorkOrder_Click);
             // 
             // lblRoutine
             // 
@@ -593,6 +606,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbRoutine;
         private System.Windows.Forms.Label lblRoutine;
+        private System.Windows.Forms.Button btnViewWorkOrder;
         private RoundButton roundButton2;
     }
 }

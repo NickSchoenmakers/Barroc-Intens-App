@@ -17,14 +17,14 @@ namespace BarrocIntensApp.Models
         public int Stock { get; set; } = 0;
         public int ProductCategoryId { get; set; }
         public bool isPart {get; set;}
-        public bool hasArrived { get; set; }
         public ProductCategory ProductCategory { get; set; } = null;
         public ObservableCollectionListSource<CustomInvoiceProduct> CustomInvoiceProducts { get; } = new ObservableCollectionListSource<CustomInvoiceProduct>();
         public ObservableCollectionListSource<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentWorkOrderProducts { get; } = new ObservableCollectionListSource<MaintenanceAppointmentWorkOrderProduct>();
 
         public override string ToString()
         {
-            return $"{Name}(€{Price})";
+            double doublePrice = (double)Price;
+            return $"{Name} (€{doublePrice})";
         }
     }
 }
