@@ -27,6 +27,34 @@ namespace BarrocIntensApp.Finance
             this.dbContext.Companies.Load();
             this.dbContext.CustomInvoiceProducts.Load();
             this.dbContext.CustomInvoices.Load();
+
+            this.InvoiceGridView.DataSource = dbContext.CustomInvoices.Local.ToBindingList();
+            this.productsDataGridview.DataSource = dbContext.CustomInvoiceProducts.Local.ToBindingList();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InvoiceGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.dbContext == null)
+                return;
+
+            var Invoice = (CustomInvoice)this.InvoiceGridView.CurrentRow.DataBoundItem;
+
+            if (Invoice == null)
+                return;
+
+            this.dbContext.Entry(Invoice)
+                .Collection(I => I.CustomInvoiceProducts)
+                .Load();
+            DateData.Text = Invoice?.Date.ToString();
+            CompanyData.Text = Invoice?.Company.ToString();
+            PaidData.Text = Invoice?.PaidAt.ToString();
+
+            productsDataGridview.DataSource = Invoice.CustomInvoiceProducts;
         }
     }
 }

@@ -28,11 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.InvoiceGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ProductData = new System.Windows.Forms.Label();
+            this.CompanyData = new System.Windows.Forms.Label();
+            this.PaidData = new System.Windows.Forms.Label();
+            this.DateData = new System.Windows.Forms.Label();
+            this.productsDataGridview = new System.Windows.Forms.DataGridView();
+            this.AmountData = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paidAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBlack
@@ -57,26 +85,242 @@
             this.lblTitle.Text = "Factuur overzicht";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // dataGridView1
+            // InvoiceGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 49);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 103;
+            this.InvoiceGridView.AllowUserToDeleteRows = false;
+            this.InvoiceGridView.AutoGenerateColumns = false;
+            this.InvoiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InvoiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.paidAtDataGridViewTextBoxColumn,
+            this.companyIdDataGridViewTextBoxColumn,
+            this.companyDataGridViewTextBoxColumn});
+            this.InvoiceGridView.DataSource = this.customInvoiceBindingSource;
+            this.InvoiceGridView.Location = new System.Drawing.Point(12, 48);
+            this.InvoiceGridView.Name = "InvoiceGridView";
+            this.InvoiceGridView.ReadOnly = true;
+            this.InvoiceGridView.Size = new System.Drawing.Size(554, 260);
+            this.InvoiceGridView.TabIndex = 103;
+            this.InvoiceGridView.SelectionChanged += new System.EventHandler(this.InvoiceGridView_SelectionChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.AmountData);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.ProductData);
+            this.groupBox1.Controls.Add(this.CompanyData);
+            this.groupBox1.Controls.Add(this.PaidData);
+            this.groupBox1.Controls.Add(this.DateData);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(609, 81);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(455, 366);
+            this.groupBox1.TabIndex = 104;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Facture Info";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Datum:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Betaald op:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Bedrijf:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 119);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Product:";
+            // 
+            // ProductData
+            // 
+            this.ProductData.AutoSize = true;
+            this.ProductData.Location = new System.Drawing.Point(71, 119);
+            this.ProductData.Name = "ProductData";
+            this.ProductData.Size = new System.Drawing.Size(23, 13);
+            this.ProductData.TabIndex = 7;
+            this.ProductData.Text = "null";
+            // 
+            // CompanyData
+            // 
+            this.CompanyData.AutoSize = true;
+            this.CompanyData.Location = new System.Drawing.Point(59, 90);
+            this.CompanyData.Name = "CompanyData";
+            this.CompanyData.Size = new System.Drawing.Size(23, 13);
+            this.CompanyData.TabIndex = 6;
+            this.CompanyData.Text = "null";
+            // 
+            // PaidData
+            // 
+            this.PaidData.AutoSize = true;
+            this.PaidData.Location = new System.Drawing.Point(82, 58);
+            this.PaidData.Name = "PaidData";
+            this.PaidData.Size = new System.Drawing.Size(23, 13);
+            this.PaidData.TabIndex = 5;
+            this.PaidData.Text = "null";
+            // 
+            // DateData
+            // 
+            this.DateData.AutoSize = true;
+            this.DateData.Location = new System.Drawing.Point(59, 26);
+            this.DateData.Name = "DateData";
+            this.DateData.Size = new System.Drawing.Size(23, 13);
+            this.DateData.TabIndex = 4;
+            this.DateData.Text = "null";
+            // 
+            // productsDataGridview
+            // 
+            this.productsDataGridview.AllowUserToDeleteRows = false;
+            this.productsDataGridview.AutoGenerateColumns = false;
+            this.productsDataGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.productIdDataGridViewTextBoxColumn,
+            this.productDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn});
+            this.productsDataGridview.DataSource = this.customInvoiceProductBindingSource;
+            this.productsDataGridview.Location = new System.Drawing.Point(12, 314);
+            this.productsDataGridview.Name = "productsDataGridview";
+            this.productsDataGridview.ReadOnly = true;
+            this.productsDataGridview.Size = new System.Drawing.Size(459, 189);
+            this.productsDataGridview.TabIndex = 105;
+            // 
+            // AmountData
+            // 
+            this.AmountData.AutoSize = true;
+            this.AmountData.Location = new System.Drawing.Point(94, 142);
+            this.AmountData.Name = "AmountData";
+            this.AmountData.Size = new System.Drawing.Size(23, 13);
+            this.AmountData.TabIndex = 9;
+            this.AmountData.Text = "null";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Hoeveelheid:";
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            this.productDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customInvoiceProductBindingSource
+            // 
+            this.customInvoiceProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.CustomInvoiceProduct);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paidAtDataGridViewTextBoxColumn
+            // 
+            this.paidAtDataGridViewTextBoxColumn.DataPropertyName = "PaidAt";
+            this.paidAtDataGridViewTextBoxColumn.HeaderText = "PaidAt";
+            this.paidAtDataGridViewTextBoxColumn.Name = "paidAtDataGridViewTextBoxColumn";
+            this.paidAtDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // companyIdDataGridViewTextBoxColumn
+            // 
+            this.companyIdDataGridViewTextBoxColumn.DataPropertyName = "CompanyId";
+            this.companyIdDataGridViewTextBoxColumn.HeaderText = "CompanyId";
+            this.companyIdDataGridViewTextBoxColumn.Name = "companyIdDataGridViewTextBoxColumn";
+            this.companyIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // companyDataGridViewTextBoxColumn
+            // 
+            this.companyDataGridViewTextBoxColumn.DataPropertyName = "Company";
+            this.companyDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.companyDataGridViewTextBoxColumn.Name = "companyDataGridViewTextBoxColumn";
+            this.companyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customInvoiceBindingSource
+            // 
+            this.customInvoiceBindingSource.DataSource = typeof(BarrocIntensApp.Models.CustomInvoice);
             // 
             // FinanceFacturatieOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.productsDataGridview);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.InvoiceGridView);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Name = "FinanceFacturatieOverzichtForm";
             this.Text = "FinanceFacturatieOverzichtForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customInvoiceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,6 +330,29 @@
 
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView InvoiceGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paidAtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customInvoiceBindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label ProductData;
+        private System.Windows.Forms.Label CompanyData;
+        private System.Windows.Forms.Label PaidData;
+        private System.Windows.Forms.Label DateData;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label AmountData;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView productsDataGridview;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource customInvoiceProductBindingSource;
     }
 }
