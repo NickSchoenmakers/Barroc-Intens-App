@@ -30,7 +30,9 @@
         {
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBlack
@@ -55,16 +57,26 @@
             this.lblTitle.Text = "Factuur overzicht";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 103;
+            // 
             // FinanceFacturatieOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Name = "FinanceFacturatieOverzichtForm";
             this.Text = "FinanceFacturatieOverzichtForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
