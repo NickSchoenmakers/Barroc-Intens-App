@@ -18,7 +18,7 @@ namespace BarrocIntensApp.Models
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentProducts { get; set; }
+        public DbSet<MaintenanceAppointmentWorkOrderProduct> MaintenanceAppointmentWorkOrderProducts { get; set; }
         public DbSet<MaintenanceAppointmentWorkOrder> MaintenanceAppointmentWorkOrders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

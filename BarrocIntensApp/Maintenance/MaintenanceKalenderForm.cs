@@ -23,9 +23,9 @@ namespace BarrocIntensApp
             lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
             Program.dbContext.MaintenanceAppointments.Where(m => m.WorkerId == Globals.loggedInUser.Id).Load();
             Program.dbContext.Companies.Load();
-            this.dgvAppointments.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();
             Program.dbContext.MaintenanceAppointmentWorkOrders.Load();
             Program.dbContext.Products.Where(p => p.ProductCategoryId == 1).Load();
+            this.dgvAppointments.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();
             cbFilter.SelectedIndex = 0;
         }
 

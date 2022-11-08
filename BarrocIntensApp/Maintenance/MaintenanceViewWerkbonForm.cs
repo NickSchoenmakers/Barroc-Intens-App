@@ -18,10 +18,10 @@ namespace BarrocIntensApp.Maintenance
         {
             InitializeComponent();
             this.lblDescription.Text = maintenanceAppointmentWorkOrder.Description;
+            Program.dbContext.MaintenanceAppointmentWorkOrderProducts.Load();
             foreach (var product in maintenanceAppointmentWorkOrder.MaintenanceAppointmentWorkOrderProducts) {
                 this.dgvParts.Rows.Add(product.Product.Name, product.Amount, "€" + Decimal.Parse((product.Amount * product.Product.Price).ToString("0.00")));
             }
-
         }
     }
 }
