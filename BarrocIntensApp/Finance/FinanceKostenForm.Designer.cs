@@ -32,8 +32,11 @@
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
-            this.roundButton2 = new BarrocIntensApp.RoundButton();
+            this.lblIncome = new System.Windows.Forms.Label();
+            this.lblspending = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,18 +76,32 @@
             this.lblDepartmentPart.Text = "Kostenoverzicht";
             this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // roundButton2
+            // lblIncome
             // 
-            this.roundButton2.BackColor = System.Drawing.Color.Black;
-            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton2.ForeColor = System.Drawing.Color.White;
-            this.roundButton2.Location = new System.Drawing.Point(12, 49);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(88, 50);
-            this.roundButton2.TabIndex = 42;
-            this.roundButton2.Text = "←";
-            this.roundButton2.UseVisualStyleBackColor = false;
-            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            this.lblIncome.AutoSize = true;
+            this.lblIncome.Location = new System.Drawing.Point(318, 294);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(47, 13);
+            this.lblIncome.TabIndex = 45;
+            this.lblIncome.Text = "inkomen";
+            // 
+            // lblspending
+            // 
+            this.lblspending.AutoSize = true;
+            this.lblspending.Location = new System.Drawing.Point(871, 294);
+            this.lblspending.Name = "lblspending";
+            this.lblspending.Size = new System.Drawing.Size(48, 13);
+            this.lblspending.TabIndex = 47;
+            this.lblspending.Text = "uitgaven";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(555, 294);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(33, 13);
+            this.lblTotal.TabIndex = 48;
+            this.lblTotal.Text = "totaal";
             // 
             // roundButton1
             // 
@@ -98,11 +115,27 @@
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
+            // roundButton2
+            // 
+            this.roundButton2.BackColor = System.Drawing.Color.Black;
+            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(12, 49);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(88, 50);
+            this.roundButton2.TabIndex = 42;
+            this.roundButton2.Text = "←";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
             // FinanceKostenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblspending);
+            this.Controls.Add(this.lblIncome);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.lblDepartmentPart);
@@ -114,8 +147,10 @@
             this.MaximizeBox = false;
             this.Name = "FinanceKostenForm";
             this.Text = "KostenForm1";
+            this.Load += new System.EventHandler(this.FinanceKostenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,5 +160,8 @@
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton roundButton2;
         private RoundButton roundButton1;
+        private System.Windows.Forms.Label lblIncome;
+        private System.Windows.Forms.Label lblspending;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
