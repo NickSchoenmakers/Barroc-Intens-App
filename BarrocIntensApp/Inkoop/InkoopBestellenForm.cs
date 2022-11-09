@@ -68,19 +68,40 @@ namespace BarrocIntensApp.Inkoop
             // calls the method getproduct in order to load the selected row in the datagridview
             Product product = GetProduct();
             // if the user did not select an amount to add it just adds 1 to the stock of the item
-            if (String.IsNullOrEmpty(txbAmount.Text))
+            if (String.IsNullOrEmpty(nrAmount.Text))
             {
                 
             }
             else
             {
                 // converts the amount given by the user into an int so we can actually do math with it
-                int aantal = Convert.ToInt32(txbAmount.Text);
+                int aantal = Convert.ToInt32(nrAmount.Text);
                 // checks if the order is bigger than 5000
                 if (aantal >= 5000)
                 {
-                    // tells the user that they need permission to do this order
-                    lbPermission.Text = "Toestemming vereist voor bestellingen die meer producten kopen dat 5000";
+                    if (Globals.loggedInUser.isManager == true)
+                    {
+                        // adds the amount of products selected to the stock
+                        var order = new Order
+                        {
+                            // puts the amount of products bought into the order
+                            Amount = aantal,
+                            // puts the product into the order
+                            ProductId = product.Id,
+                            // this will be used to see if it has arrived
+                            hasArrived = false,
+                        };
+                        // saves the changes to the database
+                        Program.dbContext.Orders.Update(order);
+                        Program.dbContext.SaveChanges();
+                        this.RefreshProductInfo();
+                    }
+                    else 
+                    {
+                        // tells the user that they need permission to do this order
+                        lbPermission.Text = "Toestemming vereist voor bestellingen die meer producten kopen dat 5000";
+                    }
+
                 }
                 else
                 {
