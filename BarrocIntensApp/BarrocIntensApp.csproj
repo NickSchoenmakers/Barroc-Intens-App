@@ -421,8 +421,6 @@
   <ItemGroup>
     <Content Include="Image\Logo6_groot.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
