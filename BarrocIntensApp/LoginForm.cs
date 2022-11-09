@@ -20,14 +20,14 @@ namespace BarrocIntensApp
         {
             public static User loggedInUser;
         }
-
+        private AppDbContext dbContext;
         public LoginForm()
         {
             InitializeComponent();
             txbUserPassword.PasswordChar = '●';
 
             // Uncomment the line below to start fresh with a new database.
-            // this.dbContext.Database.EnsureDeleted();
+            //Program.dbContext.Database.EnsureDeleted();
             Program.dbContext.Database.EnsureCreated();            
         }
         private void btnLogin_Click(object sender, EventArgs e)
@@ -102,6 +102,11 @@ namespace BarrocIntensApp
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void pbBlack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -97,6 +97,7 @@
             this.pbBlack.Size = new System.Drawing.Size(1145, 43);
             this.pbBlack.TabIndex = 100;
             this.pbBlack.TabStop = false;
+            this.pbBlack.Click += new System.EventHandler(this.pbBlack_Click);
             // 
             // lblTitle
             // 
