@@ -17,12 +17,13 @@ namespace BarrocIntensApp.Maintenance {
             InitializeComponent();
             lblTitle.Text = $"Maintenance | {Globals.loggedInUser.Name}";
             Program.dbContext.MaintenanceAppointments.Load();
+            Program.dbContext.MaintenanceAppointmentWorkOrders.Load();
             Program.dbContext.Companies.Load();
-            this.dgvAppointments.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();
             Program.dbContext.Products.Where(p => p.ProductCategoryId == 1).Load();
+            Program.dbContext.Users.Load();
+            this.dgvAppointments.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();          
             this.cbAppointmentProduct.DataSource = Program.dbContext.Products.Local.ToBindingList();
             this.cbAppointmentCompany.DataSource = Program.dbContext.Companies.Local.ToBindingList();
-            Program.dbContext.Users.Load();
             this.cbWorker.DataSource = Program.dbContext.Users.Where(u => u.isManager == false && u.RoleId == 2).ToList();
             dtAppointmentDate.CustomFormat = "dd/MM/yyyy hh:mm";
             cbFilter.SelectedIndex = 0;
@@ -67,6 +68,15 @@ namespace BarrocIntensApp.Maintenance {
                 {
                     lblRoutine.Text = "Type bezoek: storingbezoek";
                 }
+
+                if (maintenanceAppointment.MaintenanceAppointmentWorkOrderId != null)
+                {
+                    btnViewWorkOrder.Visible = true;
+                }
+                else
+                {
+                    btnViewWorkOrder.Visible = false;
+                }
             }
         }
 
@@ -107,6 +117,12 @@ namespace BarrocIntensApp.Maintenance {
             FilterProducts();
         }
 
+        private MaintenanceAppointmentWorkOrder GetMaintenanceAppointmentWorkOrder()
+        {
+            MaintenanceAppointmentWorkOrder maintenanceAppointmentWorkOrder = GetMaintenanceAppointment().MaintenanceAppointmentWorkOrder;
+            return maintenanceAppointmentWorkOrder;
+        }
+
         private void btnDeleteAppointment_Click_1(object sender, EventArgs e) {
             Program.dbContext.Remove(GetMaintenanceAppointment());
             Program.dbContext.SaveChanges();
@@ -114,6 +130,11 @@ namespace BarrocIntensApp.Maintenance {
             groupAppointmentInfo.Hide();
         }
 
+        private void btnViewWorkOrder_Click(object sender, EventArgs e)
+        {
+            var maintenanceWerkbon = new MaintenanceViewWerkbonForm(GetMaintenanceAppointmentWorkOrder());
+            maintenanceWerkbon.ShowDialog(this);
+        }
         private void roundButton2_Click(object sender, EventArgs e)
         {
             var LoginForm = new LoginForm();

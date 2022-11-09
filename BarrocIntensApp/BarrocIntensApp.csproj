@@ -212,6 +212,12 @@
     <Compile Include="Finance\FinanceForm.Designer.cs">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finance\FinanceLeaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\FinanceLeaseForm.Designer.cs">
+      <DependentUpon>FinanceLeaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inkoop\InkoopBestellenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,11 +236,11 @@
     <Compile Include="Finance\FinanceKostenForm.Designer.cs">
       <DependentUpon>FinanceKostenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finance\FinanceLeaseForm.cs">
+    <Compile Include="Finance\FinanceBkrCheck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finance\FinanceLeaseForm.Designer.cs">
-      <DependentUpon>FinanceLeaseForm.cs</DependentUpon>
+    <Compile Include="Finance\FinanceBkrCheck.Designer.cs">
+      <DependentUpon>FinanceBkrCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -288,10 +294,12 @@
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\CustomInvoice.cs" />
     <Compile Include="Models\CustomInvoiceProduct.cs" />
+    <Compile Include="Models\LeaseContract.cs" />
     <Compile Include="Models\MaintenanceAppointment.cs" />
     <Compile Include="Models\MaintenanceAppointmentWorkOrderProduct.cs" />
     <Compile Include="Models\MaintenanceAppointmentWorkOrder.cs" />
     <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\Role.cs" />
@@ -328,6 +336,9 @@
     <EmbeddedResource Include="Finance\FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Finance\FinanceLeaseForm.resx">
+      <DependentUpon>FinanceLeaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inkoop\InkoopBestellenForm.resx">
       <DependentUpon>InkoopBestellenForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,8 +348,8 @@
     <EmbeddedResource Include="Finance\FinanceKostenForm.resx">
       <DependentUpon>FinanceKostenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finance\FinanceLeaseForm.resx">
-      <DependentUpon>FinanceLeaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="Finance\FinanceBkrCheck.resx">
+      <DependentUpon>FinanceBkrCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -387,9 +398,11 @@
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Company.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.CustomInvoice.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.CustomInvoiceProduct.datasource" />
+    <None Include="Properties\DataSources\BarrocIntensApp.Models.LeaseContract.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.MaintenanceAppointment1.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.MaintenanceAppointmentWorkOrderProduct.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Note.datasource" />
+    <None Include="Properties\DataSources\BarrocIntensApp.Models.Order.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Product.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.ProductCategory.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.User.datasource" />
@@ -409,8 +422,6 @@
   <ItemGroup>
     <Content Include="Image\Logo6_groot.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
