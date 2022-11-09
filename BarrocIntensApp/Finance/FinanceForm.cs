@@ -53,5 +53,12 @@ namespace BarrocIntensApp
             this.Hide();
             BkrCheckForm.Show(this);
         }
+
+        private void btnFacturatieOverzicht_Click(object sender, EventArgs e)
+        {
+            var overzichtForm = new FinanceFacturatieOverzichtForm();
+            this.Hide();
+            overzichtForm.Show(this);
+        }
     }
 }
