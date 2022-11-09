@@ -35,6 +35,7 @@
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnLogout = new BarrocIntensApp.RoundButton();
             this.groupLeaseContractInfo = new System.Windows.Forms.GroupBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblLeaseInfoProduct = new System.Windows.Forms.Label();
             this.lblLeaseInfoCompany = new System.Windows.Forms.Label();
             this.lblMonthlyPeriodically = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.lblLeaseInfoStartDate = new System.Windows.Forms.Label();
             this.btnDeleteLeaseContract = new System.Windows.Forms.Button();
             this.groupCreateLeaseContract = new System.Windows.Forms.GroupBox();
+            this.btnSaveEdit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numPeriods = new System.Windows.Forms.NumericUpDown();
             this.lblMonthly = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.companyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leaseContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSaveEdit = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.groupLeaseContractInfo.SuspendLayout();
             this.groupCreateLeaseContract.SuspendLayout();
@@ -131,7 +131,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(168, 70);
             this.btnLogout.TabIndex = 85;
-            this.btnLogout.Text = "Logout";
+            this.btnLogout.Text = "Uitloggen";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -152,6 +152,16 @@
             this.groupLeaseContractInfo.TabIndex = 80;
             this.groupLeaseContractInfo.TabStop = false;
             this.groupLeaseContractInfo.Text = "Leasecontract info";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(423, 281);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(144, 36);
+            this.btnEdit.TabIndex = 57;
+            this.btnEdit.Text = "Leasecontract bewerken";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblLeaseInfoProduct
             // 
@@ -243,6 +253,17 @@
             this.groupCreateLeaseContract.TabIndex = 82;
             this.groupCreateLeaseContract.TabStop = false;
             this.groupCreateLeaseContract.Text = "Leasecontract aanmaken";
+            // 
+            // btnSaveEdit
+            // 
+            this.btnSaveEdit.Location = new System.Drawing.Point(423, 111);
+            this.btnSaveEdit.Name = "btnSaveEdit";
+            this.btnSaveEdit.Size = new System.Drawing.Size(144, 41);
+            this.btnSaveEdit.TabIndex = 88;
+            this.btnSaveEdit.Text = "Bewerkingen opslaan";
+            this.btnSaveEdit.UseVisualStyleBackColor = true;
+            this.btnSaveEdit.Visible = false;
+            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
             // 
             // label2
             // 
@@ -422,27 +443,6 @@
             // leaseContractBindingSource
             // 
             this.leaseContractBindingSource.DataSource = typeof(BarrocIntensApp.Models.LeaseContract);
-            // 
-            // btnSaveEdit
-            // 
-            this.btnSaveEdit.Location = new System.Drawing.Point(423, 111);
-            this.btnSaveEdit.Name = "btnSaveEdit";
-            this.btnSaveEdit.Size = new System.Drawing.Size(144, 41);
-            this.btnSaveEdit.TabIndex = 88;
-            this.btnSaveEdit.Text = "Bewerkingen opslaan";
-            this.btnSaveEdit.UseVisualStyleBackColor = true;
-            this.btnSaveEdit.Visible = false;
-            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(423, 281);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(144, 36);
-            this.btnEdit.TabIndex = 57;
-            this.btnEdit.Text = "Leasecontract bewerken";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FinanceLeaseForm
             // 

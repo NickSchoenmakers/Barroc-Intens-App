@@ -43,18 +43,18 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(10, 92);
+            this.btnLogin.Location = new System.Drawing.Point(11, 94);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(172, 45);
+            this.btnLogin.Size = new System.Drawing.Size(207, 45);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "login";
+            this.btnLogin.Text = "Inloggen";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txbUserPassword
             // 
-            this.txbUserPassword.Location = new System.Drawing.Point(63, 70);
+            this.txbUserPassword.Location = new System.Drawing.Point(98, 70);
             this.txbUserPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserPassword.Name = "txbUserPassword";
             this.txbUserPassword.Size = new System.Drawing.Size(120, 20);
@@ -63,7 +63,7 @@
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(63, 47);
+            this.txbUserName.Location = new System.Drawing.Point(98, 47);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(120, 20);
@@ -72,22 +72,22 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(8, 72);
+            this.lblPassword.Location = new System.Drawing.Point(11, 73);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(52, 13);
+            this.lblPassword.Size = new System.Drawing.Size(68, 13);
             this.lblPassword.TabIndex = 7;
-            this.lblPassword.Text = "password";
+            this.lblPassword.Text = "Wachtwoord";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(8, 50);
+            this.lblUserName.Location = new System.Drawing.Point(11, 50);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(53, 13);
+            this.lblUserName.Size = new System.Drawing.Size(84, 13);
             this.lblUserName.TabIndex = 8;
-            this.lblUserName.Text = "username";
+            this.lblUserName.Text = "Gebruikersnaam";
             // 
             // pbBlack
             // 
@@ -105,7 +105,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(264, 7);
+            this.lblTitle.Location = new System.Drawing.Point(300, 7);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(123, 25);
             this.lblTitle.TabIndex = 101;
@@ -115,7 +115,7 @@
             // pxbBigLogo
             // 
             this.pxbBigLogo.Image = global::BarrocIntensApp.Properties.Resources.Logo6_groot;
-            this.pxbBigLogo.Location = new System.Drawing.Point(201, 50);
+            this.pxbBigLogo.Location = new System.Drawing.Point(238, 50);
             this.pxbBigLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pxbBigLogo.Name = "pxbBigLogo";
             this.pxbBigLogo.Size = new System.Drawing.Size(176, 145);
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 200);
+            this.ClientSize = new System.Drawing.Size(428, 206);
             this.Controls.Add(this.pxbBigLogo);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);

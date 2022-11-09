@@ -134,7 +134,6 @@
             this.dgvParts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvParts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParts.ColumnHeadersVisible = false;
             this.dgvParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.quantity});

@@ -39,7 +39,6 @@
             this.lblRoutine = new System.Windows.Forms.Label();
             this.btnViewWorkOrder = new System.Windows.Forms.Button();
             this.btnShowCreateWorkOrder = new System.Windows.Forms.Button();
-            this.lblAppointmentProduct = new System.Windows.Forms.Label();
             this.groupAppointmentLocation = new System.Windows.Forms.GroupBox();
             this.lblCompanyCountryCode = new System.Windows.Forms.Label();
             this.lblCompanyCity = new System.Windows.Forms.Label();
@@ -137,7 +136,6 @@
             this.groupAppointmentInfo.Controls.Add(this.lblRoutine);
             this.groupAppointmentInfo.Controls.Add(this.btnViewWorkOrder);
             this.groupAppointmentInfo.Controls.Add(this.btnShowCreateWorkOrder);
-            this.groupAppointmentInfo.Controls.Add(this.lblAppointmentProduct);
             this.groupAppointmentInfo.Controls.Add(this.groupAppointmentLocation);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentRemark);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentCompany);
@@ -152,7 +150,7 @@
             // lblRoutine
             // 
             this.lblRoutine.AutoSize = true;
-            this.lblRoutine.Location = new System.Drawing.Point(9, 146);
+            this.lblRoutine.Location = new System.Drawing.Point(9, 131);
             this.lblRoutine.Name = "lblRoutine";
             this.lblRoutine.Size = new System.Drawing.Size(44, 13);
             this.lblRoutine.TabIndex = 58;
@@ -180,23 +178,13 @@
             this.btnShowCreateWorkOrder.Visible = false;
             this.btnShowCreateWorkOrder.Click += new System.EventHandler(this.btnShowCreateWorkOrder_Click);
             // 
-            // lblAppointmentProduct
-            // 
-            this.lblAppointmentProduct.AutoSize = true;
-            this.lblAppointmentProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAppointmentProduct.Location = new System.Drawing.Point(3, 55);
-            this.lblAppointmentProduct.Name = "lblAppointmentProduct";
-            this.lblAppointmentProduct.Size = new System.Drawing.Size(44, 13);
-            this.lblAppointmentProduct.TabIndex = 54;
-            this.lblAppointmentProduct.Text = "Product";
-            // 
             // groupAppointmentLocation
             // 
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyCountryCode);
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyCity);
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyNumber);
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyStreet);
-            this.groupAppointmentLocation.Location = new System.Drawing.Point(6, 71);
+            this.groupAppointmentLocation.Location = new System.Drawing.Point(6, 56);
             this.groupAppointmentLocation.Name = "groupAppointmentLocation";
             this.groupAppointmentLocation.Size = new System.Drawing.Size(243, 72);
             this.groupAppointmentLocation.TabIndex = 55;
@@ -375,7 +363,7 @@
             this.roundButton2.Name = "roundButton2";
             this.roundButton2.Size = new System.Drawing.Size(168, 70);
             this.roundButton2.TabIndex = 68;
-            this.roundButton2.Text = "Logout";
+            this.roundButton2.Text = "Uitloggen";
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
@@ -438,7 +426,6 @@
         private System.Windows.Forms.Label lblCompanyNumber;
         private System.Windows.Forms.Label lblCompanyStreet;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.Label lblAppointmentProduct;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnShowCreateWorkOrder;
