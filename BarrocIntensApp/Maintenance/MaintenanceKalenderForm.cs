@@ -64,7 +64,6 @@ namespace BarrocIntensApp
                 lblAppointmentDate.Text = $"Datum en tijd: {maintenanceAppointment.NextAppointment}";
                 lblAppointmentCompany.Text = $"Bedrijf: {maintenanceAppointment.Company.Name}";
                 lblAppointmentRemark.Text = $"Opmerking: {maintenanceAppointment.Remark}";
-                lblAppointmentProduct.Text = $"Product: {maintenanceAppointment.Product.Name}";
 
                 lblCompanyStreet.Text = $"Straatnaam: {maintenanceAppointment.Company.Street}";
                 lblCompanyNumber.Text = $"Huisnummer: {maintenanceAppointment.Company.HouseNumber}";

@@ -92,11 +92,11 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17, 17, 15, 0), ProductId = 1, WorkerId = 4, CompanyId = 1, IsRoutine = false, MaintenanceAppointmentWorkOrderId = 1},
-                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12, 10, 15, 0), ProductId = 2, WorkerId = 5, CompanyId = 2, IsRoutine = false, MaintenanceAppointmentWorkOrderId = 2 },
-                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01, 12, 0, 0), LastAppointment = new DateTime(2019, 09, 29), ProductId = 2, WorkerId = 6, CompanyId = 3, IsRoutine = false, MaintenanceAppointmentWorkOrderId = 3 },
-                new MaintenanceAppointment { Id = 4, Remark = "Grote onderhoud", NextAppointment = new DateTime(2023, 02, 12, 17, 15, 0), ProductId = 2, WorkerId = 4, CompanyId = 1, IsRoutine = false },
-                new MaintenanceAppointment { Id = 5, Remark = "Check", NextAppointment = new DateTime(2024, 02, 12, 17, 13, 0), ProductId = 2, WorkerId = 4, CompanyId = 1, IsRoutine = true }
+                new MaintenanceAppointment { Id = 1, Remark = "Spullen meenemen", NextAppointment = new DateTime(2022, 05, 17, 17, 15, 0), WorkerId = 4, CompanyId = 1, IsRoutine = false, MaintenanceAppointmentWorkOrderId = 1},
+                new MaintenanceAppointment { Id = 2, Remark = "Kan lang duren", NextAppointment = new DateTime(2021, 12, 12, 10, 15, 0), WorkerId = 5, CompanyId = 2, IsRoutine = false, MaintenanceAppointmentWorkOrderId = 2 },
+                new MaintenanceAppointment { Id = 3, Remark = "Kleine onderhoud nodig", NextAppointment = new DateTime(2020, 06, 01, 12, 0, 0), LastAppointment = new DateTime(2019, 09, 29), WorkerId = 6, CompanyId = 3, IsRoutine = false, MaintenanceAppointmentWorkOrderId = 3 },
+                new MaintenanceAppointment { Id = 4, Remark = "Grote onderhoud", NextAppointment = new DateTime(2023, 02, 12, 17, 15, 0), WorkerId = 4, CompanyId = 1, IsRoutine = false },
+                new MaintenanceAppointment { Id = 5, Remark = "Check", NextAppointment = new DateTime(2024, 02, 12, 17, 13, 0), WorkerId = 4, CompanyId = 1, IsRoutine = true }
             );
 
             modelBuilder.Entity<MaintenanceAppointmentWorkOrder>().HasData(
