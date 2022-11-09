@@ -29,7 +29,6 @@
             this.btnViewWorkOrder = new System.Windows.Forms.Button();
             this.lblRoutine = new System.Windows.Forms.Label();
             this.lblAppointmentWorker = new System.Windows.Forms.Label();
-            this.lblAppointmentProduct = new System.Windows.Forms.Label();
             this.groupAppointmentLocation = new System.Windows.Forms.GroupBox();
             this.lblCompanyCountryCode = new System.Windows.Forms.Label();
             this.lblCompanyCity = new System.Windows.Forms.Label();
@@ -50,8 +49,6 @@
             this.cbWorker = new System.Windows.Forms.ComboBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbAppointmentProduct = new System.Windows.Forms.ComboBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -100,7 +97,6 @@
             this.groupAppointmentInfo.Controls.Add(this.btnViewWorkOrder);
             this.groupAppointmentInfo.Controls.Add(this.lblRoutine);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentWorker);
-            this.groupAppointmentInfo.Controls.Add(this.lblAppointmentProduct);
             this.groupAppointmentInfo.Controls.Add(this.groupAppointmentLocation);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentRemark);
             this.groupAppointmentInfo.Controls.Add(this.lblAppointmentCompany);
@@ -127,7 +123,7 @@
             // lblRoutine
             // 
             this.lblRoutine.AutoSize = true;
-            this.lblRoutine.Location = new System.Drawing.Point(8, 172);
+            this.lblRoutine.Location = new System.Drawing.Point(8, 151);
             this.lblRoutine.Name = "lblRoutine";
             this.lblRoutine.Size = new System.Drawing.Size(44, 13);
             this.lblRoutine.TabIndex = 57;
@@ -137,21 +133,11 @@
             // 
             this.lblAppointmentWorker.AutoSize = true;
             this.lblAppointmentWorker.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAppointmentWorker.Location = new System.Drawing.Point(3, 68);
+            this.lblAppointmentWorker.Location = new System.Drawing.Point(3, 55);
             this.lblAppointmentWorker.Name = "lblAppointmentWorker";
             this.lblAppointmentWorker.Size = new System.Drawing.Size(107, 13);
             this.lblAppointmentWorker.TabIndex = 56;
             this.lblAppointmentWorker.Text = "Maintenance Worker";
-            // 
-            // lblAppointmentProduct
-            // 
-            this.lblAppointmentProduct.AutoSize = true;
-            this.lblAppointmentProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAppointmentProduct.Location = new System.Drawing.Point(3, 55);
-            this.lblAppointmentProduct.Name = "lblAppointmentProduct";
-            this.lblAppointmentProduct.Size = new System.Drawing.Size(44, 13);
-            this.lblAppointmentProduct.TabIndex = 54;
-            this.lblAppointmentProduct.Text = "Product";
             // 
             // groupAppointmentLocation
             // 
@@ -159,7 +145,7 @@
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyCity);
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyNumber);
             this.groupAppointmentLocation.Controls.Add(this.lblCompanyStreet);
-            this.groupAppointmentLocation.Location = new System.Drawing.Point(6, 93);
+            this.groupAppointmentLocation.Location = new System.Drawing.Point(6, 72);
             this.groupAppointmentLocation.Name = "groupAppointmentLocation";
             this.groupAppointmentLocation.Size = new System.Drawing.Size(243, 72);
             this.groupAppointmentLocation.TabIndex = 55;
@@ -303,8 +289,6 @@
             this.groupPlanAppointment.Controls.Add(this.cbRoutine);
             this.groupPlanAppointment.Controls.Add(this.cbWorker);
             this.groupPlanAppointment.Controls.Add(this.label5);
-            this.groupPlanAppointment.Controls.Add(this.label1);
-            this.groupPlanAppointment.Controls.Add(this.cbAppointmentProduct);
             this.groupPlanAppointment.Controls.Add(this.dtAppointmentDate);
             this.groupPlanAppointment.Controls.Add(this.btnAddProduct);
             this.groupPlanAppointment.Controls.Add(this.txbAppointmentRemark);
@@ -322,7 +306,7 @@
             // cbRoutine
             // 
             this.cbRoutine.AutoSize = true;
-            this.cbRoutine.Location = new System.Drawing.Point(225, 128);
+            this.cbRoutine.Location = new System.Drawing.Point(224, 78);
             this.cbRoutine.Name = "cbRoutine";
             this.cbRoutine.Size = new System.Drawing.Size(126, 17);
             this.cbRoutine.TabIndex = 64;
@@ -334,7 +318,7 @@
             this.cbWorker.DataSource = this.userBindingSource;
             this.cbWorker.DisplayMember = "Name";
             this.cbWorker.FormattingEnabled = true;
-            this.cbWorker.Location = new System.Drawing.Point(223, 76);
+            this.cbWorker.Location = new System.Drawing.Point(222, 26);
             this.cbWorker.Name = "cbWorker";
             this.cbWorker.Size = new System.Drawing.Size(219, 21);
             this.cbWorker.TabIndex = 62;
@@ -347,31 +331,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(224, 61);
+            this.label5.Location = new System.Drawing.Point(223, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 13);
             this.label5.TabIndex = 61;
             this.label5.Text = "Maintenance werknemer";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(221, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "Product";
-            // 
-            // cbAppointmentProduct
-            // 
-            this.cbAppointmentProduct.DataSource = this.productBindingSource;
-            this.cbAppointmentProduct.DisplayMember = "Name";
-            this.cbAppointmentProduct.FormattingEnabled = true;
-            this.cbAppointmentProduct.Location = new System.Drawing.Point(223, 26);
-            this.cbAppointmentProduct.Name = "cbAppointmentProduct";
-            this.cbAppointmentProduct.Size = new System.Drawing.Size(219, 21);
-            this.cbAppointmentProduct.TabIndex = 59;
-            this.cbAppointmentProduct.ValueMember = "Id";
             // 
             // productBindingSource
             // 
@@ -567,7 +531,6 @@
 
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.GroupBox groupAppointmentInfo;
-        private System.Windows.Forms.Label lblAppointmentProduct;
         private System.Windows.Forms.GroupBox groupAppointmentLocation;
         private System.Windows.Forms.Label lblCompanyCountryCode;
         private System.Windows.Forms.Label lblCompanyCity;
@@ -584,8 +547,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource maintenanceAppointmentBindingSource;
         private System.Windows.Forms.GroupBox groupPlanAppointment;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbAppointmentProduct;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.DateTimePicker dtAppointmentDate;
         private System.Windows.Forms.Button btnAddProduct;

@@ -19,10 +19,8 @@ namespace BarrocIntensApp.Maintenance {
             Program.dbContext.MaintenanceAppointments.Load();
             Program.dbContext.MaintenanceAppointmentWorkOrders.Load();
             Program.dbContext.Companies.Load();
-            Program.dbContext.Products.Where(p => p.ProductCategoryId == 1).Load();
             Program.dbContext.Users.Load();
             this.dgvAppointments.DataSource = Program.dbContext.MaintenanceAppointments.Local.ToBindingList();          
-            this.cbAppointmentProduct.DataSource = Program.dbContext.Products.Local.ToBindingList();
             this.cbAppointmentCompany.DataSource = Program.dbContext.Companies.Local.ToBindingList();
             this.cbWorker.DataSource = Program.dbContext.Users.Where(u => u.isManager == false && u.RoleId == 2).ToList();
             dtAppointmentDate.CustomFormat = "dd/MM/yyyy hh:mm";
@@ -52,7 +50,6 @@ namespace BarrocIntensApp.Maintenance {
                 lblAppointmentDate.Text = $"Datum en tijd: {maintenanceAppointment.NextAppointment}";
                 lblAppointmentCompany.Text = $"Bedrijf: {maintenanceAppointment.Company.Name}";
                 lblAppointmentRemark.Text = $"Opmerking: {maintenanceAppointment.Remark}";
-                lblAppointmentProduct.Text = $"Product: {maintenanceAppointment.Product.Name}";
                 lblAppointmentWorker.Text = $"Maintenance werknemer: {maintenanceAppointment.Worker.Name}";
 
                 lblCompanyStreet.Text = $"Straatnaam: {maintenanceAppointment.Company.Street}";
@@ -107,7 +104,6 @@ namespace BarrocIntensApp.Maintenance {
                 NextAppointment = Convert.ToDateTime(dtAppointmentDate.Text),
                 CompanyId = (int)cbAppointmentCompany.SelectedValue,
                 Remark = txbAppointmentRemark.Text,
-                ProductId = (int)cbAppointmentProduct.SelectedValue,
                 WorkerId = (int)cbWorker.SelectedValue,
                 IsRoutine = cbRoutine.Checked
             };
