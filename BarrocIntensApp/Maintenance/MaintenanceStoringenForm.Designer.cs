@@ -37,12 +37,11 @@
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvRemarks = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NextAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roundButton2 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceAppointmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
@@ -94,13 +93,14 @@
             // 
             // dgvRemarks
             // 
+            this.dgvRemarks.AllowUserToResizeColumns = false;
+            this.dgvRemarks.AllowUserToResizeRows = false;
             this.dgvRemarks.AutoGenerateColumns = false;
             this.dgvRemarks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvRemarks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvRemarks.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvRemarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRemarks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.Remark,
             this.NextAppointment,
             this.LastAppointment,
@@ -109,44 +109,10 @@
             this.dgvRemarks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dgvRemarks.Location = new System.Drawing.Point(12, 121);
             this.dgvRemarks.Name = "dgvRemarks";
+            this.dgvRemarks.RowHeadersVisible = false;
             this.dgvRemarks.Size = new System.Drawing.Size(753, 438);
             this.dgvRemarks.TabIndex = 8;
             this.dgvRemarks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 41;
-            // 
-            // Remark
-            // 
-            this.Remark.DataPropertyName = "Remark";
-            this.Remark.HeaderText = "Remark";
-            this.Remark.Name = "Remark";
-            this.Remark.Width = 69;
-            // 
-            // NextAppointment
-            // 
-            this.NextAppointment.DataPropertyName = "NextAppointment";
-            this.NextAppointment.HeaderText = "NextAppointment";
-            this.NextAppointment.Name = "NextAppointment";
-            this.NextAppointment.Width = 113;
-            // 
-            // LastAppointment
-            // 
-            this.LastAppointment.DataPropertyName = "LastAppointment";
-            this.LastAppointment.HeaderText = "LastAppointment";
-            this.LastAppointment.Name = "LastAppointment";
-            this.LastAppointment.Width = 111;
-            // 
-            // Company
-            // 
-            this.Company.DataPropertyName = "Company";
-            this.Company.HeaderText = "Company";
-            this.Company.Name = "Company";
-            this.Company.Width = 76;
             // 
             // roundButton2
             // 
@@ -156,9 +122,37 @@
             this.roundButton2.Name = "roundButton2";
             this.roundButton2.Size = new System.Drawing.Size(168, 70);
             this.roundButton2.TabIndex = 43;
-            this.roundButton2.Text = "Logout";
+            this.roundButton2.Text = "Uitloggen";
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
+            // 
+            // Remark
+            // 
+            this.Remark.DataPropertyName = "Remark";
+            this.Remark.HeaderText = "Opmerking";
+            this.Remark.Name = "Remark";
+            this.Remark.Width = 83;
+            // 
+            // NextAppointment
+            // 
+            this.NextAppointment.DataPropertyName = "NextAppointment";
+            this.NextAppointment.HeaderText = "Volgende afspraak";
+            this.NextAppointment.Name = "NextAppointment";
+            this.NextAppointment.Width = 111;
+            // 
+            // LastAppointment
+            // 
+            this.LastAppointment.DataPropertyName = "LastAppointment";
+            this.LastAppointment.HeaderText = "Vorige afspraak";
+            this.LastAppointment.Name = "LastAppointment";
+            this.LastAppointment.Width = 97;
+            // 
+            // Company
+            // 
+            this.Company.DataPropertyName = "Company";
+            this.Company.HeaderText = "Bedrijf";
+            this.Company.Name = "Company";
+            this.Company.Width = 61;
             // 
             // MaintenanceStoringenForm
             // 
@@ -193,11 +187,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridView dgvRemarks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private RoundButton roundButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
         private System.Windows.Forms.DataGridViewTextBoxColumn NextAppointment;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastAppointment;
         private System.Windows.Forms.DataGridViewTextBoxColumn Company;
-        private RoundButton roundButton2;
     }
 }

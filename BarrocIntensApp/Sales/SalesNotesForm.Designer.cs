@@ -224,7 +224,7 @@
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 54);
             this.roundButton1.TabIndex = 47;
-            this.roundButton1.Text = "Logout";
+            this.roundButton1.Text = "Uitloggen";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 

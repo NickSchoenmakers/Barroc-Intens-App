@@ -40,19 +40,20 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.lbAmount = new System.Windows.Forms.Label();
             this.txbAmount = new System.Windows.Forms.TextBox();
             this.lbPermission = new System.Windows.Forms.Label();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.groupAddProduct = new System.Windows.Forms.GroupBox();
+            this.cbLeasable = new System.Windows.Forms.CheckBox();
             this.numProductPrice = new System.Windows.Forms.NumericUpDown();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.checkPart = new System.Windows.Forms.CheckBox();
@@ -65,14 +66,14 @@
             this.txbProductName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cbLeasable = new System.Windows.Forms.CheckBox();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDepartmentPart
@@ -169,7 +171,7 @@
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProducts.Size = new System.Drawing.Size(339, 378);
+            this.dgvProducts.Size = new System.Drawing.Size(339, 351);
             this.dgvProducts.TabIndex = 44;
             this.dgvProducts.SelectionChanged += new System.EventHandler(this.dgvProducts_SelectionChanged);
             // 
@@ -212,16 +214,6 @@
             this.groupProductInfo.TabIndex = 48;
             this.groupProductInfo.TabStop = false;
             this.groupProductInfo.Text = "Product info";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblStatus.Location = new System.Drawing.Point(3, 42);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(26, 13);
-            this.lblStatus.TabIndex = 54;
-            this.lblStatus.Text = "Prijs";
             // 
             // lbAmount
             // 
@@ -277,12 +269,22 @@
             this.btnOrder.UseVisualStyleBackColor = true;
             this.btnOrder.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatus.Location = new System.Drawing.Point(3, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(26, 13);
+            this.lblStatus.TabIndex = 54;
+            this.lblStatus.Text = "Prijs";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvProducts);
             this.groupBox2.Location = new System.Drawing.Point(20, 219);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(354, 379);
+            this.groupBox2.Size = new System.Drawing.Size(354, 370);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Producten";
@@ -350,6 +352,16 @@
             this.groupAddProduct.TabIndex = 54;
             this.groupAddProduct.TabStop = false;
             this.groupAddProduct.Text = "Product aanmaken";
+            // 
+            // cbLeasable
+            // 
+            this.cbLeasable.AutoSize = true;
+            this.cbLeasable.Location = new System.Drawing.Point(174, 79);
+            this.cbLeasable.Name = "cbLeasable";
+            this.cbLeasable.Size = new System.Drawing.Size(79, 17);
+            this.cbLeasable.TabIndex = 59;
+            this.cbLeasable.Text = "Kan leasen";
+            this.cbLeasable.UseVisualStyleBackColor = true;
             // 
             // numProductPrice
             // 
@@ -450,42 +462,25 @@
             // 
             this.dgvOrders.AllowUserToAddRows = false;
             this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.AllowUserToResizeColumns = false;
+            this.dgvOrders.AllowUserToResizeRows = false;
             this.dgvOrders.AutoGenerateColumns = false;
             this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn,
             this.hasArrivedDataGridViewCheckBoxColumn});
             this.dgvOrders.DataSource = this.orderBindingSource;
-            this.dgvOrders.Location = new System.Drawing.Point(380, 219);
+            this.dgvOrders.Location = new System.Drawing.Point(5, 16);
             this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(349, 370);
+            this.dgvOrders.RowHeadersVisible = false;
+            this.dgvOrders.Size = new System.Drawing.Size(349, 348);
             this.dgvOrders.TabIndex = 56;
             this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
             this.dgvOrders.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellEndEdit);
             this.dgvOrders.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrders_CellFormatting);
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            this.productDataGridViewTextBoxColumn.Width = 185;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // hasArrivedDataGridViewCheckBoxColumn
-            // 
-            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
-            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
             // 
             // orderBindingSource
             // 
@@ -495,11 +490,11 @@
             // 
             this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton1.Location = new System.Drawing.Point(206, 45);
+            this.roundButton1.Location = new System.Drawing.Point(558, 50);
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 70);
             this.roundButton1.TabIndex = 55;
-            this.roundButton1.Text = "Logout";
+            this.roundButton1.Text = "Uitloggen";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
@@ -520,27 +515,36 @@
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
             // 
-            // roundButton1
+            // productDataGridViewTextBoxColumn
             // 
-            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton1.Location = new System.Drawing.Point(384, 50);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(168, 70);
-            this.roundButton1.TabIndex = 55;
-            this.roundButton1.Text = "Logout";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            this.productDataGridViewTextBoxColumn.Width = 185;
             // 
-            // cbLeasable
+            // amountDataGridViewTextBoxColumn
             // 
-            this.cbLeasable.AutoSize = true;
-            this.cbLeasable.Location = new System.Drawing.Point(174, 79);
-            this.cbLeasable.Name = "cbLeasable";
-            this.cbLeasable.Size = new System.Drawing.Size(79, 17);
-            this.cbLeasable.TabIndex = 59;
-            this.cbLeasable.Text = "Kan leasen";
-            this.cbLeasable.UseVisualStyleBackColor = true;
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Aantal";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // hasArrivedDataGridViewCheckBoxColumn
+            // 
+            this.hasArrivedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "Aangekomen";
+            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvOrders);
+            this.groupBox1.Location = new System.Drawing.Point(376, 219);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(354, 370);
+            this.groupBox1.TabIndex = 50;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Bestellingen";
             // 
             // InkoopBestellenForm
             // 
@@ -548,7 +552,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1144, 601);
-            this.Controls.Add(this.dgvOrders);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.groupAddProduct);
             this.Controls.Add(this.tbxSearch);
@@ -582,6 +586,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,10 +633,11 @@
         private RoundButton roundButton1;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox cbLeasable;
         private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.CheckBox cbLeasable;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

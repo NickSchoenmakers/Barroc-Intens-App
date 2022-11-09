@@ -522,7 +522,7 @@
             this.roundButton2.Name = "roundButton2";
             this.roundButton2.Size = new System.Drawing.Size(168, 70);
             this.roundButton2.TabIndex = 77;
-            this.roundButton2.Text = "Logout";
+            this.roundButton2.Text = "Uitloggen";
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
