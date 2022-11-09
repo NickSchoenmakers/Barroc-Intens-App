@@ -396,6 +396,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.Company.datasource" />
+    <None Include="Properties\DataSources\BarrocIntensApp.Models.CustomInvoice.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.CustomInvoiceProduct.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.LeaseContract.datasource" />
     <None Include="Properties\DataSources\BarrocIntensApp.Models.MaintenanceAppointment1.datasource" />

@@ -47,7 +47,6 @@ namespace BarrocIntensApp
             this.Hide();
             LoginForm.Show(this);
         }
-
         private void btnBkrCheck_Click(object sender, EventArgs e)
         {
             var BkrCheckForm = new FinanceBkrCheck();
