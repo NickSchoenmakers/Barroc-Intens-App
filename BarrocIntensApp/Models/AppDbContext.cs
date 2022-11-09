@@ -58,7 +58,8 @@ namespace BarrocIntensApp.Models
             modelBuilder.Entity<Company>().HasData(
                 new Company { Id = 1, Name = "Bedrijf 1", Street = "Bredaweg", HouseNumber = "23", City = "Breda", CountryCode = "NL", ContactName = "Jan Bedrijfsel", ContactPhoneNumber = "+31618476837" },
                 new Company { Id = 2, Name = "Bedrijf 2", Street = "Tilburgweg", HouseNumber = "55", City = "Tilburg", CountryCode = "NL", BkrCheckedAt = new DateTime(2021, 07, 19), ContactName = "Piet Bar", ContactPhoneNumber = "0638561212" },
-                new Company { Id = 3, Name = "Bedrijf 3", Street = "Ja", HouseNumber = "1", City = "Antwerpen", CountryCode = "BE", BkrCheckedAt = new DateTime(2020, 01, 10), ContactName = "Belg Jat", ContactPhoneNumber = "+3165847643" }
+                new Company { Id = 3, Name = "Bedrijf 3", Street = "Ja", HouseNumber = "1", City = "Antwerpen", CountryCode = "BE", BkrCheckedAt = new DateTime(2020, 01, 10), ContactName = "Belg Jat", ContactPhoneNumber = "+3165847643" },
+                new Company { Id = 4, Name = "Adam B.V.", Street = "Adamstraat", HouseNumber = "69", City = "Adamwerpen", CountryCode = "BE", ContactName = "Adam", ContactPhoneNumber = "06adam" }
             );
 
             modelBuilder.Entity<CustomInvoice>().HasData(

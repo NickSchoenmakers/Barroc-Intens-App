@@ -45,14 +45,14 @@ namespace BarrocIntensApp
         private void login()
         {
             // saves the user given data
-            string username = txbUserName.Text.ToString();
-            string password = txbUserPassword.Text.ToString();
+            //string username = txbUserName.Text.ToString();
+            //string password = txbUserPassword.Text.ToString();
             //string username = "finance1";
             //string password = "pass";
             //string username = "maintenance1";
             //string password = "pass";
-            //string username = "sales1";
-            //string password = "pass";
+            string username = "sales1";
+            string password = "pass";
             //string username = "inkoop1";
             //string password = "pass";
 
