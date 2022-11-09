@@ -19,7 +19,7 @@ namespace BarrocIntensApp.Inkoop
         public InkoopBestellenForm()
         {
             InitializeComponent();
-            
+
             lblTitle.Text = $"Inkoop | {Globals.loggedInUser.Name}";
             Program.dbContext.Products.Load();
             Program.dbContext.ProductCategories.Load();
@@ -27,7 +27,7 @@ namespace BarrocIntensApp.Inkoop
 
             this.dgvOrders.DataSource = Program.dbContext.Orders.Local.ToBindingList();
 
-            this.cbCategories.DataSource  = Program.dbContext.ProductCategories.Local.ToBindingList();
+            this.cbCategories.DataSource = Program.dbContext.ProductCategories.Local.ToBindingList();
             var productCategory = (ProductCategory)this.cbCategories.SelectedItem;
 
             dgvProducts.DataSource = productCategory.Products;
@@ -70,7 +70,7 @@ namespace BarrocIntensApp.Inkoop
             // if the user did not select an amount to add it just adds 1 to the stock of the item
             if (String.IsNullOrEmpty(nrAmount.Text))
             {
-                
+
             }
             else
             {
@@ -96,7 +96,7 @@ namespace BarrocIntensApp.Inkoop
                         Program.dbContext.SaveChanges();
                         this.RefreshProductInfo();
                     }
-                    else 
+                    else
                     {
                         // tells the user that they need permission to do this order
                         lbPermission.Text = "Toestemming vereist voor bestellingen die meer producten kopen dat 5000";
@@ -285,9 +285,9 @@ namespace BarrocIntensApp.Inkoop
         private void dgvOrders_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             var order = (Order)this.dgvOrders.Rows[e.RowIndex].DataBoundItem;
-            if (order.hasArrived == true) 
-            { 
-                this.dgvOrders.Rows[e.RowIndex].ReadOnly = true; 
+            if (order.hasArrived == true)
+            {
+                this.dgvOrders.Rows[e.RowIndex].ReadOnly = true;
             }
 
         }
