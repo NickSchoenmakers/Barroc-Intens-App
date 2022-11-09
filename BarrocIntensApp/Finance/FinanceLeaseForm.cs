@@ -26,6 +26,7 @@ namespace BarrocIntensApp.Finance
             this.cbxLeaseContractProduct.DataSource = Program.dbContext.Products.Local.ToBindingList().Where(p => p.IsLeasable).ToList();
             this.cbxMonthlyPeriodically.SelectedIndex = 0;
             lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)

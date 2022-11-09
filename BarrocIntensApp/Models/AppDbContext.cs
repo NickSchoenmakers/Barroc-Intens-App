@@ -77,10 +77,10 @@ namespace BarrocIntensApp.Models
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = 1, Name = "Barroc Intens Italian Light", Description = "S234FREKT", ImagePath = "Image/machine-bit-light.png", Price = 499, Stock = 10, ProductCategoryId = 1},
-                new Product { Id = 2, Name = "Barroc Intens Italian", Description = "S234KNDPF", ImagePath = "Image/machine-bit-light.png", Price = 599, Stock = 5, ProductCategoryId = 1},
-                new Product { Id = 3, Name = "Barroc Intens Italian Deluxe", Description = "S234KNDPF", ImagePath = "Image/machine-bit-deluxe.png", Price = 799, Stock = 7, ProductCategoryId = 1},
-                new Product { Id = 4, Name = "Barroc Intens Italian Deluxe Special", Description = "S234NNBMV", ImagePath = "Image/machine-bit-deluxe.png", Price = 999, Stock = 0, ProductCategoryId = 1},
+                new Product { Id = 1, Name = "Barroc Intens Italian Light", Description = "S234FREKT", ImagePath = "Image/machine-bit-light.png", Price = 499, Stock = 10, ProductCategoryId = 1, IsLeasable = true},
+                new Product { Id = 2, Name = "Barroc Intens Italian", Description = "S234KNDPF", ImagePath = "Image/machine-bit-light.png", Price = 599, Stock = 5, ProductCategoryId = 1, IsLeasable = true },
+                new Product { Id = 3, Name = "Barroc Intens Italian Deluxe", Description = "S234KNDPF", ImagePath = "Image/machine-bit-deluxe.png", Price = 799, Stock = 7, ProductCategoryId = 1, IsLeasable = true },
+                new Product { Id = 4, Name = "Barroc Intens Italian Deluxe Special", Description = "S234NNBMV", ImagePath = "Image/machine-bit-deluxe.png", Price = 999, Stock = 0, ProductCategoryId = 1, IsLeasable = true },
                 new Product { Id = 5, Name = "Espresso Beneficio", Description = "S239KLIUP", Price = 21.60m, Stock = 0, ProductCategoryId = 2},
                 new Product { Id = 6, Name = "Yellow Bourbon Brasil", Description = "S239MNKLL", Price = 23.20m, Stock = 250, ProductCategoryId = 2},
                 new Product { Id = 7, Name = "Espresso Roma", Description = "S239IPPSD", Price = 20.80m, Stock = 124, ProductCategoryId = 2},
