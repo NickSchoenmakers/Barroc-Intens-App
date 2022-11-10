@@ -214,7 +214,7 @@
             // lbAmount
             // 
             this.lbAmount.AutoSize = true;
-            this.lbAmount.Location = new System.Drawing.Point(237, 313);
+            this.lbAmount.Location = new System.Drawing.Point(118, 347);
             this.lbAmount.Name = "lbAmount";
             this.lbAmount.Size = new System.Drawing.Size(37, 13);
             this.lbAmount.TabIndex = 53;
@@ -229,11 +229,14 @@
             // 
             // lbPermission
             // 
+            this.lbPermission.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPermission.AutoSize = true;
-            this.lbPermission.Location = new System.Drawing.Point(316, 13);
+            this.lbPermission.Location = new System.Drawing.Point(118, 59);
             this.lbPermission.Name = "lbPermission";
             this.lbPermission.Size = new System.Drawing.Size(0, 13);
             this.lbPermission.TabIndex = 51;
+            this.lbPermission.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnDeleteProduct
             // 
