@@ -95,6 +95,11 @@
             // numHouseNumber
             // 
             this.numHouseNumber.Location = new System.Drawing.Point(202, 73);
+            this.numHouseNumber.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numHouseNumber.Minimum = new decimal(new int[] {
             1,
             0,

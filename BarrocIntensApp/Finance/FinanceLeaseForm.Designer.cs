@@ -277,6 +277,11 @@
             // numPeriods
             // 
             this.numPeriods.Location = new System.Drawing.Point(224, 81);
+            this.numPeriods.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numPeriods.Minimum = new decimal(new int[] {
             1,
             0,
