@@ -303,6 +303,11 @@
             // nudAmount
             // 
             this.nudAmount.Location = new System.Drawing.Point(31, 360);
+            this.nudAmount.Maximum = new decimal(new int[] {
+            1874919424,
+            2328306,
+            0,
+            0});
             this.nudAmount.Minimum = new decimal(new int[] {
             1,
             0,
