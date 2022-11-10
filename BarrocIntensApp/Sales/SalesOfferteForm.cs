@@ -50,7 +50,7 @@ namespace BarrocIntensApp
             lblTitle.Text = $"Sales | {Globals.loggedInUser.Name}";
 
             Program.dbContext.Products.Load();
-            this.dgvProducts.DataSource = Program.dbContext.Products.Local.ToBindingList().Where(p => !p.isPart);
+            this.dgvProducts.DataSource = Program.dbContext.Products.Local.ToBindingList();
         }
 
         private void btnBackNotes_Click(object sender, EventArgs e)
