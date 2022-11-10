@@ -20,34 +20,28 @@ namespace BarrocIntensApp
             lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
         }
 
-        private void FacturatieBtn_Click(object sender, EventArgs e)
+        private void btnFacturatie_Click(object sender, EventArgs e)
         {
             var Facturatie_Form = new FacturatieForm();
             this.Hide();
             Facturatie_Form.Show(this);
         }
 
-        private void LeaseBtn_Click(object sender, EventArgs e)
+        private void btnLease_Click(object sender, EventArgs e)
         {
             var LeaseForm = new FinanceLeaseForm();
             this.Hide();
             LeaseForm.Show(this);
         }
 
-        private void KostenBtn_Click(object sender, EventArgs e)
+        private void btnKosten_Click(object sender, EventArgs e)
         {
             var KostenForm = new FinanceKostenForm();
             this.Hide();
             KostenForm.Show(this);
         }
 
-        private void roundButton1_Click(object sender, EventArgs e)
-        {
-            var LoginForm = new LoginForm();
-            this.Hide();
-            LoginForm.Show(this);
-        }
-        private void btnBkrCheck_Click(object sender, EventArgs e)
+        private void btnBKR_Click(object sender, EventArgs e)
         {
             var BkrCheckForm = new FinanceBkrCheck();
             this.Hide();
@@ -59,6 +53,13 @@ namespace BarrocIntensApp
             var overzichtForm = new FinanceFacturatieOverzichtForm();
             this.Hide();
             overzichtForm.Show(this);
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
         }
     }
 }

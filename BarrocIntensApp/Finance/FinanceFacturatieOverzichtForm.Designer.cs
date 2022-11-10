@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pbBlack = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.InvoiceGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +38,10 @@
             this.companyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customInvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TotalPriceData = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.priceProductData = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.AmountData = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ProductData = new System.Windows.Forms.Label();
@@ -55,11 +58,10 @@
             this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.priceProductData = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.TotalPriceData = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.roundButton2 = new BarrocIntensApp.RoundButton();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblDepartmentPart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceBindingSource)).BeginInit();
@@ -77,19 +79,6 @@
             this.pbBlack.TabIndex = 6;
             this.pbBlack.TabStop = false;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Black;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(954, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(178, 25);
-            this.lblTitle.TabIndex = 102;
-            this.lblTitle.Text = "Factuur overzicht";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // InvoiceGridView
             // 
             this.InvoiceGridView.AllowUserToDeleteRows = false;
@@ -102,7 +91,7 @@
             this.companyIdDataGridViewTextBoxColumn,
             this.companyDataGridViewTextBoxColumn});
             this.InvoiceGridView.DataSource = this.customInvoiceBindingSource;
-            this.InvoiceGridView.Location = new System.Drawing.Point(12, 48);
+            this.InvoiceGridView.Location = new System.Drawing.Point(163, 58);
             this.InvoiceGridView.Name = "InvoiceGridView";
             this.InvoiceGridView.ReadOnly = true;
             this.InvoiceGridView.Size = new System.Drawing.Size(554, 260);
@@ -164,13 +153,49 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(609, 81);
+            this.groupBox1.Location = new System.Drawing.Point(760, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(308, 253);
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Facture Info";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // TotalPriceData
+            // 
+            this.TotalPriceData.AutoSize = true;
+            this.TotalPriceData.Location = new System.Drawing.Point(80, 176);
+            this.TotalPriceData.Name = "TotalPriceData";
+            this.TotalPriceData.Size = new System.Drawing.Size(23, 13);
+            this.TotalPriceData.TabIndex = 13;
+            this.TotalPriceData.Text = "null";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "total price:";
+            // 
+            // priceProductData
+            // 
+            this.priceProductData.AutoSize = true;
+            this.priceProductData.Location = new System.Drawing.Point(57, 163);
+            this.priceProductData.Name = "priceProductData";
+            this.priceProductData.Size = new System.Drawing.Size(23, 13);
+            this.priceProductData.TabIndex = 11;
+            this.priceProductData.Text = "null";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 163);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "price:";
             // 
             // AmountData
             // 
@@ -273,7 +298,7 @@
             this.productDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn});
             this.productsDataGridview.DataSource = this.customInvoiceProductBindingSource;
-            this.productsDataGridview.Location = new System.Drawing.Point(12, 314);
+            this.productsDataGridview.Location = new System.Drawing.Point(163, 324);
             this.productsDataGridview.Name = "productsDataGridview";
             this.productsDataGridview.ReadOnly = true;
             this.productsDataGridview.Size = new System.Drawing.Size(459, 189);
@@ -312,56 +337,62 @@
             // 
             this.customInvoiceProductBindingSource.DataSource = typeof(BarrocIntensApp.Models.CustomInvoiceProduct);
             // 
-            // priceProductData
-            // 
-            this.priceProductData.AutoSize = true;
-            this.priceProductData.Location = new System.Drawing.Point(57, 163);
-            this.priceProductData.Name = "priceProductData";
-            this.priceProductData.Size = new System.Drawing.Size(23, 13);
-            this.priceProductData.TabIndex = 11;
-            this.priceProductData.Text = "null";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 163);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "price:";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // TotalPriceData
+            // roundButton2
             // 
-            this.TotalPriceData.AutoSize = true;
-            this.TotalPriceData.Location = new System.Drawing.Point(80, 176);
-            this.TotalPriceData.Name = "TotalPriceData";
-            this.TotalPriceData.Size = new System.Drawing.Size(23, 13);
-            this.TotalPriceData.TabIndex = 13;
-            this.TotalPriceData.Text = "null";
+            this.roundButton2.BackColor = System.Drawing.Color.Black;
+            this.roundButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(12, 48);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(88, 50);
+            this.roundButton2.TabIndex = 106;
+            this.roundButton2.Text = "←";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
-            // label7
+            // lblTitle
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "total price:";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTitle.BackColor = System.Drawing.Color.Black;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitle.Location = new System.Drawing.Point(727, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(405, 25);
+            this.lblTitle.TabIndex = 107;
+            this.lblTitle.Text = "Finance | Name";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblDepartmentPart
+            // 
+            this.lblDepartmentPart.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDepartmentPart.BackColor = System.Drawing.Color.Black;
+            this.lblDepartmentPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentPart.ForeColor = System.Drawing.Color.White;
+            this.lblDepartmentPart.Location = new System.Drawing.Point(12, 9);
+            this.lblDepartmentPart.Name = "lblDepartmentPart";
+            this.lblDepartmentPart.Size = new System.Drawing.Size(405, 25);
+            this.lblDepartmentPart.TabIndex = 108;
+            this.lblDepartmentPart.Text = "Facturatie overzicht";
+            this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FinanceFacturatieOverzichtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.lblDepartmentPart);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.roundButton2);
             this.Controls.Add(this.productsDataGridview);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.InvoiceGridView);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
             this.Name = "FinanceFacturatieOverzichtForm";
             this.Text = "FinanceFacturatieOverzichtForm";
@@ -374,14 +405,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customInvoiceProductBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pbBlack;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView InvoiceGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label ProductData;
@@ -411,5 +440,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label TotalPriceData;
         private System.Windows.Forms.Label label7;
+        private RoundButton roundButton2;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblDepartmentPart;
     }
 }

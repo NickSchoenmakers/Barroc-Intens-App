@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BarrocIntensApp.LoginForm;
 
 namespace BarrocIntensApp.Finance
 {
@@ -17,6 +18,7 @@ namespace BarrocIntensApp.Finance
         public FinanceFacturatieOverzichtForm()
         {
             InitializeComponent();
+            lblTitle.Text = $"Finance | {Globals.loggedInUser.Name}";
             Program.dbContext.Products.Load();
             Program.dbContext.Companies.Load();
             Program.dbContext.CustomInvoiceProducts.Load();
@@ -69,6 +71,13 @@ namespace BarrocIntensApp.Finance
             priceProductData.Text = product.Product.Price.ToString();
             int test = product.Amount * ((int)product.Product.Price);
             TotalPriceData.Text = test.ToString();
+        }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            var maintenanceDashboard = new FinanceForm();
+            this.Hide();
+            maintenanceDashboard.Show(this);
         }
     }
 }

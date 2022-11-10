@@ -29,50 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinanceForm));
-            this.FacturatieBtn = new System.Windows.Forms.Button();
-            this.LeaseBtn = new System.Windows.Forms.Button();
-            this.KostenBtn = new System.Windows.Forms.Button();
             this.pbBlack = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
-            this.btnBkrCheck = new System.Windows.Forms.Button();
-            this.btnFacturatieOverzicht = new System.Windows.Forms.Button();
+            this.btnFacturatie = new BarrocIntensApp.RoundButton();
+            this.btnLease = new BarrocIntensApp.RoundButton();
+            this.btnKosten = new BarrocIntensApp.RoundButton();
+            this.btnBKR = new BarrocIntensApp.RoundButton();
+            this.btnFacturatieOverzicht = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
-            // 
-            // FacturatieBtn
-            // 
-            this.FacturatieBtn.Location = new System.Drawing.Point(134, 144);
-            this.FacturatieBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.FacturatieBtn.Name = "FacturatieBtn";
-            this.FacturatieBtn.Size = new System.Drawing.Size(150, 162);
-            this.FacturatieBtn.TabIndex = 0;
-            this.FacturatieBtn.Text = "Facturatie";
-            this.FacturatieBtn.UseVisualStyleBackColor = true;
-            this.FacturatieBtn.Click += new System.EventHandler(this.FacturatieBtn_Click);
-            // 
-            // LeaseBtn
-            // 
-            this.LeaseBtn.Location = new System.Drawing.Point(328, 144);
-            this.LeaseBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.LeaseBtn.Name = "LeaseBtn";
-            this.LeaseBtn.Size = new System.Drawing.Size(150, 162);
-            this.LeaseBtn.TabIndex = 1;
-            this.LeaseBtn.Text = "Lease contract";
-            this.LeaseBtn.UseVisualStyleBackColor = true;
-            this.LeaseBtn.Click += new System.EventHandler(this.LeaseBtn_Click);
-            // 
-            // KostenBtn
-            // 
-            this.KostenBtn.Location = new System.Drawing.Point(520, 144);
-            this.KostenBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.KostenBtn.Name = "KostenBtn";
-            this.KostenBtn.Size = new System.Drawing.Size(150, 162);
-            this.KostenBtn.TabIndex = 2;
-            this.KostenBtn.Text = "Kosten overzicht";
-            this.KostenBtn.UseVisualStyleBackColor = true;
-            this.KostenBtn.Click += new System.EventHandler(this.KostenBtn_Click);
             // 
             // pbBlack
             // 
@@ -122,26 +89,69 @@
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
-            // btnBkrCheck
+            // btnFacturatie
             // 
-            this.btnBkrCheck.Location = new System.Drawing.Point(709, 144);
-            this.btnBkrCheck.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBkrCheck.Name = "btnBkrCheck";
-            this.btnBkrCheck.Size = new System.Drawing.Size(150, 162);
-            this.btnBkrCheck.TabIndex = 42;
-            this.btnBkrCheck.Text = "BKR-checks";
-            this.btnBkrCheck.UseVisualStyleBackColor = true;
-            this.btnBkrCheck.Click += new System.EventHandler(this.btnBkrCheck_Click);
+            this.btnFacturatie.BackColor = System.Drawing.Color.Black;
+            this.btnFacturatie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturatie.ForeColor = System.Drawing.Color.White;
+            this.btnFacturatie.Location = new System.Drawing.Point(17, 67);
+            this.btnFacturatie.Name = "btnFacturatie";
+            this.btnFacturatie.Size = new System.Drawing.Size(200, 200);
+            this.btnFacturatie.TabIndex = 44;
+            this.btnFacturatie.Text = "Facturatie";
+            this.btnFacturatie.UseVisualStyleBackColor = false;
+            this.btnFacturatie.Click += new System.EventHandler(this.btnFacturatie_Click);
+            // 
+            // btnLease
+            // 
+            this.btnLease.BackColor = System.Drawing.Color.Black;
+            this.btnLease.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLease.ForeColor = System.Drawing.Color.White;
+            this.btnLease.Location = new System.Drawing.Point(240, 67);
+            this.btnLease.Name = "btnLease";
+            this.btnLease.Size = new System.Drawing.Size(200, 200);
+            this.btnLease.TabIndex = 45;
+            this.btnLease.Text = "Lease contract";
+            this.btnLease.UseVisualStyleBackColor = false;
+            this.btnLease.Click += new System.EventHandler(this.btnLease_Click);
+            // 
+            // btnKosten
+            // 
+            this.btnKosten.BackColor = System.Drawing.Color.Black;
+            this.btnKosten.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKosten.ForeColor = System.Drawing.Color.White;
+            this.btnKosten.Location = new System.Drawing.Point(469, 67);
+            this.btnKosten.Name = "btnKosten";
+            this.btnKosten.Size = new System.Drawing.Size(200, 200);
+            this.btnKosten.TabIndex = 46;
+            this.btnKosten.Text = "Kostenoverzicht";
+            this.btnKosten.UseVisualStyleBackColor = false;
+            this.btnKosten.Click += new System.EventHandler(this.btnKosten_Click);
+            // 
+            // btnBKR
+            // 
+            this.btnBKR.BackColor = System.Drawing.Color.Black;
+            this.btnBKR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBKR.ForeColor = System.Drawing.Color.White;
+            this.btnBKR.Location = new System.Drawing.Point(702, 67);
+            this.btnBKR.Name = "btnBKR";
+            this.btnBKR.Size = new System.Drawing.Size(200, 200);
+            this.btnBKR.TabIndex = 47;
+            this.btnBKR.Text = "BKR-checks";
+            this.btnBKR.UseVisualStyleBackColor = false;
+            this.btnBKR.Click += new System.EventHandler(this.btnBKR_Click);
             // 
             // btnFacturatieOverzicht
             // 
-            this.btnFacturatieOverzicht.Location = new System.Drawing.Point(134, 310);
-            this.btnFacturatieOverzicht.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFacturatieOverzicht.BackColor = System.Drawing.Color.Black;
+            this.btnFacturatieOverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturatieOverzicht.ForeColor = System.Drawing.Color.White;
+            this.btnFacturatieOverzicht.Location = new System.Drawing.Point(17, 300);
             this.btnFacturatieOverzicht.Name = "btnFacturatieOverzicht";
-            this.btnFacturatieOverzicht.Size = new System.Drawing.Size(150, 162);
-            this.btnFacturatieOverzicht.TabIndex = 43;
+            this.btnFacturatieOverzicht.Size = new System.Drawing.Size(200, 200);
+            this.btnFacturatieOverzicht.TabIndex = 48;
             this.btnFacturatieOverzicht.Text = "Facturatie overzicht";
-            this.btnFacturatieOverzicht.UseVisualStyleBackColor = true;
+            this.btnFacturatieOverzicht.UseVisualStyleBackColor = false;
             this.btnFacturatieOverzicht.Click += new System.EventHandler(this.btnFacturatieOverzicht_Click);
             // 
             // FinanceForm
@@ -150,14 +160,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
             this.Controls.Add(this.btnFacturatieOverzicht);
-            this.Controls.Add(this.btnBkrCheck);
+            this.Controls.Add(this.btnBKR);
+            this.Controls.Add(this.btnKosten);
+            this.Controls.Add(this.btnLease);
+            this.Controls.Add(this.btnFacturatie);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pbBlack);
-            this.Controls.Add(this.KostenBtn);
-            this.Controls.Add(this.LeaseBtn);
-            this.Controls.Add(this.FacturatieBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -170,15 +180,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button FacturatieBtn;
-        private System.Windows.Forms.Button LeaseBtn;
-        private System.Windows.Forms.Button KostenBtn;
         private System.Windows.Forms.PictureBox pbBlack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton roundButton1;
-        private System.Windows.Forms.Button btnBkrCheck;
-        private System.Windows.Forms.Button btnFacturatieOverzicht;
+        private RoundButton btnFacturatie;
+        private RoundButton btnLease;
+        private RoundButton btnKosten;
+        private RoundButton btnBKR;
+        private RoundButton btnFacturatieOverzicht;
     }
 }
