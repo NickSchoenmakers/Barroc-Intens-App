@@ -99,7 +99,7 @@ namespace BarrocIntensApp.Inkoop
                     else
                     {
                         // tells the user that they need permission to do this order
-                        lbPermission.Text = "Toestemming vereist voor bestellingen die meer producten kopen dat 5000";
+                        MessageBox.Show("toestemming vereist voor bestellingen die meer dan producten kopen dan 5000");
                     }
 
                 }
