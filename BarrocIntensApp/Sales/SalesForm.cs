@@ -1,4 +1,5 @@
-﻿using BarrocIntensApp.Sales;
+﻿using BarrocIntensApp.Maintenance;
+using BarrocIntensApp.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,13 @@ namespace BarrocIntensApp
             var LoginForm = new LoginForm();
             this.Hide();
             LoginForm.Show(this);
+        }
+
+        private void btnCreateCustomerform_Click(object sender, EventArgs e)
+        {
+            var createCustomerForm = new SalesKlantCreateForm();
+            createCustomerForm.ShowDialog(this);
+            MessageBox.Show("Klant aangemaakt");
         }
     }
 }
