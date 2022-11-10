@@ -43,7 +43,6 @@
             this.stockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPartDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasArrivedDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productCategoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.offerProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbFolder = new System.Windows.Forms.Label();
@@ -68,13 +67,13 @@
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPartDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.pbLoad = new System.Windows.Forms.ProgressBar();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btnBackNotes = new BarrocIntensApp.RoundButton();
+            this.roundButton1 = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.panel1.SuspendLayout();
             this.gpAdded.SuspendLayout();
@@ -175,7 +174,6 @@
             this.stockDataGridViewTextBoxColumn1,
             this.productCategoryIdDataGridViewTextBoxColumn1,
             this.isPartDataGridViewCheckBoxColumn1,
-            this.hasArrivedDataGridViewCheckBoxColumn1,
             this.productCategoryDataGridViewTextBoxColumn1});
             this.dgvAdded.DataSource = this.offerProductBindingSource;
             this.dgvAdded.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -251,14 +249,6 @@
             this.isPartDataGridViewCheckBoxColumn1.Name = "isPartDataGridViewCheckBoxColumn1";
             this.isPartDataGridViewCheckBoxColumn1.ReadOnly = true;
             this.isPartDataGridViewCheckBoxColumn1.Visible = false;
-            // 
-            // hasArrivedDataGridViewCheckBoxColumn1
-            // 
-            this.hasArrivedDataGridViewCheckBoxColumn1.DataPropertyName = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn1.HeaderText = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn1.Name = "hasArrivedDataGridViewCheckBoxColumn1";
-            this.hasArrivedDataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.hasArrivedDataGridViewCheckBoxColumn1.Visible = false;
             // 
             // productCategoryDataGridViewTextBoxColumn1
             // 
@@ -409,7 +399,6 @@
             this.stockDataGridViewTextBoxColumn,
             this.productCategoryIdDataGridViewTextBoxColumn,
             this.isPartDataGridViewCheckBoxColumn,
-            this.hasArrivedDataGridViewCheckBoxColumn,
             this.productCategoryDataGridViewTextBoxColumn});
             this.dgvProducts.DataSource = this.productBindingSource;
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -494,14 +483,6 @@
             this.isPartDataGridViewCheckBoxColumn.ReadOnly = true;
             this.isPartDataGridViewCheckBoxColumn.Visible = false;
             // 
-            // hasArrivedDataGridViewCheckBoxColumn
-            // 
-            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
-            this.hasArrivedDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.hasArrivedDataGridViewCheckBoxColumn.Visible = false;
-            // 
             // productCategoryDataGridViewTextBoxColumn
             // 
             this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
@@ -557,11 +538,24 @@
             this.btnBackNotes.UseVisualStyleBackColor = false;
             this.btnBackNotes.Click += new System.EventHandler(this.btnBackNotes_Click);
             // 
+            // roundButton1
+            // 
+            this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roundButton1.Location = new System.Drawing.Point(964, 49);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(168, 70);
+            this.roundButton1.TabIndex = 49;
+            this.roundButton1.Text = "Uitloggen";
+            this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // SalesOfferteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbLoad);
             this.Controls.Add(this.btnBackNotes);
@@ -636,5 +630,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn isPartDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn1;
+        private RoundButton roundButton1;
     }
 }

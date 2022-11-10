@@ -36,10 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.AmountNu = new System.Windows.Forms.NumericUpDown();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CartGv = new System.Windows.Forms.DataGridView();
             this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,9 +48,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.roundButton2 = new BarrocIntensApp.RoundButton();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -139,37 +138,11 @@
             this.productsDataGridView.DataSource = this.productBindingSource;
             this.productsDataGridView.Location = new System.Drawing.Point(76, 47);
             this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(442, 150);
+            this.productsDataGridView.RowHeadersVisible = false;
+            this.productsDataGridView.Size = new System.Drawing.Size(484, 150);
             this.productsDataGridView.TabIndex = 33;
             this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
             this.productsDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.productsDataGridView_RowHeaderMouseClick);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
             // 
             // productBindingSource
             // 
@@ -181,12 +154,12 @@
             this.CartGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CartGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.Product});
+            this.Product,
+            this.amountDataGridViewTextBoxColumn});
             this.CartGv.DataSource = this.customInvoiceProductBindingSource;
             this.CartGv.Location = new System.Drawing.Point(6, 19);
             this.CartGv.Name = "CartGv";
+            this.CartGv.RowHeadersVisible = false;
             this.CartGv.Size = new System.Drawing.Size(521, 272);
             this.CartGv.TabIndex = 36;
             this.CartGv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartGv_CellContentClick);
@@ -201,7 +174,7 @@
             this.Cartbtn.BackColor = System.Drawing.Color.Black;
             this.Cartbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cartbtn.ForeColor = System.Drawing.Color.White;
-            this.Cartbtn.Location = new System.Drawing.Point(333, 209);
+            this.Cartbtn.Location = new System.Drawing.Point(472, 206);
             this.Cartbtn.Name = "Cartbtn";
             this.Cartbtn.Size = new System.Drawing.Size(88, 50);
             this.Cartbtn.TabIndex = 34;
@@ -250,7 +223,7 @@
             this.groupBox1.Size = new System.Drawing.Size(540, 475);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "winkelwagen";
+            this.groupBox1.Text = "Winkelwagen";
             // 
             // lblPrice
             // 
@@ -276,7 +249,7 @@
             this.groupBox2.Size = new System.Drawing.Size(600, 475);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "besteling";
+            this.groupBox2.Text = "Bestelling";
             // 
             // roundButton1
             // 
@@ -286,7 +259,7 @@
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 70);
             this.roundButton1.TabIndex = 40;
-            this.roundButton1.Text = "uitloggen";
+            this.roundButton1.Text = "Uitloggen";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
@@ -303,26 +276,48 @@
             this.roundButton2.UseVisualStyleBackColor = false;
             this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
-            // idDataGridViewTextBoxColumn
+            // nameDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 24.36548F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Beschrijving";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Voorraad";
+            this.Stock.Name = "Stock";
+            // 
+            // Product
+            // 
+            this.Product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Product.DataPropertyName = "Product";
+            this.Product.FillWeight = 210.2991F;
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
             // 
             // amountDataGridViewTextBoxColumn
             // 
             this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
             this.amountDataGridViewTextBoxColumn.FillWeight = 65.33537F;
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Aantal";
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            // 
-            // Product
-            // 
-            this.Product.DataPropertyName = "Product";
-            this.Product.FillWeight = 210.2991F;
-            this.Product.HeaderText = "Product";
-            this.Product.Name = "Product";
             // 
             // FacturatieForm
             // 
@@ -379,8 +374,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
     }
 }

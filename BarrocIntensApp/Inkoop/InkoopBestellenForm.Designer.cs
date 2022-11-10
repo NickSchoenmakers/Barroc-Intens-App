@@ -40,18 +40,20 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
+            this.nrAmount = new System.Windows.Forms.NumericUpDown();
             this.lbAmount = new System.Windows.Forms.Label();
-            this.txbAmount = new System.Windows.Forms.TextBox();
             this.lbPermission = new System.Windows.Forms.Label();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.groupAddProduct = new System.Windows.Forms.GroupBox();
+            this.cbLeasable = new System.Windows.Forms.CheckBox();
             this.numProductPrice = new System.Windows.Forms.NumericUpDown();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.checkPart = new System.Windows.Forms.CheckBox();
@@ -64,18 +66,19 @@
             this.txbProductName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.groupProductInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupAddProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductPrice)).BeginInit();
@@ -197,8 +200,8 @@
             // groupProductInfo
             // 
             this.groupProductInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupProductInfo.Controls.Add(this.nrAmount);
             this.groupProductInfo.Controls.Add(this.lbAmount);
-            this.groupProductInfo.Controls.Add(this.txbAmount);
             this.groupProductInfo.Controls.Add(this.lbPermission);
             this.groupProductInfo.Controls.Add(this.btnDeleteProduct);
             this.groupProductInfo.Controls.Add(this.lblPrice);
@@ -211,6 +214,13 @@
             this.groupProductInfo.TabStop = false;
             this.groupProductInfo.Text = "Product info";
             // 
+            // nrAmount
+            // 
+            this.nrAmount.Location = new System.Drawing.Point(197, 339);
+            this.nrAmount.Name = "nrAmount";
+            this.nrAmount.Size = new System.Drawing.Size(77, 20);
+            this.nrAmount.TabIndex = 54;
+            // 
             // lbAmount
             // 
             this.lbAmount.AutoSize = true;
@@ -219,13 +229,6 @@
             this.lbAmount.Size = new System.Drawing.Size(37, 13);
             this.lbAmount.TabIndex = 53;
             this.lbAmount.Text = "Aantal";
-            // 
-            // txbAmount
-            // 
-            this.txbAmount.Location = new System.Drawing.Point(161, 344);
-            this.txbAmount.Name = "txbAmount";
-            this.txbAmount.Size = new System.Drawing.Size(113, 20);
-            this.txbAmount.TabIndex = 52;
             // 
             // lbPermission
             // 
@@ -267,6 +270,16 @@
             this.btnOrder.Text = "Bestellen";
             this.btnOrder.UseVisualStyleBackColor = true;
             this.btnOrder.Click += new System.EventHandler(this.btnAddStock_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatus.Location = new System.Drawing.Point(3, 42);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(26, 13);
+            this.lblStatus.TabIndex = 54;
+            this.lblStatus.Text = "Prijs";
             // 
             // groupBox2
             // 
@@ -324,6 +337,7 @@
             // 
             // groupAddProduct
             // 
+            this.groupAddProduct.Controls.Add(this.cbLeasable);
             this.groupAddProduct.Controls.Add(this.numProductPrice);
             this.groupAddProduct.Controls.Add(this.btnAddProduct);
             this.groupAddProduct.Controls.Add(this.checkPart);
@@ -340,6 +354,16 @@
             this.groupAddProduct.TabIndex = 54;
             this.groupAddProduct.TabStop = false;
             this.groupAddProduct.Text = "Product aanmaken";
+            // 
+            // cbLeasable
+            // 
+            this.cbLeasable.AutoSize = true;
+            this.cbLeasable.Location = new System.Drawing.Point(174, 79);
+            this.cbLeasable.Name = "cbLeasable";
+            this.cbLeasable.Size = new System.Drawing.Size(79, 17);
+            this.cbLeasable.TabIndex = 59;
+            this.cbLeasable.Text = "Kan leasen";
+            this.cbLeasable.UseVisualStyleBackColor = true;
             // 
             // numProductPrice
             // 
@@ -450,32 +474,12 @@
             this.dgvOrders.DataSource = this.orderBindingSource;
             this.dgvOrders.Location = new System.Drawing.Point(380, 219);
             this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.RowHeadersVisible = false;
             this.dgvOrders.Size = new System.Drawing.Size(349, 370);
             this.dgvOrders.TabIndex = 56;
             this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
             this.dgvOrders.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellEndEdit);
             this.dgvOrders.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrders_CellFormatting);
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            this.productDataGridViewTextBoxColumn.Width = 185;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // hasArrivedDataGridViewCheckBoxColumn
-            // 
-            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
-            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
             // 
             // orderBindingSource
             // 
@@ -485,7 +489,7 @@
             // 
             this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton1.Location = new System.Drawing.Point(206, 45);
+            this.roundButton1.Location = new System.Drawing.Point(384, 50);
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 70);
             this.roundButton1.TabIndex = 55;
@@ -509,6 +513,27 @@
             // productCategoryBindingSource1
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // hasArrivedDataGridViewCheckBoxColumn
+            // 
+            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
+            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
             // 
             // InkoopBestellenForm
             // 
@@ -542,6 +567,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.groupProductInfo.ResumeLayout(false);
             this.groupProductInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupAddProduct.ResumeLayout(false);
             this.groupAddProduct.PerformLayout();
@@ -591,11 +617,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numProductPrice;
         private System.Windows.Forms.Label lbAmount;
-        private System.Windows.Forms.TextBox txbAmount;
         private System.Windows.Forms.Label lbPermission;
         private RoundButton roundButton1;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox cbLeasable;
+        private System.Windows.Forms.NumericUpDown nrAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;

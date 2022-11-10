@@ -36,6 +36,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.btnBkrCheck = new System.Windows.Forms.Button();
+            this.btnFacturatieOverzicht = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,15 +118,39 @@
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 70);
             this.roundButton1.TabIndex = 41;
-            this.roundButton1.Text = "Logout";
+            this.roundButton1.Text = "Uitloggen";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
+            // btnBkrCheck
+            // 
+            this.btnBkrCheck.Location = new System.Drawing.Point(709, 144);
+            this.btnBkrCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBkrCheck.Name = "btnBkrCheck";
+            this.btnBkrCheck.Size = new System.Drawing.Size(150, 162);
+            this.btnBkrCheck.TabIndex = 42;
+            this.btnBkrCheck.Text = "BKR-checks";
+            this.btnBkrCheck.UseVisualStyleBackColor = true;
+            this.btnBkrCheck.Click += new System.EventHandler(this.btnBkrCheck_Click);
+            // 
+            // btnFacturatieOverzicht
+            // 
+            this.btnFacturatieOverzicht.Location = new System.Drawing.Point(134, 310);
+            this.btnFacturatieOverzicht.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFacturatieOverzicht.Name = "btnFacturatieOverzicht";
+            this.btnFacturatieOverzicht.Size = new System.Drawing.Size(150, 162);
+            this.btnFacturatieOverzicht.TabIndex = 43;
+            this.btnFacturatieOverzicht.Text = "Facturatie overzicht";
+            this.btnFacturatieOverzicht.UseVisualStyleBackColor = true;
+            this.btnFacturatieOverzicht.Click += new System.EventHandler(this.btnFacturatieOverzicht_Click);
             // 
             // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.btnFacturatieOverzicht);
+            this.Controls.Add(this.btnBkrCheck);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.lblDepartmentPart);
             this.Controls.Add(this.lblTitle);
@@ -152,5 +178,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton roundButton1;
+        private System.Windows.Forms.Button btnBkrCheck;
+        private System.Windows.Forms.Button btnFacturatieOverzicht;
     }
 }

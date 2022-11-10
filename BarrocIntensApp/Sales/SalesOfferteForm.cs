@@ -50,7 +50,7 @@ namespace BarrocIntensApp
             lblTitle.Text = $"Sales | {Globals.loggedInUser.Name}";
 
             Program.dbContext.Products.Load();
-            this.dgvProducts.DataSource = Program.dbContext.Products.Local.ToBindingList();
+            this.dgvProducts.DataSource = Program.dbContext.Products.Local.ToBindingList().Where(p => !p.isPart);
         }
 
         private void btnBackNotes_Click(object sender, EventArgs e)
@@ -173,6 +173,13 @@ namespace BarrocIntensApp
             dgvAdded.DataSource = new BindingList<Product>(addedProducts);
 
             dgvAdded.Refresh();
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            var LoginForm = new LoginForm();
+            this.Hide();
+            LoginForm.Show(this);
         }
     }
 }

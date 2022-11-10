@@ -28,23 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbBlack = new System.Windows.Forms.PictureBox();
             this.btnOfferte = new BarrocIntensApp.RoundButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
             this.btnNotities = new BarrocIntensApp.RoundButton();
             this.roundButton1 = new BarrocIntensApp.RoundButton();
+            this.pbBlack = new System.Windows.Forms.PictureBox();
+            this.btnCreateCustomerform = new BarrocIntensApp.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbBlack
-            // 
-            this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
-            this.pbBlack.Location = new System.Drawing.Point(-1, 0);
-            this.pbBlack.Name = "pbBlack";
-            this.pbBlack.Size = new System.Drawing.Size(1146, 43);
-            this.pbBlack.TabIndex = 3;
-            this.pbBlack.TabStop = false;
             // 
             // btnOfferte
             // 
@@ -109,15 +101,39 @@
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 70);
             this.roundButton1.TabIndex = 43;
-            this.roundButton1.Text = "Logout";
+            this.roundButton1.Text = "Uitloggen";
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
+            // pbBlack
+            // 
+            this.pbBlack.BackColor = System.Drawing.SystemColors.WindowText;
+            this.pbBlack.Location = new System.Drawing.Point(-1, 0);
+            this.pbBlack.Name = "pbBlack";
+            this.pbBlack.Size = new System.Drawing.Size(1146, 43);
+            this.pbBlack.TabIndex = 3;
+            this.pbBlack.TabStop = false;
+            // 
+            // btnCreateCustomerform
+            // 
+            this.btnCreateCustomerform.BackColor = System.Drawing.Color.Black;
+            this.btnCreateCustomerform.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateCustomerform.ForeColor = System.Drawing.Color.White;
+            this.btnCreateCustomerform.Location = new System.Drawing.Point(414, 59);
+            this.btnCreateCustomerform.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateCustomerform.Name = "btnCreateCustomerform";
+            this.btnCreateCustomerform.Size = new System.Drawing.Size(170, 168);
+            this.btnCreateCustomerform.TabIndex = 44;
+            this.btnCreateCustomerform.Text = "Klant aanmaken";
+            this.btnCreateCustomerform.UseVisualStyleBackColor = false;
+            this.btnCreateCustomerform.Click += new System.EventHandler(this.btnCreateCustomerform_Click);
             // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 601);
+            this.Controls.Add(this.btnCreateCustomerform);
             this.Controls.Add(this.roundButton1);
             this.Controls.Add(this.btnNotities);
             this.Controls.Add(this.lblDepartmentPart);
@@ -142,5 +158,6 @@
         private System.Windows.Forms.Label lblDepartmentPart;
         private RoundButton btnNotities;
         private RoundButton roundButton1;
+        private RoundButton btnCreateCustomerform;
     }
 }
