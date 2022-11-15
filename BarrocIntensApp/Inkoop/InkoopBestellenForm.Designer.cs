@@ -36,10 +36,6 @@
             this.cbCategories = new System.Windows.Forms.ComboBox();
             this.productCategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isPart = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IsLeasable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
@@ -76,6 +72,10 @@
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPart = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IsLeasable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -162,7 +162,6 @@
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.ColumnHeadersVisible = false;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.Price,
@@ -175,35 +174,6 @@
             this.dgvProducts.Size = new System.Drawing.Size(339, 375);
             this.dgvProducts.TabIndex = 44;
             this.dgvProducts.SelectionChanged += new System.EventHandler(this.dgvProducts_SelectionChanged);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.Width = 50;
-            // 
-            // isPart
-            // 
-            this.isPart.DataPropertyName = "isPart";
-            this.isPart.HeaderText = "isPart";
-            this.isPart.Name = "isPart";
-            this.isPart.Width = 25;
-            // 
-            // IsLeasable
-            // 
-            this.IsLeasable.DataPropertyName = "IsLeasable";
-            this.IsLeasable.HeaderText = "IsLeasable";
-            this.IsLeasable.Name = "IsLeasable";
-            this.IsLeasable.Width = 25;
             // 
             // productBindingSource
             // 
@@ -566,6 +536,35 @@
             // productCategoryBindingSource1
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nameDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.Width = 50;
+            // 
+            // isPart
+            // 
+            this.isPart.DataPropertyName = "isPart";
+            this.isPart.HeaderText = "Onderdeel";
+            this.isPart.Name = "isPart";
+            this.isPart.Width = 65;
+            // 
+            // IsLeasable
+            // 
+            this.IsLeasable.DataPropertyName = "IsLeasable";
+            this.IsLeasable.HeaderText = "Huurbaar";
+            this.IsLeasable.Name = "IsLeasable";
+            this.IsLeasable.Width = 65;
             // 
             // InkoopBestellenForm
             // 
