@@ -69,13 +69,13 @@
             this.txbProductName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roundButton1 = new BarrocIntensApp.RoundButton();
             this.btnReturnDashboard = new BarrocIntensApp.RoundButton();
             this.productCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasArrivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -498,6 +498,7 @@
             this.dgvOrders.AllowUserToDeleteRows = false;
             this.dgvOrders.AutoGenerateColumns = false;
             this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productDataGridViewTextBoxColumn,
@@ -512,27 +513,6 @@
             this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
             this.dgvOrders.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellEndEdit);
             this.dgvOrders.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOrders_CellFormatting);
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // hasArrivedDataGridViewCheckBoxColumn
-            // 
-            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "hasArrived";
-            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
-            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
             // 
             // orderBindingSource
             // 
@@ -566,6 +546,27 @@
             // productCategoryBindingSource1
             // 
             this.productCategoryBindingSource1.DataSource = typeof(BarrocIntensApp.Models.ProductCategory);
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Aantal";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // hasArrivedDataGridViewCheckBoxColumn
+            // 
+            this.hasArrivedDataGridViewCheckBoxColumn.DataPropertyName = "hasArrived";
+            this.hasArrivedDataGridViewCheckBoxColumn.HeaderText = "Gearriveerd";
+            this.hasArrivedDataGridViewCheckBoxColumn.Name = "hasArrivedDataGridViewCheckBoxColumn";
+            this.hasArrivedDataGridViewCheckBoxColumn.Width = 60;
             // 
             // InkoopBestellenForm
             // 
@@ -655,12 +656,12 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.CheckBox cbLeasable;
         private System.Windows.Forms.NumericUpDown nrAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isPart;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsLeasable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;
     }
 }

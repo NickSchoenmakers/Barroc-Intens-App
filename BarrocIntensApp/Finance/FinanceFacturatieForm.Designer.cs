@@ -42,6 +42,8 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CartGv = new System.Windows.Forms.DataGridView();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aantal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customInvoiceProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Cartbtn = new BarrocIntensApp.RoundButton();
             this.BtnReturnStoringen = new BarrocIntensApp.RoundButton();
@@ -53,8 +55,6 @@
             this.roundButton2 = new BarrocIntensApp.RoundButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDepartmentPart = new System.Windows.Forms.Label();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aantal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -127,6 +127,7 @@
             // productsDataGridView
             // 
             this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
@@ -175,6 +176,7 @@
             // CartGv
             // 
             this.CartGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CartGv.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CartGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CartGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product,
@@ -184,6 +186,19 @@
             this.CartGv.RowHeadersVisible = false;
             this.CartGv.Size = new System.Drawing.Size(521, 272);
             this.CartGv.TabIndex = 36;
+            // 
+            // Product
+            // 
+            this.Product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Product.DataPropertyName = "Product";
+            this.Product.FillWeight = 210.2991F;
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
+            // 
+            // Aantal
+            // 
+            this.Aantal.HeaderText = "Aantal";
+            this.Aantal.Name = "Aantal";
             // 
             // customInvoiceProductBindingSource
             // 
@@ -309,19 +324,6 @@
             this.lblDepartmentPart.TabIndex = 109;
             this.lblDepartmentPart.Text = "Facturatie";
             this.lblDepartmentPart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Product
-            // 
-            this.Product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Product.DataPropertyName = "Product";
-            this.Product.FillWeight = 210.2991F;
-            this.Product.HeaderText = "Product";
-            this.Product.Name = "Product";
-            // 
-            // Aantal
-            // 
-            this.Aantal.HeaderText = "Aantal";
-            this.Aantal.Name = "Aantal";
             // 
             // FacturatieForm
             // 
