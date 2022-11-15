@@ -520,7 +520,7 @@
             // 
             this.roundButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.roundButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.roundButton1.Location = new System.Drawing.Point(384, 50);
+            this.roundButton1.Location = new System.Drawing.Point(558, 50);
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 70);
             this.roundButton1.TabIndex = 55;
