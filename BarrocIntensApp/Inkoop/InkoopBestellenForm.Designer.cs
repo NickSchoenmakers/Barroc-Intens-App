@@ -37,6 +37,9 @@
             this.productCategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPart = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IsLeasable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStock = new System.Windows.Forms.Label();
             this.groupProductInfo = new System.Windows.Forms.GroupBox();
@@ -153,7 +156,6 @@
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToAddRows = false;
-            this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.AllowUserToResizeColumns = false;
             this.dgvProducts.AllowUserToResizeRows = false;
             this.dgvProducts.AutoGenerateColumns = false;
@@ -162,26 +164,46 @@
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.ColumnHeadersVisible = false;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn});
+            this.nameDataGridViewTextBoxColumn,
+            this.Price,
+            this.isPart,
+            this.IsLeasable});
             this.dgvProducts.DataSource = this.productBindingSource;
             this.dgvProducts.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvProducts.Location = new System.Drawing.Point(1, 13);
+            this.dgvProducts.Location = new System.Drawing.Point(1, 16);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.RowHeadersVisible = false;
-            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProducts.Size = new System.Drawing.Size(339, 378);
+            this.dgvProducts.Size = new System.Drawing.Size(339, 375);
             this.dgvProducts.TabIndex = 44;
             this.dgvProducts.SelectionChanged += new System.EventHandler(this.dgvProducts_SelectionChanged);
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.Width = 50;
+            // 
+            // isPart
+            // 
+            this.isPart.DataPropertyName = "isPart";
+            this.isPart.HeaderText = "isPart";
+            this.isPart.Name = "isPart";
+            this.isPart.Width = 25;
+            // 
+            // IsLeasable
+            // 
+            this.IsLeasable.DataPropertyName = "IsLeasable";
+            this.IsLeasable.HeaderText = "IsLeasable";
+            this.IsLeasable.Name = "IsLeasable";
+            this.IsLeasable.Width = 25;
             // 
             // productBindingSource
             // 
@@ -604,7 +626,6 @@
         private System.Windows.Forms.BindingSource productCategoryBindingSource1;
         private System.Windows.Forms.BindingSource productCategoryBindingSource2;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.GroupBox groupProductInfo;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -637,5 +658,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasArrivedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isPart;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsLeasable;
     }
 }
